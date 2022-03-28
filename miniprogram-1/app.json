@@ -1,0 +1,54 @@
+{
+    "pages": [
+        "pages/index/index1",
+        "pages/index/index2",
+        "pages/index/index3",
+        "pages/index/index4",
+        "pages/lostthing/index",
+        "pages/SecendHandChange/index",
+        "pages/TakePhoto/index",
+        "pages/AskAndQuestion/index",
+        "pages/News/index"
+    ],
+    "tabBar": {
+        "color": "#7A7E83",
+        "selectedColor": "#3cc51f",
+        "borderStyle": "black",
+        "backgroundColor": "#ffffff",
+        "list": [
+            {
+                "pagePath": "pages/index/index1",
+                "iconPath": "img/blackindex.png",
+                "selectedIconPath": "img/blue.png",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/index/index2",
+                "iconPath": "img/blackfire.png",
+                "selectedIconPath": "img/redfire.png",
+                "text": "热点"
+            },
+            {
+                "pagePath": "pages/index/index3",
+                "iconPath": "img/xinxi.png",
+                "selectedIconPath": "img/yellow.png",
+                "text": "讨论"
+            },
+            {
+                "pagePath": "pages/index/index4",
+                "iconPath": "img/black.png",
+                "selectedIconPath": "img/orange.png",
+                "text": "我的"
+            }
+        ]
+    },
+    "window": {
+        "navigationStyle": "custom",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "华师说",
+        "navigationBarTextStyle": "black"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

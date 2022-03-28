@@ -1,0 +1,57 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+/*
+导航栏
+*/
+.nav-wrap {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  background: #fff;
+  color: #000;
+  z-index: 9999999;
+}
+.topimage {
+margin-bottom: 10px;
+}
+.nav-title {
+  position: absolute;
+  text-align: center;
+  max-width: 377rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  top: 0px;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  margin: auto;
+  font-size: 35rpx;
+  color: #2c2b2b;
+  font-weight: 400;
+}
+
+.nav-capsule {
+  display: flex;
+  align-items: center;
+  margin-left: 20rpx;
+  width: 50rpx;
+  justify-content: space-around;
+  border-radius: 50%;
+  margin-top: 54rpx;
+  z-index: 999999999;
+}
+
+.back-pre {
+  width: 35px;
+  margin-top: 11rpx;
+  margin-left: 25px;
+}
