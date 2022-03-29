@@ -19,9 +19,12 @@
   color: #000;
   z-index: 9999999;
 }
+
+/* 顶部图标 */
 .topimage {
 margin-bottom: 10px;
 }
+
 .nav-title {
   position: absolute;
   text-align: center;
@@ -38,7 +41,7 @@ margin-bottom: 10px;
   color: #2c2b2b;
   font-weight: 400;
 }
-
+/* 导航栏容器 */
 .nav-capsule {
   display: flex;
   align-items: center;
@@ -49,6 +52,7 @@ margin-bottom: 10px;
   margin-top: 54rpx;
   z-index: 999999999;
 }
+
 
 .back-pre {
   width: 35px;

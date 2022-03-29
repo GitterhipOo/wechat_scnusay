@@ -82,7 +82,7 @@
     
 <!-- -------------------------------------瀑布流----------------------------------------- -->
 <scroll-view scroll-y="true" class="waterfall" bindscrolltoupper="upper" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
-
+<!-- aaaaaa -->
 
 
 
