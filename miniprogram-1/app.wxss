@@ -1,4 +1,7 @@
 /**app.wxss**/
+page {
+  background-color:rgb(245, 245, 245);
+}
 .container {
   height: 100%;
   display: flex;
@@ -15,7 +18,7 @@
   position: fixed;
   width: 100%;
   top: 0px;
-  background: #fff;
+  background: #ffffff;
   color: #000;
   z-index: 9999999;
 }

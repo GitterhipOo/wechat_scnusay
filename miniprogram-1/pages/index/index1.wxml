@@ -69,13 +69,12 @@
     </view>
         
 
-    <view>
+    <view class="bigleavemessage">
         <!-- 分类标签 -->
         <scroll-view scroll-x class="sort-nav" scroll-with-animation enable-flex="true">
             <view class="sort-nav-item" wx:for="{{sortList}}"  wx:key="index">
                 <image class="sort-nav-icon" src="{{item.icon}}" mode="widthFix" lazy-load="false"></image>
                 <text class="sort-nav-text">{{item.text}}</text>
-                <image class="down-selected"src="../../assets/images/sort/dwon.png"></image>
             </view>
         </scroll-view>   
     </view>

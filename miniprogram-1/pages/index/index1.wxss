@@ -86,12 +86,11 @@
 .leave-message{
   display: flex;
   width: 85%;
-  height: 120rpx;
   margin: auto;
   align-items: center;
-  margin-top: 10rpx;
-  
-  
+  margin-top: 25rpx;
+  margin-bottom: 10rpx;
+
 }
 
 .message-content{
@@ -112,7 +111,7 @@
 /*标签导航*/
 .sort-nav{
   width: 90%;
-  height: 200rpx;
+  height: 150rpx;
   margin: 0rpx auto;
   /* margin-top: 0rpx; */
   display: flex;
@@ -140,7 +139,8 @@
   text-align: center;
   /* line-height: 4rpx; */
   color: #aaa;
-  margin: 0rpx 34rpx 0rpx 20rpx;
+  margin: 0rpx 34rpx 20rpx 20rpx;
+  margin-top: 50rpx;
 }
 .sort-nav-icon{
   width: 84rpx;
@@ -156,3 +156,11 @@
   width: 25rpx;
   height: 25rpx;
 }
+.bigleavemessage{
+  padding-top: 10rpx;
+  background-color: #ffffff;
+  border-radius: 45rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+
