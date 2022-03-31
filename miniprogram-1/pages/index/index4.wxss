@@ -66,3 +66,19 @@
   .my .my-item:last-child .myitem-name{
     border-bottom: none;
   }
+
+  /* 头像 */
+  .userinfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #aaa;
+  }
+  
+  .userinfo-avatar {
+    overflow: hidden;
+    width: 128rpx;
+    height: 128rpx;
+    margin: 50rpx;
+    border-radius: 50%;
+  }
