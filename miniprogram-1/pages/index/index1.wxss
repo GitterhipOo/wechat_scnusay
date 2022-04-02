@@ -139,8 +139,7 @@
   text-align: center;
   /* line-height: 4rpx; */
   color: #aaa;
-  margin: 0rpx 34rpx 20rpx 20rpx;
-  margin-top: 50rpx;
+  margin-top: 10rpx;
 }
 .sort-nav-icon{
   width: 84rpx;
