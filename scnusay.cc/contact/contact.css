@@ -13,10 +13,12 @@ body {
     z-index: 999;
     background-image: url(http://zhongguose.com/img/texture.png);
     background-color: rgb(186, 204, 217);
+    box-shadow: 0px 5px 21px 0px rgba(0, 0, 0, 0.3);
 }
 
 .topmenu {
     float: right;
+    margin-right: 80px;
 }
 
 .topmenu ul li {
@@ -31,7 +33,7 @@ body {
 .toplogo img {
     width: 94px;
     height: 94px;
-    margin-left: 50px;
+    margin-left: 130px;
 }
 
 .topmenu ul li a {
@@ -39,6 +41,7 @@ body {
     padding: 40px 25px;
     text-decoration: none;
     color: white;
+    font-weight: 500;
 }
 
 .header {
