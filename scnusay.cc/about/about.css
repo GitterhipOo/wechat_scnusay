@@ -8,12 +8,11 @@ body {
 }
 
 #wrapper {
-    position: fixed;
+    position: absolute;
     top: 0;
     z-index: 999;
-    width: 100%;
     background-image: url(http://zhongguose.com/img/texture.png);
-    background-color: #ddd;
+    background-color: rgb(186, 204, 217);
 }
 
 .topmenu {

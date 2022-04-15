@@ -6,15 +6,16 @@
 body {
     /*background-color: rgb(245, 245, 245);*/
     background-color: white;
+    overflow-y: scroll;
+    overflow-x: scroll;
 }
 
 #wrapper {
-    position: fixed;
+    position: absolute;
     top: 0;
     z-index: 999;
-    width: 100%;
     background-image: url(http://zhongguose.com/img/texture.png);
-    background-color: #ddd;
+    background-color: rgb(186, 204, 217);
 }
 
 .topmenu {
@@ -58,30 +59,36 @@ body {
 .home {
     position: absolute;
     top: 100.67px;
-    width: 70%;
+    margin-top: 5px;
     margin-left: 15%;
-    margin-top: 100px;
+    background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F1114%2F112620113628%2F201126113628-1-1200.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1652594949&t=4881864ef0caa453feb7c61d08930a5c);
+    background-position: top;
+    box-shadow: -1px 5px 17px 7px rgb(0 0 0 / 30%)
 }
 
 .jieshao {
     float: left;
     width: 50%;
     height: 400px;
-    text-align: center;
 }
 
-.jieshaowords {
-    float: right;
-    width: 40%;
-    height: 400px;
-    margin-left: 10%;
-}
 
 .jieshao h1 {
     display: block;
+    text-align: center;
+    margin-left: 20%;
     font-size: 60px;
     color: #1793d1;
     font-weight: 700;
-    margin: 0px;
+    margin-top: 80px;
+}
 
+.jieshao .scnusay {
+    display: block;
+    text-align: center;
+    font-size: 80px;
+    color: black;
+    font-weight: 700;
+    font-family: 'Helvetica';
+    margin-top: 30px;
 }
