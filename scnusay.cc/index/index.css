@@ -4,11 +4,14 @@
 }
 
 body {
-    background-color: rgb(245, 245, 245);
+    /*background-color: rgb(245, 245, 245);*/
+    background-color: white;
 }
 
 #wrapper {
     position: fixed;
+    top: 0;
+    z-index: 999;
     width: 100%;
     background-image: url(http://zhongguose.com/img/texture.png);
     background-color: #ddd;
@@ -20,9 +23,7 @@ body {
 
 .topmenu ul li {
     display: inline-block;
-    float: left;
     list-style: none;
-    margin-left: 20px;
 }
 
 .toplogo {
@@ -49,5 +50,38 @@ body {
 
 .topmenu ul li:hover {
     background-color: rgb(119, 171, 184);
+    box-shadow: 0px 5px 21px 0px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s;
     -webkit-transition: all 0.6s;
+}
+
+.home {
+    position: absolute;
+    top: 100.67px;
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 100px;
+}
+
+.jieshao {
+    float: left;
+    width: 50%;
+    height: 400px;
+    text-align: center;
+}
+
+.jieshaowords {
+    float: right;
+    width: 40%;
+    height: 400px;
+    margin-left: 10%;
+}
+
+.jieshao h1 {
+    display: block;
+    font-size: 60px;
+    color: #1793d1;
+    font-weight: 700;
+    margin: 0px;
+
 }
