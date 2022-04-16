@@ -10,10 +10,19 @@ body {
 #wrapper {
     position: absolute;
     top: 0;
+    width: 100%;
     z-index: 999;
     background-image: url(http://zhongguose.com/img/texture.png);
     background-color: rgb(186, 204, 217);
     box-shadow: 0px 5px 21px 0px rgba(0, 0, 0, 0.3);
+}
+
+#wrapper2 {
+    z-index: 999;
+    height: 100px;
+    background-image: url(http://zhongguose.com/img/texture.png);
+    background-color: rgb(186, 204, 217);
+    box-shadow: 0px -5px 21px 0px rgba(0, 0, 0, 0.3);
 }
 
 .topmenu {
