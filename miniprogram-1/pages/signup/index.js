@@ -86,10 +86,31 @@ Page({
             success (res) {
             }
           })
+          // post提交模块
+        }
+        else
+        {
+wx.request({
+  url: 'https://www.scnusay.cc/signup/signup.php',
+  method:"POST",
+  data:{
+    'username':e.detail.value.username,
+    'password':e.detail.value.password,
+    'passwordAck':e.detail.value.passwordAck,
+    'userphone':e.detail.value.userphone,
+    'scnu_number':e.detail.value.scnu_number,
+  },
+  header: {
+    'content-type': 'application/x-www-form-urlencoded'  
+  },
+  success(res){
+      console.log(res.data);
+  }
+})
         }
       },
-
-
+          
+// 同步输入框内东西到全局数组
       usernameInput:function(e){
         // 获取 input 输入框的值
         this.data.username = e.detail.value;
@@ -102,14 +123,15 @@ Page({
         // 获取 input 输入框的值
         this.data.passwordAck = e.detail.value;
       },
-      emailInput:function(e){
+      phoneInput:function(e){
         // 获取 input 输入框的值
         this.data.userphone = e.detail.value;
       },
-      phoneNumberInput:function(e){
+      scnuNumberInput:function(e){
         // 获取 input 输入框的值
         this.data.scnu_number = e.detail.value;
-      },
+      }
+
 
  
 })

@@ -11,10 +11,10 @@
 			<input id="passwordAck" placeholder="请再次输入密码" placeholder-class="plas" class="inputs" type="password" bindinput="passwordInputAck"></input>
 		</view>
 		<view class="second">
-			<input id="userphone" placeholder="请输入手机号" placeholder-class="plas" class="inputs" type="email" bindinput="emailInput" name="email"></input>
+			<input id="userphone" placeholder="请输入手机号" placeholder-class="plas" class="inputs" type="number" bindinput="phoneInput" name="userphone"></input>
 		</view>
 		<view class="second">
-			<input id="scnu_number" placeholder="请输入学号" placeholder-class="plas" class="inputs" type="number" bindinput="phoneNumberInput" name="phone"></input>
+			<input id="scnu_number" placeholder="请输入学号" placeholder-class="plas" class="inputs" type="number" bindinput="scnuNumberInput" name="scnu_number"></input>
 		</view>
 		<view>
 			<button class="click" type="primary" form-type='submit' bindtap="regist">注册</button>
