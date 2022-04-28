@@ -163,3 +163,22 @@
   margin-right: 10rpx;
 }
 
+.keep-students{
+  margin: 3% 3%;
+  height: 120rpx;
+  border-radius: 10%;
+  background-color: #fff;
+}
+.keep-students .left-image{
+  float: left;
+  height: 120rpx;
+  width: 120rpx;
+}
+.keep-students .say-to-keep{
+  line-height: 120rpx;
+  color: #aaa;
+}
+
+
+
+
