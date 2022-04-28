@@ -13,7 +13,6 @@
     </view>
 </view>
 
-
 <view style="margin-top:{{navH*4+50}}rpx">
     <!-- 轮播图 -->
     <view class="bbs-swiper-container">
@@ -79,11 +78,9 @@
         </scroll-view>   
     </view>
     
+    <view class="keep-students">
+        <image src="/assets/images/icon/search.png" class="left-image"></image>
+        <view class="say-to-keep">关注华师说，获取更多华师内容捏~</view>
+    </view>
 <!-- -------------------------------------瀑布流----------------------------------------- -->
 
-<view class="container">
-  
-  <view bindtap='ceshifuwuqi'>点击测试服务器
-  <view>{{demo}}</view></view>
-  
-</view>
