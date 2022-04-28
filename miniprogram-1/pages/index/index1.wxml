@@ -80,3 +80,10 @@
     </view>
     
 <!-- -------------------------------------瀑布流----------------------------------------- -->
+
+<view class="container">
+  
+  <view bindtap='ceshifuwuqi'>点击测试服务器
+  <view>{{demo}}</view></view>
+  
+</view>
