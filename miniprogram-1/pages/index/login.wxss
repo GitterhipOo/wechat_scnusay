@@ -5,11 +5,9 @@ page{
     background-color: white;
   }
   .first{
-    width: 90%;
+    width: 80%;
     height: 100rpx;
-    margin-top: 80rpx;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin: 60% 10% 0 10%;
     /* 排列方式 */
     display: flex;
     /* 纵向排列 */
@@ -32,11 +30,9 @@ page{
     width: 100%;
   }
   .second{
-    width: 90%;
+    width: 80%;
     height: 100rpx;
-    margin-top: 30rpx;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin: 5% 10% 5% 10%;
     /* 排列方式 */
     display: flex;
     /* 纵向排列 */
