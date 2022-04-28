@@ -47,17 +47,18 @@ page{
   }
   .click{
     width: 90%;
-    height: 100rpx;
-    line-height: 100rpx;
+    height: 80rpx;
+    line-height: 50rpx;
     margin:auto;
-    margin-top: 80rpx;
+    margin-top: 40rpx;
     background-color: #43CD80;
     border-radius: 8rpx;
-    text-align: center;
     color: white;
     font-size: 33rpx;
   }
   .cha{
+    position: absolute;
+    bottom: 320rpx;
     width: 90%;
     height: 50rpx;
     margin: auto;
