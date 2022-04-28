@@ -1,0 +1,24 @@
+<!--pages/enroll/enroll.wxml-->
+<form bindsubmit="regist">
+	<view>
+		<view class="first">
+			<input id="username" placeholder="请输入用户名" placeholder-class="plas" class="inputs" type="text" bindinput="usernameInput" name="username"></input>
+		</view>
+		<view class="second">
+			<input id="password" placeholder="请输入密码" placeholder-class="plas" class="inputs" type="password" bindinput="passwordInput" name="password"></input>
+		</view>
+		<view class="second">
+			<input id="passwordAck" placeholder="请再次输入密码" placeholder-class="plas" class="inputs" type="password" bindinput="passwordInputAck"></input>
+		</view>
+		<view class="second">
+			<input id="userphone" placeholder="请输入手机号" placeholder-class="plas" class="inputs" type="number" bindinput="phoneInput" name="userphone"></input>
+		</view>
+		<view class="second">
+			<input id="scnu_number" placeholder="请输入学号" placeholder-class="plas" class="inputs" type="number" bindinput="scnuNumberInput" name="scnu_number"></input>
+		</view>
+		<view>
+			<button class="click" type="primary" form-type='submit' bindtap="regist">注册</button>
+		</view>
+		<view class="cha" bindtap="enroll"><text class="no" style="color: steelblue;">已有账号，点我登录</text></view>
+	</view>
+</form>

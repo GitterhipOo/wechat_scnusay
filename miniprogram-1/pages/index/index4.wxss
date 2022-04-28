@@ -79,6 +79,10 @@
     overflow: hidden;
     width: 128rpx;
     height: 128rpx;
-    margin: 50rpx;
+    margin: 20rpx;
     border-radius: 50%;
   }
+.loginbutton{
+  margin-right: 10px !important;
+  width: 80% ;
+}

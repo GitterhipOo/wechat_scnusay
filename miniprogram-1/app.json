@@ -4,11 +4,14 @@
         "pages/index/index2",
         "pages/index/index3",
         "pages/index/index4",
+        "pages/index/login",
         "pages/lostthing/index",
         "pages/SecendHandChange/index",
         "pages/TakePhoto/index",
         "pages/AskAndQuestion/index",
-        "pages/News/index"
+        "pages/News/index",
+        "pages/signup/index"
+
     ],
     "tabBar": {
         "color": "#7A7E83",
@@ -43,7 +46,6 @@
         ]
     },
     "window": {
-        "navigationStyle": "custom",
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",
         "navigationBarTitleText": "华师说",

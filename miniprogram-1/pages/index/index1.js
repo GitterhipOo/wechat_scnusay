@@ -39,6 +39,29 @@ Page({
         swiperCurrent: 0
     },
 
+    ceshifuwuqi:function(){
+      var that = this
+      wx.request({
+        url: `https://www.scnusay.cc/test2.php`,//你的后台url地址
+        data:{
+          name:'test1号'
+        },
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        method: "GET",
+        success(result) {
+          console.log(result);
+          that.setData({
+            demo: result.data
+          })
+        },
+        fail(error) {
+          util.showModel('请求失败', error);
+          console.log('request fail', error);
+        }
+      })
+    },  
     /**
      * 生命周期函数--监听页面加载
      */
