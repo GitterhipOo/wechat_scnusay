@@ -2,7 +2,7 @@
 <view>
 	<form bindsubmit='login'>
 		<view class="first">
-			<input id="username" placeholder="请输入用户名" placeholder-class="plas" class="inputs" type="text" name="username"></input>
+			<input id="username" placeholder="请输入手机号/学号" placeholder-class="plas" class="inputs" type="text" name="username"></input>
 		</view>
 		<view class="second">
 			<input id="password" placeholder="请输入密码" placeholder-class="plas" class="inputs" type="password" name="password"></input>

@@ -11,17 +11,13 @@
 			<input id="passwordAck" placeholder="请再次输入密码" placeholder-class="plas" class="inputs" type="password" bindinput="passwordInputAck"></input>
 		</view>
 		<view class="second">
-			<input id="email" placeholder="请输入邮箱" placeholder-class="plas" class="inputs" type="email" bindinput="emailInput" name="email"></input>
+			<input id="userphone" placeholder="请输入手机号" placeholder-class="plas" class="inputs" type="email" bindinput="emailInput" name="email"></input>
 		</view>
 		<view class="second">
-			<input id="phoneNumber" placeholder="请输入手机号" placeholder-class="plas" class="inputs" type="number" bindinput="phoneNumberInput" name="phone"></input>
+			<input id="scnu_number" placeholder="请输入学号" placeholder-class="plas" class="inputs" type="number" bindinput="phoneNumberInput" name="phone"></input>
 		</view>
-		<view class="second">
-			<input id="role" placeholder="角色" placeholder-class="plas" class="inputs" type="number" bindinput="roleInput" name="role"></input>
-		</view>
-		<!-- <view id="btn" class="click" bindtap="regist"><input type="submit">注册</input></view> -->
 		<view>
-			<button class="click" type="primary" form-type='submit'>注册</button>
+			<button class="click" type="primary" form-type='submit' bindtap="regist">注册</button>
 		</view>
 		<view class="cha" bindtap="enroll"><text class="no" style="color: steelblue;">已有账号，点我登录</text></view>
 	</view>
