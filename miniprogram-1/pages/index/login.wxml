@@ -1,5 +1,9 @@
 <!--pages/login/login.wxml-->
 <view>
+<!-- <view>
+	<image bindtap="bindViewTap" class="userinfo-avatar" src="https://s1.328888.xyz/2022/04/28/8xOJJ.png" mode="cover"></image>
+      <text class="userinfo-nickname">微信用户</text>
+	</view> -->
 	<form bindsubmit='login'>
 		<view class="first">
 			<input id="username" placeholder="请输入手机号/学号" placeholder-class="plas" class="inputs" type="text" name="username"></input>

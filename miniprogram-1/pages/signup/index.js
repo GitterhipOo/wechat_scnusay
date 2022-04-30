@@ -10,7 +10,8 @@ Page({
         password:"",
         passwordAck:"",
         userphone:"",
-        scnu_number:""
+        scnu_number:"",
+        result1:"",
     },
     enroll: function (e) {
         // 发起网络请求
@@ -105,10 +106,31 @@ wx.request({
   },
   success(res){
       console.log(res.data);
-  }
+      if ("注册成功!" == res.data) {
+        wx.showModal({
+          title: '提示',
+          content: '注册成功! 即将返回登录页面!',
+        })
+        
+setTimeout(function () {
+  //要延时执行的代码
+  wx.navigateBack({
+    // 返回上 1 页
+    delta: 1
 })
-        }
-      },
+ }, 2000) //延迟时间 这里是1秒
+        
+      }else if("注册失败!" == res.data) {
+        wx.showModal({
+          title: '提示',
+          content: '注册失败! 点击重新注册!',
+        })
+      }  
+    }
+  })
+      }
+    },
+
           
 // 同步输入框内东西到全局数组
       usernameInput:function(e){
