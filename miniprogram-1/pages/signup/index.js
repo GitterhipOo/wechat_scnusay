@@ -112,13 +112,13 @@ wx.request({
           content: '注册成功! 即将返回登录页面!',
         })
         
-setTimeout(function () {
-  //要延时执行的代码
-  wx.navigateBack({
-    // 返回上 1 页
-    delta: 1
-})
- }, 2000) //延迟时间 这里是1秒
+        setTimeout(function () {
+          //要延时执行的代码
+          wx.navigateBack({
+            // 返回上 1 页
+            delta: 1
+        })
+        }, 2000) //延迟时间 这里是1秒
         
       }else if("注册失败!" == res.data) {
         wx.showModal({
@@ -153,7 +153,4 @@ setTimeout(function () {
         // 获取 input 输入框的值
         this.data.scnu_number = e.detail.value;
       }
-
-
- 
 })
