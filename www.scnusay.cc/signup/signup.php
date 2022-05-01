@@ -22,12 +22,13 @@ $scnu_number=$_POST['scnu_number'] ;//post获取表单里的role
 
 $q="insert into scnusay(id,user_id,userpassword,userphone,scnu_number) values (null,'$username','$password','$userphone','$scnu_number')";//向数据库插入表单传来的值的sql
 $reslut=$con->query($q);//执行sql
+$success="注册成功!";
 
-echo $q;
-if (!$reslut){
-    echo "注册失败";
-}else{
-    echo "注册成功";
+
+if ($reslut){
+    echo iconv("GB2312","UTF-8","$success");
+}else {
+	echo iconv("GB2312","UTF-8","注册失败,请核对手机号码以及学号!");
 }
 $con->close()//关闭数据库
 ?>
