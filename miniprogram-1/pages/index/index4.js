@@ -23,6 +23,13 @@ Page({
       })
 }
 },
+logo: function (e) {
+  // 发起网络请求
+  wx.navigateTo({
+  // 开发者服务器接口地址
+    url: '/pages/index/index',
+  })
+},
 enroll: function (e) {
   // 发起网络请求
   wx.navigateTo({

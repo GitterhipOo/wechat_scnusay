@@ -88,6 +88,13 @@ Page({
         url: '/pages/News/index',
       })
     },
+    logo: function (e) {
+      // 发起网络请求
+      wx.navigateTo({
+      // 开发者服务器接口地址
+        url: '/pages/index/index',
+      })
+    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
