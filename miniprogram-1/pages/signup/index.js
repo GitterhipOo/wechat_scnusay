@@ -118,9 +118,9 @@ wx.request({
             // 返回上 1 页
             delta: 1
         })
-        }, 2000) //延迟时间 这里是1秒
+        }, 1500) //延迟时间 这里是1秒
         
-      }else if("注册失败!" == res.data) {
+      }else if("注册失败,请核对手机号码以及学号!" == res.data) {
         wx.showModal({
           title: '提示',
           content: '注册失败! 点击重新注册!',
