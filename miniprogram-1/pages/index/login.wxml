@@ -1,9 +1,18 @@
 <!--pages/login/login.wxml-->
 <view>
-<!-- <view>
-	<image bindtap="bindViewTap" class="userinfo-avatar" src="https://s1.328888.xyz/2022/04/28/8xOJJ.png" mode="cover"></image>
-      <text class="userinfo-nickname">微信用户</text>
-	</view> -->
+    <block wx:if="{{hasUserInfo}}">
+        <view class="loginhead">
+    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      
+    </view>
+    </block>
+    <block wx:if="{{!hasUserInfo}}">
+<view class="loginhead">
+    <image bindtap="bindViewTap" class="userinfo-avatar" src="https://s1.328888.xyz/2022/05/02/ANMF7.png" mode="cover"></image>
+      <text class="userinfo-nickname">未登录用户</text>
+    </view>
+</block>
 	<form bindsubmit='login'>
 		<view class="first">
 			<input id="username" placeholder="请输入手机号/学号" placeholder-class="plas" class="inputs" type="text" name="username"></input>
@@ -13,7 +22,7 @@
 		</view>
 		<!--按钮-->
 		<view>
-			<button class="loginBtn" type="primary" form-type='submit'>登录</button>
+			<button class="loginBtn" type="primary" form-type='submit' bindtap="getUserProfile">登录</button>
 		</view>
 		<view class="cha" bindtap="signup"><text class="no" style="color: steelblue;">没有账号?点我注册</text></view>
 	</form>
