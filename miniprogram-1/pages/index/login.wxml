@@ -13,17 +13,9 @@
       <text class="userinfo-nickname">未登录用户</text>
     </view>
 </block>
-	<form bindsubmit='login'>
-		<view class="first">
-			<input id="username" placeholder="请输入手机号/学号" placeholder-class="plas" class="inputs" type="text" name="username"></input>
-		</view>
-		<view class="second">
-			<input id="password" placeholder="请输入密码" placeholder-class="plas" class="inputs" type="password" name="password"></input>
-		</view>
-		<!--按钮-->
 		<view>
-			<button class="loginBtn" type="primary" form-type='submit' bindtap="getUserProfile">登录</button>
+			<button class="loginBtn" type="primary" form-type='submit' bindtap="getUserProfile">授权个人资料</button>
 		</view>
-		<view class="cha" bindtap="signup"><text class="no" style="color: steelblue;">没有账号?点我注册</text></view>
-	</form>
+		<!-- 转到注册的页面 绑定学号和手机号 
+            <view class="cha" bindtap="signup"><text class="no" style="color: steelblue;">没有账号?点我注册</text></view> -->
 </view>

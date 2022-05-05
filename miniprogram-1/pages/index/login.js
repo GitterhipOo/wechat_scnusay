@@ -38,6 +38,18 @@ getUserProfile(e) {
         userInfo: res.userInfo,
         hasUserInfo: true
       })
+      wx.showModal({
+        title:'授权成功',
+        content:'即将返回主页',
+        showCancel:false
+      })
+      setTimeout(function () {
+        //要延时执行的代码
+        wx.navigateBack({
+          // 返回上 1 页
+          delta: 1
+      })
+      }, 1500)
     }
   })
 },
@@ -45,8 +57,6 @@ login:function(e){
     var me=this;
     var formobject=e.detail.value;
     console.log(e.detail);
-    var username =formobject.username;
-    var password=formobject.password;
-    
+
 }
 })

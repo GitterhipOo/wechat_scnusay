@@ -2,7 +2,7 @@
 page{
     left:10rpx;
     right:10rpx;
-    background-color: white;
+    background-color:rgb(245, 245, 245);
   }
   .first{
     width: 80%;
@@ -73,7 +73,7 @@ page{
     border-radius: 50%;
   }
   .loginhead{
-margin: 10% 10% 0% 10%;
+margin: 40% 10% 0% 10%;
 display: flex;
 justify-content: center;
 align-items: center;

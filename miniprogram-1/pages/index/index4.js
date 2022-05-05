@@ -6,7 +6,6 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    isHide: true 
   },
   //事件处理函数
   bindViewTap: function() {
@@ -15,25 +14,6 @@ Page({
     this.setData({
       navH: app.globalData.navHeight
     });
-    var that=this;
-    wx.getSetting({
-      success:function(res){
-          console.log(res);
-          console.log(that.data.isHide);
-        if (!res.authSetting['scope.userInfo']) {
-            // 还未授权，显示授权按钮
-            that.setData({
-             isHide: true
-            });
-      }else {
-        // 已授权，隐藏授权按钮，显示正文
-        that.setData({
-         isHide: false
-        });
-        console.log(that.data.isHide);
-        }
-      }
-    })
 },
 logo: function (e) {
   // 发起网络请求
@@ -59,6 +39,7 @@ getUserProfile(e) {
         userInfo: res.userInfo,
         hasUserInfo: true
       })
+  
     }
   })
 }

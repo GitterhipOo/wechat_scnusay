@@ -5,6 +5,7 @@
     flex-direction: row;
     align-items: center;
     color: #aaa;
+    margin-top: 30%;
   }
   
   .userinfo-avatar {
