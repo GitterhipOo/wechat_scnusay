@@ -4,10 +4,7 @@ var app = getApp()
 Page({
   data: {
     userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    canIUseGetUserProfile: false,
-    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
+    hasUserInfo: false
   },
   //事件处理函数
   bindViewTap: function() {
@@ -42,5 +39,13 @@ getUserProfile(e) {
       })
     }
   })
+},
+login:function(e){
+    var me=this;
+    var formobject=e.detail.value;
+    console.log(e.detail);
+    var username =formobject.username;
+    var password=formobject.password;
+    
 }
 })

@@ -24,8 +24,8 @@
 
     <block wx:if="{{!hasUserInfo}}">
     
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="https://s1.328888.xyz/2022/04/28/8xOJJ.png" mode="cover"></image>
-      <text class="userinfo-nickname">微信用户</text>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="https://s1.328888.xyz/2022/05/02/ANMF7.png" mode="cover"></image>
+      <text class="userinfo-nickname">未登录用户</text>
       <button bindtap="enroll" class="loginbutton" style="display: block;"> 登录/注册 </button>
       <!-- <button bindtap="getUserProfile" class="loginbutton" style="display: block;"> 获取用户头像以及个人名称 </button> -->
 
