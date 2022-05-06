@@ -14,7 +14,7 @@
     </view>
 </block>
 		<view>
-			<button class="loginBtn" type="primary" form-type='submit' bindtap="getUserProfile">授权个人资料</button>
+			<button class="loginBtn" type="primary" form-type='submit' bindtap="getUserProfile">授权/更新信息</button>
 		</view>
 		<!-- 转到注册的页面 绑定学号和手机号 
             <view class="cha" bindtap="signup"><text class="no" style="color: steelblue;">没有账号?点我注册</text></view> -->

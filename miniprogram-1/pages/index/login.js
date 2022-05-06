@@ -5,7 +5,8 @@ Page({
   data: {
     userInfo: {},
     hasUserInfo: false,
-
+    user_imgurl:"",
+    user_wxname:""
   },
   //事件处理函数
   bindViewTap: function() {
@@ -40,23 +41,24 @@ getUserProfile(e) {
       })
       wx.showModal({
         title:'授权成功',
-        content:'即将返回主页',
+        content:'已同步您的微信头像及昵称',
         showCancel:false
       })
-      setTimeout(function () {
-        //要延时执行的代码
-        wx.navigateBack({
-          // 返回上 1 页
-          delta: 1
+      wx.request({
+        url: 'https://www.scnusay.cc/signup/saveimgandname.php',
+        method:"POST",
+        data:{
+            'user_imgurl':res.userInfo.avatarUrl,
+            'user_wxname':res.userInfo.nickName,
+        },
+        header: {
+            'content-type': 'application/x-www-form-urlencoded'  
+          },
+          success(res){
+              console.log(res.data);
+          }
       })
-      }, 1500)
     }
   })
 },
-login:function(e){
-    var me=this;
-    var formobject=e.detail.value;
-    console.log(e.detail);
-
-}
 })
