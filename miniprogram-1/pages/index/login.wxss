@@ -2,12 +2,12 @@
 page{
     left:10rpx;
     right:10rpx;
-    background-color: white;
+    background-color:rgb(245, 245, 245);
   }
   .first{
     width: 80%;
     height: 100rpx;
-    margin: 60% 10% 0 10%;
+    margin: 10% 10% 0 10%;
     /* 排列方式 */
     display: flex;
     /* 纵向排列 */
@@ -58,5 +58,26 @@ page{
   .loginBtn{
       margin-top: 10px !important;
   }
+  .userinfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #aaa;
+  }
+  
+  .userinfo-avatar {
+    overflow: hidden;
+    width: 128rpx;
+    height: 128rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+  }
+  .loginhead{
+margin: 40% 10% 0% 10%;
+display: flex;
+justify-content: center;
+align-items: center;
+  }
+
   
   

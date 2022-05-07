@@ -5,9 +5,8 @@ Page({
   data: {
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    canIUseGetUserProfile: false,
-    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
+    user_imgurl:"",
+    user_wxname:""
   },
   //事件处理函数
   bindViewTap: function() {
@@ -40,7 +39,26 @@ getUserProfile(e) {
         userInfo: res.userInfo,
         hasUserInfo: true
       })
+      wx.showModal({
+        title:'授权成功',
+        content:'已同步您的微信头像及昵称',
+        showCancel:false
+      })
+      wx.request({
+        url: 'https://www.scnusay.cc/signup/saveimgandname.php',
+        method:"POST",
+        data:{
+            'user_imgurl':res.userInfo.avatarUrl,
+            'user_wxname':res.userInfo.nickName,
+        },
+        header: {
+            'content-type': 'application/x-www-form-urlencoded'  
+          },
+          success(res){
+              console.log(res.data);
+          }
+      })
     }
   })
-}
+},
 })

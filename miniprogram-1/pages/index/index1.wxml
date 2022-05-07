@@ -6,7 +6,7 @@
         <navigator hoverClass="none" url="/pages/serach/search">
             <view class="nav-capsule">
                 <view class="topimage">
-                    <image class="back-pre" src="../../assets/images/icon/search.png" style="height:35px;width:35px;"></image>
+                    <image class="back-pre" src="../../assets/images/icon/search.png" style="height:35px;width:35px;" bindtap="logo"></image>
                 </view>
             </view>
         </navigator>
@@ -71,7 +71,7 @@
     <view class="bigleavemessage">
         <!-- 分类标签 -->
         <scroll-view scroll-x class="sort-nav" scroll-with-animation enable-flex="true">
-            <view class="sort-nav-item" wx:for="{{sortList}}"  wx:key="index">
+            <view class="sort-nav-item" wx:for="{{sortList}}"  wx:key="index" bindtap="{{item.jumpid}}">
                 <image class="sort-nav-icon" src="{{item.icon}}" mode="widthFix" lazy-load="false"></image>
                 <text class="sort-nav-text">{{item.text}}</text>
             </view>

@@ -20,12 +20,14 @@ page {
   top: 0px;
   background: #ffffff;
   color: #000;
-  z-index: 9999999;
+  z-index: 999999;
 }
 
 /* 顶部图标 */
 .topimage {
+  position: fixed;
 margin-bottom: 10px;
+z-index: 9999999999;
 }
 
 .nav-title {
