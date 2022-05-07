@@ -76,10 +76,11 @@ body {
 
 .indeximg {
     background-color: white;
-    height: 498px;
+    height: 419.7px;
     margin: 110px 15% 0 15%;
     box-shadow: 0px 5px 21px 0px rgba(0, 0, 0, 0.3);
     background-image: url(https://s1.328888.xyz/2022/04/17/iVPyJ.png);
+    background-size: contain;
     transition: all 0.5s;
 }
 
