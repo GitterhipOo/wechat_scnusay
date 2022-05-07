@@ -1,13 +1,14 @@
 //logs.js
 var util = require('../../utils/util.js')
 var app = getApp()
+var openid
 Page({
   data: {
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     ishide:false,
-    openidget:false
+    openidget:false,
   },
   //事件处理函数
   bindViewTap: function() {
@@ -22,7 +23,7 @@ Page({
       success(res){
           if(res.code)
           {
-            console.log('code为'+res.code)
+            console.log('code为'+res.code+'\n')
               wx.request({
                 url: 'https://www.scnusay.cc/login/login.php',
                 method:"POST",
@@ -34,6 +35,8 @@ Page({
                 },
                 success(res){
                     console.log(res.data);
+                    openid=res.data;
+                    console.log(openid);
                 }
               })
           }else{
