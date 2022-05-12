@@ -2,10 +2,14 @@
 <!-- 头像 -->
 <view class="container">
   <view class="userinfo">
-      <!-- <image bindtap="bindViewTap" class="userinfo-avatar" src="https://s1.328888.xyz/2022/05/02/ANMF7.png" mode="cover"></image> -->
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{app.globalData.headurl}}" mode="cover"></image>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="https://s1.328888.xyz/2022/05/02/ANMF7.png" mode="cover"></image>
+      <text class="userinfo-nickname">未登录用户</text>
 
-      <text class="userinfo-nickname">未登录用户</text> 
+<!--  已经录如数据
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{headimgurl}}" mode="cover"></image>
+
+      <text class="userinfo-nickname">{{username}}</text>  -->
+
   </view>
   <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindtap="enroll">
       立即登录</button> 

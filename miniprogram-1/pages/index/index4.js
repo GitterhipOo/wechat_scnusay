@@ -8,6 +8,8 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     ishide:false,
     openidget:false,
+    headimgurl:"",
+    username:"",
   },
   //事件处理函数
   bindViewTap: function() {
@@ -36,6 +38,14 @@ Page({
             console.log(res.data['user_imgurl']);
             //后面返回的json
             app.globalData.headurl=res.data['user_imgurl'];
+            app.globalData.wxname=res.data['user_wxname']
+            that.setData({
+                headimgurl:app.globalData.headurl,
+                username:app.globalData.wxname
+            })
+            //同步返回的数据到全局数据里面 作为用户的头像储存
+            
+           
         }
     })
 },
