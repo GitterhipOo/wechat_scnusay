@@ -1,0 +1,83 @@
+/* pages/login/login.wxss */
+page{
+    left:10rpx;
+    right:10rpx;
+    background-color:rgb(245, 245, 245);
+  }
+  .first{
+    width: 80%;
+    height: 100rpx;
+    margin: 10% 10% 0 10%;
+    /* 排列方式 */
+    display: flex;
+    /* 纵向排列 */
+    flex-direction: row;
+    align-items: center;
+    background-color: #f2f2f2;
+    border-radius: 8rpx;
+  }
+  .plas{
+    font-size: 30rpx;
+    color: #ccc;
+  }
+  .inputs{
+    /* 行高 */
+    line-height: 100rpx;
+    font-size: 30rpx;
+    color: #000;
+    margin:auto;
+    margin-left: 20rpx;
+    width: 100%;
+  }
+  .second{
+    width: 80%;
+    height: 100rpx;
+    margin: 5% 10% 5% 10%;
+    /* 排列方式 */
+    display: flex;
+    /* 纵向排列 */
+    flex-direction: row;
+    align-items: center;
+    background-color: #f2f2f2;
+    border-radius: 8rpx;
+  }
+  .cha{
+    width: 90%;
+    height: 50rpx;
+    margin: auto;
+    margin-top: 30rpx;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .no{
+    color: black;
+    font-size: 28rpx;
+    margin-left: 15rpx;
+    font-family: PingFangSC-regular;
+  }
+  .loginBtn{
+      margin-top: 10px !important;
+  }
+  .userinfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #aaa;
+  }
+  
+  .userinfo-avatar {
+    overflow: hidden;
+    width: 128rpx;
+    height: 128rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+  }
+  .loginhead{
+margin: 40% 10% 0% 10%;
+display: flex;
+justify-content: center;
+align-items: center;
+  }
+
+  
+  

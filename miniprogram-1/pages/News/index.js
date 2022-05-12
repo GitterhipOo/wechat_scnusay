@@ -1,19 +1,29 @@
 // pages/News/index.js
+var app = getApp()
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        navH: 0,
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        this.setData({
+            navH: app.globalData.navHeight
+          });
     },
+    logo: function (e) {
+        // 发起网络请求
+        wx.navigateTo({
+        // 开发者服务器接口地址
+          url: '/pages/index/index',
+        })
+      },
 
     /**
      * 生命周期函数--监听页面初次渲染完成

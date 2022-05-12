@@ -1,6 +1,6 @@
 <!--pages/index/index1.wxml-->
-<view class="nav-wrap" style="height: {{navH*2+20}}px;">
-    <!-- 自定义导航栏 -->
+
+<!-- <view class="nav-wrap" style="height: {{navH*2+20}}px;">
     <view class="nav-title" style="line-height: {{navH*2+44}}px;">华师说</view>
     <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
         <navigator hoverClass="none" url="/pages/serach/search">
@@ -11,26 +11,28 @@
             </view>
         </navigator>
     </view>
-</view>
+</view> -->
+
+    <!-- 自定义导航栏 -->
+
+    
 <!-- 头像 -->
 <view class="container">
   <view class="userinfo">
-    <block wx:if="{{canIUseOpenData}}">
-      <view class="userinfo-avatar">
-        <open-data type="userAvatarUrl"></open-data>
-      </view>
-      <open-data type="userNickName"></open-data>
-    </block>
-    <block wx:elif="{{!hasUserInfo}}">
-      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
-      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    </block>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="https://s1.328888.xyz/2022/05/02/ANMF7.png" mode="cover"></image>
+      <text class="userinfo-nickname">未登录用户</text>
+      
+      <!-- 授权以后已经有公开信息 不用手动触发
+      <button bindtap="enroll" class="loginbutton" style="display: block;"> 授权登录 </button>
+       <button bindtap="getUserProfile" class="loginbutton" style="display: block;"> 获取用户头像以及个人名称 </button> 
+       -->
   </view>
+  <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindtap="enroll">
+      授权登录</button> 
 </view>
+
+
+
 
 
 

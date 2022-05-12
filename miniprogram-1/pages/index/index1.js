@@ -17,28 +17,34 @@ Page({
       {
         icon: "../../assets/images/sort/news.png",
         sortid: 1,
-        text:"失物招领"
+        text:"失物招领",
+        jumpid:"lostthing"
       },{
         icon: "../../assets/images/sort/second-hand.png",
         sortid: 2,
-        text:"闲置交易"
+        text:"闲置交易",
+        jumpid:"shchange"
       },{
         icon: "../../assets/images/sort/love-mood.png",
         sortid: 3,
-        text:"影见华师"
+        text:"影见华师",
+        jumpid:"photo"
       },{
         icon: "../../assets/images/sort/question-ask.png",
         sortid: 4,
-        text:"疑问互答"
+        text:"疑问互答",
+        jumpid:"AaQ"
       },{
         icon: "../../assets/images/sort/part-time-job.png",
         sortid: 5,
-        text:"华师要闻"
+        text:"华师要闻",
+        jumpid:"news"
       }
     ],
         swiperCurrent: 0
     },
 
+   
     /**
      * 生命周期函数--监听页面加载
      */
@@ -46,7 +52,48 @@ Page({
       this.setData({
         navH: app.globalData.navHeight
       });
-      
+    },
+    lostthing: function (e) {
+      // 发起网络请求
+      wx.navigateTo({
+      // 开发者服务器接口地址
+        url: '/pages/lostthing/index',
+      })
+    },
+    shchange: function (e) {
+      // 发起网络请求
+      wx.navigateTo({
+      // 开发者服务器接口地址
+        url: '/pages/SecendHandChange/index',
+      })
+    },
+    photo: function (e) {
+      // 发起网络请求
+      wx.navigateTo({
+      // 开发者服务器接口地址
+        url: '/pages/TakePhoto/index',
+      })
+    },
+    AaQ: function (e) {
+      // 发起网络请求
+      wx.navigateTo({
+      // 开发者服务器接口地址
+        url: '/pages/AskAndQuestion/index',
+      })
+    },
+    news: function (e) {
+      // 发起网络请求
+      wx.navigateTo({
+      // 开发者服务器接口地址
+        url: '/pages/News/index',
+      })
+    },
+    logo: function (e) {
+      // 发起网络请求
+      wx.navigateTo({
+      // 开发者服务器接口地址
+        url: '/pages/index/index',
+      })
     },
     /**
      * 生命周期函数--监听页面初次渲染完成
