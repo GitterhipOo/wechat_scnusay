@@ -10,6 +10,7 @@ Page({
     openidget:false,
     headimgurl:"",
     username:"",
+    doihaveinfo:false,
   },
   //事件处理函数
   bindViewTap: function() {
@@ -41,13 +42,16 @@ Page({
             app.globalData.wxname=res.data['user_wxname']
             that.setData({
                 headimgurl:app.globalData.headurl,
-                username:app.globalData.wxname
+                username:app.globalData.wxname,
+                doihaveinfo:true
             })
-            //同步返回的数据到全局数据里面 作为用户的头像储存
             
-           
+            //同步返回的数据到全局数据里面 作为用户的头像储存
         }
     })
+},
+onShow:function(){
+    this.onLoad();
 },
 logo: function (e) {
   // 发起网络请求
@@ -73,7 +77,6 @@ wx.getUserProfile({
         showCancel:false
       })
     //   onload 已经拿到了openid
-    //   
       wx.request({
         url: 'https://www.scnusay.cc/signup/saveimgandname.php',
         method:"POST",
