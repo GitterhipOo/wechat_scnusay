@@ -1,17 +1,26 @@
     
 <!-- 头像 -->
 <view class="container" wx:if="{{!doihaveinfo}}">
+    <view class="headwelcome">
+        <text class="welcometext">
+        你好
+        欢迎来到华师说
+        </text>
+        <image src="/assets/images/icon/search.png" alt="" class="welcomelogo"/>
+    </view>
   <view class="userinfo" >
       <image bindtap="bindViewTap" class="userinfo-avatar" src="https://s1.328888.xyz/2022/05/02/ANMF7.png" mode="cover"></image>
       <text class="userinfo-nickname">未登录用户</text>
   </view>
   <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindtap="enroll">
-      立即登录</button> 
-    </view>
+      立即登录</button>
+
+</view>
+
 <!-- 未登录的页面↑ -->
 <!-- onshow时判断有无东西 然后显示 -->
 
-<view class="container" wx:if="{{doihaveinfo}}">
+<view class="container2" wx:if="{{doihaveinfo}}">
 
     <view class="userinfo">
         <image bindtap="bindViewTap" class="userinfo-avatar" src="{{headimgurl}}" mode="cover"></image>
