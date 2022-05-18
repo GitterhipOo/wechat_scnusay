@@ -1,6 +1,6 @@
     
 <!-- 头像 -->
-<view class="container" wx:if="{{!doihaveinfo}}">
+<view class="container" wx:if="{{!doihaveinfo}}" id="animate-area">
     <view class="headwelcome">
         <text class="welcometext">
         你好
@@ -8,15 +8,19 @@
         </text>
         <image src="/assets/images/icon/search.png" alt="" class="welcomelogo"/>
     </view>
-  <view class="userinfo" >
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="https://s1.328888.xyz/2022/05/02/ANMF7.png" mode="cover"></image>
-      <text class="userinfo-nickname">未登录用户</text>
-  </view>
-  <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindtap="enroll">
-      立即登录</button>
 
+    <view class="down_welcome">
+        <view class="loginnow">立刻登录</view>
+        <view class="userinfo" >
+                <image bindtap="bindViewTap" class="userinfo-avatar" src="https://s1.328888.xyz/2022/05/02/ANMF7.png" mode="cover"></image>
+                <text class="userinfo-nickname">未登录用户</text>
+        </view>
+        <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindtap="enroll">
+        立即登录</button>
+        <view class="userknow" bindtap="userknow">条款与使用细则</view>
 </view>
 
+</view>
 <!-- 未登录的页面↑ -->
 <!-- onshow时判断有无东西 然后显示 -->
 

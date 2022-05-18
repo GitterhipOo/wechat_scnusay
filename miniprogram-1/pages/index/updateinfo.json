@@ -1,6 +1,6 @@
 {
   "usingComponents": {},
   "navigationBarBackgroundColor":"#fff",
-  "navigationBarTitleText": "用户登录",
+  "navigationBarTitleText": "资料同步与更新",
   "navigationBarTextStyle":"black"
 }

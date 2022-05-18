@@ -1,0 +1,2 @@
+<!--pages/login/login.wxml-->
+<view style="text-align: center;font-size: 35px;font-weight: 800; margin-top: 15%;font-family: youyuan;">授权您的资料</view>
