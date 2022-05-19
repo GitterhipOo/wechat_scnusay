@@ -1,11 +1,11 @@
 {
     "pages": [
-        "pages/index/updateinfo",
+        "pages/updatenumbers/update_phonenumbers",
         "pages/index/index1",
         "pages/index/index2",
         "pages/index/index3",
         "pages/index/index4",
-
+        "pages/index/updateinfo",
         "pages/lostthing/index",
         "pages/SecendHandChange/index",
         "pages/TakePhoto/index",
@@ -14,7 +14,8 @@
         "pages/signup/index",
         "pages/userknow/userknow",
         "pages/updatewxinfo/updatewxinfo",
-        "pages/updatenumbers/updatenumbers"
+       
+        "pages/updatenumbers/update_schoolnumber"
 
 
     ],

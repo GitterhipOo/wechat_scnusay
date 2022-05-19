@@ -1,4 +1,4 @@
-// pages/updatenumbers/updatenumbers.js
+// pages/updatenumbers/update_schoolnumber.js
 Page({
 
     /**

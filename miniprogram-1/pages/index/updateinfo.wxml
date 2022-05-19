@@ -1,2 +1,15 @@
-<!--pages/login/login.wxml-->
+
 <view style="text-align: center;font-size: 35px;font-weight: 800; margin-top: 15%;font-family: youyuan;">授权您的资料</view>
+
+<view class="goto_updateinfo">
+    <text style="font-weight: 700;">已绑定手机</text>
+    <text>123</text>
+    <view class="update" bindtap="update_phonenumber"> <text>更新</text></view>
+</view>
+
+<view class="goto_updateinfo">
+    <text style="font-weight: 700;">已绑定学号</text>
+    <text>123</text>
+    <view class="update" bindtap="update_schoolnumber">
+    <text>更新</text></view>
+</view>

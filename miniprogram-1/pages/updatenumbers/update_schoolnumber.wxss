@@ -1,0 +1,17 @@
+
+  .goto_updateinfo{
+    display: flex;
+    width: 660rpx;
+    height: 160rpx;
+    background-color: #fff;
+    margin: auto ;
+    margin-top: 30px;
+    border-radius: 30rpx;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
+}
+.goto_updateinfo text{
+    font-size: 35rpx;
+}
