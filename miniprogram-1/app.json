@@ -10,8 +10,9 @@
         "pages/TakePhoto/index",
         "pages/AskAndQuestion/index",
         "pages/News/index",
-        "pages/signup/index"
-
+        "pages/signup/index",
+        "pages/lostthing/register_information",
+        "pages/lostthing/lost"
     ],
     "tabBar": {
         "color": "#7A7E83",

@@ -1,3 +1,4 @@
+<!--pages/lostthing/register_information.wxml-->
 <view class="nav-wrap" style="height: {{navH*2+20}}px;">
     <!-- 自定义导航栏 -->
     <view class="nav-title" style="line-height: {{navH*2+44}}px;">华师说</view>
@@ -10,13 +11,4 @@
             </view>
         </navigator>
     </view>
-</view>
-<view style="height:140rpx"></view>
-<view class="guide">
-    <image src="/assets/images/icon/search.png" class="left-image"></image>
-    <a href="./lost" class="lostcenter">失物广场</a>
-</view>
-<view class="guide">
-    <image src="/assets/images/icon/search.png" class="left-image"></image>
-    <a href="./lost" class="getcenter">拾物广场</a>
 </view>

@@ -1,4 +1,4 @@
-// pages/lostthing/index.js
+// pages/lostthing/lost.js
 var app = getApp()
 Page({
 

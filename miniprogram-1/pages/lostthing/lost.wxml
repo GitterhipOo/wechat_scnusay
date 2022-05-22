@@ -1,0 +1,75 @@
+<!--pages/lostthing/lost.wxml-->
+<view class="nav-wrap" style="height: {{navH*2+20}}px;">
+    <!-- 自定义导航栏 -->
+    <view class="nav-title" style="line-height: {{navH*2+44}}px;">华师说</view>
+    <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
+        <navigator hoverClass="none" url="/pages/serach/search">
+            <view class="nav-capsule">
+                <view class="topimage">
+                    <image class="back-pre" src="../../assets/images/icon/search.png" style="height:35px;width:35px;"></image>
+                </view>
+            </view>
+        </navigator>
+    </view>
+</view>
+<!-- 搜索框我不会做呜呜 -->
+    <view class="box1">
+        <input type="text" placeholder="输入任意键搜索" placeholder-class="placeholder1" class="search"/>
+        <view class="button">提交</view>
+    </view>
+<!-- 瀑布流 -->
+<view class="preview">
+    <view class="hr text_mid">
+        <text>{{firstname}}</text>
+    </view>
+    <view class="hr">
+        <text>物品名称：{{good_name}}</text>
+    </view>
+    <view class="hr">
+        <text>拾取时间：{{pickup_time}}</text>
+    </view>
+    <view class="hr">
+        <text>拾取地点：{{pickup_position}}</text>
+    </view>
+    <view class="hr">
+        <text>备注：{{pickup_remark}}</text>
+    </view>
+    <hr/>
+</view>
+<view class="preview">
+    <view class="hr text_mid">
+        <text>{{firstname}}</text>
+    </view>
+    <view class="hr">
+        <text>物品名称：{{good_name}}</text>
+    </view>
+    <view class="hr">
+        <text>拾取时间：{{pickup_time}}</text>
+    </view>
+    <view class="hr">
+        <text>拾取地点：{{pickup_position}}</text>
+    </view>
+    <view class="hr">
+        <text>备注：{{pickup_remark}}</text>
+    </view>
+    <hr/>
+</view>
+<view class="preview">
+    <view class="hr text_mid">
+        <text>{{firstname}}</text>
+    </view>
+    <view class="hr">
+        <text>物品名称：{{good_name}}</text>
+    </view>
+    <view class="hr">
+        <text>拾取时间：{{pickup_time}}</text>
+    </view>
+    <view class="hr">
+        <text>拾取地点：{{pickup_position}}</text>
+    </view>
+    <view class="hr">
+        <text>备注：{{pickup_remark}}</text>
+    </view>
+    <hr/>
+</view>
+ 
