@@ -1,3 +1,4 @@
+<!-- 这个页面是未注册过的人点登录 然后引导登录用的 -->
 <view>
     <block wx:if="{{hasUserInfo}}">
         <view class="loginhead">

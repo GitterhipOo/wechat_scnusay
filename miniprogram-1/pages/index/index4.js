@@ -96,7 +96,7 @@ enroll: function (e) {
 //   })
   wx.navigateTo({
     // 开发者服务器接口地址
-      url: '/pages/index/updateinfo',
+      url: '/pages/updatewxinfo/updatewxinfo',
     })
 },
 userknow:function(e){
@@ -118,5 +118,11 @@ getUserProfile(e) {
   
     }
   })
+}
+,
+updateinfo:function(e){
+    wx.navigateTo({
+      url: '/pages/index/updateinfo',
+    })
 }
 })

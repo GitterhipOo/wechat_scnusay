@@ -31,6 +31,23 @@
         <text class="userinfo-nickname">{{username}}</text>  
     </view>
 
+<view class="goto_updateinfo"  bindtap="updateinfo">
+ 更新信息
+</view>
+<view class="goto_updateinfo2">
+  联系我们
+</view>
+<view class="goto_updateinfo2">
+关于我们
+</view>
+<view class="goto_updateinfo2">
+ 条款准则
+</view>
+
+
+
+    
+
 </view>
 
 
