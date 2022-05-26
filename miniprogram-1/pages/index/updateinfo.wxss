@@ -10,7 +10,7 @@ page{
       height: 160rpx;
       background-color: #fff;
       margin: auto ;
-      margin-top: 30px;
+      margin-top: 15px;
       border-radius: 30rpx;
       text-align: center;
       justify-content: space-around;
@@ -34,4 +34,9 @@ page{
   .update text{
       text-align: center;
   }
-  
+  .updateimg{
+    width: 60%;
+    height: 100px;
+    margin-left: 20%;
+    margin-top: 20px;
+}

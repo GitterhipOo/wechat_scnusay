@@ -1,6 +1,6 @@
 {
     "pages": [
-        "pages/updatenumbers/update_phonenumbers",
+        
         "pages/index/index1",
         "pages/index/index2",
         "pages/index/index3",
@@ -14,7 +14,7 @@
         "pages/signup/index",
         "pages/userknow/userknow",
         "pages/updatewxinfo/updatewxinfo",
-       
+        "pages/updatenumbers/update_phonenumbers",
         "pages/updatenumbers/update_schoolnumber"
 
 

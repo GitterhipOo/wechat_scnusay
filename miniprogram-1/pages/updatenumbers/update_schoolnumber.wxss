@@ -1,11 +1,10 @@
-
-  .goto_updateinfo{
+.goto_updateinfo{
     display: flex;
     width: 660rpx;
     height: 160rpx;
     background-color: #fff;
     margin: auto ;
-    margin-top: 30px;
+    margin-top: 10px;
     border-radius: 30rpx;
     text-align: center;
     justify-content: space-around;
@@ -14,4 +13,18 @@
 }
 .goto_updateinfo text{
     font-size: 35rpx;
+}
+.bottom {
+    border-radius: 80rpx;
+    margin: 70rpx 50rpx;
+    font-size: 35rpx;
+    width: 200px !important ;
+    background-color: rgb(80, 123, 168) !important;
+    color: white;
+  }
+  .updateimg{
+    width: 60%;
+    height: 100px;
+    margin-left: 20%;
+    margin-top: 20px;
 }
