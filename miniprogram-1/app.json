@@ -1,18 +1,23 @@
 {
     "pages": [
+        
         "pages/index/index1",
         "pages/index/index2",
         "pages/index/index3",
         "pages/index/index4",
-        "pages/index/login",
+        "pages/index/updateinfo",
         "pages/lostthing/index",
         "pages/SecendHandChange/index",
         "pages/TakePhoto/index",
         "pages/AskAndQuestion/index",
         "pages/News/index",
         "pages/signup/index",
-        "pages/lostthing/register_information",
-        "pages/lostthing/lost"
+        "pages/userknow/userknow",
+        "pages/updatewxinfo/updatewxinfo",
+        "pages/updatenumbers/update_phonenumbers",
+        "pages/updatenumbers/update_schoolnumber"
+
+
     ],
     "tabBar": {
         "color": "#7A7E83",

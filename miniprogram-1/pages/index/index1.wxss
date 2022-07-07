@@ -179,7 +179,9 @@
   line-height: 120rpx;
   color: #aaa;
 }
-
+.say-to-keep{
+    margin-left: 10%;
+}
 
 
 

@@ -50,6 +50,7 @@ getUserProfile(e) {
         data:{
             'user_imgurl':res.userInfo.avatarUrl,
             'user_wxname':res.userInfo.nickName,
+            'openid':app.globalData.openid
         },
         header: {
             'content-type': 'application/x-www-form-urlencoded'  
