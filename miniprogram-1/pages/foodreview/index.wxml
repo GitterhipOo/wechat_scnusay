@@ -1,6 +1,6 @@
 <view class="nav-wrap" style="height: {{navH*2+20}}px;">
     <!-- 自定义导航栏 -->
-    <view class="nav-title" style="line-height: {{navH*2+44}}px;">闲置交易</view>
+    <view class="nav-title" style="line-height: {{navH*2+44}}px;">美食点评</view>
     <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
         <navigator hoverClass="none" open-type="switchTab" url="/pages/index/index1">
                     <image class="back-pre" src="../../assets/images/sort/back.png" style="height:50rpx;width:50rpx;margin-top: 50rpx;"></image>
@@ -13,14 +13,24 @@
     <input type="text" placeholder="搜索关键词" id="mysearch"/> 
     <button type="primary" style="border-radius: 30rpx;height: 60rpx;width: 160rpx; font-size: 20rpx; ">搜索</button>
 </view>
-<!-- 导航栏 -->
-<view class="grid-list">
-        <view class="grid-item" wx:for="{{sortlist}}" wx:key="sortid" bindtap="{{item.jump}}">
-            <image src="{{item.icon}}"></image>
-            <text>{{item.text}}</text>
-        </view>
+<!-- 下拉选择框 -->
+<view class='fenlei'>
+    <text style="color: black; font-weight: 400;">校区</text>
+  <!-- 下拉框 -->
+    <view class='select_box'>
+      <view class='select' catchtap='selectTaps'>
+        <text class='select_text'>{{selectDatas[indexs]}}</text>
+        <image class='select_img {{shows&&"select_img_rotate"}}' src='../../assets/images/sort/xiasanjiao.png'></image>
+      </view>
+      <view class='option_box' style='height:{{shows?(selectDatas.length>5?300:selectDatas.length*60):0}}rpx;'>
+        <text class='option' style='{{indexs==selectDatas.length-1&&"border:0;"}}' wx:for='{{selectDatas}}' wx:key='this' data-index='{{index}}' catchtap='optionTaps'>{{item}}</text>
+      </view>
+    </view>
+    <navigator hoverClass="none" open-type="navigate" url="../foodreview/mypublish" style="width: 180rpx;height: 80rpx;line-height: 80rpx;">
+             <view style="margin-left: 20rpx;background-color:skyblue;text-align: center;font-size: 30rpx;border-radius: 30rpx;">我的分享</view>       
+    </navigator>
 </view>
-<!-- 商品发布 -->
+<!-- 美食信息 -->
 <view class="pubinfo" wx:for="{{infolist}}" wx:key="infoid" data-id="{{item.infoid}}" data-name="{{item.name}}" bindtap="godetail"> 
    <view class="info1">
         <image src="{{item.icon}}" class="headpic" mode="aspectFill"></image>
@@ -28,7 +38,7 @@
             <view class="text1">{{item.infotitle}}</view>
             <view class="time"><text >{{item.time}}</text></view>
         </view>
-        <text class="price">{{item.infoprice}}</text>
+        <text class="price">{{item.areaname}}</text>
     </view>
     <view class="info2">
         <view class="info3">
@@ -46,9 +56,3 @@
         </view>
     </view>
 </view>
-
-
-
-
-
-

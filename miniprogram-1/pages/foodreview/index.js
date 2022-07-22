@@ -1,7 +1,6 @@
-// pages/SecendHandChange/index.js
+// pages/foodreview/index.js
 var app = getApp()
 Page({
-
     godetail: function (e) {
         
         var id = e.currentTarget.dataset.id,
@@ -10,7 +9,7 @@ Page({
         console.log(name);
         // 执行页面跳转
         wx.navigateTo({
-          url: '/pages/SecendHandChange/detail'
+          url: '/pages/foodreview/detail'
         })
     },
     /**
@@ -18,66 +17,19 @@ Page({
      */
     data: {
         navH: 0,
-        sortlist: [
-            {
-                sortid: 1,
-                icon: "../../assets/images/sort/all.png",
-                text: "全部",
-                jump: "all"
-            },
-            {
-                sortid: 2,
-                icon: "../../assets/images/sort/book.png",
-                text: "图书文具",
-                jump: "book"
-            },
-            {
-                sortid: 3,
-                icon: "../../assets/images/sort/life.png",
-                text: "生活用品",
-                jump: "life"
-            },
-            {
-                sortid: 4,
-                icon: "../../assets/images/sort/computer.png",
-                text: "电子产品",
-                jump: "computer"
-            },
-            {
-                sortid: 5,
-                icon: "../../assets/images/sort/makeup.png",
-                text: "化妆用品",
-                jump: "makeup"
-            },
-            {
-                sortid: 6,
-                icon: "../../assets/images/sort/clothe.png",
-                text: "服饰鞋包",
-                jump: "clothe"
-            },
-            {
-                sortid: 7,
-                icon: "../../assets/images/sort/others.png",
-                text: "其他",
-                jump: "others"
-            },
-            {
-                sortid: 8,
-                icon: "../../assets/images/sort/publish.png",
-                text: "我的发布",
-                jump: "mypublish"
-            }
-        ],
+        shows: false, //控制下拉列表的显示隐藏，false隐藏、true显示
+        selectDatas: ['南海校区', '石牌校区', '大学城校区','汕尾校区'], //下拉列表的数据
+        indexs: 0, //选择的下拉列 表下标,
         infolist: [
             {   
                 infoid: 1,
                 icon: "../../assets/images/sort/part-time-job.png",
                 name: "hzm",
                 time: "1小时前",
-                infotitle: "出售顶级皮肤啦啦啦",
-                infodetail:"非常之顶级啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦",
+                infotitle: "熹园究极美食哈哈哈哈",
+                infodetail:"非常之顶级顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶大大大大大大顶顶顶顶顶",
                 infoimage:"../../assets/images/sort/publish.png",
-                infoprice: "￥9600",
+                areaname:"南海校区",
                 lookup: 300,
                 nice: 50,
                 talk: 40
@@ -87,10 +39,10 @@ Page({
                 icon: "../../assets/images/sort/part-time-job.png",
                 name: "hzm",
                 time: "1小时前",
-                infotitle: "出售顶级皮肤",
+                infotitle: "熹园究极美食",
                 infodetail:"非常之顶级",
                 infoimage:"../../assets/images/sort/publish.png",
-                infoprice: "￥20",
+                areaname:"南海校区",
                 lookup: 3,
                 nice: 4,
                 talk: 5
@@ -100,10 +52,10 @@ Page({
                 icon: "../../assets/images/sort/part-time-job.png",
                 name: "hzm",
                 time: "1小时前",
-                infotitle: "出售顶级皮肤",
+                infotitle: "熹园究极美食",
                 infodetail:"非常之顶级",
                 infoimage:"../../assets/images/sort/publish.png",
-                infoprice: "￥20",
+                areaname:"南海校区",
                 lookup: 3,
                 nice: 4,
                 talk: 5
@@ -113,10 +65,10 @@ Page({
                 icon: "../../assets/images/sort/part-time-job.png",
                 name: "hzm",
                 time: "1小时前",
-                infotitle: "出售顶级皮肤",
+                infotitle: "熹园究极美食",
                 infodetail:"非常之顶级",
                 infoimage:"../../assets/images/sort/publish.png",
-                infoprice: "￥20",
+                areaname:"南海校区",
                 lookup: 3,
                 nice: 4,
                 talk: 5
@@ -126,10 +78,10 @@ Page({
                 icon: "../../assets/images/sort/part-time-job.png",
                 name: "hzm",
                 time: "1小时前",
-                infotitle: "出售顶级皮肤",
+                infotitle: "熹园究极美食",
                 infodetail:"非常之顶级",
                 infoimage:"../../assets/images/sort/publish.png",
-                infoprice: "￥20",
+                areaname:"南海校区",
                 lookup: 3,
                 nice: 4,
                 talk: 5
@@ -139,30 +91,36 @@ Page({
                 icon: "../../assets/images/sort/part-time-job.png",
                 name: "hzm",
                 time: "1小时前",
-                infotitle: "出售顶级皮肤",
+                infotitle: "熹园究极美食",
                 infodetail:"非常之顶级",
                 infoimage:"../../assets/images/sort/publish.png",
-                infoprice: "￥20",
+                areaname:"南海校区",
                 lookup: 3,
                 nice: 4,
                 talk: 5
             }
         ]
-    },
-    gotopublish(){
+    },  
+  
+    selectTaps() {
+        this.setData({
+          shows: !this.data.shows,
+        });
+      },
+      // 点击下拉列表
+      optionTaps(e) {
+        let Indexs = e.currentTarget.dataset.index; //获取点击的下拉列表的下标
+        console.log(Indexs)
+        this.setData({
+          indexs: Indexs,
+          shows: !this.data.shows
+        });
+    
+      },
+      gotopublish(){
         wx.navigateTo({
-            url: '/pages/SecendHandChange/publish',
+            url: '/pages/foodreview/publish',
           })    
-    },
-    mypublish: function (e) {
-        var id = e.currentTarget.dataset.id,
-        name = e.currentTarget.dataset.name;
-        console.log(id);
-        console.log(name);
-        // 执行页面跳转
-        wx.navigateTo({
-          url: '/pages/SecendHandChange/mypublish'
-        })
     },
     /**
      * 生命周期函数--监听页面加载
@@ -183,48 +141,49 @@ Page({
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
-    onReady: function () {
+    onReady() {
 
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
-    onShow: function () {
+    onShow() {
 
     },
 
     /**
      * 生命周期函数--监听页面隐藏
      */
-    onHide: function () {
+    onHide() {
 
     },
 
     /**
      * 生命周期函数--监听页面卸载
      */
-    onUnload: function () {
+    onUnload() {
 
     },
 
     /**
      * 页面相关事件处理函数--监听用户下拉动作
      */
-    onPullDownRefresh: function () {
+    onPullDownRefresh() {
 
     },
 
     /**
      * 页面上拉触底事件的处理函数
      */
-    onReachBottom: function () {
+    onReachBottom() {
+
     },
 
     /**
      * 用户点击右上角分享
      */
-    onShareAppMessage: function () {
+    onShareAppMessage() {
 
     }
 })

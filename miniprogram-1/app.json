@@ -7,11 +7,17 @@
         "pages/index/login",
         "pages/lostthing/index",
         "pages/SecendHandChange/index",
+        "pages/SecendHandChange/publish",
+        "pages/SecendHandChange/detail",
+        "pages/SecendHandChange/mypublish",
         "pages/TakePhoto/index",
         "pages/AskAndQuestion/index",
         "pages/News/index",
-        "pages/signup/index"
-
+        "pages/signup/index",
+        "pages/foodreview/index",
+        "pages/foodreview/mypublish",
+        "pages/foodreview/detail",
+        "pages/foodreview/publish"
     ],
     "tabBar": {
         "color": "#7A7E83",
