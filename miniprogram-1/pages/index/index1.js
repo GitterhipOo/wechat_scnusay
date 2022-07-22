@@ -8,9 +8,9 @@ Page({
     data: {
         navH: 0,
         rotationList:[
-          {imgurl: 'https://img1.imgtp.com/2022/06/01/BgYTrOiQ.jpg',},
-          {imgurl: 'https://news.scnu.edu.cn/media/image/2020/11/2020112537fb67.jpeg.v',},
-          {imgurl: 'https://img1.imgtp.com/2022/06/01/vFZmZtBC.png'}
+          {imgurl: 'https://s3.bmp.ovh/imgs/2022/03/0f8829adabf4e19d.png',},
+          {imgurl: 'https://s3.bmp.ovh/imgs/2022/03/22262d3399effd84.png',},
+          {imgurl: 'https://s3.bmp.ovh/imgs/2022/03/bdccd8c92ff84d1e.png'}
         ],
         
     sortList:[

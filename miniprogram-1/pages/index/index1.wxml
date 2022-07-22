@@ -46,21 +46,21 @@
                     <view class="message">
                         
                         <text class="message-name">卢本伟</text>
-                        <text class="message-content">图书馆又漏水辣</text>
+                        <text class="message-content">这小程序太棒辣</text>
                     </view>
                 </swiper-item>
                 <swiper-item class="swiper-item-message">
                     <view class="message">
                         <!-- <image class="message-image" src="../../assets/images/sort/love-mood.png"></image> -->
-                        <text class="message-name">财务处 </text>
-                        <text class="message-content">2022年华南师范大学部门预算</text>
+                        <text class="message-name">马飞飞 </text>
+                        <text class="message-content">这小程序真的不错！！</text>
                     </view>
                 </swiper-item>
                 <swiper-item class="swiper-item-message">
                     <view class="message">
                         <!-- <image class="message-image" src="../../assets/images/sort/love-mood.png"></image> -->
-                        <text class="message-name">软件学院 </text>
-                        <text class="message-content">第二轮转专业结果已公示</text>
+                        <text class="message-name">吴杨钊 </text>
+                        <text class="message-content">到底要选哪个呢</text>
                     </view>
                 </swiper-item>
             </swiper>
@@ -80,7 +80,7 @@
     
     <view class="keep-students">
         <image src="/assets/images/icon/search.png" class="left-image"></image>
-        <view class="say-to-keep">关注华师说，获取更多华师资讯~</view>
+        <view class="say-to-keep">关注华师说，获取更多华师内容捏~</view>
     </view>
 <!-- -------------------------------------瀑布流----------------------------------------- -->
 

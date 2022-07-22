@@ -16,7 +16,6 @@ Page({
         this.setData({
           navH: app.globalData.navHeight
         });
-        
       },
       logo: function (e) {
         // 发起网络请求
