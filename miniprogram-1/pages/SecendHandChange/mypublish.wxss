@@ -1,43 +1,7 @@
 page {
     background-color:#fff
   }
-.grid-list{
-    display: flex;
-    flex-wrap: wrap;
-    background-color: rgb(255, 255, 255);
-}
-.grid-item{
-    width: 25%;
-    height: 180rpx;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-}
-.grid-item image{
-    height: 80rpx;
-    width: 80rpx;
-}
-.grid-item text{
-    font-size: 28rpx;
-    margin-top: 10rpx;
-}
-
-.search{
-    display: flex;
-    background-color: #fff;
-}
-.search input{
-    background-color: rgb(235, 235, 235);
-    border-radius: 30rpx;
-    margin-left: 50rpx;
-    height: 60rpx;
-    width: 500rpx;
-    font-size: 24rpx;
-    padding-left: 30rpx;
-}
-.pubinfo{
+  .pubinfo{
     height: 400rpx;
     width: 700rpx;
     background-color: rgba(241, 250, 189, 0.87);
@@ -130,4 +94,3 @@ page {
     height: 40rpx;
     width: 40rpx;
 }
-

@@ -1,26 +1,13 @@
 <view class="nav-wrap" style="height: {{navH*2+20}}px;">
     <!-- 自定义导航栏 -->
-    <view class="nav-title" style="line-height: {{navH*2+44}}px;">闲置交易</view>
+    <view class="nav-title" style="line-height: {{navH*2+44}}px;">我的发布</view>
     <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
-        <navigator hoverClass="none" open-type="switchTab" url="/pages/index/index1">
+        <navigator hoverClass="none" open-type="navigate" url="../SecendHandChange/index">
                     <image class="back-pre" src="../../assets/images/sort/back.png" style="height:50rpx;width:50rpx;margin-top: 50rpx;"></image>
         </navigator>
     </view>
 </view>
-<cover-image src="../../assets/images/sort/publish2.png" bindtap="gotopublish" style=" height: 80rpx;width: 80rpx; position: fixed;top:1000rpx; left:670rpx;"></cover-image>
-<!-- 搜索 -->
-<view class="search" style="margin-top:{{navH*4+50}}rpx" >
-    <input type="text" placeholder="搜索关键词" id="mysearch"/> 
-    <button type="primary" style="border-radius: 30rpx;height: 60rpx;width: 160rpx; font-size: 20rpx; ">搜索</button>
-</view>
-<!-- 导航栏 -->
-<view class="grid-list">
-        <view class="grid-item" wx:for="{{sortlist}}" wx:key="sortid" bindtap="{{item.jump}}">
-            <image src="{{item.icon}}"></image>
-            <text>{{item.text}}</text>
-        </view>
-</view>
-<!-- 商品发布 -->
+<view style="margin-top:{{navH*4+50}}rpx"></view>
 <view class="pubinfo" wx:for="{{infolist}}" wx:key="infoid" data-id="{{item.infoid}}" data-name="{{item.name}}" bindtap="godetail"> 
    <view class="info1">
         <image src="{{item.icon}}" class="headpic" mode="aspectFill"></image>
@@ -46,9 +33,3 @@
         </view>
     </view>
 </view>
-
-
-
-
-
-
