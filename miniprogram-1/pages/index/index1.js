@@ -8,9 +8,9 @@ Page({
     data: {
         navH: 0,
         rotationList:[
-          {imgurl: 'https://s3.bmp.ovh/imgs/2022/03/0f8829adabf4e19d.png',},
-          {imgurl: 'https://s3.bmp.ovh/imgs/2022/03/22262d3399effd84.png',},
-          {imgurl: 'https://s3.bmp.ovh/imgs/2022/03/bdccd8c92ff84d1e.png'}
+            {imgurl: 'https://img1.imgtp.com/2022/06/01/BgYTrOiQ.jpg',},
+            {imgurl: 'https://news.scnu.edu.cn/media/image/2020/11/2020112537fb67.jpeg.v',},
+            {imgurl: 'https://img1.imgtp.com/2022/06/01/vFZmZtBC.png'}
         ],
         
     sortList:[
@@ -27,18 +27,18 @@ Page({
       },{
         icon: "../../assets/images/sort/love-mood.png",
         sortid: 3,
-        text:"影见华师",
-        jumpid:"photo"
+        text:"拼车同行",
+        jumpid:"car"
       },{
         icon: "../../assets/images/sort/question-ask.png",
         sortid: 4,
-        text:"疑问互答",
-        jumpid:"AaQ"
+        text:"队友招募",
+        jumpid:"team"
       },{
         icon: "../../assets/images/sort/part-time-job.png",
         sortid: 5,
-        text:"华师要闻",
-        jumpid:"news"
+        text:"美食点评",
+        jumpid:"food"
       }
     ],
         swiperCurrent: 0
@@ -67,25 +67,25 @@ Page({
         url: '/pages/SecendHandChange/index',
       })
     },
-    photo: function (e) {
+    car: function (e) {
       // 发起网络请求
       wx.navigateTo({
       // 开发者服务器接口地址
-        url: '/pages/TakePhoto/index',
+        url: '/pages/car/car',
       })
     },
-    AaQ: function (e) {
+    team: function (e) {
       // 发起网络请求
       wx.navigateTo({
       // 开发者服务器接口地址
-        url: '/pages/AskAndQuestion/index',
+        url: '/pages/team/team',
       })
     },
-    news: function (e) {
+    food: function (e) {
       // 发起网络请求
       wx.navigateTo({
       // 开发者服务器接口地址
-        url: '/pages/News/index',
+        url: '/pages/foodreview/index',
       })
     },
     logo: function (e) {
