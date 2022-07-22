@@ -63,41 +63,47 @@ logo: function (e) {
 enroll: function (e) {
   // 发起网络请求
 //   点击授权
-wx.getUserProfile({
-    desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
-    success: (res) => {
-      console.log(res)
-      this.setData({
-        userInfo: res.userInfo,
-        hasUserInfo: true
-      })
-      wx.showModal({
-        title:'授权成功',
-        content:'已同步您的微信头像及昵称',
-        showCancel:false
-      })
-    //   onload 已经拿到了openid
-      wx.request({
-        url: 'https://www.scnusay.cc/signup/saveimgandname.php',
-        method:"POST",
-        data:{
-            'user_imgurl':res.userInfo.avatarUrl,
-            'user_wxname':res.userInfo.nickName,
-            'openid':app.globalData.openid
-        },
-        header: {
-            'content-type': 'application/x-www-form-urlencoded'  
-          },
-          success(res){
-              console.log(res.data);
-          }
-      })
-    }
-  })
+// wx.getUserProfile({
+//     desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+//     success: (res) => {
+//       console.log(res)
+//       this.setData({
+//         userInfo: res.userInfo,
+//         hasUserInfo: true
+//       })
+//       wx.showModal({
+//         title:'授权成功',
+//         content:'已同步您的微信头像及昵称',
+//         showCancel:false
+//       })
+//     //   onload 已经拿到了openid
+//       wx.request({
+//         url: 'https://www.scnusay.cc/signup/saveimgandname.php',
+//         method:"POST",
+//         data:{
+//             'user_imgurl':res.userInfo.avatarUrl,
+//             'user_wxname':res.userInfo.nickName,
+//             'openid':app.globalData.openid
+//         },
+//         header: {
+//             'content-type': 'application/x-www-form-urlencoded'  
+//           },
+//           success(res){
+//               console.log(res.data);
+//           }
+//       })
+//     }
+//   })
   wx.navigateTo({
     // 开发者服务器接口地址
-      url: '/pages/index/login',
+      url: '/pages/updatewxinfo/updatewxinfo',
     })
+},
+userknow:function(e){
+    wx.navigateTo({
+        // 开发者服务器接口地址
+          url: '/pages/userknow/userknow',
+        })
 },
 getUserProfile(e) {
   // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
@@ -112,5 +118,11 @@ getUserProfile(e) {
   
     }
   })
+}
+,
+updateinfo:function(e){
+    wx.navigateTo({
+      url: '/pages/index/updateinfo',
+    })
 }
 })

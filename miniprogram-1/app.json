@@ -1,23 +1,30 @@
 {
     "pages": [
+        
         "pages/index/index1",
         "pages/index/index2",
         "pages/index/index3",
         "pages/index/index4",
-        "pages/index/login",
+        "pages/index/updateinfo",
         "pages/lostthing/index",
         "pages/SecendHandChange/index",
-        "pages/SecendHandChange/publish",
         "pages/SecendHandChange/detail",
         "pages/SecendHandChange/mypublish",
+        "pages/SecendHandChange/publish",
+        "pages/foodreview/index",
+        "pages/foodreview/detail",
+        "pages/foodreview/mypublish",
+        "pages/foodreview/publish",
         "pages/TakePhoto/index",
         "pages/AskAndQuestion/index",
         "pages/News/index",
         "pages/signup/index",
-        "pages/foodreview/index",
-        "pages/foodreview/mypublish",
-        "pages/foodreview/detail",
-        "pages/foodreview/publish"
+        "pages/userknow/userknow",
+        "pages/updatewxinfo/updatewxinfo",
+        "pages/updatenumbers/update_phonenumbers",
+        "pages/updatenumbers/update_schoolnumber"
+
+
     ],
     "tabBar": {
         "color": "#7A7E83",

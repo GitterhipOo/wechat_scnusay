@@ -73,10 +73,10 @@ page{
     border-radius: 50%;
   }
   .loginhead{
-margin: 40% 10% 0% 10%;
-display: flex;
-justify-content: center;
-align-items: center;
+    margin: 0 10% 0% 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   
