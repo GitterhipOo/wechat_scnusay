@@ -7,6 +7,6 @@
 
 <view class="goto_updateinfo">
     <text style="font-weight: 700;">绑定手机</text>
-    <input type="number" bindtap="phoneInput" placeholder="请输入手机号"/>
+    <input bindinput="phoneInput" placeholder="请输入手机号" />
 </view>
 <button class="bottom" bindtap="update_phonenumber" >提交</button>

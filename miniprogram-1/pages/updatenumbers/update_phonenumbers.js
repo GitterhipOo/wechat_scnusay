@@ -1,73 +1,17 @@
 // pages/updatenumbers/update_phonenumbers.js
 var app=getApp();
 Page({
-
-    /**
-     * 页面的初始数据
-     */
     data: {
         userphone:"",
     },
-
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad(options) {
-
-    },
-    update_phonenumber:function(){
-
-    },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload() {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh() {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom() {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage() {
-
-    },
-    update_phonenumber:function(e){
+    phoneInput:function(e){
+        console.log(e.detail.value)
+        // 获取 input 输入框的值
+        if(e.detail.value){
+                this.data.userphone=e.detail.value
+        }
+      },
+    update_phonenumber:function(e){  
         console.log(e);
         var that = this;
         if(that.data.userphone== ''){
@@ -78,7 +22,8 @@ Page({
             success (res) {
             }
           })
-        }else if(that.data.userphone.length != 11){
+        }else if(that.data.userphone.length != 11)
+        {
           wx.showModal({
             title: '提示',
             content: '手机号位数不正确，请重新输入',
@@ -124,8 +69,5 @@ Page({
   })
       }},
     
-    phoneInput:function(e){
-        // 获取 input 输入框的值
-        this.data.userphone = e.detail.value;
-      },
+
 })
