@@ -1,10 +1,5 @@
 {
     "pages": [
-        "pages/team/team",
-        "pages/team/my_publish/index",
-        "pages/team/publish/index",
-        "pages/team/detail/index",
-        "pages/team/search/index", 
         "pages/index/index1",
         "pages/ShareCar/index",
         "pages/ShareCar/details/index",
@@ -29,7 +24,12 @@
         "pages/userknow/userknow",
         "pages/updatewxinfo/updatewxinfo",
         "pages/updatenumbers/update_phonenumbers",
-        "pages/updatenumbers/update_schoolnumber"
+        "pages/updatenumbers/update_schoolnumber",
+        "pages/team/team",
+        "pages/team/my_publish/index",
+        "pages/team/publish/index",
+        "pages/team/detail/index",
+        "pages/team/search/index"
 
 
     ],
