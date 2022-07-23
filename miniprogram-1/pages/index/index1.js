@@ -71,7 +71,7 @@ Page({
       // 发起网络请求
       wx.navigateTo({
       // 开发者服务器接口地址
-        url: '/pages/car/car',
+        url: '/pages/ShareCar/index',
       })
     },
     team: function (e) {

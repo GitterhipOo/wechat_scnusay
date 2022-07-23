@@ -1,0 +1,120 @@
+<!--pages/team/detail/index.wxml-->
+<!-- <text>pages/team/detail/index.wxml</text> -->
+<view class="chat">
+<!-- woshifengexian -->
+<view class="touxianglan">
+<view>
+<image class="touxiang" src="/assets/images/sharecars/yellow_bgc.jpg"></image>
+</view>
+<view>
+<text class="name">女装大姐姐</text>
+<text class="time" decode="true">\n &nbsp;&nbsp;&nbsp;1小时前发布</text>
+</view>
+</view>
+
+<view class="in_contact">
+<text class="topic">挑战杯初赛（A组）
+</text>
+<text class="team_name">队伍名：<text style="font-weight: 400;">我这什么队</text></text>
+<text class="xiaoqu">
+校区：<text style="font-weight: 400;">南海校区</text></text>
+<text class="kuaxiao">
+是否支持跨校区组队：<text style="font-weight: 400;">否</text></text>
+<text class="contact">
+联系方式：<text style="font-weight: 400;">13927423111</text></text>
+</view>
+<view class="detailview">
+    <text class="detail_1">
+    #帮转
+#互联网+队友招募
+ 关键词：财商教育 绿色经济 公益
+📌现有资源：
+现有两名经验丰富的老师担任指导
+财商工作室已成立
+已被学院推荐至校种子营
+商业计划书与ppt已完成
+
+🚩 项目获奖经历：
+省级大创立项
+“与人杯”全国20强
+互联网+校赛银奖
+挑战杯校赛银奖
+ 
+👥 团队成员介绍：团队成员具有互联网+、大创、挑战杯、三创赛、众创杯等项目经验，项目成员有小挑校银奖，互联网+校赛银奖，国家级大创立项等获奖经历。
+现有成员分别来自经管、政管、旅游管理、文学院、城市与文化学院，专业知识掌握牢固，综合能力强。多名成员为校综合奖学金获得者，且团队氛围十分和睦。
+ 
+💫 团队现招募1-2名负责线上平台搭建，计算机能力和设计灵感较强的同学
+
+ 💫 我们希望你：
+ 在4月份到5月份有充足的时间投入比赛，中途不退出
+ 不拖ddl，不摸鱼，向上积极
+ 有想法，灵感丰富，创新能力强
+
+  投递简历或发送微信号至邮箱直接联系 3287548928@qq.com
+ 截止时间：4月14号晚上23:00
+
+我们期待你的到来
+</text>
+  </view>
+</view>
+
+
+<!-- 底下评论区 -->
+<view>
+
+<!-- 评论-回复-回复评论显示区域 -->  
+<view class="container">
+    <!-- 总共评论数 -->    
+    <view class="total">共{{comment_list.length + comment_list2.length}}条评论</view>    
+    <!-- END -->
+    <!-- 评论框 -->    
+    <input confirm-type="send" class="container_inp" value="{{value}}" placeholder="{{ placeholder2 }}" placeholder-class="container_place" bindconfirm="bindconfirm"></input>    
+    <!-- END -->
+    <!-- 用户评论回复显示区域 -->    
+    <view class="container-item" wx:for="{{comment_list}}" wx:for-item="list" wx:key="key">
+      <image class="item_img" src="{{list.comment_user_avatar}}"></image>
+      <view class="item_right">
+        <view class="right_name">{{list.comment_user_name}}</view>
+        <view class="right_content">
+          <text class="right_content_txt" bindtap='replyComment' data-type="1" data-name='{{list.comment_user_name}}' data-cid='{{list.comment_id}}' data-pid="{{list.parent_id}}">{{list.comment_text}}</text>
+          <text class="right_content_txt2">{{list.comment_time}}</text>
+          <!-- 回复评论 -->
+          <!-- 判断回复列表数据中的parent_id和评论列表数据的comment_id是否相等 相等就显示 不等就不显示 -->          
+          <view class="reply" wx:for="{{comment_list2}}" wx:for-item="list2" wx:key="list2" wx:if="{{list2.parent_id == list.comment_id}}">
+            <image class="reply_img" src="{{list2.comment_user_avatar}}"></image>
+            <view class="reply_right">
+              <view class="right_name">{{list2.comment_user_name}}</view>
+              <text wx:if="{{list2.reply_name == ''}}" class="right_content_txt" bindtap='replyComment' data-type="2" data-name='{{list2.comment_user_name}}' data-cid='{{list2.comment_id}}' data-pid="{{list2.parent_id}}">{{list2.comment_text}}</text>
+              <text wx:if="{{list2.reply_name != ''}}" bindtap='replyComment' data-type="2" data-name='{{list2.comment_user_name}}' data-cid='{{list2.comment_id}}' data-pid="{{list2.parent_id}}" class="right_content_txt">回复 <text class="right_name">{{list2.reply_name}}：</text>{{list2.comment_text}}</text>
+              <text class="right_content_txt2">{{list2.comment_time}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>    
+    <!-- END -->
+    <!-- 结束 -->    
+    <view class="end">      
+      <text class="end_txt" space="nbsp">—  THE END  —</text>    
+    </view>    
+    <!-- END -->
+  </view>  
+  <!-- END -->
+  <!-- 底部评论 -->  
+  <view class="foot">
+    <view class="say">
+      <view class="flex">
+        <image class="say_img" src="/assets/images/sharecars/icon6.jpg"></image>
+        <input confirm-type="send" class="say_inp" placeholder="{{ placeholder }}" value="{{ comment_text }}" focus="{{ focus }}" bindblur="blur" bindconfirm="confirm"></input>
+      </view>
+    </view>
+    <image class="foot_img" src="/assets/images/sharecars/icon4.jpg"></image>
+    <text class="foot_num">210</text>
+    <image class="foot_img2" src="/assets/images/sharecars/icon5.jpg"></image>
+    <text class="foot_num">368</text>
+  </view>  
+  <!-- END -->
+
+
+</view>
+

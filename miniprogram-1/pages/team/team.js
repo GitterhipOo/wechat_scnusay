@@ -7,7 +7,28 @@ Page({
     data: {
 
     },
-
+    // 跳转到搜索页面
+  search: function () {
+    wx.navigateTo({
+      url: '/pages/team/search/index'
+    })
+  },
+  jump_page:function(){
+    wx.navigateTo({
+      url: '/pages/team/detail/index',
+    })  
+  },
+  calling: function () {
+    wx.makePhoneCall({
+    phoneNumber: '13927433111',
+    success: function () {
+    console.log("拨打电话成功！")
+    },
+    fail: function () {
+    console.log("拨打电话失败！")
+    }
+    })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
