@@ -32,9 +32,9 @@
     <image src="../../assets/images/sort/share.png" bindtap="goshare" class="img1"></image>
 </view>
 <view class="view2">
-    <image src="../../assets/images/sort/lookup.png" class="img2"></image><text>{{lookup}}</text>
-     <image src="../../assets/images/sort/zan.png" class="img2"></image><text>{{nice}}</text>
-     <image src="../../assets/images/sort/liuyan.png" class="img2"></image><text>{{talk}}</text>
+    <image src="https://s1.328888.xyz/2022/07/23/mHKKo.md.png" class="img2"></image><text>{{lookup}}</text>
+     <image src="https://s1.328888.xyz/2022/07/23/mHKKo.md.png" class="img2"></image><text>{{nice}}</text>
+     <image src="https://s1.328888.xyz/2022/07/23/mHKKo.md.png" class="img2"></image><text>{{talk}}</text>
 </view>
 </view>
 <view class="carea">
