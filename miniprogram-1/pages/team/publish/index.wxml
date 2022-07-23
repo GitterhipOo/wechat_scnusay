@@ -1,0 +1,58 @@
+<!--pages/team/publish/index.wxml-->
+<!-- <text>pages/team/publish/index.wxml</text> -->
+<view>
+
+
+<view class="modify-form">
+<form bindsubmit='getForm'>
+    <view class="label-list">
+        <view class="label">队伍名</view>
+        <view class="input-box">
+        <input placeholder="请输入您的队伍名"  placeholder-class="place" name="name" value="{{name}}"/>
+        </view>
+    </view>
+    <view class="label-list">
+        <view class="label">是否支持跨校区组队：</view>
+        <radio-group class="radio-group" bindchange="radioChange">
+            <label class="radio" wx:for="{{sex}}" wx:key="index">
+                <radio value="{{item.id}}" checked="{{sexId == item.id}}"/>{{item.name}}
+            </label>
+        </radio-group>
+    </view>
+    <view class="label-list">
+        <view class="label">电话</view>
+        <view class="input-box">
+        <input placeholder="请输入您的电话" value='{{phonenumber}}' placeholder-class="place" name='Phonenumber'/>
+        </view>
+    </view>
+    <view class="label-list">
+        <view class="label">所在校区</view>
+        <view class="input-box">
+        <input placeholder="请输入您所在校区" value="{{school}}"  placeholder-class="place" name='school'/>
+        </view>
+    </view>
+    
+    <view class="label-list">
+        <view class="label">身份</view>
+        <picker bindchange="bindPickerChange" range="{{identity}}" value="{{index}}">
+        <view  class="picker-show">
+        {{identity[index]}}
+        </view>
+        </picker>
+    </view>
+
+<view class="con">
+        <textarea name="" id="" class="inputText" cols="30" rows="10" value="{{inputText}}" placeholder="留下您的队伍详情情况吧～" bindinput="getInputText"></textarea>
+        <input disabled class="textword" value="{{inputTextLen+'/1000'}}" />
+    </view>
+
+
+    <button formType="submit" bindtap="saveData" class="submit">发布</button>
+</form>
+
+</view>
+
+
+
+
+</view>
