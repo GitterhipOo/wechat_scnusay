@@ -11,3 +11,12 @@
         </navigator>
     </view>
 </view>
+
+<!-- 因为傻卵所以多写的一行 -->
+<view style="background-color: rgb(245,245,245); margin-top: 100rpx; color:rgb(245,245,245)">0</view>
+<!-- 华师热点榜 -->
+<view class="box1">
+    <text class="hots-pre">华师热点榜</text>
+    <!-- 榜单上每个东西都有它的名字跟序号 -->
+    <view class="hots-list" ></view>
+</view>

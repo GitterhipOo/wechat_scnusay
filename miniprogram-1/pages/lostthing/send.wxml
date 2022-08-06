@@ -1,0 +1,56 @@
+<view style="margin: 3%;">
+    <form action="">
+        <!-- 标题与内容 -->
+        <input type="text" maxlength="17" style="font-size: 40rpx; margin:20rpx 5rpx;" placeholder="标题" placeholder-style="font-size:40rpx" />
+        <view class="divline"></view>
+        <textarea style="font-size: 30rpx; margin: 20rpx 5rpx; height:500rpx" placeholder="丢失（拾取）物品种类/地点具体描述" placeholder-style="font-size:30rpx" />
+        <view class="divline"></view>
+        <!-- 图片上传功能 -->
+        <view class="img-wrap">
+            <view class="txt">上传图片</view>
+            <view class="imglist">
+                <view class="item" wx:for="{{imgs}}" wx:key="item">
+                    <image src="{{item}}" alt=""></image>
+                    <view class='delete' bindtap='deleteImg' data-index="{{index}}">
+                        <image src="../../../images/icon.png"></image>
+                    </view>
+                </view>
+                <view class="last-item" wx:if="{{imgs.length >= 3 ? false : true}}" bindtap="bindUpload">
+                    <text style="color: darkgray;">+</text>
+                </view>
+            </view>
+        </view>
+        <view class="divline"></view>
+        <!-- 失物判断 -->
+        <view class="switchCheck">
+            <view style="float: left; padding-top: 15rpx;">寻找失主</view>
+            <switch style="float: right;" checked="{{switch1Checked}}" bindchange="switch1Change" />
+        </view>
+        <view class="divline"></view>
+        <!-- 丢失地点+分类 -->
+        <view class="lostChoose">
+            <picker bindchange="bindPickerChange_Space" value="{{space}}" range="{{array_Space}}">
+            <view style="float: left;margin-left: 0rpx;color:{{spaceColor}}">
+                地点：{{array_Space[space]}}
+            </view>
+        </picker>
+            <picker bindchange="bindPickerChange_Tag" value="{{tag}}" range="{{array_Tag}}">
+            <view style="float: right;margin-right: 20rpx;color:{{tagColor}}">
+                分类：{{array_Tag[tag]}}
+            </view>
+        </picker>
+        </view>
+        <view class="divline"></view>
+        <!-- 联系方式+姓名 -->
+        <view class="moreInfor">
+            <view style="position: absolute;">姓名：</view>
+            <input type="text" maxlength="17" style="float:left;; margin: 0rpx 90rpx; " placeholder="某某同学（可选）" placeholder-style="" />
+        </view>
+        <view class="divline"></view>
+        <view class="moreInfor">
+            <view style="position: absolute;">备注：</view>
+            <input type="text" maxlength="17" style="float:left;; margin: 0rpx 90rpx;" placeholder="备注信息（可选）" placeholder-style="" />
+        </view>
+        <button class="send" hover-class="send-hover">发送</button>
+    </form>
+</view>

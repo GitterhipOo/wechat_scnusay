@@ -1,6 +1,5 @@
 {
     "pages": [
-        
         "pages/index/index1",
         "pages/index/index2",
         "pages/index/index3",
@@ -15,9 +14,9 @@
         "pages/userknow/userknow",
         "pages/updatewxinfo/updatewxinfo",
         "pages/updatenumbers/update_phonenumbers",
-        "pages/updatenumbers/update_schoolnumber"
-
-
+        "pages/updatenumbers/update_schoolnumber",
+        "pages/lostthing/send",
+        "pages/lostthing/search"
     ],
     "tabBar": {
         "color": "#7A7E83",
