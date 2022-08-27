@@ -1,0 +1,84 @@
+.sort-nav{
+    width: 90%;
+    height: 150rpx;
+    margin: 0rpx auto;
+    /* margin-top: 0rpx; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    white-space: nowrap;
+    /* padding-bottom: 15rpx; */
+    /* padding: 20rpx; */
+    /* background-color: rgb(250, 250, 250); */
+  
+  }
+  
+  ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+    display: none;
+  }
+  .sort-nav-item{
+    display: inline-block;
+    width: 94rpx;
+    font-size: 20rpx;
+    text-align: center;
+    /* line-height: 4rpx; */
+    color: #aaa;
+    margin-top: 10rpx;
+  }
+  .sort-nav-icon{
+    width: 84rpx;
+    height: 84rpx;
+  }
+  .sort-nav-text{
+    display: block;
+  }
+  
+/*
+导航栏
+*/
+.nav-wrap {
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    background: #ffffff;
+    color: #000;
+    z-index: 9999999;
+  }
+  
+  /* 顶部图标 */
+  .topimage {
+  margin-bottom: 10px;
+  }
+  
+  .nav-title {
+    position: absolute;
+    text-align: center;
+    max-width: 377rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    margin: auto;
+    font-size: 35rpx;
+    color: #2c2b2b;
+    font-weight: 400;
+  }
+  /* 导航栏容器 */
+  .nav-capsule {
+    display: flex;
+    align-items: center;
+    margin-left: 20rpx;
+    width: 50rpx;
+    justify-content: space-around;
+    border-radius: 50%;
+    margin-top: 54rpx;
+    z-index: 999999999;
+  }
+  

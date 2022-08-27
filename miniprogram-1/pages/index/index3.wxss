@@ -1,1 +1,120 @@
 /* pages/index/index3.wxss */
+
+/* 搜索栏样式 */
+.search{
+    display: flex;
+    width: 480rpx;
+    height: 80rpx;
+    background-color: rgb(248, 248, 248);
+    margin: auto ;
+    margin-top: 10rpx;
+    border-radius: 30rpx;
+    align-items:center;
+    box-shadow: -1rpx 2rpx 15rpx 0px rgba(0, 0, 0, 0.2);
+    padding-left:6px;
+}
+
+
+/* 浏览框样式 */
+.chat{
+    padding-top: 15rpx;
+    margin: 30rpx auto;
+    width: 95%;
+    border-radius: 15rpx;
+    box-shadow: 0px 0px 8rpx 0px rgba(0, 0, 0, 0.7);
+    background-color: #fff;
+}
+
+/* 头像框 */
+.touxiang{
+    height:64rpx;
+    width:64rpx;
+    border-radius: 50%;
+    overflow:hidden;
+}
+
+.touxianglan{
+    margin-left: 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left; 
+    padding-top: 20rpx;
+}
+
+.name{
+    padding-left: 20rpx;
+    font-weight: 700;
+    font-size: 30rpx;
+}
+
+.time{
+    margin-left:330rpx;
+    font-size: 26rpx;
+}
+
+/* 帖子内容 */
+.in_contact{
+    padding-left: 10rpx;
+    padding-right: 10rpx;
+    width: 90%;
+    margin:auto;
+    padding-bottom: 15rpx;
+    padding-top: 15rpx;
+    /* box-shadow: 0px 0px 8rpx 0px rgba(0, 0, 0, 0.7); */
+}
+
+
+.detail{
+    color: rgb(32, 27, 27);
+    font-size: 34.5rpx;
+    padding-bottom: 8.5rpx;
+    text-overflow: ellipsis;
+    z-index: -1;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+    overflow: hidden;
+    /* box-shadow: 0px 0px 8rpx 0px rgba(0, 0, 0, 0.7); */
+    }
+
+.cont image{
+    margin-top: 16rpx;
+    margin-bottom: 10rpx;
+    width: 90%;
+    border-radius: 15rpx;
+    box-shadow: 0px 0px 8rpx 0px rgba(0, 0, 0, 0.2);
+}
+
+.post img{
+    height: 450rpx;
+}
+
+    
+/* 功能 */
+.function{
+        padding-bottom: 75rpx;
+        display: flex;
+        /* box-shadow: 0px 0px 8rpx 0px rgba(0, 0, 0, 0.7); */
+  }
+
+  .function image{
+    height: 45rpx;
+  }
+
+  .share{
+    position: absolute;
+    right: 32%;
+
+  }
+
+  .comment{
+    position: absolute;
+    right: 2.3%;
+  }
+  
+  .like{
+    position: absolute;
+    left: 29%;
+  }
