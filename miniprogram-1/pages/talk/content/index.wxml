@@ -1,0 +1,52 @@
+<!--pages/talk/content/index.wxml-->
+
+<!-- 楼主发帖内容界面 -->
+<view class="chat">
+
+<!-- woshifengexian -->
+<view class="touxianglan">
+    <view>
+    <image class="touxiang" src="/assets/images/for_post/bella_image.jpg"></image>
+    </view>
+    <view>
+    <text class="name">贝拉Kris</text>
+    <text class="major" decode="true">\n &nbsp;&nbsp;&nbsp;播音学院</text>
+    </view>
+    <!-- 这里是一个功能键 可以做成举报或者关注 现在暂时用按钮代替 -->
+    <view>
+    <button class="tip" size="mini" bindtap="jubao">举办他</button>    
+    </view>
+</view>
+
+<!-- 文本内容 -->
+<view class="detailview">
+
+<!-- 正文的字体大小尽量和POST界面保持一致 -->
+<view class="detail_1">
+<text>贝极星们～ 
+
+    Keep × 贝拉联动课程已经正式上线啦！快来 A-SOUL 运动星球解锁更多有趣课程、心动权益，和 Keep 会员活力星推官贝拉一起锻炼心肺耐力，快乐燃脂跑吧！
+
+现在就打开 Keep，搜索🔍「A-SOUL」或者「贝拉」，了解更多联动信息
+</text>
+</view>
+
+<view>
+<image class ="postimg" src="/assets/images/for_post/bella_content.jpg" mode="aspectFill"></image>
+</view>
+
+<!-- 不显示多久之前发送而是显示具体的时间 等后面还要再改一下 调用数据 -->
+<view class="time">
+<text >2022-07-18 11:00</text>
+</view>
+</view>
+</view>
+<!-- 评论区 -->
+
+<view class="chat">
+
+<view class="bar">111</view>
+
+
+</view>
+

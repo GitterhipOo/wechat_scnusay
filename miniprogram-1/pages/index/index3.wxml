@@ -1,5 +1,6 @@
 <!--pages/index/index1.wxml-->
 <view class="nav-wrap" style="height: {{navH*2+20}}px;">
+
     <!-- 自定义导航栏 -->
     <view class="nav-title" style="line-height: {{navH*2+44}}px;">华师说</view>
     <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
@@ -13,3 +14,100 @@
     </view>
 </view>
 
+<!-- 搜索界面 -->
+<!-- 直接抄杨超的了^^ -->
+<view class="search" style="margin-top:{{navH*4+90}}rpx">
+    <icon class="searchcion" size='20' type='search'></icon>
+    <input bindinput="search" placeholder="你在找什么呢?" />
+</view>
+<!-- ↓可以在搜索旁边做一个热点/最新排列方式的SWTICH按钮，但是目前没学到怎么做 -->
+
+<!-- 浏览帖子 -->
+<navigator class="chat" url="/pages/talk/content/index"> 
+
+<!-- woshifengexian -->
+
+<view class="touxianglan">
+<view>
+<image class="touxiang" src="/assets/images/for_post/bella_image.jpg"></image>
+</view>
+<view>
+
+<!-- 研究了一下ID字体比正文小 然后ID下面可以显示专业？类似COMIN -->
+<text class="name">贝拉Kira</text>
+
+<!-- 仅显示时间不显示多久之前发的，简化流程 -->
+<text class="time">7/18</text>
+</view>
+</view>
+
+<view class="in_contact">
+<view>
+
+<!-- 模仿COMIN的设置，6行后省略内容，没有POST展开功能，要看全只能点看来看 -->
+<!-- 和广大派的区别是没有一个#代表标题，标题和内容混在一起了（和COMIN一样） -->
+    <text class="detail">贝极星们～ 
+
+    Keep × 贝拉联动课程已经正式上线啦！快来 A-SOUL 运动星球解锁更多有趣课程、心动权益，和 Keep 会员活力星推官贝拉一起锻炼心肺耐力，快乐燃脂跑吧！
+
+现在就打开 Keep，搜索🔍「A-SOUL」或者「贝拉」，了解更多联动信息
+</text>
+  </view>
+
+  <!-- 在POST中只能展示一个图片，类似COMIN，有分享多图需求则要楼主自己在后续评论中发送 -->
+  <view class="cont image">
+  <image class="post img" src="/assets/images/for_post/bella_content.jpg" mode="aspectFill"></image>
+  </view>
+</view>
+
+<view class="function">
+<!-- 要做话题功能吗？虽然不知道咋做 -->
+
+    <!-- 有一个疑问，分享到底是分享到哪里？分享到到华师空间？还是到微信群？ -->
+    <image class ="share" src="/assets/images/for_post/share.png" mode="aspectFit"></image>
+
+    <!-- 评论可以像豆瓣一样点击直接到评论区，跳过正文内容（从上到下和直接跳到评论区的区别 -->
+    <image class ="comment" src="/assets/images/for_post/comment.png" mode="aspectFit"></image>
+
+    <!-- 点赞，这个我看了要做一个动效还挺麻烦的，后面再说吧 -->
+    <image class ="like" src="/assets/images/for_post/like.png" mode="aspectFit"></image>
+ </view>
+</navigator>
+
+<!-- 学钊哥再补一个乃琳 -->
+<navigator class="chat" url="/pages/talk/content/index"> 
+<!-- woshifengexian -->
+<view class="touxianglan">
+<view>
+<image class="touxiang" src="/assets/images/for_post/elieen_image.jpg"></image>
+</view>
+<view>
+<text class="name">乃琳Queen</text>
+<text class="time">7/26</text>
+</view>
+</view>
+
+<view class="in_contact">
+<view>
+    <text class="detail">一曲惊鸿，名动九州~
+    
+奶淇琳们，乃琳生日会来啦~！8月7日晚8点，和@乃琳Queen 一起“穿越时空”，享受一场浪漫、开心的生日之旅吧！
+P.S. 乃琳的生日是8月8日哦，但是为了能和更多的小伙伴一起庆生，决定将今年的生日会提前一天举行，千万不要记错时间呀！
+预约直播还有机会获得乃琳送出的惊喜礼品哦！
+---------------------------------------
+【预约有奖】：预约【乃琳生日会】即可参与抽奖。
+奖品包含：华为MateBook X Pro 2022（512G）×1；阿米洛 锦鲤娘主题机械键盘 ×8；“大凤沟”爱琳大礼包×50。
+（运营代发）
+</text>
+  </view>
+  <view class="cont image">
+  <image class="post img" src="/assets/images/for_post/elieen_content.jpg" mode="aspectFill"></image>
+  </view>
+</view>
+
+<view class="function">
+    <image class ="share" src="/assets/images/for_post/share.png" mode="aspectFit"></image>
+    <image class ="comment" src="/assets/images/for_post/comment.png" mode="aspectFit"></image>
+    <image class ="like" src="/assets/images/for_post/like.png" mode="aspectFit"></image>
+ </view>
+</navigator>

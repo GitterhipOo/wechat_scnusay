@@ -1,0 +1,21 @@
+<!--pages/login/login.wxml-->
+<view>
+    <block wx:if="{{hasUserInfo}}">
+        <view class="loginhead">
+    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      
+    </view>
+    </block>
+    <block wx:if="{{!hasUserInfo}}">
+<view class="loginhead">
+    <image bindtap="bindViewTap" class="userinfo-avatar" src="https://s1.328888.xyz/2022/05/02/ANMF7.png" mode="cover"></image>
+      <text class="userinfo-nickname">未登录用户</text>
+    </view>
+</block>
+		<view>
+			<button class="loginBtn" type="primary" form-type='submit' bindtap="getUserProfile">授权/更新信息</button>
+		</view>
+		<!-- 转到注册的页面 绑定学号和手机号 
+            <view class="cha" bindtap="signup"><text class="no" style="color: steelblue;">没有账号?点我注册</text></view> -->
+</view>

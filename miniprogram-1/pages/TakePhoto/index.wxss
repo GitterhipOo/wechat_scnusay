@@ -1,0 +1,38 @@
+.sort-nav{
+    width: 90%;
+    height: 150rpx;
+    margin: 0rpx auto;
+    /* margin-top: 0rpx; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    white-space: nowrap;
+    /* padding-bottom: 15rpx; */
+    /* padding: 20rpx; */
+    /* background-color: rgb(250, 250, 250); */
+  
+  }
+  
+  ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+    display: none;
+  }
+  .sort-nav-item{
+    display: inline-block;
+    width: 94rpx;
+    font-size: 20rpx;
+    text-align: center;
+    /* line-height: 4rpx; */
+    color: #aaa;
+    margin-top: 10rpx;
+  }
+  .sort-nav-icon{
+    width: 84rpx;
+    height: 84rpx;
+  }
+  .sort-nav-text{
+    display: block;
+  }
