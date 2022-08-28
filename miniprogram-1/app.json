@@ -5,12 +5,14 @@
         "pages/ShareCar/details/index",
         "pages/ShareCar/My_publish/index",
         "pages/ShareCar/search/index",
-        "pages/ShareCar/ReleaseInformation/index",  
+        "pages/ShareCar/ReleaseInformation/index",
         "pages/index/index2",
         "pages/index/index3",
         "pages/index/index4",
         "pages/index/updateinfo",
         "pages/lostthing/index",
+        "pages/lostthing/search",
+        "pages/lostthing/send",
         "pages/SecendHandChange/index",
         "pages/SecendHandChange/detail",
         "pages/SecendHandChange/mypublish",
@@ -29,9 +31,9 @@
         "pages/team/my_publish/index",
         "pages/team/publish/index",
         "pages/team/detail/index",
-        "pages/team/search/index"
-
-
+        "pages/team/search/index",
+        "pages/lostthing/details",
+        "pages/hots/index"
     ],
     "tabBar": {
         "color": "#7A7E83",
