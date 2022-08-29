@@ -4,10 +4,32 @@
     <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
         <navigator hoverClass="none" url="/pages/serach/search">
             <view class="nav-capsule">
-                <view class="topimage" bindtap="logo">
-                    <image class="back-pre" src="../../assets/images/icon/search.png" style="height:35px;width:35px;" ></image>
+                <view class="topimage">
+                    <image class="back-pre" src="../../assets/images/icon/search.png" style="height:35px;width:35px;" bindtap="logo"></image>
                 </view>
             </view>
         </navigator>
     </view>
 </view>
+<!-- 热门内容 -->
+<view class="sblyc" style="height: {{navH*2+20}}px;"></view>
+<view class="hots_content">
+    <view style="padding:3% 0 0 4%; font-weight: 700;">华师话题榜</view>
+    <view class="hots_list" wx:for="{{hots_list}}">
+        <view class="ordin_num">
+            {{item.ordin_num}}
+        </view>
+        <navigator url="{{item.url}}" open-type="navigate">{{item.name}}</navigator>
+    </view>
+    <view class="hots_more" bindtap="hots_more">更多话题>></view>
+    <view style="height:30rpx; clear:both;"></view>
+</view>
+<!-- 我是一个傻鸟 -->
+<!-- 热点内容 -->
+<view class="hots_news_show">
+<text style="font-size: 30rpx; font-weight: 700;">华师热点</text>
+<text style="font-size: 24rpx;color: #aaa;">看看最近的华师er关注什么内容</text>
+</view>
+<view style="padding-top: 100rpx;">建设中~~~</view>
+<view>
+从晚安华师、官网等地方爬一些数据给大家看</view>

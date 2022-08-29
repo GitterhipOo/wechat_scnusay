@@ -1,0 +1,7 @@
+<!--pages/lostthing/search.wxml-->
+<view style="position: relative;">
+    <view class="search" hover-class="search-hover" hover-stay-time="50" bindtap="jumpToSearch">
+        <icon type="search" class="icon" style="float:left; margin:10rpx 0 0 20rpx;"></icon>
+        <input style="float:left; margin:10rpx 10rpx 10rpx 10rpx;" placeholder="输入标签、名称、描述"/>
+    </view>
+</view>
