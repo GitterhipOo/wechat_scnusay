@@ -1,6 +1,5 @@
 {
     "pages": [
-        
         "pages/index/index1",
         "pages/ShareCar/index",
         "pages/ShareCar/details/index",
@@ -12,10 +11,6 @@
         "pages/index/index4",
         "pages/index/updateinfo",
         "pages/lostthing/index",
-        "pages/lostthing/search",
-        "pages/lostthing/send",
-        "pages/lostthing/details",
-        "pages/hots/index",
         "pages/SecendHandChange/index",
         "pages/SecendHandChange/detail",
         "pages/SecendHandChange/mypublish",
@@ -34,8 +29,8 @@
         "pages/team/my_publish/index",
         "pages/team/publish/index",
         "pages/team/detail/index",
-        "pages/talk/content/index",
-        "pages/team/search/index"
+        "pages/team/search/index",
+        "pages/talk/content/index"
 
     ],
     "tabBar": {
