@@ -1,0 +1,304 @@
+/* pages/ShareCar/details/index.wxss */
+.chat {
+    padding-top: 10px;
+    margin: 10px auto;
+    border: rgb(32, 29, 221) solid 1px;
+    width: 95%;
+
+}
+
+.touxiang {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.touxianglan {
+    margin-left: 4.5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.follow {
+    right: -2%;
+
+}
+
+.name {
+    padding-left: 10px;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.time {
+    font-weight: 450;
+    font-size: 13px;
+}
+
+.in_contact {
+    padding-top: 10px;
+    padding-left: 10px;
+    background-color: rgba(128, 124, 124, 0.356);
+    width: 90%;
+    margin: 10px auto;
+    padding-bottom: 10px;
+
+}
+
+.topic {
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.date {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.space {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.space_detail {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.lostthing_class {
+    font-weight: 700;
+    font-size: 14px;
+
+}
+
+.contact {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.bottom {
+    padding-top: 8px;
+}
+
+.shoucang {
+    color: #000000;
+    border: 1px solid #000000;
+    left: 10%;
+}
+
+.pinglun {
+    position: absolute;
+    right: 11.5%;
+    color: #000000;
+    border: 1px solid #000000;
+}
+
+.call {
+    left: 36.1%;
+    position: absolute;
+    color: #000000;
+    border: 1px solid #000000;
+}
+
+.contact_detail {
+    /* margin: 0 auto; */
+    width: 90%;
+    /* background-color: rgba(128, 124, 124, 0.356); */
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-bottom: 12px;
+}
+
+.h1_detail {
+    /* padding-bottom: 10px; */
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.detail_1 {
+
+    font-size: 14px;
+}
+
+/* 评论-回复-回复评论显示区域 */
+.container {
+    width: 718rpx;
+    margin-top: 39rpx;
+    padding-left: 32rpx;
+}
+
+.total {
+    font-size: 24rpx;
+    color: #999999;
+    margin-left: 1rpx;
+    height:80rpx;
+}
+
+.container_inp {
+    width: 661rpx;
+    height: 32rpx;
+    background-color: #F2F2F2;
+    border-radius: 8rpx;
+    padding: 17rpx 0rpx 15rpx 25rpx;
+    margin-top: 24rpx;
+    margin-bottom: 47rpx;
+}
+
+.container_place {
+    font-size: 24rpx;
+    color: #999999;
+}
+
+.container-item {
+    display: flex;
+    margin-bottom: 34rpx;
+    align-items: flex-start;
+}
+
+.item_img {
+    width: 64rpx;
+    height: 64rpx;
+    margin-right: 17rpx;
+}
+
+.item_right {
+    display: inline-block;
+    position: relative;
+    width: 636rpx;
+    border-bottom: 2rpx solid #E5E5E5;
+    padding-bottom: 40rpx;
+}
+
+.right_name {
+    font-size: 24rpx;
+    color: #999999;
+}
+
+.right_content {
+    
+    width: 603rpx;
+    margin-top: 20rpx;
+}
+
+.right_content_txt {
+    font-size: 26rpx;
+    color: #333333;
+}
+
+.right_content_txt2 {
+    font-size: 24rpx;
+    color: #CCCCCC;
+    margin-left: 30rpx;
+}
+
+.reply {
+    display: flex;
+    margin-top: 32rpx;
+    align-items: flex-start;
+}
+
+.reply_img {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 17rpx;
+}
+
+.reply_right {
+    position: relative;
+    display: inline-block;
+    width: 546rpx;
+}
+
+/* 结束 */
+.end {
+    margin-top: 47rpx;
+    margin-bottom: 48rpx;
+    text-align: center;
+}
+
+.end_txt {
+    font-size: 24rpx;
+    color: #999999;
+}
+
+/* 底部评论 */
+.foot {
+    width: 686rpx;
+    padding: 17rpx 32rpx;
+    background-color: #FFFFFF;
+    box-shadow: 0rpx -1rpx 4rpx 0rpx rgba(0, 0, 0, 0.08);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.say {
+    display: inline-block;
+    width: 360rpx;
+    padding: 20rpx 0rpx 10rpx 24rpx;
+    background-color: #F2F2F2;
+    border-radius: 8rpx;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.say_img {
+    width: 24rpx;
+    height: 24rpx;
+    margin-right: 13rpx;
+    /* vertical-align: 10rpx; */
+}
+
+.say_inp {
+    display: inline-block;
+    width: 300rpx;
+    height: 33rpx;
+}
+
+.say_place {
+    font-size: 28rpx;
+    color: #333333;
+}
+
+.foot_img {
+    width: 45rpx;
+    height: 40rpx;
+    margin-left: 50rpx;
+    margin-right: 17rpx;
+}
+
+.foot_num {
+    font-size: 24rpx;
+    vertical-align: 10rpx;
+}
+
+.favour{
+    position: absolute;
+    top:15rpx;
+    right:65rpx;
+    width:80rpx;
+    margin-right: 5%;
+    margin-top: 2%;
+    font-size:24rpx;
+    line-height: 5rpx;
+}
+
+.favour_img2 {
+    width: 35rpx;
+    height: 35rpx;
+    margin-right: 17rpx;
+    margin-top: 5rpx;
+}
+
+.favour_num{
+    position: absolute;
+    right: 6rpx;
+    bottom: 14rpx;
+}

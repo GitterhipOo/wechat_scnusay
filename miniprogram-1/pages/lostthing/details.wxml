@@ -1,0 +1,108 @@
+<!--pages/ShareCar/details/index.wxml-->
+<!-- <text>pages/ShareCar/details/index.wxml</text> -->
+<view class="chat" wx:for="{{blogger_list}}">
+    <!-- woshifengexian -->
+    <view class="touxianglan">
+        <view>
+            <image class="touxiang" src="{{item.blogger_avatar}}"></image>
+        </view>
+        <view>
+            <text class="name">{{item.blogger_name}}</text>
+            <text class="time" decode="true">\n &nbsp;&nbsp;&nbsp;{{item.blogger_time}}</text>
+        </view>
+        <button size="mini" type="primary" class="follow">关注</button>
+    </view>
+
+    <view class="in_contact">
+        <text class="topic">{{item.lostthing_topic}}
+        </text>
+        <text class="date">日期：<text style="font-weight: 400;">{{item.lostthing_time}}</text></text>
+        <text class="space">
+            校区：<text style="font-weight: 400;">{{item.lostthing_space}}</text></text>
+        <text class="space_detail">
+            地点：<text style="font-weight: 400;">{{item.lostthing_space_detail}}</text></text>
+        <text class="contact">
+            联系方式：<text style="font-weight: 400;">{{item.lostthing_contact}}}</text></text>
+        <text class="lostthing_class">
+            分类：<text style="font-weight: 400;">{{item.lostthing_class}}</text>
+        </text>
+    </view>
+
+    <view class="contact_detail">
+        <text class="h1_detail">详情内容
+        </text>
+        <view style="margin-top: 5px;">
+            <text class="detail_1">{{item.lostthing_detail}}</text>
+        </view>
+    </view>
+</view>
+
+<!-- 底下评论区 -->
+<view>
+
+    <!-- 评论-回复-回复评论显示区域 -->
+    <view class="container">
+        <!-- 总共评论数 -->
+        <view class="total">共{{comment_list.length + comment_list2.length}}条评论</view>
+        <!-- END -->
+        <!-- 评论框 -->
+        <!-- <input confirm-type="send" class="container_inp" value="{{value}}" placeholder="{{ placeholder2 }}" placeholder-class="container_place" bindconfirm="bindconfirm"></input> -->
+        <!-- END -->
+        <!-- 用户评论回复显示区域 -->
+        <view class="container-item" wx:for="{{comment_list}}" wx:for-item="list" wx:key="key">
+            <image class="item_img" src="{{list.comment_user_avatar}}"></image>
+            <view class="item_right">
+                <view class="right_name">{{list.comment_user_name}}</view>
+                <view class="favour" style="top:-20rpx; right:5rpx">
+                    <image class="favour_img2" src="{{list.favour_src}}" bindtap="favourMe" data-id="{{list.comment_id}}"  data-reply="{{list.reply_id}}"></image>
+                    <view class="favour_num">{{list.favour}}</view>
+                </view>
+                <view class="right_content">
+                    <text class="right_content_txt" bindtap='replyComment' data-type="1" data-name='{{list.comment_user_name}}' data-cid='{{list.comment_id}}' data-pid="{{list.parent_id}}">{{list.comment_text}}</text>
+                    <text class="right_content_txt2">{{list.comment_time}}</text>
+                    <!-- 回复评论 -->
+                    <!-- 判断回复列表数据中的parent_id和评论列表数据的comment_id是否相等 相等就显示 不等就不显示 -->
+                    <view class="reply" wx:for="{{comment_list2}}" wx:for-item="list2" wx:key="list2" wx:if="{{list2.parent_id == list.comment_id}}">
+                        <image class="reply_img" src="{{list2.comment_user_avatar}}"></image>
+                        <view class="reply_right">
+                            <view class="favour" style="top:-12rpx; right:-24rpx">
+                                <image class="favour_img2" src="{{list2.favour_src}}" bindtap="favourMe" data-id="{{list2.comment_id}}" data-reply="{{list2.reply_id}}"></image>
+                                <view class="favour_num">{{list2.favour}}</view>
+                            </view>
+                            <view class="right_name">{{list2.comment_user_name}}</view>
+                            <text wx:if="{{list2.reply_name == ''}}" class="right_content_txt" bindtap='replyComment' data-type="2" data-name='{{list2.comment_user_name}}' data-cid='{{list2.comment_id}}' data-pid="{{list2.parent_id}}">{{list2.comment_text}}</text>
+                            <text wx:if="{{list2.reply_name != ''}}" bindtap='replyComment' data-type="2" data-name='{{list2.comment_user_name}}' data-cid='{{list2.comment_id}}' data-pid="{{list2.parent_id}}" class="right_content_txt">回复 <text class="right_name">{{list2.reply_name}}：</text>{{list2.comment_text}}</text>
+                            <text class="right_content_txt2">{{list2.comment_time}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!-- END -->
+        <!-- 结束 -->
+        <view class="end">
+            <text class="end_txt" space="nbsp">— THE END —</text>
+        </view>
+        <!-- END -->
+    </view>
+    <!-- END -->
+    <!-- 底部评论 -->
+    <view class="foot">
+        <view class="say">
+            <view class="flex">
+                <image class="say_img" src="/assets/images/sharecars/icon6.jpg"></image>
+                <input confirm-type="send" class="say_inp" placeholder="{{ placeholder }}" value="{{ comment_text }}" focus="{{ focus }}" bindblur="blur" bindconfirm="confirm"></input>
+            </view>
+        </view>
+        <image class="foot_img" src="/assets/images/sharecars/icon4.jpg"></image>
+        <text class="foot_num">{{comment_list.length + comment_list2.length}}</text>
+        <view class="favour">
+            <image class="favour_img2" src="{{favour_src}}" bindtap="favourMe" data-id="{{item.comment_id}}"></image>
+            <view class="favour_num">{{favour}}</view>
+        </view>
+
+    </view>
+    <!-- END -->
+
+
+</view>

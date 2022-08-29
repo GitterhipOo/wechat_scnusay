@@ -1,1 +1,40 @@
 /* pages/index/index2.wxss */
+page{
+    width:100%;
+}
+.hots_content{
+    margin: 3% 1%;
+    border-radius: 10rpx;
+    height: 20%;
+    background-color: #fff;
+}
+.hots_list{
+    float: left;
+    width:44%;
+    margin:3% 0 0 4%;
+}
+
+.ordin_num{
+    display: inline-block;
+    width: 40rpx;
+    height: 40rpx;
+    text-indent: 10rpx;
+    background-color: rgb(161, 155, 155);
+    border-radius: 4rpx;
+}
+.hots_list>navigator{
+    display: inline-block;
+}
+
+.hots_more{
+    float: left;
+    width:44%;
+    margin:3% 0 0 4%;
+    height: 40rpx;
+    color:aqua;
+    line-height: 40rpx;
+}
+
+.hots_news_show{
+    margin: 5% 3%;
+}

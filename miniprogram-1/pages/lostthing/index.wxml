@@ -1,5 +1,4 @@
-<view class="nav-wrap" style="height: {{navH*2+20}}px;">
-    <!-- 自定义导航栏 -->
+<!-- <view class="nav-wrap" style="height: {{navH*2+20}}px;">
     <view class="nav-title" style="line-height: {{navH*2+44}}px;">华师说</view>
     <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
         <navigator hoverClass="none" url="/pages/serach/search">
@@ -9,5 +8,61 @@
                 </view>
             </view>
         </navigator>
+    </view>
+</view>
+<view style="height:120rpx"></view> -->
+<!-- 滑动大图 -->
+<view class="swiper-container">
+    <swiper class="swiper1" indicator-dots="true" indicator-active-color="#fff" autoplay circular>
+        <swiper-item wx:for="{{banners}}" wx:key="id">
+            <image mode="aspectFill" bindtap="tapBanner" src="{{item.url}}" />
+        </swiper-item>
+    </swiper>
+</view>
+<!-- 滑动大图下面的小字 -->
+<view class="goodsDynamic">
+    <swiper class="swiper2" autoplay circular vertical>
+        <navigator wx:for="{{banners}}" wx:key="id" url="/pages/index/index1">
+            <swiper-item>
+                <view class="goodsDynamic-item">
+                    <image mode="aspectFill" src="{{item.userUrl}}" />
+                    <text>{{item.desc}}</text>
+                </view>
+            </swiper-item>
+        </navigator>
+    </swiper>
+</view>
+<!-- 搜索栏目 -->
+<view style="position: relative;">
+    <view class="search" hover-class="search-hover" hover-stay-time="50" bindtap="jumpToSearch">
+        <icon type="search" class="icon" style="float:left; margin:10rpx 0 0 20rpx;"></icon>
+        <text style="float:left; margin:10rpx 10rpx 10rpx 10rpx;">输入标签、名称、描述</text>
+    </view>
+</view>
+<!-- 发布入口 -->
+<navigator class="guide" url="/pages/lostthing/send" open-type="navigate">
+    <view class="lostcenter">发布</view>
+</navigator>
+<!-- 标签 -->
+<view class="tag">
+    <view style="height:30rpx"></view>
+    <view wx:for="{{tags}}" wx:key="id" class="tag-box">
+        <image class="tag-image" src="{{item.src}}"></image>
+        <view><text>{{item.tag_Desc}}</text></view>
+    </view>
+</view>
+<!-- 这里就是广场 -->
+<!-- 以一个作为案例 -->
+<view class="box" wx:for="{{post}}" wx:key="id" bindtap="jumptonews">
+<!-- 头部 -->
+    <view class="box1">
+        <image src="{{item.profile}}"></image>
+        <text class="text1">{{item.desc}}</text>
+        <text class="text2">{{item.time}}</text>
+    </view>
+    <view class="box-way">{{item.way}}</view>
+    <view class="box2">
+        <view><text>{{item.more_Infor}}</text></view>
+        <image wx:for="{{photos}}" src="{{item}} mode='aspectFill'"></image>
     </view>
 </view>
