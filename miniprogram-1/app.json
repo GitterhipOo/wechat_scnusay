@@ -1,11 +1,12 @@
 {
     "pages": [
+        
         "pages/index/index1",
         "pages/ShareCar/index",
         "pages/ShareCar/details/index",
         "pages/ShareCar/My_publish/index",
         "pages/ShareCar/search/index",
-        "pages/ShareCar/ReleaseInformation/index",
+        "pages/ShareCar/ReleaseInformation/index",  
         "pages/index/index2",
         "pages/index/index3",
         "pages/index/index4",
@@ -13,6 +14,8 @@
         "pages/lostthing/index",
         "pages/lostthing/search",
         "pages/lostthing/send",
+        "pages/lostthing/details",
+        "pages/hots/index",
         "pages/SecendHandChange/index",
         "pages/SecendHandChange/detail",
         "pages/SecendHandChange/mypublish",
@@ -32,8 +35,8 @@
         "pages/team/publish/index",
         "pages/team/detail/index",
         "pages/team/search/index",
-        "pages/lostthing/details",
-        "pages/hots/index"
+        "pages/talk/content/index"
+
     ],
     "tabBar": {
         "color": "#7A7E83",
