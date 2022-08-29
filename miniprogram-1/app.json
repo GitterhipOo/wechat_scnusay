@@ -34,8 +34,8 @@
         "pages/team/my_publish/index",
         "pages/team/publish/index",
         "pages/team/detail/index",
-        "pages/team/search/index",
-        "pages/talk/content/index"
+        "pages/talk/content/index",
+        "pages/team/search/index"
 
     ],
     "tabBar": {
