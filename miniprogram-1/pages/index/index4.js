@@ -124,5 +124,10 @@ updateinfo:function(e){
     wx.navigateTo({
       url: '/pages/index/updateinfo',
     })
+},
+User_Privacy:function(e){
+    wx.navigateTo({
+      url: '/pages/index/userprivacy',
+    })
 }
 })

@@ -34,7 +34,8 @@
         "pages/team/publish/index",
         "pages/team/detail/index",
         "pages/team/search/index",
-        "pages/talk/content/index"
+        "pages/talk/content/index",
+        "pages/index/userprivacy"
 
     ],
     "tabBar": {
