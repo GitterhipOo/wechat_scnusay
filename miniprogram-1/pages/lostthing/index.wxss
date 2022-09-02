@@ -1,4 +1,12 @@
 /* pages/lostthing/index.wxss */
+.nav-title1 {
+  display: flex;
+  position: relative;
+  width: auto;
+  margin-left: 5%;
+  float: left;
+  font-size: 35rpx;
+}
 
 .swiper-container {
   width: 750rpx;
@@ -57,33 +65,27 @@
 }
 
 .search {
-  z-index: 99999;
-  position: absolute;
-  top: -30rpx;
-  left: 25rpx;
-  height: 60rpx;
-  width:700rpx;
+  z-index: 9999999;
+  height: 100%;
+  width: 110%;
   border-radius: 50rpx;
   background-color: #eee;
-  line-height: 40rpx;
   color: darkgray;
 }
-.search-hover{
-  z-index: 99999;
-  position: absolute;
-  top: -30rpx;
-  left: 25rpx;
-  height: 60rpx;
-  width:700rpx;
+
+.search-hover {
+  z-index: 9999999;
+  height: 100%;
+  width: 110%;
   border-radius: 50rpx;
   background-color: rgb(209, 209, 209);
-  line-height: 40rpx;
 }
+
 .guide {
   z-index: 99999;
   position: fixed;
   top: 200rpx;
-  right:40rpx;
+  right: 40rpx;
   margin: 3% 1%;
   height: 90rpx;
   width: 90rpx;
@@ -99,83 +101,110 @@
   color: #aaa;
 }
 
-.tag{
-  padding:20rpx;
-  height:330rpx;
-  background-color: #fff;
+.grid-list{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgb(255, 255, 255);
 }
-.tag-box{
-  float: left;
-  height:150rpx;
-  width:135rpx;
-  margin:5rpx 20rpx;
+.grid-item{
+  width: 25%;
+  height: 180rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
 }
-.tag-image{
-  float: left;
-  height:90rpx;
-  width:90rpx;
-  margin:0 10rpx;
+.grid-item-hover{
+  background-color: #a54b4a;
 }
-.tag-box text{
-  margin:0 20rpx;
-  text-align: center;
-  color:darkgrey
+.grid-item image{
+  height: 80rpx;
+  width: 80rpx;
+}
+.grid-item text{
+  font-size: 28rpx;
+  margin-top: 10rpx;
 }
 
-.box{
+.box {
   position: relative;
-  margin:10rpx 0;
+  margin: 10rpx 0;
   background-color: #fff;
 }
 
-.box1{
-  height:100rpx;
-  width:500rpx;
+.box1 {
+  height: 100rpx;
+  width: 500rpx;
 }
 
-.box1 image{
+.box1 image {
   float: left;
-  margin:5rpx 0 5rpx 10rpx;
-  width:90rpx;
-  height:90rpx;
+  margin: 5rpx 0 5rpx 10rpx;
+  width: 90rpx;
+  height: 90rpx;
   border-radius: 90rpx;
 }
 
-.box1 .text1{
-  float:left;
+.box1 .text1 {
+  float: left;
   margin-top: 10rpx;
   margin-left: 20rpx;
   font-weight: 700;
   font-size: 38rpx;
-  width:380rpx;
+  width: 380rpx;
 }
 
-.box1 .text2{
+.box1 .text2 {
   float: left;
   font-size: 25rpx;
-  color:#aaa;
-  margin-left:20rpx;
+  color: #aaa;
+  margin-left: 20rpx;
 }
 
-.box-way{
+.box-way {
   position: absolute;
-  right:10rpx;
-  top:10rpx;
-  color:rgb(53, 192, 247);
+  right: 10rpx;
+  top: 10rpx;
+  color: rgb(53, 192, 247);
   font-size: 40rpx;
 }
-.box2{
-  margin:4rpx 10rpx;
-  height:400rpx;
+
+.box2 {
+  margin: 20rpx 10rpx;
+  /* height: 400rpx; */
 }
-.box2 text{
+
+.box2 text {
   font-size: 30rpx;
-  width:750rpx;
-  height:30rpx;
+  width: 750rpx;
+  height: 30rpx;
 }
-.box2 image{
-  display: inline-block;
+
+.box2 image {
   margin: 20rpx 5rpx;
-  width:270rpx;
-  height:200rpx;
+  width: 230rpx;
+  height: 130rpx;
+}
+
+.box3 .tags{
+  display: inline-block;
+  background-color: rgb(75, 200, 238);
+  border:1rpx solid rgb(1,1,1);
+  margin: 5rpx;
+  padding: 2rpx;
+}
+
+.box3 .post-data{
+float: right;
+}
+
+.box3 .foot{
+  float: right;
+}
+
+.box3 .foot image{
+  display: inline-block;
+  width: 35rpx;
+  height: 35rpx;
 }

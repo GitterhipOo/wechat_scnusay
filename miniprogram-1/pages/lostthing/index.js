@@ -6,12 +6,67 @@ Page({
      * 页面的初始数据
      */
     data: {
+      top_using_res:wx.getMenuButtonBoundingClientRect(),
+      windowInfo: wx.getWindowInfo(),
+      sortlist: [
+          {
+              sortid: 1,
+              icon: "../../assets/images/sort/all.png",
+              text: "全部",
+              jump: "all",
+              chosen_judge:"#fff"
+          },
+          {
+              sortid: 2,
+              icon: "../../assets/images/sort/book.png",
+              text: "图书文具",
+              jump: "book",
+              chosen_judge:"#fff"
+          },
+          {
+              sortid: 3,
+              icon: "../../assets/images/sort/life.png",
+              text: "生活用品",
+              jump: "life",
+              chosen_judge:"#fff"
+          },
+          {
+              sortid: 4,
+              icon: "../../assets/images/sort/computer.png",
+              text: "电子产品",
+              jump: "computer",
+              chosen_judge:"#fff"
+          },
+          {
+              sortid: 5,
+              icon: "../../assets/images/sort/makeup.png",
+              text: "化妆用品",
+              jump: "makeup",
+              chosen_judge:"#fff"
+          },
+          {
+              sortid: 6,
+              icon: "../../assets/images/sort/clothe.png",
+              text: "服饰鞋包",
+              jump: "clothe",
+              chosen_judge:"#fff"
+          },
+          {
+              sortid: 7,
+              icon: "../../assets/images/sort/others.png",
+              text: "其他",
+              jump: "others",
+              chosen_judge:"#fff"
+          },
+          {
+              sortid: 8,
+              icon: "../../assets/images/sort/publish.png",
+              text: "我的发布",
+              jump: "mypublish",
+              chosen_judge:"#fff"
+          }
+      ],
         navH: 0,
-        firstname:"丢失校园卡",
-        good_name:"可爱的我",
-        pickup_time:"2022/5/23",
-        pickup_position:"西饼屋",
-        pickup_remark:"v我50",
         banners:[{
           "url":"https://s1.328888.xyz/2022/08/02/OF0gj.jpg",//大图地址
           "userUrl":"https://s1.328888.xyz/2022/08/02/OF8Ay.jpg",//头像
@@ -67,24 +122,39 @@ Page({
           "tag_Desc":"文具",
           "id":"8",
         },],
-        post:[{
-          "profile":"https://s1.328888.xyz/2022/08/02/OF8Ay.jpg",
-          "desc":"700出帅哥一只",
-          "time":"39分钟前",
-          "way":"失物求寻",
-          "more_Infor":"我在南海这里丢失了一块抹茶拿铁，你们可以帮我寻找一下遗失的红色精灵吗",
-          "contact_Phone":"1101101110",
-          "contact_Wechat":"akai1111s1ad21"
-        },{
-          "profile":"https://s1.328888.xyz/2022/08/02/OF8Ay.jpg",
-          "desc":"700出帅哥一只",
-          "time":"39分钟前",
-          "way":"失物求寻",
-          "more_Infor":"我在南海这里丢失了一块抹茶拿铁，你们可以帮我寻找一下遗失的红色精灵吗",
-          "contact_Phone":"1101101110",
-          "contact_Wechat":"akai1111s1ad21"
-        }],
-        photos:["https://s1.328888.xyz/2022/08/05/ul86C.jpg","https://img1.imgtp.com/2022/08/05/q23HbBwo.jpg"],
+        post: [{
+            profile: "https://s1.328888.xyz/2022/08/02/OF8Ay.jpg", //头像
+            desc: "700出帅哥一只", //标题
+            time: "1661857644662", //时间戳、这里需要
+            way: "失物求寻", //发布类别（不需要可以不填充
+            more_Infor: "我在南海这里丢失了一块抹茶拿铁，你们可以帮我寻找一下遗失的红色精灵吗", //主要内容
+            photos: ["https://s1.328888.xyz/2022/08/29/CzMYU.png", "https://s1.328888.xyz/2022/08/29/CzgoR.png", "https://s1.328888.xyz/2022/08/29/Czf0B.png"], //放置于主要内容下方的图片
+            tags: ["图书文具", "生活用品", "夹心糖"], //标签
+            readingtimes: 49, //阅读次数
+            favour: 20, //点赞数量
+            had_favour: 0,
+            favour_src: "/assets/images/icon/unfavour.png",
+            comments: 5, //评论数量
+            postid: 1, //文章在数据库中存储的位置
+        },
+        {
+          profile: "https://s1.328888.xyz/2022/08/02/OF8Ay.jpg", //头像
+          desc: "70出帅哥一只", //标题
+          time: "0", //时间戳、这里需要
+          way: "失物求寻", //发布类别（不需要可以不填充
+          more_Infor: "我在南海这里丢失抹茶拿铁，你们可以帮我寻找一下遗失的红色精灵吗", //主要内容
+          photos: ["https://s1.328888.xyz/2022/08/29/CzMYU.png", "https://s1.328888.xyz/2022/08/29/CzgoR.png", "https://s1.328888.xyz/2022/08/29/Czf0B.png"], //放置于主要内容下方的图片
+          tags: ["图书文具", "生活用品", "夹心糖"], //标签
+          readingtimes: 49, //阅读次数
+          favour: 20, //点赞数量
+          had_favour: 0,
+          favour_src: "/assets/images/icon/unfavour.png",
+          comments: 5, //评论数量
+          postid: 1, //文章在数据库中存储的位置
+      }],
+
+        //轮播图的照片
+        photos:["https://s1.328888.xyz/2022/08/29/CzMYU.png","https://s1.328888.xyz/2022/08/29/CzgoR.png","https://s1.328888.xyz/2022/08/29/Czf0B.png"],
     },
     jumpToSearch:function(){
       wx.navigateTo({
@@ -96,6 +166,24 @@ Page({
       wx.navigateTo({
         url: '/pages/lostthing/details',
       })
+    },
+    //分类选择功能
+    ///////根据选取的序号判断内容，并将选取的模块颜色设置为#eee
+    class_choose:function(e){
+      var chosennum=e.currentTarget.dataset.sortid-1
+      for(var i=0;i<8;i=i+1){
+        if(chosennum!==i){
+          console.log(this.data.sortlist[i].chosen_judge)
+          this.setData({
+            ['sortlist[' + i + '].chosen_judge']:"#fff",
+          })
+        }
+        else{
+          this.setData({
+            ['sortlist[' + i + '].chosen_judge']:"#eee"
+          })
+        }
+      }
     },
     /**
      * 生命周期函数--监听页面加载
