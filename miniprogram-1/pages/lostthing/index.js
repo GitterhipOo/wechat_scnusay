@@ -67,28 +67,6 @@ Page({
           }
       ],
         navH: 0,
-        banners:[{
-          "url":"https://s1.328888.xyz/2022/08/02/OF0gj.jpg",//大图地址
-          "userUrl":"https://s1.328888.xyz/2022/08/02/OF8Ay.jpg",//头像
-          "name":"鼠标一只",
-          "id":"1",
-          "desc":"我的鼠标在西饼屋里落下了，可以帮我找找吗",//简介
-          "goods_Type":"lost"
-        },{
-          "url":"https://s1.328888.xyz/2022/08/02/OFCvw.jpg",
-          "userUrl":"https://s1.328888.xyz/2022/08/02/OF8Ay.jpg",
-          "name":"可爱的手机架",
-          "id":"2",
-          "desc":"我有一个可爱的手机架，可是他不见了呜呜呜",
-          "goods_Type":"lost"
-        },{
-          "url":"https://s1.328888.xyz/2022/08/02/OF5Ah.jpg",
-          "userUrl":"https://s1.328888.xyz/2022/08/02/OF8Ay.jpg",
-          "name":"小小的蓝牙耳机",
-          "id":"3",
-          "desc":"我放弃了我的保研名额，这个耳机是谁的啊",
-          "goods_Type":"find"
-        }],
         tags:[{
           "src":"/assets/images/sort/news.png",
           "tag_Desc":"文具",
@@ -185,6 +163,28 @@ Page({
         }
       }
     },
+
+    //点赞功能
+    //返回commentid数据，再根据commentid能否访问/具体数字来判断点赞操作
+    favourMe: function (e) {
+        var that = this
+        let postid = e.currentTarget.dataset.id - 1 //帖子ID
+        if (this.data.post[postid].had_favour == 0) {
+            console.log(1)
+            this.setData({
+                ['post['+postid+'].favour']: that.data.post[postid].favour + 1,
+                ['post['+postid+'].favour_src']: "/assets/images/icon/favour.png",
+                ['post['+postid+'].had_favour']: 1
+            })
+        } else {
+            this.setData({
+                ['post['+postid+'].favour']: that.data.post[postid].favour - 1,
+                ['post['+postid+'].favour_src']: "/assets/images/icon/unfavour.png",
+                ['post['+postid+'].had_favour']: 0
+            })
+        }
+    },
+
     /**
      * 生命周期函数--监听页面加载
      */
