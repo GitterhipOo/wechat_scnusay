@@ -5,11 +5,27 @@ Page({
         imgs: [],
         count: 3,
         array_Space: ['石牌', '大学城', '南海', '汕尾'],
-        array_Tag: ['工具', '文具', '宝具', '法宝','事物','宝贝'],
+        array_Tag: ['其他','图书文具', '生活用品', '电子产品', '化妆用品','服装鞋包'],
         space:0,
         tag:0,
         spaceColor:"#afeeee",
         tagColor:"#afeeee",
+        postValue:{//打包发送的post数组
+            profile: "https://s1.328888.xyz/2022/08/02/OF8Ay.jpg", //头像
+            desc: "", //标题
+            time: "1661857644662", //时间戳、这里需要
+            way: "失物求寻", //发布类别（不需要可以不填充
+            more_Infor: "我在南海这里丢失了一块抹茶拿铁，你们可以帮我寻找一下遗失的红色精灵吗", //主要内容
+            photos: ["https://s1.328888.xyz/2022/08/29/CzMYU.png", "https://s1.328888.xyz/2022/08/29/CzgoR.png", "https://s1.328888.xyz/2022/08/29/Czf0B.png"], //放置于主要内容下方的图片
+            tags: ["图书文具", "生活用品", "夹心糖"], //标签
+            readingtimes: 49, //阅读次数
+            favour: 20, //点赞数量
+            had_favour: 0,
+            favour_src: "/assets/images/icon/unfavour.png",
+            comments: 5, //评论数量
+            postid: 1, //文章在数据库中存储的位置
+        }
+        
       },
       bindUpload: function (e) {
         switch (this.data.imgs.length) {
@@ -90,7 +106,21 @@ Page({
           }
         })
       },
-    //   选择器
+      //绑定“way”值为“寻找失主”
+      bindPickerChange_Way: function(e) {
+        console.log('way发送选择改变，携带值为', e.detail.value)
+        if(e.detail.value){
+            this.setData({
+                ['postValue.way']:"寻找失主",
+            })
+        }
+        else{
+            this.setData({
+                ['postValue.way']:"失物求寻",
+            })
+        }
+      },
+      //选择器，实现修改“地点、分类”后变换颜色为黑色
       bindPickerChange_Space: function(e) {
         console.log('space发送选择改变，携带值为', e.detail.value)
         this.setData({

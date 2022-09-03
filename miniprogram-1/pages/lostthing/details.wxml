@@ -2,6 +2,7 @@
 <!-- <text>pages/ShareCar/details/index.wxml</text> -->
 <view class="chat" wx:for="{{blogger_list}}">
     <!-- woshifengexian -->
+    <!-- 头像栏 -->
     <view class="touxianglan">
         <view>
             <image class="touxiang" src="{{item.blogger_avatar}}"></image>
@@ -12,7 +13,7 @@
         </view>
         <button size="mini" type="primary" class="follow">关注</button>
     </view>
-
+    <!-- 信息展览 -->
     <view class="in_contact">
         <text class="topic">{{item.lostthing_topic}}
         </text>
@@ -27,14 +28,33 @@
             分类：<text style="font-weight: 400;">{{item.lostthing_class}}</text>
         </text>
     </view>
-
+    <!-- 主要内容 -->
     <view class="contact_detail">
-        <text class="h1_detail">详情内容
-        </text>
+        <text class="h1_detail">详情内容</text>
         <view style="margin-top: 5px;">
             <text class="detail_1">{{item.lostthing_detail}}</text>
         </view>
+        <image wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
     </view>
+        <!-- 文后小标模块 -->
+        <view class="box3">
+            <view class="tags" wx:for="{{item.tags}}">{{item}}</view>
+            <view class="post-data">
+                <!-- 点赞   -->
+                <view class="foot" bindtap="favourMe" data-id="{{item.blogger_id}}">
+                    <image class="favour_img" src="{{item.favour_src}}"></image>
+                    <text class="favour_num">{{item.favour}}</text>
+                </view>
+                <view class="foot">
+                    <image class="foot_img" src="/assets/images/sort/liuyan.png"></image>
+                    <text class="foot_num">{{item.comments}}</text>
+                </view>
+                <view class="foot">
+                    <image class="foot_img" src="/assets/images/sort/lookup.png"></image>
+                    <text class="foot_num">{{item.readingtimes}}</text>
+                </view>
+            </view>
+        </view>
 </view>
 
 <!-- 底下评论区 -->

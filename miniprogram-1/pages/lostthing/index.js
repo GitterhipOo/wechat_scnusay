@@ -1,4 +1,6 @@
 // pages/lostthing/index.js
+//暂定将标签第一个设置为大致地址，详细地址将进行隐瞒
+//使用函数直接插入地址
 var app = getApp()
 Page({
 
@@ -101,26 +103,31 @@ Page({
           "id":"8",
         },],
         post: [{
-            profile: "https://s1.328888.xyz/2022/08/02/OF8Ay.jpg", //头像
-            desc: "700出帅哥一只", //标题
-            time: "1661857644662", //时间戳、这里需要
-            way: "失物求寻", //发布类别（不需要可以不填充
-            more_Infor: "我在南海这里丢失了一块抹茶拿铁，你们可以帮我寻找一下遗失的红色精灵吗", //主要内容
+            blogger_id: 1, //文章所属id
+            blogger_avatar: "https://s1.328888.xyz/2022/08/02/OF8Ay.jpg", //头像
+            blogger_name:"xhiming",//博主昵称
+            blogger_time: "1661857644662", //发布时间的时间戳、这里需要修改
+            lostthing_topic: "700出帅哥一只", //标题
+            lostthing_time:"1661857644662",//丢失时间的时间戳、这里需要修改
+            lostthing_class: "失物求寻", //发布类别（不需要可以不填充
+            lostthing_detail: "我在南海这里丢失了一块抹茶拿铁，你们可以帮我寻找一下遗失的红色精灵吗", //主要内容
+            lostthing_space:"南海校区",//
+            lostthing_space_detail:"G253与G252之间的交界处",
+            lostthing_contact:"12312311231",
             photos: ["https://s1.328888.xyz/2022/08/29/CzMYU.png", "https://s1.328888.xyz/2022/08/29/CzgoR.png", "https://s1.328888.xyz/2022/08/29/Czf0B.png"], //放置于主要内容下方的图片
             tags: ["图书文具", "生活用品", "夹心糖"], //标签
             readingtimes: 49, //阅读次数
-            favour: 20, //点赞数量
-            had_favour: 0,
-            favour_src: "/assets/images/icon/unfavour.png",
             comments: 5, //评论数量
-            postid: 1, //文章在数据库中存储的位置
+            favour: 20, //点赞数量
+            had_favour: 0,//点赞判断
+            favour_src: "/assets/images/icon/unfavour.png",//点赞图标
         },
         {
-          profile: "https://s1.328888.xyz/2022/08/02/OF8Ay.jpg", //头像
-          desc: "70出帅哥一只", //标题
-          time: "0", //时间戳、这里需要
-          way: "失物求寻", //发布类别（不需要可以不填充
-          more_Infor: "我在南海这里丢失抹茶拿铁，你们可以帮我寻找一下遗失的红色精灵吗", //主要内容
+          blogger_avatar: "https://s1.328888.xyz/2022/08/02/OF8Ay.jpg", //头像
+          lostthing_topic: "70出帅哥一只", //标题
+          blogger_time: "0", //时间戳、这里需要
+          lostthing_class: "失物求寻", //发布类别（不需要可以不填充
+          lostthing_detail: "我在南海这里丢失抹茶拿铁，你们可以帮我寻找一下遗失的红色精灵吗", //主要内容
           photos: ["https://s1.328888.xyz/2022/08/29/CzMYU.png", "https://s1.328888.xyz/2022/08/29/CzgoR.png", "https://s1.328888.xyz/2022/08/29/Czf0B.png"], //放置于主要内容下方的图片
           tags: ["图书文具", "生活用品", "夹心糖"], //标签
           readingtimes: 49, //阅读次数
@@ -128,7 +135,7 @@ Page({
           had_favour: 0,
           favour_src: "/assets/images/icon/unfavour.png",
           comments: 5, //评论数量
-          postid: 1, //文章在数据库中存储的位置
+          blogger_id: 1, //文章在数据库中存储的位置
       }],
 
         //轮播图的照片
@@ -168,19 +175,19 @@ Page({
     //返回commentid数据，再根据commentid能否访问/具体数字来判断点赞操作
     favourMe: function (e) {
         var that = this
-        let postid = e.currentTarget.dataset.id - 1 //帖子ID
-        if (this.data.post[postid].had_favour == 0) {
+        let blogger_id = e.currentTarget.dataset.id - 1 //帖子ID
+        if (this.data.post[blogger_id].had_favour == 0) {
             console.log(1)
             this.setData({
-                ['post['+postid+'].favour']: that.data.post[postid].favour + 1,
-                ['post['+postid+'].favour_src']: "/assets/images/icon/favour.png",
-                ['post['+postid+'].had_favour']: 1
+                ['post['+blogger_id+'].favour']: that.data.post[blogger_id].favour + 1,
+                ['post['+blogger_id+'].favour_src']: "/assets/images/icon/favour.png",
+                ['post['+blogger_id+'].had_favour']: 1
             })
         } else {
             this.setData({
-                ['post['+postid+'].favour']: that.data.post[postid].favour - 1,
-                ['post['+postid+'].favour_src']: "/assets/images/icon/unfavour.png",
-                ['post['+postid+'].had_favour']: 0
+                ['post['+blogger_id+'].favour']: that.data.post[blogger_id].favour - 1,
+                ['post['+blogger_id+'].favour_src']: "/assets/images/icon/unfavour.png",
+                ['post['+blogger_id+'].had_favour']: 0
             })
         }
     },

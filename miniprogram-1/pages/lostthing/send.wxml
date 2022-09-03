@@ -1,9 +1,9 @@
 <view style="margin: 3%;">
     <form action="">
         <!-- 标题与内容 -->
-        <input type="text" maxlength="17" style="font-size: 40rpx; margin:20rpx 5rpx;" placeholder="标题" placeholder-style="font-size:40rpx" />
+        <input type="text" maxlength="17" style="font-size: 40rpx; margin:20rpx 5rpx;" placeholder="标题" placeholder-style="font-size:40rpx" value="{{postValue.desc}}"/>
         <view class="divline"></view>
-        <textarea style="font-size: 30rpx; margin: 20rpx 5rpx; height:500rpx" placeholder="丢失（拾取）物品种类/地点具体描述" placeholder-style="font-size:30rpx" />
+        <textarea style="font-size: 30rpx; margin: 20rpx 5rpx; height:500rpx" placeholder="丢失（拾取）物品种类/地点具体描述" placeholder-style="font-size:30rpx" value="{{postValue.more_Infor}}"/>
         <view class="divline"></view>
         <!-- 图片上传功能 -->
         <view class="img-wrap">
@@ -24,19 +24,20 @@
         <!-- 失物判断 -->
         <view class="switchCheck">
             <view style="float: left; padding-top: 15rpx;">寻找失主</view>
-            <switch style="float: right;" checked="{{switch1Checked}}" bindchange="switch1Change" />
+            <switch style="float: right;" bindchange="bindPickerChange_Way" />
         </view>
         <view class="divline"></view>
         <!-- 丢失地点+分类 -->
         <view class="lostChoose">
             <picker bindchange="bindPickerChange_Space" value="{{space}}" range="{{array_Space}}">
             <view style="float: left;margin-left: 0rpx;color:{{spaceColor}}">
-                地点：{{array_Space[space]}}
+                <text style="color:#000 ;">地点：</text>{{array_Space[space]}}
             </view>
+            
         </picker>
             <picker bindchange="bindPickerChange_Tag" value="{{tag}}" range="{{array_Tag}}">
             <view style="float: right;margin-right: 20rpx;color:{{tagColor}}">
-                分类：{{array_Tag[tag]}}
+                <text style="color:#000 ;">分类：</text>{{array_Tag[tag]}}
             </view>
         </picker>
         </view>
