@@ -100,7 +100,7 @@ Page({
         /*定义一些数据*/
         focus: false, //输入框是否聚焦
         placeholder: '写回复', //底部输入框占字符
-        // placeholder2: '说点什么，向拼主表达你的想法吧！', //顶部输入框占字符
+        placeholder2: '说点什么，向拼主表达你的想法吧！', //顶部输入框占字符
         value: null, //顶部输入框内容
         comment_text: null, //底部评论框内容
         /*
@@ -115,7 +115,7 @@ Page({
         //模拟用户信息
         userinfo: {
             nickName: '马飞', //用户昵称
-            avatarUrl: '/images/assemblyNumber/discoveryDetails/per5.png' //用户头像
+            avatarUrl: '//img/black.png' //用户头像
         }
     },
 
@@ -193,13 +193,17 @@ Page({
             }
             var comment_detail = {} //评论/回复对象
             comment_detail.comment_id = new_id; //评论Id      
-            comment_detail.comment_user_name = comment_user_name; //用户昵称      
             comment_detail.comment_user_avatar = comment_user_avatar; //用户头像      
+            comment_detail.comment_user_name = comment_user_name; //用户昵称      
             comment_detail.comment_text = comment_text; //评论内容      
             comment_detail.comment_time = time; //评论时间      
             comment_detail.reply_id = reply_id; //回复谁的评论的id      
             comment_detail.parent_id = parent_id; //评论所属哪个评论id      
             comment_detail.reply_name = reply_name; //回复评论人的昵称
+            comment_detail.favour = 0;//点赞数量
+            comment_detail.had_favour = 0;//是否点赞
+            comment_detail.favour_src = "/assets/images/icon/unfavour.png"//图标
+
             //判断parent_id是否为0 为0就是评论 不为0就是回复
             if (comment_detail.parent_id > 0) {
                 //回复
@@ -209,7 +213,7 @@ Page({
                 comment_list.unshift(comment_detail);
             }
             //动态渲染
-            ths.setData({
+            this.setData({
                 //发表评论后将以下数据初始化 为下次发表评论做准备
                 comment_text: null, //评论内容        
                 now_reply: 0, //当前点击的评论id        

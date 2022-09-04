@@ -66,7 +66,7 @@
         <view class="total">共{{comment_list.length + comment_list2.length}}条评论</view>
         <!-- END -->
         <!-- 评论框 -->
-        <!-- <input confirm-type="send" class="container_inp" value="{{value}}" placeholder="{{ placeholder2 }}" placeholder-class="container_place" bindconfirm="bindconfirm"></input> -->
+        <input confirm-type="send" class="container_inp" value="{{value}}" placeholder="{{ placeholder2 }}" placeholder-class="container_place" bindconfirm="bindconfirm"></input>
         <!-- END -->
         <!-- 用户评论回复显示区域 -->
         <view class="container-item" wx:for="{{comment_list}}" wx:for-item="list" wx:key="key">

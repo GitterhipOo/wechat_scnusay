@@ -158,7 +158,7 @@
     font-size: 24rpx;
     color: #999999;
     margin-left: 1rpx;
-    height:80rpx;
+    height:40rpx;
 }
 
 .container_inp {
