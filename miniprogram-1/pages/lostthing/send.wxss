@@ -1,10 +1,10 @@
 /* pages/lostthing/send.wxss */
 page {
-  background-color: #fff;
+    background-color: #fff;
 }
 
 .divline {
-  border-bottom: 1rpx solid darkgray;
+    border-bottom: 1rpx solid darkgray;
 }
 
 /* .wrap {
@@ -12,86 +12,95 @@ page {
     padding: 0 30rpx;
     box-sizing: border-box;
   } */
-.img-wrap {
-  font-size: 30rpx;
-  color: #33373E;
-  margin:20rpx 5rpx;
+/* 相机 */
+.img_list .img_li .delete {
+    width: 50rpx;
+    height: 50rpx;
+    position: absolute;
+    right:5rpx;
 }
 
-.img-wrap .txt {
-  margin-bottom: 20rpx;
-  color: darkgray
+.img_list {
+    width: 100vw;
+    display: flex;
+    display: -webkit-flex;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
 }
 
-.img-wrap .imglist {
-  display: flex;
-  flex-wrap: wrap;
+.img_list .img_li,
+
+.addimg {
+    position: relative;
+    width: 200rpx;
+    height: 200rpx;
+    border: 1px solid #999999;
+    margin: 5rpx;
+    flex-shrink: 0;
+    -webkit-flex-shrink: 0;
 }
 
-
-.img-wrap .imglist .item {
-  width: 150rpx;
-  height: 150rpx;
-  margin-right: 22rpx;
-  margin-bottom: 10rpx;
-  position: relative;
+.addimg image {
+    width: 150rpx;
+    height: 150rpx;
+    margin: 25rpx 25rpx;
 }
 
-.img-wrap .imglist .last-item {
-  width: 150rpx;
-  height: 150rpx;
-  text-align: center;
-  line-height: 146rpx;
-  border: 2rpx dashed #8B97A9;
-  box-sizing: border-box;
-}
-
-.img-wrap .imglist .item image {
-  width: 100%;
-  height: 100%;
-}
-
-.img-wrap .imglist .item .delete {
-  width: 30rpx;
-  height: 30rpx;
-  position: absolute;
-  top: -14rpx;
-  right: -12rpx;
+.img_list .img_li image {
+    width: 100%;
+    height: 100%;
 }
 
 .switchCheck {
-  margin: 20rpx 5rpx;
-  height: 60rpx;
+    margin: 20rpx 5rpx;
+    height: 60rpx;
 }
 
-.lostChoose{
-  margin: 20rpx 5rpx;
-  height:40rpx;
+.lostChoose {
+    margin: 20rpx 5rpx;
+    height: 40rpx;
 }
 
-.moreInfor{
-  position: relative;
-  margin: 20rpx 5rpx;
-  height: 50rpx;
+picker {
+    display: inline-block;
 }
 
-.send{
-  margin:40rpx 0;
-  height:70rpx;
-  border-radius: 70rpx;
-  box-shadow:0px 0px 8px #999 inset; 
-  line-height: 45rpx;
-  text-align: center;
-  background-color:steelblue;
-  color:white
+.moreInfor {
+    position: relative;
+    margin: 20rpx 5rpx;
+    height: 50rpx;
 }
-.send-hover{
-  margin:40rpx 0;
-  height:70rpx;
-  border-radius: 70rpx;
-  line-height: 45rpx;
-  text-align: center;
-  background-color:rgb(47, 101, 145);
-  color:white;
-  box-shadow:0px 0px 0px rgb(253, 252, 252) inset; 
+
+.send {
+    margin: 40rpx 0;
+    height: 70rpx;
+    border-radius: 70rpx;
+    box-shadow: 0px 0px 8px #999 inset;
+    line-height: 45rpx;
+    text-align: center;
+    background-color: steelblue;
+    color: white
+}
+
+.send-hover {
+    margin: 40rpx 0;
+    height: 70rpx;
+    border-radius: 70rpx;
+    line-height: 45rpx;
+    text-align: center;
+    background-color: rgb(47, 101, 145);
+    color: white;
+    box-shadow: 0px 0px 0px rgb(253, 252, 252) inset;
+}
+
+.clearfix:after,
+.clearfix:before {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
 }
