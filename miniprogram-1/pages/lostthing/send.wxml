@@ -16,7 +16,7 @@
                         <image src="{{item}}" bindtap="previewImg"></image>
                         <image class='delete' bindtap="deleteImg" data-index="{{index}}" src="../../assets/images/sort/delete.png"></image>
                     </view>
-                    <view class='addimg' bindtap='img_w_show'>
+                    <view class='addimg' bindtap='img_w_show' wx:if="{{countNow<count}}">
                         <image src='../../assets/images/sort/tianjia.png'></image>
                     </view>
                 </view>

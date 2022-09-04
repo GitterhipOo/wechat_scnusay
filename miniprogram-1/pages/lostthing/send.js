@@ -3,7 +3,7 @@ Page({
 
     data: {
         imglist: [],
-        count: 3,
+        count: 3,//最多储存图片
         countNow: 0, //当前储存图片数量
         array_Space: ['石牌', '大学城', '南海', '汕尾'],
         array_Tag: ['其他', '图书文具', '生活用品', '电子产品', '化妆用品', '服装鞋包'],
@@ -36,16 +36,16 @@ Page({
     },
     //添加照片功能
     img_w_show() {
+        var count = this.data.count
         var _this = this;
-        if (_this.data.countNow == 3) {
+        if (_this.data.countNow == count) {
             wx.showToast({
-                title: '最多上传三张图片',
+                title: '最多上传'+count+'张图片',
                 icon: 'error',
                 duration: 500//持续的时间
               })
         } else {
             wx.chooseImage({
-                // count: 3, // 默认3
                 sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
                 sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
                 success: function (res) {
@@ -70,23 +70,24 @@ Page({
         var _this = this;
         var imgList = _this.data.imglist
         let index = e.target.dataset.index//当前点击元素索引
-        imgList = []
         console.log(index)
         wx.showModal({
             title: '删除确认',
             content: '是否删除该图片',
             success: function (res) {
               if (res.confirm) {//这里是点击了确定以后
-                if(imgList.length>1){//执行删除操作，规避splice函数的特性
+                if(imgList.length>=1){//执行删除操作，规避splice函数的特性
                     imgList.splice(index,1);
                     console.log(imgList)
-                    _this.setData({
-                        imglist: imgList
+                    _this.setData({   
+                        imglist: imgList,
+                        countNow: _this.data.countNow - 1
                     })
                 }
                else{
                 _this.setData({
-                    imglist:[]
+                    imglist:[],
+                    countNow: _this.data.countNow - 1
                 })
                }
               } else {//这里是点击了取消以后
