@@ -103,9 +103,6 @@ Page({
         // placeholder2: '说点什么，向拼主表达你的想法吧！', //顶部输入框占字符
         value: null, //顶部输入框内容
         comment_text: null, //底部评论框内容
-        favour: 20, //点赞数
-        had_favour: 0, //用户是否点赞判断
-        favour_src: "/assets/images/icon/unfavour.png", //地址
         /*
          *以下初始化数据是用户点击任意一条评论或回复时需要设置的数据
          *然后将设置好的数据传递给评论时新创建的评论数据对象
@@ -232,18 +229,20 @@ Page({
         var that = this
         let commentid = e.currentTarget.dataset.id
         let reply = e.currentTarget.dataset.reply
+        let had_favour = that.data.blogger_list[0].had_favour
+        console.log(had_favour)
         if (commentid == null) { //如果不是评论区
-            if (that.data.had_favour == 0) {
+            if (had_favour == 0) {
                 this.setData({
-                    favour: that.data.favour + 1,
-                    favour_src: "/assets/images/icon/favour.png",
-                    had_favour: 1
+                    ['blogger_list[0].favour']: that.data.blogger_list[0].favour + 1,
+                    ['blogger_list[0].favour_src']: "/assets/images/icon/favour.png",
+                    ['blogger_list[0].had_favour']: 1
                 })
             } else {
                 this.setData({
-                    favour: that.data.favour - 1,
-                    favour_src: "/assets/images/icon/unfavour.png",
-                    had_favour: 0
+                    ['blogger_list[0].favour']: that.data.blogger_list[0].favour - 1,
+                    ['blogger_list[0].favour_src']: "/assets/images/icon/unfavour.png",
+                    ['blogger_list[0].had_favour']: 0
                 })
             }
         } else {

@@ -41,17 +41,17 @@
             <view class="tags" wx:for="{{item.tags}}">{{item}}</view>
             <view class="post-data">
                 <!-- 点赞   -->
-                <view class="foot" bindtap="favourMe" data-id="{{item.blogger_id}}">
+                <view class="feet" bindtap="favourMe" data-id="{{item.comment_id}}">
                     <image class="favour_img" src="{{item.favour_src}}"></image>
-                    <text class="favour_num">{{item.favour}}</text>
+                    <text class="favour_num" style="position: relative; right:0;bottom: 0;">{{item.favour}}</text>
                 </view>
-                <view class="foot">
-                    <image class="foot_img" src="/assets/images/sort/liuyan.png"></image>
-                    <text class="foot_num">{{item.comments}}</text>
+                <view class="feet">
+                    <image class="feet_img" src="/assets/images/sort/liuyan.png"></image>
+                    <text class="feet_num">{{item.comments}}</text>
                 </view>
-                <view class="foot">
-                    <image class="foot_img" src="/assets/images/sort/lookup.png"></image>
-                    <text class="foot_num">{{item.readingtimes}}</text>
+                <view class="feet">
+                    <image class="feet_img" src="/assets/images/sort/lookup.png"></image>
+                    <text class="feet_num">{{item.readingtimes}}</text>
                 </view>
             </view>
         </view>
@@ -117,8 +117,8 @@
         <image class="foot_img" src="/assets/images/sharecars/icon4.jpg"></image>
         <text class="foot_num">{{comment_list.length + comment_list2.length}}</text>
         <view class="favour">
-            <image class="favour_img2" src="{{favour_src}}" bindtap="favourMe" data-id="{{item.comment_id}}"></image>
-            <view class="favour_num">{{favour}}</view>
+            <image class="favour_img2" src="{{blogger_list[0].favour_src}}" bindtap="favourMe" data-id="{{blogger_list[0].comment_id}}"></image>
+            <view class="favour_num">{{blogger_list[0].favour}}</view>
         </view>
 
     </view>
