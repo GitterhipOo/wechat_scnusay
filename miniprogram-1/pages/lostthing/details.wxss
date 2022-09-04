@@ -137,11 +137,11 @@
   float: right;
   }
   
-  .box3 .foot{
+  .box3 .feet{
     float: right;
   }
   
-  .box3 .foot image{
+  .box3 .feet image{
     display: inline-block;
     width: 35rpx;
     height: 35rpx;
