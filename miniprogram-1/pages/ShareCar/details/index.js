@@ -177,7 +177,7 @@ Page({
         comment_list.unshift(comment_detail);
       }
       //动态渲染
-      ths.setData({
+      this.setData({
         //发表评论后将以下数据初始化 为下次发表评论做准备
         comment_text: null, //评论内容        
         now_reply: 0, //当前点击的评论id        

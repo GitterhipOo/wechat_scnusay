@@ -2,18 +2,24 @@ Page({
     data: {
         //主人公数据
         blogger_list: [{
-
-            pr_id: 1, //文章所属id
-            blogger_avatar: 'https://s1.328888.xyz/2022/08/02/OF8Ay.jpg', //博主头像(路径替换为你的图片路径)
-            blogger_name: '黄志敏黄志敏', //博主昵称
-            bloger_time: '11小时前', //发布时间
-            lostthing_topic: '耳机一副', //标题
-            lostthing_time: '2022年9月1日',
-            lostthing_space: '南海校区', //大致地址
-            lostthing_space_detail: 'G252林杨超床下桌子', //详细地址
-            lostthing_contact: '18823828238',
-            lostthing_class: '文具', //分类
-            lostthing_detail: '我在南海这里丢失了一块抹茶拿铁，你们可以帮我寻找一下遗失的红色精灵吗' //详情内容
+            blogger_id: 1, //文章所属id
+            blogger_avatar: "https://s1.328888.xyz/2022/08/02/OF8Ay.jpg", //头像
+            blogger_name:"xhiming",//博主昵称
+            blogger_time: "1661857644662", //发布时间的时间戳、这里需要修改
+            lostthing_topic: "700出帅哥一只", //标题
+            lostthing_time:"1661857644662",//丢失时间的时间戳、这里需要修改
+            lostthing_class: "失物求寻", //发布类别（不需要可以不填充
+            lostthing_detail: "我在南海这里丢失了一块抹茶拿铁，你们可以帮我寻找一下遗失的红色精灵吗", //主要内容
+            lostthing_space:"南海校区",//
+            lostthing_space_detail:"G253与G252之间的交界处",
+            lostthing_contact:"12312311231",
+            photos: ["https://s1.328888.xyz/2022/08/29/CzMYU.png", "https://s1.328888.xyz/2022/08/29/CzgoR.png", "https://s1.328888.xyz/2022/08/29/Czf0B.png"], //放置于主要内容下方的图片
+            tags: ["图书文具", "生活用品", "夹心糖"], //标签
+            readingtimes: 49, //阅读次数
+            comments: 5, //评论数量
+            favour: 20, //点赞数量
+            had_favour: 0,//点赞判断
+            favour_src: "/assets/images/icon/unfavour.png",//点赞图标
         }],
         //评论数据
         comment_list: [{
@@ -94,12 +100,9 @@ Page({
         /*定义一些数据*/
         focus: false, //输入框是否聚焦
         placeholder: '写回复', //底部输入框占字符
-        // placeholder2: '说点什么，向拼主表达你的想法吧！', //顶部输入框占字符
+        placeholder2: '说点什么，向拼主表达你的想法吧！', //顶部输入框占字符
         value: null, //顶部输入框内容
         comment_text: null, //底部评论框内容
-        favour: 20, //点赞数
-        had_favour: 0, //用户是否点赞判断
-        favour_src: "/assets/images/icon/unfavour.png", //地址
         /*
          *以下初始化数据是用户点击任意一条评论或回复时需要设置的数据
          *然后将设置好的数据传递给评论时新创建的评论数据对象
@@ -112,7 +115,7 @@ Page({
         //模拟用户信息
         userinfo: {
             nickName: '马飞', //用户昵称
-            avatarUrl: '/images/assemblyNumber/discoveryDetails/per5.png' //用户头像
+            avatarUrl: '//img/black.png' //用户头像
         }
     },
 
@@ -190,13 +193,17 @@ Page({
             }
             var comment_detail = {} //评论/回复对象
             comment_detail.comment_id = new_id; //评论Id      
-            comment_detail.comment_user_name = comment_user_name; //用户昵称      
             comment_detail.comment_user_avatar = comment_user_avatar; //用户头像      
+            comment_detail.comment_user_name = comment_user_name; //用户昵称      
             comment_detail.comment_text = comment_text; //评论内容      
             comment_detail.comment_time = time; //评论时间      
             comment_detail.reply_id = reply_id; //回复谁的评论的id      
             comment_detail.parent_id = parent_id; //评论所属哪个评论id      
             comment_detail.reply_name = reply_name; //回复评论人的昵称
+            comment_detail.favour = 0;//点赞数量
+            comment_detail.had_favour = 0;//是否点赞
+            comment_detail.favour_src = "/assets/images/icon/unfavour.png"//图标
+
             //判断parent_id是否为0 为0就是评论 不为0就是回复
             if (comment_detail.parent_id > 0) {
                 //回复
@@ -206,7 +213,7 @@ Page({
                 comment_list.unshift(comment_detail);
             }
             //动态渲染
-            ths.setData({
+            this.setData({
                 //发表评论后将以下数据初始化 为下次发表评论做准备
                 comment_text: null, //评论内容        
                 now_reply: 0, //当前点击的评论id        
@@ -226,18 +233,20 @@ Page({
         var that = this
         let commentid = e.currentTarget.dataset.id
         let reply = e.currentTarget.dataset.reply
+        let had_favour = that.data.blogger_list[0].had_favour
+        console.log(had_favour)
         if (commentid == null) { //如果不是评论区
-            if (that.data.had_favour == 0) {
+            if (had_favour == 0) {
                 this.setData({
-                    favour: that.data.favour + 1,
-                    favour_src: "/assets/images/icon/favour.png",
-                    had_favour: 1
+                    ['blogger_list[0].favour']: that.data.blogger_list[0].favour + 1,
+                    ['blogger_list[0].favour_src']: "/assets/images/icon/favour.png",
+                    ['blogger_list[0].had_favour']: 1
                 })
             } else {
                 this.setData({
-                    favour: that.data.favour - 1,
-                    favour_src: "/assets/images/icon/unfavour.png",
-                    had_favour: 0
+                    ['blogger_list[0].favour']: that.data.blogger_list[0].favour - 1,
+                    ['blogger_list[0].favour_src']: "/assets/images/icon/unfavour.png",
+                    ['blogger_list[0].had_favour']: 0
                 })
             }
         } else {

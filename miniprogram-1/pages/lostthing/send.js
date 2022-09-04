@@ -2,107 +2,126 @@
 Page({
 
     data: {
-        imgs: [],
-        count: 3,
+        imglist: [],
+        count: 3,//最多储存图片
+        countNow: 0, //当前储存图片数量
         array_Space: ['石牌', '大学城', '南海', '汕尾'],
-        array_Tag: ['工具', '文具', '宝具', '法宝','事物','宝贝'],
-        space:0,
-        tag:0,
-        spaceColor:"#afeeee",
-        tagColor:"#afeeee",
-      },
-      bindUpload: function (e) {
-        switch (this.data.imgs.length) {
-          case 0:
-            this.data.count = 3
-            break
-          case 1:
-            this.data.count = 2
-            break
-          case 2:
-            this.data.count = 1
-            break
+        array_Tag: ['其他', '图书文具', '生活用品', '电子产品', '化妆用品', '服装鞋包'],
+        space: 0,
+        tag: 0,
+        spaceColor: "#afeeee",
+        tagColor: "#afeeee",
+
+        postValue: { //打包发送的post数组
+            blogger_id: 1, //文章所属id
+            blogger_avatar: "https://s1.328888.xyz/2022/08/02/OF8Ay.jpg", //头像
+            blogger_name: "xhiming", //博主昵称
+            blogger_time: "1661857644662", //发布时间的时间戳、这里需要修改
+            lostthing_topic: "700出帅哥一只", //标题
+            lostthing_time: "1661857644662", //丢失时间的时间戳、这里需要修改
+            lostthing_class: "失物求寻", //发布类别（不需要可以不填充
+            lostthing_detail: "我在南海这里丢失了一块抹茶拿铁，你们可以帮我寻找一下遗失的红色精灵吗", //主要内容
+            lostthing_space: "南海校区", //
+            lostthing_space_detail: "",
+            lostthing_contact: "12312311231",
+            photos: [], //放置于主要内容下方的图片
+            tags: ["图书文具", "生活用品", "夹心糖"], //标签
+            readingtimes: 49, //阅读次数
+            comments: 5, //评论数量
+            favour: 20, //点赞数量
+            had_favour: 0, //点赞判断
+            favour_src: "/assets/images/icon/unfavour.png", //点赞图标
         }
-        var that = this
-        wx.chooseMedia({
-          count: that.data.count, // 默认3
-          mediaType:["mix"],
-          sizeType: ["original", "compressed"], // 可以指定是原图还是压缩图，默认二者都有
-          sourceType: ["album", "camera"], // 可以指定来源是相册还是相机，默认二者都有
-          success: function (res) {
-            // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-            var tempFilePaths = res.tempFilePaths
-            for (var i = 0; i < tempFilePaths.length; i++) {
-              wx.uploadFile({
-                // url: 'https://graph.baidu.com/upload',
-                filePath: tempFilePaths[i],
-                name: "file",
-                header: {
-                  "content-type": "multipart/form-data"
-                },
+
+    },
+    //添加照片功能
+    img_w_show() {
+        var count = this.data.count
+        var _this = this;
+        if (_this.data.countNow == count) {
+            wx.showToast({
+                title: '最多上传'+count+'张图片',
+                icon: 'error',
+                duration: 500//持续的时间
+              })
+        } else {
+            wx.chooseImage({
+                sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+                sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
                 success: function (res) {
-                  if (res.statusCode == 200) {
-                    wx.showToast({
-                      title: "上传成功",
-                      icon: "none",
-                      duration: 1500
+                    // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+                    var tempFilePaths = res.tempFilePaths
+                    _this.setData({
+                        countNow: _this.data.countNow + 1,
+                        imglist: _this.data.imglist.concat(tempFilePaths)
                     })
-      
-                    that.data.imgs.push(JSON.parse(res.data).data)
-      
-                    that.setData({
-                      imgs: that.data.imgs
-                    })
-                  }
-                },
-                fail: function (err) {
-                  wx.showToast({
-                    title: "上传失败",
-                    icon: "none",
-                    duration: 2000
-                  })
-                },
-                complete: function (result) {
-                  console.log(result.errMsg)
+                    console.log(_this.data.countNow)
                 }
-              })
-            }
-          }
-        })
-      },
-      // 删除图片
-      deleteImg: function (e) {
-        var that = this
+            })
+        }
+    },
+
+    // 预览图片
+    previewImg: function (e) {
+
+    },
+    // 点击删除
+    deleteImg(e) {
+        var _this = this;
+        var imgList = _this.data.imglist
+        let index = e.target.dataset.index//当前点击元素索引
+        console.log(index)
         wx.showModal({
-          title: "提示",
-          content: "是否删除",
-          success: function (res) {
-            if (res.confirm) {
-              for (var i = 0; i < that.data.imgs.length; i++) {
-                if (i == e.currentTarget.dataset.space) that.data.imgs.splice(i, 1)
+            title: '删除确认',
+            content: '是否删除该图片',
+            success: function (res) {
+              if (res.confirm) {//这里是点击了确定以后
+                if(imgList.length>=1){//执行删除操作，规避splice函数的特性
+                    imgList.splice(index,1);
+                    console.log(imgList)
+                    _this.setData({   
+                        imglist: imgList,
+                        countNow: _this.data.countNow - 1
+                    })
+                }
+               else{
+                _this.setData({
+                    imglist:[],
+                    countNow: _this.data.countNow - 1
+                })
+               }
+              } else {//这里是点击了取消以后
+                console.log('用户点击取消')
               }
-              that.setData({
-                imgs: that.data.imgs
-              })
-            } else if (res.cancel) {
-              console.log("用户点击取消")
             }
-          }
-        })
-      },
-    //   选择器
-      bindPickerChange_Space: function(e) {
+          })
+    },
+    //绑定“way”值为“寻找失主”
+    bindPickerChange_Way: function (e) {
+        console.log('way发送选择改变，携带值为', e.detail.value)
+        if (e.detail.value) {
+            this.setData({
+                ['postValue.way']: "寻找失主",
+            })
+        } else {
+            this.setData({
+                ['postValue.way']: "失物求寻",
+            })
+        }
+    },
+    //选择器，实现修改“地点、分类”后变换颜色为黑色
+    bindPickerChange_Space: function (e) {
         console.log('space发送选择改变，携带值为', e.detail.value)
         this.setData({
-          space: e.detail.value,
-          spaceColor:'#000',
+            space: e.detail.value,
+            spaceColor: '#000',
         })
-      },
-      bindPickerChange_Tag: function(e) {
+    },
+    bindPickerChange_Tag: function (e) {
         console.log('Tag发送选择改变，携带值为', e.detail.value)
         this.setData({
-          tag: e.detail.value,
-          tagColor:'#000',
+            tag: e.detail.value,
+            tagColor: '#000',
         })
-      },
+    },
 })

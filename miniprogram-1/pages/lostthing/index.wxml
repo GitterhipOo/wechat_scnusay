@@ -39,16 +39,16 @@
 </view>
 <!-- 这里就是广场 -->
 <!-- 以一个作为案例 -->
-<view class="box" bindtap="jumptonews" wx:for="{{post}}" wx:key="{{id}}">
+<view class="box" wx:for="{{post}}" wx:key="{{id}}">
         <!-- 头像栏模块 -->
-        <view class="box1">
-            <image src="{{item.profile}}"></image>
-            <text class="text1">{{item.desc}}</text>
-            <text class="text2">{{item.time}}</text>
+        <view class="box1"bindtap="jumptonews" >
+            <image src="{{item.blogger_avatar}}"></image>
+            <text class="text1">{{item.lostthing_topic}}</text>
+            <text class="text2">{{item.blogger_time}}</text>
         </view>
-        <view class="box-way">{{item.way}}</view>
+        <view class="box-way">{{item.lostthing_class}}</view>
         <!-- 主要内容模块 -->
-        <view class="box2">
+        <view class="box2"bindtap="jumptonews" >
             <view style="margin: 20rpx 0 40rpx 0;"><text>{{item.more_Infor}}</text></view>
             <image wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
         </view>
@@ -57,13 +57,13 @@
             <view class="tags" wx:for="{{item.tags}}">{{item}}</view>
             <view class="post-data">
                 <!-- 点赞   -->
-                <view class="foot" bindtap="favourMe" data-id="{{item.postid}}">
+                <view class="foot" bindtap="favourMe" data-id="{{item.blogger_id}}">
                     <image class="favour_img" src="{{item.favour_src}}"></image>
                     <text class="favour_num">{{item.favour}}</text>
                 </view>
                 <view class="foot">
                     <image class="foot_img" src="/assets/images/sort/liuyan.png"></image>
-                    <text class="foot_num">{{post.comments}}</text>
+                    <text class="foot_num">{{item.comments}}</text>
                 </view>
                 <view class="foot">
                     <image class="foot_img" src="/assets/images/sort/lookup.png"></image>

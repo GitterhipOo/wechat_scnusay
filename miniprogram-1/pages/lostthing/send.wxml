@@ -1,22 +1,24 @@
 <view style="margin: 3%;">
     <form action="">
         <!-- 标题与内容 -->
-        <input type="text" maxlength="17" style="font-size: 40rpx; margin:20rpx 5rpx;" placeholder="标题" placeholder-style="font-size:40rpx" />
+        <input type="text" maxlength="17" style="font-size: 40rpx; margin:20rpx 5rpx;" placeholder="标题" placeholder-style="font-size:40rpx" value="{{postValue.lostthing_topic}}" />
         <view class="divline"></view>
-        <textarea style="font-size: 30rpx; margin: 20rpx 5rpx; height:500rpx" placeholder="丢失（拾取）物品种类/地点具体描述" placeholder-style="font-size:30rpx" />
+        <textarea style="font-size: 30rpx; margin: 20rpx 5rpx; height:500rpx" placeholder="丢失（拾取）物品种类/地点具体描述" placeholder-style="font-size:30rpx" value="{{postValue.lostthing_detail}}" />
         <view class="divline"></view>
-        <!-- 图片上传功能 -->
-        <view class="img-wrap">
-            <view class="txt">上传图片</view>
-            <view class="imglist">
-                <view class="item" wx:for="{{imgs}}" wx:key="item">
-                    <image src="{{item}}" alt=""></image>
-                    <view class='delete' bindtap='deleteImg' data-index="{{index}}">
-                        <image src="../../../images/icon.png"></image>
+        <!-- 相机 -->
+        <view>
+            <text>上传图片(最多3张)</text>
+        </view>
+        <view class="container">
+            <view class='img_body'>
+                <view class='img_list'>
+                    <view class='img_li' wx:for="{{imglist}}" wx:key="index">
+                        <image src="{{item}}" bindtap="previewImg"></image>
+                        <image class='delete' bindtap="deleteImg" data-index="{{index}}" src="../../assets/images/sort/delete.png"></image>
                     </view>
-                </view>
-                <view class="last-item" wx:if="{{imgs.length >= 3 ? false : true}}" bindtap="bindUpload">
-                    <text style="color: darkgray;">+</text>
+                    <view class='addimg' bindtap='img_w_show' wx:if="{{countNow<count}}">
+                        <image src='../../assets/images/sort/tianjia.png'></image>
+                    </view>
                 </view>
             </view>
         </view>
@@ -24,32 +26,38 @@
         <!-- 失物判断 -->
         <view class="switchCheck">
             <view style="float: left; padding-top: 15rpx;">寻找失主</view>
-            <switch style="float: right;" checked="{{switch1Checked}}" bindchange="switch1Change" />
+            <switch style="float: right;" bindchange="bindPickerChange_Way" />
         </view>
         <view class="divline"></view>
-        <!-- 丢失地点+分类 -->
-        <view class="lostChoose">
+        <!-- 丢失地点 -->
+        <view class="lostChoose clearfix">
             <picker bindchange="bindPickerChange_Space" value="{{space}}" range="{{array_Space}}">
-            <view style="float: left;margin-left: 0rpx;color:{{spaceColor}}">
-                地点：{{array_Space[space]}}
-            </view>
-        </picker>
+                <view style="float: left;color:{{spaceColor}}">
+                    <text style="color:#000 ;">地点：</text>{{array_Space[space]}}
+                </view>
+            </picker>
+            <input type="text" maxlength="17" style="display: inline-block; margin: 0rpx 30rpx; " placeholder="详细地址:" value="{{postValue.lostthing_space_detail}}" />
+
+        </view>
+        <view class="divline"></view>
+        <!-- 分类 -->
+        <view style="margin: 20rpx 5rpx;">
             <picker bindchange="bindPickerChange_Tag" value="{{tag}}" range="{{array_Tag}}">
-            <view style="float: right;margin-right: 20rpx;color:{{tagColor}}">
-                分类：{{array_Tag[tag]}}
-            </view>
-        </picker>
+                <view style="margin-right: 20rpx;color:{{tagColor}}">
+                    <text style="color:#000 ;">分类：</text>{{array_Tag[tag]}}
+                </view>
+            </picker>
         </view>
         <view class="divline"></view>
-        <!-- 联系方式+姓名 -->
+        <!-- 联系方式+标签 -->
         <view class="moreInfor">
-            <view style="position: absolute;">姓名：</view>
-            <input type="text" maxlength="17" style="float:left;; margin: 0rpx 90rpx; " placeholder="某某同学（可选）" placeholder-style="" />
+            <view style="position: absolute;">联系方式：</view>
+            <input type="number" maxlength="17" style="float:left;; margin: 0rpx 140rpx; " placeholder="19999999999" value="{{postValue.lostthing_contact}}" />
         </view>
         <view class="divline"></view>
         <view class="moreInfor">
-            <view style="position: absolute;">备注：</view>
-            <input type="text" maxlength="17" style="float:left;; margin: 0rpx 90rpx;" placeholder="备注信息（可选）" placeholder-style="" />
+            <view style="position: absolute;">标签：</view>
+            <input type="text" maxlength="30" style="float:left;width:100%; margin: 0rpx 90rpx;" placeholder="你希望分享的标签（可选）以顿号‘、’分割" placeholder-style="" />
         </view>
         <button class="send" hover-class="send-hover">发送</button>
     </form>

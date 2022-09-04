@@ -2,6 +2,7 @@
 <!-- <text>pages/ShareCar/details/index.wxml</text> -->
 <view class="chat" wx:for="{{blogger_list}}">
     <!-- woshifengexian -->
+    <!-- 头像栏 -->
     <view class="touxianglan">
         <view>
             <image class="touxiang" src="{{item.blogger_avatar}}"></image>
@@ -12,7 +13,7 @@
         </view>
         <button size="mini" type="primary" class="follow">关注</button>
     </view>
-
+    <!-- 信息展览 -->
     <view class="in_contact">
         <text class="topic">{{item.lostthing_topic}}
         </text>
@@ -27,14 +28,33 @@
             分类：<text style="font-weight: 400;">{{item.lostthing_class}}</text>
         </text>
     </view>
-
+    <!-- 主要内容 -->
     <view class="contact_detail">
-        <text class="h1_detail">详情内容
-        </text>
+        <text class="h1_detail">详情内容</text>
         <view style="margin-top: 5px;">
             <text class="detail_1">{{item.lostthing_detail}}</text>
         </view>
+        <image wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
     </view>
+        <!-- 文后小标模块 -->
+        <view class="box3">
+            <view class="tags" wx:for="{{item.tags}}">{{item}}</view>
+            <view class="post-data">
+                <!-- 点赞   -->
+                <view class="feet" bindtap="favourMe" data-id="{{item.comment_id}}">
+                    <image class="favour_img" src="{{item.favour_src}}"></image>
+                    <text class="favour_num" style="position: relative; right:0;bottom: 0;">{{item.favour}}</text>
+                </view>
+                <view class="feet">
+                    <image class="feet_img" src="/assets/images/sort/liuyan.png"></image>
+                    <text class="feet_num">{{item.comments}}</text>
+                </view>
+                <view class="feet">
+                    <image class="feet_img" src="/assets/images/sort/lookup.png"></image>
+                    <text class="feet_num">{{item.readingtimes}}</text>
+                </view>
+            </view>
+        </view>
 </view>
 
 <!-- 底下评论区 -->
@@ -46,7 +66,7 @@
         <view class="total">共{{comment_list.length + comment_list2.length}}条评论</view>
         <!-- END -->
         <!-- 评论框 -->
-        <!-- <input confirm-type="send" class="container_inp" value="{{value}}" placeholder="{{ placeholder2 }}" placeholder-class="container_place" bindconfirm="bindconfirm"></input> -->
+        <input confirm-type="send" class="container_inp" value="{{value}}" placeholder="{{ placeholder2 }}" placeholder-class="container_place" bindconfirm="bindconfirm"></input>
         <!-- END -->
         <!-- 用户评论回复显示区域 -->
         <view class="container-item" wx:for="{{comment_list}}" wx:for-item="list" wx:key="key">
@@ -97,8 +117,8 @@
         <image class="foot_img" src="/assets/images/sharecars/icon4.jpg"></image>
         <text class="foot_num">{{comment_list.length + comment_list2.length}}</text>
         <view class="favour">
-            <image class="favour_img2" src="{{favour_src}}" bindtap="favourMe" data-id="{{item.comment_id}}"></image>
-            <view class="favour_num">{{favour}}</view>
+            <image class="favour_img2" src="{{blogger_list[0].favour_src}}" bindtap="favourMe" data-id="{{blogger_list[0].comment_id}}"></image>
+            <view class="favour_num">{{blogger_list[0].favour}}</view>
         </view>
 
     </view>

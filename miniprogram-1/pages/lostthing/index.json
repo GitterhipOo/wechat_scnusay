@@ -1,4 +1,4 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "动态详情"
+  "navigationStyle": "custom"
 }
