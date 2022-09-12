@@ -151,8 +151,15 @@ Page({
             url: '/pages/lostthing/search',
         })
     },
-
-    jumptonews() {
+    //跳转至详情页面
+    jumptodetails: function (e) {
+        console.log(e);
+        let index=e.currentTarget.dataset.index
+        let postValue=this.data.post[index]
+        wx.setStorage({
+            key: "sendPostValue",
+            data: postValue
+        })
         wx.navigateTo({
             url: '/pages/lostthing/details',
         })
