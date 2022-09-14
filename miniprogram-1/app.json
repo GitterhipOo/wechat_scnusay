@@ -25,7 +25,7 @@
         "pages/foodreview/publish",
         "pages/News/index",
         "pages/signup/index",
-        "pages/userknow/userknow",
+
         "pages/updatewxinfo/updatewxinfo",
         "pages/updatenumbers/update_phonenumbers",
         "pages/updatenumbers/update_schoolnumber",
