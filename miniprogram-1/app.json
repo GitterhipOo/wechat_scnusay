@@ -1,5 +1,6 @@
 {
     "pages": [
+        "pages/lostthing/index",
         "pages/index/index1",
         "pages/ShareCar/index",
         "pages/ShareCar/details/index",
@@ -10,7 +11,7 @@
         "pages/index/index3",
         "pages/index/index4",
         "pages/index/updateinfo",
-        "pages/lostthing/index",
+
         "pages/lostthing/details",
         "pages/lostthing/search",
         "pages/lostthing/send",
