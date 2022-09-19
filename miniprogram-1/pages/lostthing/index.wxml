@@ -38,7 +38,10 @@
         </view>
 </view>
 <!-- 这里就是广场 -->
-<!-- 以一个作为案例 -->
+<!-- 以一个作为案例 --> 
+
+
+
 <view class="box" wx:for="{{post}}" wx:key="index">
         <!-- 头像栏模块 -->
         <view class="box1" bindtap="jumptodetails" data-index="{{index}}">
