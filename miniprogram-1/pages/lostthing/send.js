@@ -244,7 +244,7 @@ Page({
                   'specialcode_inmysqlname':app.globalData.openid+year+month+day+hour+minute+second,
                   'length':that.data.postValue.photos.length,
                   //+i是为了避免重名 无法存入多张照片
-                  //上传图片的数量一起传过去 方便判断放在数据库的哪个位置
+                  //上传图片的数量一起传过去 方便判断放在数据库的哪个位置 但是注意分辨数据库里面的不同值
               },
               success:function(res){
                 console.log(res.data)
