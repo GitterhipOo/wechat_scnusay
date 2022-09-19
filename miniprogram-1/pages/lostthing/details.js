@@ -291,7 +291,7 @@ Page({
         wx.getStorage({
             key: 'sendPostValue',
             success: function(res) {
-                console.log(res.data)
+                console.log(res.data)  
                 _this.setData({
                     ['blogger_list[0]']:res.data
                 })

@@ -169,6 +169,7 @@ Page({
             key: "sendPostValue",
             data: postValue
         })
+<<<<<<< Updated upstream
         wx.showToast({
             title: '正在跳转到详情页面', //提示内容
             icon: 'none' //提示图标
@@ -176,5 +177,83 @@ Page({
         wx.navigateTo({
           url: '/pages/lostthing/details',
         })
+=======
+        //
+        //打包发送到服务器
+        wx.request({
+          url: 'https://www.scnusay.cc/lostdetail/lostdetailsave.php',
+            method:"POST",
+            data:{
+                'openid':app.globalData.openid,
+                   //这是联系方式 得改个名字
+                  //判断作者直接返回openid就行了我日
+                'blogger_time':that.data.postValue.blogger_time, //发布时间
+                'lostthing_topic':that.data.postValue.lostthing_topic, //标题
+                'lostthing_time':that.data.postValue.lostthing_time, //丢失时间，以字符串直接储存
+                'lostthing_class':  that.data.postValue.lostthing_class, //发布类别（不需要可以不填充
+                'lostthing_detail':that.data.postValue. lostthing_detail, //主要内容
+                'lostthing_space':that.data.postValue.lostthing_space, //丢失地点
+                'lostthing_space_detail':that.data.postValue.lostthing_space_detail, //丢失详细地址
+                'lostthing_contact':that.data.postValue.lostthing_contact, //联系方式
+                'specialcode':app.globalData.openid+year+month+day+hour+minute+second,
+            // readingtimes: 0, //阅读次数
+            // comments: 0, //评论数量
+            // favour: 0, //点赞数量
+            // had_favour: 0, //点赞判断 
+            // 这几个不用在这个时候发给后面 但是后面要存起来 方便以后的判断
+            },
+            header: {
+                'content-type': 'application/x-www-form-urlencoded;charset=utf-8'  
+            },
+            success(res){
+                console.log(res.data);
+                if(res.data=="发布成功")
+                wx.showModal({
+                    title: '提示',
+                    content: '发布成功！',
+                  })
+            }
+        })
+        // 'photos': [], //放置于主要内容下方的图片 等request第一次结束以后再放进去
+        //下面是上传图片到服务器
+        console.log(that.data.postValue.photos.length)
+        //计算photo数组长度 方便上传
+        for(var i=0;i<that.data.postValue.photos.length;i++){
+            wx.uploadFile({
+              filePath: that.data.postValue.photos[i],
+             //filePath: "C:/Users/林木/Documents/GitHub/wechat_scnusay/miniprogram-1/img/black.png", 
+              name: 'file',
+              url: 'https://www.scnusay.cc/lostdetail/lostdetailphoto/savelostphoto.php',
+              header: {
+                "Content-Type": "multipart/form-data"
+              },
+              formData:{
+                  "openid":app.globalData.openid,
+                  'specialcode':app.globalData.openid+year+month+day+hour+minute+second,
+              },
+              success:function(res){
+                console.log(res.data)
+                wx.showToast({
+                    title: '正在跳转到详情页面', //提示内容
+                    icon: 'none' //提示图标
+                })
+                wx.navigateTo({
+                  url: '/pages/lostthing/details',
+                })
+              },
+              fail:function(res){
+                  console.log(123456);
+              }
+
+            })
+        }
+
+
+
+        // wx.navigateBack({
+        //     // 返回上 1 页
+        //     delta: 1
+        // })
+>>>>>>> Stashed changes
     }
 })
