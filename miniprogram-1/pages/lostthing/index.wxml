@@ -1,8 +1,11 @@
+<!-- 我还没有做具体的跳转页面，同时没有实现swiper自动高度，大致需要彰显的内容就这些 -->
+<!-- 标签模块是需要删除的，右上角的“失物求寻”可以去掉。样式里面的"list"不要删除 -->
+<!-- 顶部导航栏 -->
 <view class="nav-wrap" style="height: {{navH*2+20}}px;position: relative;">
-<!-- 华师小标+返回首页效果 -->
+    <!-- 华师小标+返回首页效果 -->
     <view style="display: flex;flex-wrap: wrap;height:100%;">
         <navigator hoverClass="none" url="/pages/index/index1" open-type="switchTab">
-                    <image class="back-pre" src="../../assets/images/icon/search.png" style="height:36px;width:36px;margin: {{navH*1}}px 0 0 {{navH*0.4}}px;"></image>
+            <image class="back-pre" src="../../assets/images/icon/search.png" style="height:36px;width:36px;margin: {{navH*1}}px 0 0 {{navH*0.4}}px;"></image>
         </navigator>
     </view>
     <!-- 搜索栏目 -->
@@ -14,61 +17,133 @@
     </view>
 
 </view>
-<!-- <view style="height:{{navH*2+20}}px"></view> -->
-<!-- 首页 -->
-
-<!-- 滑动大图 -->
-<view class="swiper-container">
-    <swiper class="swiper1" indicator-dots="true" indicator-active-color="#fff" autoplay circular>
-        <swiper-item wx:for="{{photos}}" wx:key="id">
-            <image mode="aspectFill" bindtap="tapBanner" src="{{item}}" />
-        </swiper-item>
-    </swiper>
-</view>
+<!-- 顶部导航栏结束 -->
 <!-- 发布入口 -->
 <navigator class="guide" url="/pages/lostthing/send" open-type="navigate">
     <view class="lostcenter">发布</view>
 </navigator>
-<!-- 导航栏 -->
-<view class="grid-list">
-        <view class="grid-item" wx:for="{{sortlist}}" hover-class="grid-item-hover" hover-stay-time="100" wx:key="sortid" bindtap="class_choose" data-sortid="{{item.sortid}}">
-        <!-- style="background-color:{{item.chosen_judge}}"> -->
-            <image src="{{item.icon}}"></image>
-            <text>{{item.text}}</text>
-        </view>
+<!-- 发布入口结束 -->
+<!-- 切换栏 -->
+<view class='swipertab'>
+    <view class="tabitem {{currentab==0 ? 'active' : ''}}" data-current="0" bindtap='clicktab1'>拾主</view>
+    <view class="tabitem {{currentab==1 ? 'active' : ''}}" data-current="1" bindtap='clicktab2'>失主</view>
+    <view class="tabitem {{currentab==2 ? 'active' : ''}}" data-current="2" bindtap='clicktab3'>我的</view>
 </view>
-<!-- 这里就是广场 -->
-<!-- 以一个作为案例 -->
-<view class="box" wx:for="{{post}}" wx:key="index">
-        <!-- 头像栏模块 -->
-        <view class="box1" bindtap="jumptodetails" data-index="{{index}}">
-            <image src="{{item.blogger_avatar}}"></image>
-            <text class="text1">{{item.lostthing_topic}}</text>
-            <text class="text2">{{item.blogger_time}}</text>
-        </view>
-        <view class="box-way">{{item.lostthing_class}}</view>
-        <!-- 主要内容模块 -->
-        <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
-            <view style="margin: 20rpx 0 40rpx 0;"><text>{{item.more_Infor}}</text></view>
-            <image wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
-        </view>
-        <!-- 文后小标模块 -->
-        <view class="box3">
-            <view class="tags" wx:for="{{item.tags}}">{{item}}</view>
-            <view class="post-data">
-                <!-- 点赞   -->
-                <view class="foot" bindtap="favourMe" data-id="{{item.blogger_id}}">
-                    <image class="favour_img" src="{{item.favour_src}}"></image>
-                    <text class="favour_num">{{item.favour}}</text>
+<!-- 切换栏结束 -->
+<!-- 使用<swiper></swiper>来承担切换内容 -->
+<swiper class="container" style="height:{{height}}" bindchange="changeswiper">
+    <swiper-item class="container1">
+        <view class="list">
+            <!-- 以一个作为案例 -->
+            <view class="box" wx:for="{{post}}" wx:key="index">
+                <!-- 头像栏模块 -->
+                <view class="box1" bindtap="jumptodetails" data-index="{{index}}">
+                    <image src="{{item.blogger_avatar}}"></image>
+                    <text class="text1">{{item.lostthing_topic}}</text>
+                    <text class="text2">{{item.blogger_time}}</text>
                 </view>
-                <view class="foot">
-                    <image class="foot_img" src="/assets/images/sort/liuyan.png"></image>
-                    <text class="foot_num">{{item.comments}}</text>
+                <view class="box-way">{{item.lostthing_class}}</view>
+                <!-- 主要内容模块 -->
+                <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
+                    <view style="margin: 20rpx 0 40rpx 0;"><text>{{item.more_Infor}}</text></view>
+                    <image wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
                 </view>
-                <view class="foot">
-                    <image class="foot_img" src="/assets/images/sort/lookup.png"></image>
-                    <text class="foot_num">{{item.readingtimes}}</text>
+                <!-- 文后小标模块 -->
+                <view class="box3">
+                    <view class="tags" wx:for="{{item.tags}}">{{item}}</view>
+                    <view class="post-data">
+                        <!-- 点赞   -->
+                        <view class="foot" bindtap="favourMe" data-id="{{item.blogger_id}}">
+                            <image class="favour_img" src="{{item.favour_src}}"></image>
+                            <text class="favour_num">{{item.favour}}</text>
+                        </view>
+                        <view class="foot">
+                            <image class="foot_img" src="/assets/images/sort/liuyan.png"></image>
+                            <text class="foot_num">{{item.comments}}</text>
+                        </view>
+                        <view class="foot">
+                            <image class="foot_img" src="/assets/images/sort/lookup.png"></image>
+                            <text class="foot_num">{{item.readingtimes}}</text>
+                        </view>
+                    </view>
                 </view>
             </view>
         </view>
-    </view>
+    </swiper-item>
+    <swiper-item class="container1">
+        <view class="list">
+            <!-- 以一个作为案例 -->
+            <view class="box" wx:for="{{post}}" wx:key="index">
+                <!-- 头像栏模块 -->
+                <view class="box1" bindtap="jumptodetails" data-index="{{index}}">
+                    <image src="{{item.blogger_avatar}}"></image>
+                    <text class="text1">{{item.lostthing_topic}}</text>
+                    <text class="text2">{{item.blogger_time}}</text>
+                </view>
+                <view class="box-way">{{item.lostthing_class}}</view>
+                <!-- 主要内容模块 -->
+                <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
+                    <view style="margin: 20rpx 0 40rpx 0;"><text>{{item.more_Infor}}</text></view>
+                    <image wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
+                </view>
+                <!-- 文后小标模块 -->
+                <view class="box3">
+                    <view class="tags" wx:for="{{item.tags}}">{{item}}</view>
+                    <view class="post-data">
+                        <!-- 点赞   -->
+                        <view class="foot" bindtap="favourMe" data-id="{{item.blogger_id}}">
+                            <image class="favour_img" src="{{item.favour_src}}"></image>
+                            <text class="favour_num">{{item.favour}}</text>
+                        </view>
+                        <view class="foot">
+                            <image class="foot_img" src="/assets/images/sort/liuyan.png"></image>
+                            <text class="foot_num">{{item.comments}}</text>
+                        </view>
+                        <view class="foot">
+                            <image class="foot_img" src="/assets/images/sort/lookup.png"></image>
+                            <text class="foot_num">{{item.readingtimes}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </swiper-item>
+    <swiper-item class="container1">
+        <view class="list">
+            <!-- 以一个作为案例 -->
+            <view class="box" wx:for="{{post}}" wx:key="index">
+                <!-- 头像栏模块 -->
+                <view class="box1" bindtap="jumptodetails" data-index="{{index}}">
+                    <image src="{{item.blogger_avatar}}"></image>
+                    <text class="text1">{{item.lostthing_topic}}</text>
+                    <text class="text2">{{item.blogger_time}}</text>
+                </view>
+                <view class="box-way">{{item.lostthing_class}}</view>
+                <!-- 主要内容模块 -->
+                <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
+                    <view style="margin: 20rpx 0 40rpx 0;"><text>{{item.more_Infor}}</text></view>
+                    <image wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
+                </view>
+                <!-- 文后小标模块 -->
+                <view class="box3">
+                    <view class="tags" wx:for="{{item.tags}}">{{item}}</view>
+                    <view class="post-data">
+                        <!-- 点赞   -->
+                        <view class="foot" bindtap="favourMe" data-id="{{item.blogger_id}}">
+                            <image class="favour_img" src="{{item.favour_src}}"></image>
+                            <text class="favour_num">{{item.favour}}</text>
+                        </view>
+                        <view class="foot">
+                            <image class="foot_img" src="/assets/images/sort/liuyan.png"></image>
+                            <text class="foot_num">{{item.comments}}</text>
+                        </view>
+                        <view class="foot">
+                            <image class="foot_img" src="/assets/images/sort/lookup.png"></image>
+                            <text class="foot_num">{{item.readingtimes}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </swiper-item>
+</swiper>
