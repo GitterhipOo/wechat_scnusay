@@ -1,0 +1,132 @@
+/* pages/lostthing/index.wxss */
+page{
+    height: 100%;
+}
+/* 搜索框 */
+.search {
+    z-index: 9999999;
+    height: 100%;
+    width: 110%;
+    border-radius: 50rpx;
+    background-color: #eee;
+    color: darkgray;
+}
+
+.search-hover {
+    z-index: 9999999;
+    height: 100%;
+    width: 110%;
+    border-radius: 50rpx;
+    background-color: rgb(209, 209, 209);
+}
+
+/* 搜索框结束 */
+/* 发布 */
+.guide {
+    z-index: 99999;
+    position: fixed;
+    top: 200rpx;
+    right: 40rpx;
+    margin: 3% 1%;
+    height: 90rpx;
+    width: 90rpx;
+    border-radius: 45rpx;
+    background-color: #fff;
+    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
+}
+
+.guide .lostcenter {
+    display: block;
+    text-align: center;
+    line-height: 90rpx;
+    color: #aaa;
+}
+/* 切换栏 */
+.tabitem{
+    display: inline-block;
+    background-color: rgb(185, 144, 144);
+    margin: 0 20rpx;
+}
+/* swiper模块 */
+
+/* 帖子数据 */
+.box {
+    position: relative;
+    margin: 10rpx 0;
+    background-color: #fff;
+}
+
+.box1 {
+    height: 100rpx;
+    width: 500rpx;
+}
+
+.box1 image {
+    float: left;
+    margin: 5rpx 0 5rpx 10rpx;
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 90rpx;
+}
+
+.box1 .text1 {
+    float: left;
+    margin-top: 10rpx;
+    margin-left: 20rpx;
+    font-weight: 700;
+    font-size: 34rpx;
+    width: 380rpx;
+}
+
+.box1 .text2 {
+    float: right;
+    font-size: 20rpx;
+    color: #aaa;
+}
+
+.box-way {
+    position: absolute;
+    right: 10rpx;
+    top: 10rpx;
+    color: rgb(53, 192, 247);
+    font-size: 40rpx;
+}
+
+.box2 {
+    margin: 20rpx 10rpx;
+    /* height: 400rpx; */
+}
+
+.box2 text {
+    font-size: 30rpx;
+    width: 750rpx;
+    height: 30rpx;
+}
+
+.box2 image {
+    margin: 20rpx 5rpx;
+    width: 230rpx;
+    height: 130rpx;
+}
+
+.box3 .tags {
+    display: inline-block;
+    background-color: rgb(75, 200, 238);
+    border: 1rpx solid rgb(1, 1, 1);
+    margin: 5rpx;
+    padding: 2rpx;
+}
+
+.box3 .post-data {
+    float: right;
+}
+
+.box3 .foot {
+    float: right;
+}
+
+.box3 .foot image {
+    display: inline-block;
+    width: 35rpx;
+    height: 35rpx;
+}

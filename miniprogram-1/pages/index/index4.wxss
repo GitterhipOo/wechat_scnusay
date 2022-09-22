@@ -1,0 +1,177 @@
+page{
+    height: 100%;
+}
+  /* 头像 */
+  .userinfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #aaa;
+    justify-content:center;
+    margin-top: 10%;
+  }
+  .userinfo-nickname{
+      font-size: 21px;
+  }
+  
+  .userinfo-avatar {
+    overflow: hidden;
+    width: 170rpx;
+    height: 170rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+  }
+.loginbutton{
+  margin-right: 10px !important;
+  width: 80% ;
+}
+.header {
+    margin: 90rpx 0 90rpx 50rpx;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    width: 650rpx;
+    height: 300rpx;
+    line-height: 450rpx;
+  }
+  .header image {
+    width: 200rpx;
+    height: 200rpx;
+  }
+  .content {
+    margin-left: 50rpx;
+    margin-bottom: 90rpx;
+  }
+  .content text {
+    display: block;
+    color: #9d9d9d;
+    margin-top: 40rpx;
+  }
+  .bottom {
+    border-radius: 80rpx;
+    margin: 70rpx 50rpx;
+    font-size: 35rpx;
+    width: 200px !important ;
+    background-color: rgb(80, 123, 168) !important;
+  }
+  .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  } 
+  .container2 {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    margin-top: 10%;
+  } 
+  .welcometext{
+      height: 200rpx;
+      color: white;
+      font-size: 25px;
+      font-weight: 800;
+      
+  }
+  .welcomelogo{
+      width: 200rpx;
+      height: 200rpx;
+      margin-left: 30rpx;
+      margin-top: 30rpx;
+  }
+  .headwelcome{
+      display: flex;
+      margin-top: 15%;
+      width: 90%;
+      justify-content: space-evenly;
+      height: 25%;
+  }
+  @keyframes animatedBackground {
+    from { background-position: 0 0; }
+    to { background-position: 100% 0; }
+  }
+  #animate-area { 
+    width: 100%; 
+    height: 100%; 
+    /* background-image: url(https://s1.328888.xyz/2022/05/15/qFhjW.png); */
+    background-image: url(https://s1.328888.xyz/2022/05/15/qFDnd.png);
+    background-position: 0px 0px;
+    background-repeat: repeat-x;
+    animation: animatedBackground 40s linear infinite;
+  }
+  .down_welcome{
+      width: 90%;
+      height: 63%;
+      background-color:rgb(255, 255, 255,0.3);
+      border-radius: 15px;
+  }
+  .loginnow{
+      margin-top: 60px;
+      font-size: 45px;
+      font-weight: 1000;
+      text-align: center;
+      font-family: youyuan;
+  }
+
+  .userknow{
+    text-align: center;
+    font-size: 13px;
+    color: gray;
+  }
+ /* pages/login/login.wxss */
+page{
+    left:10rpx;
+    right:10rpx;
+    background-color:rgb(245, 245, 245);
+  }
+  .goto_updateinfo{
+      display: flex;
+      width: 600rpx;
+      height: 130rpx;
+      background-color: #fff;
+      margin: auto ;
+      margin-top: 60px;
+      margin-bottom: 0px;
+      border-radius: 30rpx;
+      text-align: center;
+      justify-content: space-around;
+      align-items: center;
+      box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
+  }
+  .update{
+      background-color: skyblue;
+      border-radius: 30rpx;
+      width: 60px;
+      height: 30px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+     
+  }
+  .goto_updateinfo text{
+      font-size: 35rpx;
+  }
+  .update text{
+      text-align: center;
+  }
+  .updateimg{
+    width: 60%;
+    height: 100px;
+    margin-left: 20%;
+    margin-top: 20px;
+}
+.goto_updateinfo2{
+    display: flex;
+    width: 600rpx;
+    height: 130rpx;
+    background-color: #fff;
+    margin-top: 15px;
+    border-radius: 30rpx;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
+}

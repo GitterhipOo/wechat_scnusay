@@ -1,0 +1,17 @@
+<!--pages/team/search/index.wxml-->
+<!-- <text>pages/team/search/index.wxml</text> -->
+<view>
+     <view>
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+            <!-- 搜索框 -->
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="请输入搜索内容"/>
+                </view>
+            </view>
+            <!-- 取消搜索 -->
+            <view class="weui-search-bar__cancel-btn" bindtap='hideInput'>取消</view>
+        </view>
+    </view>
+</view>

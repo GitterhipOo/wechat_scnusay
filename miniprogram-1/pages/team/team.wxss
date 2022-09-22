@@ -1,0 +1,224 @@
+/* pages/team/team.wxss */
+.search{
+    width: 98%;
+  }
+  .search_arr {
+      margin-top: 10px;
+    border: 1px solid #d0d0d0;
+    border-radius: 10rpx;
+    margin-left: 20rpx;
+  }
+  .search_arr input{
+    margin-left: 60rpx;
+    height: 60rpx;
+    border-radius: 5px;
+  }
+  .sousuo {
+    padding-left: 38%;
+    width: 15%;
+    line-height: 150%;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .page_row{
+    display: flex;
+    flex-direction: row
+  }
+  .searchcion {
+    margin: 10rpx 10rpx 10rpx 10rpx;
+    position: absolute;
+    margin-left:38%;
+    z-index: 2;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+   }
+
+   page{
+    background-color: #f3f3f3;
+}
+.top_alarm{
+    line-height: 40px;
+    height: 40px;
+    background-color:rgb(238, 216, 174); 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.out_index_top{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100px;
+    width: 94%;
+    padding-top: 10px;
+}
+
+ .alarm{
+    color: rgb(32, 29, 221);
+    font-weight: 700;
+ }
+
+ .index_three_box{
+     text-align: center;
+     padding-left: 20px;
+ }
+
+ .img1{
+     height:55px;
+     width: 55px;
+    border-radius: 50%;
+    overflow:hidden;
+ }
+
+ .under_img{
+    font-size: 11.0px;
+    font-weight: 700;
+ }
+
+ 
+.mid_zhaomu{
+    border-top: 1px solid;
+    margin-top: -12px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; 
+    /* padding-bottom: 10px; */
+}
+
+.mid_jpg{
+    height: 23px;
+    width: 23px;
+    padding-right: 10px;
+}
+
+.mid_jpg_text{
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.chat{
+    padding-top: 10px;
+    margin: 10px auto;
+    border: rgb(32, 29, 221) solid 1px;
+    width: 95%;
+
+}
+
+.touxiang{
+    height:45px;
+     width: 45px;
+    border-radius: 50%;
+    overflow:hidden;
+}
+
+.touxianglan{
+    /* position: absolute; */
+    margin-left: 5% ;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left; 
+}
+
+.name{
+    padding-left: 10px;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.time{
+    font-weight: 450;
+    font-size: 13px;
+}
+
+.in_contact{
+    padding-top: 10px;
+    padding-left: 10px;
+    background-color: rgba(128, 124, 124, 0.356);
+    width: 90%;
+    margin:auto;
+    padding-bottom: 10px;
+}
+
+.topic{
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.team_name{
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.xiaoqu{
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.kuaxiao{
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.detail{
+    font-weight: 700;
+    font-size: 14px;
+    
+}
+
+.contact{
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.bottom{
+        padding-top: 8px;
+        padding-bottom: 6px;
+  }
+  .shoucang{
+    color: #000000;
+    border: 1px solid #000000;
+    left: 10%;
+  }
+  
+  .pinglun{
+    position: absolute;
+    right: 11.5%;
+    color: #000000;
+    border: 1px solid #000000;
+  }
+
+.call{
+    left: 36.1%;
+    position: absolute;
+    color: #000000;
+    border: 1px solid #000000;
+}
+
+.detail{
+
+    font-weight: 530;
+    color: rgb(32, 27, 27);
+
+  font-size: 35rpx;
+
+  text-overflow:ellipsis;
+
+  z-index: -1;
+
+  display: -webkit-box;
+
+  word-break: break-all;
+
+  -webkit-box-orient: vertical;
+
+  -webkit-line-clamp: 3;
+
+  overflow: hidden;
+}

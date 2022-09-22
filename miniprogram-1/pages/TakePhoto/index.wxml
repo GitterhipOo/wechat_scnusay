@@ -1,0 +1,13 @@
+<view class="nav-wrap" style="height: {{navH*2+20}}px;">
+    <!-- 自定义导航栏 -->
+    <view class="nav-title" style="line-height: {{navH*2+44}}px;">华师说</view>
+    <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
+        <navigator hoverClass="none" url="/pages/serach/search">
+            <view class="nav-capsule">
+                <view class="topimage">
+                    <image class="back-pre" src="../../assets/images/icon/search.png" style="height:35px;width:35px;"></image>
+                </view>
+            </view>
+        </navigator>
+    </view>
+</view>

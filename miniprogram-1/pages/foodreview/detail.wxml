@@ -1,0 +1,52 @@
+<view class="nav-wrap" style="height: {{navH*2+20}}px;">
+    <!-- 自定义导航栏 -->
+    <view class="nav-title" style="line-height: {{navH*2+44}}px;">美食详情</view>
+    <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
+        <navigator hoverClass="none" open-type="navigateBack" >
+                    <image class="back-pre" src="../../assets/images/sort/back.png" style="height:50rpx;width:50rpx;margin-top: 50rpx;"></image>
+        </navigator>
+    </view>
+</view>
+<view class="pubinfo" style="margin-top:{{navH*4+50}}rpx">  
+        <image src="{{icon}}" class="headpic" mode="aspectFill"></image>
+        <view class="titletime">
+            <view><text>{{name}}</text></view>
+            <view class="time"><text >{{time}}</text>
+            </view>
+        </view>
+        <text class="price">{{areaname}}</text> 
+</view>
+<view  class="detail"  style="background-color: #ffffff;width: 698rpx; margin: 0 auto; border: 1px solid #ffffff; border-radius: 20rpx;">
+    <view class="view1">
+        {{infotitle}}
+    </view>
+    <view  class="view2">
+        {{infodetail}}
+    </view>
+    <image  wx:for="{{infoimage}}"wx:key="index" src="{{item}}" class="myimg" mode="widthFix"></image>
+    
+</view>
+<view class="catch">
+<view class="view1">
+    <image src="../../assets/images/sort/zan2.png" bindtap="gopraise" class="img1"></image>
+    <image src="../../assets/images/sort/share.png" bindtap="goshare" class="img1"></image>
+</view>
+<view class="view2">
+    <image src="https://s1.328888.xyz/2022/07/23/mHKKo.md.png" class="img2"></image><text>{{lookup}}</text>
+     <image src="https://s1.328888.xyz/2022/07/23/mHKKo.md.png" class="img2"></image><text>{{nice}}</text>
+     <image src="https://s1.328888.xyz/2022/07/23/mHKKo.md.png" class="img2"></image><text>{{talk}}</text>
+</view>
+</view>
+<view class="carea">
+    <view>
+        <text class="c1">评论区 </text><text class="c2">/{{talk}}</text>
+    </view>
+<!-- 评论 -->
+<view class="allinput"  >
+    <input class="input1" type="text" placeholder="发表友好评论哦" id="myinput"/> 
+    <view class="post">发送</view>       
+</view>
+<view style="background-color: #ffffff;width: 100%;height: 100rpx;"> 
+</view>
+</view>
+

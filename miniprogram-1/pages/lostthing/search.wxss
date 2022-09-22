@@ -1,0 +1,21 @@
+/* pages/lostthing/search.wxss */
+
+.search {
+    z-index: 99999;
+    margin:10rpx auto;
+    height: 60rpx;
+    width:700rpx;
+    border-radius: 50rpx;
+    background-color: rgb(255, 255, 255);
+    line-height: 40rpx;
+    color: darkgray;
+  }
+  .search-hover{
+    z-index: 99999;
+    margin:10rpx auto;
+    height: 60rpx;
+    width:700rpx;
+    border-radius: 50rpx;
+    background-color: rgb(209, 209, 209);
+    line-height: 40rpx;
+  }

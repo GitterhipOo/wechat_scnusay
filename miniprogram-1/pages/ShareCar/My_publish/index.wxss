@@ -1,0 +1,98 @@
+/* pages/ShareCar/My_publish/index.wxss */
+.chat{
+    padding-top: 10px;
+    margin: 10px auto;
+    border: rgb(32, 29, 221) solid 1px;
+    width: 95%;
+
+}
+
+.touxiang{
+    height:45px;
+     width: 45px;
+    border-radius: 50%;
+    overflow:hidden;
+}
+
+.touxianglan{
+    margin-left: -30% ;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; 
+}
+
+.name{
+    padding-left: 10px;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.time{
+    font-weight: 450;
+    font-size: 13px;
+}
+
+.in_contact{
+    padding-top: 10px;
+    padding-left: 10px;
+    background-color: rgba(128, 124, 124, 0.356);
+    width: 90%;
+    margin:auto;
+    padding-bottom: 10px;
+}
+
+.topic{
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.date{
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.renshu{
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.qidian{
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.price_share{
+    font-weight: 700;
+    font-size: 14px;
+    
+}
+
+.contact{
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.bottom{
+        padding-top: 8px;
+  }
+  .share{
+    color: #000000;
+    border: 1px solid #000000;
+    left: 10%;
+  }
+  
+  .delete{
+    position: absolute;
+    right: 11.5%;
+    color: #000000;
+    border: 1px solid #000000;
+  }
+
+.look{
+    left: 36.1%;
+    position: absolute;
+    color: #000000;
+    border: 1px solid #000000;
+}

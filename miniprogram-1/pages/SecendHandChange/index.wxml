@@ -1,0 +1,54 @@
+<view class="nav-wrap" style="height: {{navH*2+20}}px;">
+    <!-- 自定义导航栏 -->
+    <view class="nav-title" style="line-height: {{navH*2+44}}px;">闲置交易</view>
+    <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
+        <navigator hoverClass="none" open-type="switchTab" url="/pages/index/index1">
+                    <image class="back-pre" src="../../assets/images/sort/back.png" style="height:50rpx;width:50rpx;margin-top: 50rpx;"></image>
+        </navigator>
+    </view>
+</view>
+<cover-image src="../../assets/images/sort/publish2.png" bindtap="gotopublish" style=" height: 80rpx;width: 80rpx; position: fixed;top:1000rpx; left:670rpx;"></cover-image>
+<!-- 搜索 -->
+<view class="search" style="margin-top:{{navH*4+50}}rpx" >
+    <input type="text" placeholder="搜索关键词" id="mysearch"/> 
+    <button type="primary" style="border-radius: 30rpx;height: 60rpx;width: 160rpx; font-size: 20rpx; ">搜索</button>
+</view>
+<!-- 导航栏 -->
+<view class="grid-list">
+        <view class="grid-item" wx:for="{{sortlist}}" wx:key="sortid" bindtap="{{item.jump}}">
+            <image src="{{item.icon}}"></image>
+            <text>{{item.text}}</text>
+        </view>
+</view>
+<!-- 商品发布 -->
+<view class="pubinfo" wx:for="{{infolist}}" wx:key="infoid" data-id="{{item.infoid}}" data-name="{{item.name}}" bindtap="godetail"> 
+   <view class="info1">
+        <image src="{{item.icon}}" class="headpic" mode="aspectFill"></image>
+        <view class="titletime">
+            <view class="text1">{{item.infotitle}}</view>
+            <view class="time"><text >{{item.time}}</text></view>
+        </view>
+        <text class="price">{{item.infoprice}}</text>
+    </view>
+    <view class="info2">
+        <view class="info3">
+            <text>{{item.infodetail}}</text> 
+        </view>
+        <view class="img1">
+            <image src="{{item.infoimage}}" class="infoimg" mode="aspectFill"></image>
+        </view>
+        <view class="info4">
+        <view class="view1"></view>
+        <view class="view2"> 
+            <image src="../../assets/images/sort/lookup.png" class="otherimg"></image><text>{{item.lookup}}</text>
+            <image src="../../assets/images/sort/zan.png" class="otherimg"></image><text>{{item.nice}}</text>
+            <image src="../../assets/images/sort/liuyan.png" class="otherimg"></image><text>{{item.talk}}</text></view>
+        </view>
+    </view>
+</view>
+
+
+
+
+
+
