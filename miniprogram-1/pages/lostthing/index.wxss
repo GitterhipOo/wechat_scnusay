@@ -1,10 +1,7 @@
 /* pages/lostthing/index.wxss */
-
 page{
     height: 100%;
 }
-
-
 /* 搜索框 */
 .search {
     z-index: 9999999;
