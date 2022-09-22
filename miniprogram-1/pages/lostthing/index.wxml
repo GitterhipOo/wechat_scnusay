@@ -31,6 +31,7 @@
 </view>
 <!-- 切换栏结束 -->
 <!-- 使用<swiper></swiper>来承担切换内容 -->
+<swiper class="container" style="height:100%" bindchange="changeswiper" current="{{current_Page}}">
 <swiper class="container" style="height:{{height}}" bindchange="changeswiper" current="{{current_Page}}">
     <swiper-item class="container1">
         <view class="list">
@@ -68,7 +69,6 @@
                     </view>
                 </view>
             </view>
-=======
 <!-- 这里就是广场 -->
 <!-- 以一个作为案例 --> 
 
