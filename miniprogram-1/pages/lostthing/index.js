@@ -292,7 +292,6 @@ Page({
                 })
             })
         }, 100)
-        var that=this;
         this.setData({
             navH: app.globalData.navHeight
         });
