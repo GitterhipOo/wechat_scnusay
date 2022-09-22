@@ -71,14 +71,15 @@
     margin-top: 10rpx;
     margin-left: 20rpx;
     font-weight: 700;
-    font-size: 34rpx;
+    font-size: 38rpx;
     width: 380rpx;
 }
 
 .box1 .text2 {
-    float: right;
-    font-size: 20rpx;
+    float: left;
+    font-size: 25rpx;
     color: #aaa;
+    margin-left: 20rpx;
 }
 
 .box-way {

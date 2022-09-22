@@ -53,12 +53,12 @@
         <!-- 联系方式+标签 -->
         <view class="moreInfor">
             <view style="position: absolute;">{{lostthing_Time_Binding}}时间：</view>
-            <input type="number" maxlength="17" style="float:left;; margin: 0rpx 140rpx; " placeholder="9月19日18:00:00" value="{{postValue.lostthing_time}}" bindinput="adInputChange" data-info="lostthing_time"/>
+            <input type="number" maxlength="17" style="float:left;; margin: 0rpx 140rpx; " placeholder="请填写时间" value="{{postValue.lostthing_time}}" bindinput="adInputChange" data-info="lostthing_time"/>
         </view>
         <view class="divline"></view>
         <view class="moreInfor">
             <view style="position: absolute;">联系方式：</view>
-            <input type="text" maxlength="17" style="float:left;; margin: 0rpx 140rpx; " placeholder="19999999999" value="{{postValue.lostthing_contact}}" bindinput="adInputChange" data-info="lostthing_contact"/>
+            <input type="text" maxlength="17" style="float:left;; margin: 0rpx 140rpx; " placeholder="请输入联系方式" value="{{postValue.lostthing_contact}}" bindinput="adInputChange" data-info="lostthing_contact"/>
         </view>
         <view class="divline"></view>
         <view class="moreInfor">
