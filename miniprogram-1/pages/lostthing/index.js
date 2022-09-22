@@ -154,7 +154,7 @@ Page({
                 comments: 5, //评论数量
                 favour: 20000, //点赞数量
                 had_favour: 0, //点赞判断
-                favour_src: "/assets/images/icon/unfavour.png", //点赞图标
+             //   favour_src: "/assets/images/icon/unfavour.png", //点赞图标
             },
             {
                 blogger_id: 2, //文章所属id
@@ -174,7 +174,7 @@ Page({
                 comments: 5, //评论数量
                 favour: 20000, //点赞数量
                 had_favour: 0, //点赞判断
-                favour_src: "/assets/images/icon/unfavour.png", //点赞图标
+              //  favour_src: "/assets/images/icon/unfavour.png", //点赞图标
             },
         ],
         //post2为捡到物品，其中lostthing_class = 2
@@ -292,9 +292,14 @@ Page({
                 })
             })
         }, 100)
+        var that=this;
         this.setData({
             navH: app.globalData.navHeight
         });
+            //onload 请求一次首页的数据 覆盖掉原始本地的数组 
+            //在点击的时候带数组进入新的页面
+
+
     },
     logo: function (e) {
         // 发起网络请求
@@ -303,6 +308,9 @@ Page({
             url: '/pages/index/index',
         })
     },
+
+ 
+
 
     /**
      * 生命周期函数--监听页面初次渲染完成
