@@ -31,7 +31,44 @@
 </view>
 <!-- 切换栏结束 -->
 <!-- 使用<swiper></swiper>来承担切换内容 -->
-<swiper class="container" style="height:100%" bindchange="changeswiper" current="{{current_Page}}">
+<swiper class="container" style="height:{{height}}" bindchange="changeswiper" current="{{current_Page}}">
+    <swiper-item class="container1">
+        <view class="list">
+            <!-- 以一个作为案例 -->
+            <view class="box" wx:for="{{post0}}" wx:key="index">
+                <!-- 头像栏模块 -->
+                <view class="box1" bindtap="jumptodetails" data-index="{{index}}">
+                    <image src="{{item.blogger_avatar}}"></image>
+                    <text class="text1">{{item.lostthing_topic}}</text>
+                    <text class="text2">{{item.blogger_time}}</text>
+                </view>
+                <view class="box-way">{{item.lostthing_class==1?"丢失物品":"寻找物品"}}</view>
+                <!-- 主要内容模块 -->
+                <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
+                    <view style="margin: 20rpx 0 40rpx 0;"><text>{{item.lostthing_detail}}</text></view>
+                    <image wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
+                </view>
+                <!-- 文后小标模块 -->
+                <view class="box3">
+                    <view class="post-data">
+                        <!-- 点赞   -->
+                        <view class="foot" bindtap="favourMe" data-id="{{item.blogger_id}}">
+                            <image class="favour_img" src="{{item.favour_src}}"></image>
+                            <text class="favour_num">{{item.favour}}</text>
+                        </view>
+                        <view class="foot">
+                            <image class="foot_img" src="/assets/images/sort/liuyan.png"></image>
+                            <text class="foot_num">{{item.comments}}</text>
+                        </view>
+                        <view class="foot">
+                            <image class="foot_img" src="/assets/images/sort/lookup.png"></image>
+                            <text class="foot_num">{{item.readingtimes}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </swiper-item>
     <swiper-item class="container1">
         <view class="list">
             <!-- 以一个作为案例 -->
@@ -45,12 +82,11 @@
                 <view class="box-way">{{item.lostthing_class==1?"丢失物品":"寻找物品"}}</view>
                 <!-- 主要内容模块 -->
                 <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
-                    <view style="margin: 20rpx 0 40rpx 0;"><text>{{item.more_Infor}}</text></view>
+                    <view style="margin: 20rpx 0 40rpx 0;"><text>{{item.lostthing_detail}}</text></view>
                     <image wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
                 </view>
                 <!-- 文后小标模块 -->
                 <view class="box3">
-                    <view class="tags" wx:for="{{item.tags}}">{{item}}</view>
                     <view class="post-data">
                         <!-- 点赞   -->
                         <view class="foot" bindtap="favourMe" data-id="{{item.blogger_id}}">
@@ -73,45 +109,7 @@
     <swiper-item class="container1">
         <view class="list">
             <!-- 以一个作为案例 -->
-            <view class="box" wx:for="{{post2}}" wx:key="index">
-                <!-- 头像栏模块 -->
-                <view class="box1" bindtap="jumptodetails" data-index="{{index}}">
-                    <image src="{{item.blogger_avatar}}"></image>
-                    <text class="text1">{{item.lostthing_topic}}</text>
-                    <text class="text2">{{item.blogger_time}}</text>
-                </view>
-                <view class="box-way">{{item.lostthing_class==1?"丢失物品":"寻找物品"}}</view>
-                <!-- 主要内容模块 -->
-                <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
-                    <view style="margin: 20rpx 0 40rpx 0;"><text>{{item.more_Infor}}</text></view>
-                    <image wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
-                </view>
-                <!-- 文后小标模块 -->
-                <view class="box3">
-                    <view class="tags" wx:for="{{item.tags}}">{{item}}</view>
-                    <view class="post-data">
-                        <!-- 点赞   -->
-                        <view class="foot" bindtap="favourMe" data-id="{{item.blogger_id}}">
-                            <image class="favour_img" src="{{item.favour_src}}"></image>
-                            <text class="favour_num">{{item.favour}}</text>
-                        </view>
-                        <view class="foot">
-                            <image class="foot_img" src="/assets/images/sort/liuyan.png"></image>
-                            <text class="foot_num">{{item.comments}}</text>
-                        </view>
-                        <view class="foot">
-                            <image class="foot_img" src="/assets/images/sort/lookup.png"></image>
-                            <text class="foot_num">{{item.readingtimes}}</text>
-                        </view>
-                    </view>
-                </view>
-            </view>
-        </view>
-    </swiper-item>
-    <swiper-item class="container1">
-        <view class="list">
-            <!-- 以一个作为案例 -->
-            <view class="box" wx:for="{{post}}" wx:key="index">
+            <view class="box" wx:for="{{post0}}" wx:key="index" wx:if="{{item.blogger_openid == 'ouctO4ypxLjQ_3t67gYI-urvPoQs'}}">
                 <!-- 头像栏模块 -->
                 <view class="box1" bindtap="jumptodetails" data-index="{{index}}">
                     <image src="{{item.blogger_avatar}}"></image>
@@ -121,12 +119,11 @@
                 <view class="box-way">{{item.lostthing_class}}</view>
                 <!-- 主要内容模块 -->
                 <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
-                    <view style="margin: 20rpx 0 40rpx 0;"><text>{{item.more_Infor}}</text></view>
+                    <view style="margin: 20rpx 0 40rpx 0;"><text>{{item.lostthing_detail}}</text></view>
                     <image wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
                 </view>
                 <!-- 文后小标模块 -->
                 <view class="box3">
-                    <view class="tags" wx:for="{{item.tags}}">{{item}}</view>
                     <view class="post-data">
                         <!-- 点赞   -->
                         <view class="foot" bindtap="favourMe" data-id="{{item.blogger_id}}">
