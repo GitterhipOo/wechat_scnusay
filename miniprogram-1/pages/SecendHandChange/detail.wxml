@@ -7,6 +7,7 @@
         </navigator>
     </view>
 </view>
+
 <view class="pubinfo" style="margin-top:{{navH*4+50}}rpx">  
         <image src="{{icon}}" class="headpic" mode="aspectFill"></image>
         <view class="titletime">
@@ -23,13 +24,14 @@
     <view  class="view2">
         {{infodetail}}
     </view>
-    <image  wx:for="{{infoimage}}"wx:key="index" src="{{item}}" class="myimg" mode="widthFix"></image>
+    <image  wx:for="{{infoimage}}"wx:key="index" src="{{item}}" data-src='{{item}}'class="myimg" mode="widthFix" bindtap="gopreview"></image>
     
 </view>
 <view class="catch">
 <view class="view1">
-    <image src="../../assets/images/sort/zan2.png" bindtap="gopraise" class="img1"></image>
-    <image src="../../assets/images/sort/share.png" bindtap="goshare" class="img1"></image>
+    <image src="../../assets/images/sort/zan2.png" bindtap="gopraise"  wx:if="{{show == false}}" class="img1"></image>
+    <image src="../../assets/images/sort/zan_active.png" bindtap="gopraise"  wx:else class="img1"></image>
+    <button open-type="share" size="mini" style=" align-items: center; justify-content: center;background-color:rgb(245, 245, 245)"><image src="../../assets/images/sort/share.png"  class="img11"></image></button>
 </view>
 <view class="view2">
     <image src="../../assets/images/sort/lookup.png" class="img2"></image><text>{{lookup}}</text>

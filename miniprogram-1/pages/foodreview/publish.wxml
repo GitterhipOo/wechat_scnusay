@@ -7,31 +7,32 @@
         </navigator>
     </view>
 </view>
+<form bindsubmit="formsubmit">
 <view style="margin-top:{{navH*4+50}}rpx;" >
-    <textarea   placeholder="给出你的标题吧" auto-focus="true" style="width: 750rpx;height: 120rpx;font-size: 50rpx; white-space:pre-wrap;text-indent: 15rpx;border-bottom: 1rpx solid rgb(233, 233, 233);"/>
+    <textarea   placeholder="给出你的标题吧" auto-focus="true" class="title"value='{{title}}' name="title" bindblur="titleblur"/>
 </view>
 <view>
-    <textarea   placeholder="说说你的看法（赞美/吐槽）" auto-focus="true" style="height: 248rpx; width: 750rpx;white-space:pre-wrap;text-indent: 15rpx;border-bottom: 1rpx solid rgb(233, 233, 233);"/>
+    <textarea   placeholder="说说你的看法（赞美/吐槽）" auto-focus="true" class="information" name="info" value='{{info}}' bindblur="infoblur"/>
 </view>
 <view>
-    <text>上传图片(最多3张)</text>
-</view>
-<!-- 相机 -->
-<view class="container">
-  <view class='img_body'>
-    <view class='img_list'>
-      <view class='img_li' wx:for="{{imglist}}" wx:key="index">
-        <image src="{{item}}" bindtap="previewImg"></image>
-        <image class='delete' bindtap="deleteImg" src="../../assets/images/sort/delete.png"></image>
-      </view>
-      <view class='addimg' bindtap='img_w_show'>
-        <image src='../../assets/images/sort/tianjia.png'></image>
-      </view>
-    </view>
-  </view>
-</view>
+        <text>上传图片(最多3张)</text>
+        </view>
+        <view class="container">
+            <view class='img_body'>
+                <view class='img_list'>
+                    <view class='img_li' wx:for="{{imglist}}" wx:key="index">
+                        <image src="{{item}}" bindtap="previewImg"></image>
+                        <image class='delete' bindtap="deleteImg" data-index="{{index}}" src="/assets/images/sort/delete.png"></image>
+                    </view>
+                    <view class='addimg' bindtap='img_w_show' wx:if="{{countNow<count}}">
+                        <image src='../../assets/images/sort/tianjia.png'></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="divline"></view>
 <view class="myinput">
-   <text class="price">地址</text><input type="text" class="input1" value="{{addr}}"/><image src="../../assets/images/sort/dingwei.png" bindtap="getAddress"></image>
+   <text class="price">地址</text><input type="text" class="input1" name="addr" value="{{addr}}"/><image src="../../assets/images/sort/dingwei.png" bindtap="getAddress"></image>
 </view>
 <!-- 下拉选择框 -->
 <view class='fenlei'>
@@ -39,7 +40,7 @@
   <!-- 下拉框 -->
     <view class='select_box'>
       <view class='select' catchtap='selectTaps'>
-        <text class='select_text'>{{selectDatas[indexs]}}</text>
+        <text class='select_text' name="category">{{selectDatas[indexs]}}</text>
         <image class='select_img {{shows&&"select_img_rotate"}}' src='../../assets/images/sort/xiasanjiao.png'></image>
       </view>
       <view class='option_box' style='height:{{shows?(selectDatas.length>5?300:selectDatas.length*60):0}}rpx;'>
@@ -48,10 +49,10 @@
     </view>
 </view>
 <view class="myinput">
-<text>姓名（可选）</text> <input type="text" />
+<text>姓名（可选）</text> <input type="text"  value="{{username}}" name="username" bindblur="usernameblur" />
 </view>
 <view class="myinput">
-<text>备注（可选）</text><input type="text" />
+<text>备注（可选）</text><input type="text" value="{{tip}}"  name="tip"bindblur="tipblur"/>
 </view>
-<button type="primary" style="border-radius: 40rpx;height: 80rpx;width: 700rpx; font-size: 30rpx;flex-wrap: wrap; letter-spacing:5rpx;">立即分享</button>
-
+<button form-type="submit" style="border-radius: 40rpx;height: 80rpx;width: 700rpx; font-size: 30rpx;flex-wrap: wrap; letter-spacing:5rpx;background-color: #32CD32;color: aliceblue;">立即分享</button>
+</form>

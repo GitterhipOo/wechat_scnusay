@@ -54,6 +54,9 @@ page {
     display: flex;
     line-height: 100rpx;
 }
+.catch .view1{
+    flex:1;
+}
 .catch .view2 .img2{
     height: 40rpx;
     width: 40rpx;
@@ -62,9 +65,11 @@ page {
     height: 60rpx;
     width: 60rpx;
     padding-left:20rpx;
+    padding-bottom: 20rpx;
 }
-.catch .view1{
-    flex: 1;
+.catch .view1 .img11{
+    height: 60rpx;
+    width: 60rpx;
 }
 .catch .view2{
     margin-top: 10rpx;

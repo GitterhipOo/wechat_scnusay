@@ -21,20 +21,22 @@
         {{infotitle}}
     </view>
     <view  class="view2">
-        {{infodetail}}
+        <text style="color: red;">{{addr}}</text>
+         {{infodetail}}
     </view>
-    <image  wx:for="{{infoimage}}"wx:key="index" src="{{item}}" class="myimg" mode="widthFix"></image>
+    <image  wx:for="{{infoimage}}"wx:key="index" src="{{item}}" data-src='{{item}}'class="myimg" mode="widthFix" bindtap="gopreview"></image>
     
 </view>
 <view class="catch">
 <view class="view1">
-    <image src="../../assets/images/sort/zan2.png" bindtap="gopraise" class="img1"></image>
-    <image src="../../assets/images/sort/share.png" bindtap="goshare" class="img1"></image>
+    <image src="../../assets/images/sort/zan2.png" bindtap="gopraise"  wx:if="{{show == false}}"class="img1"></image>
+    <image src="../../assets/images/sort/zan_active.png" bindtap="gopraise"  wx:else class="img1"></image>
+    <button open-type="share" size="mini" style=" align-items: center; justify-content: center;background-color:rgb(230, 228, 228)"><image src="../../assets/images/sort/share.png"  class="img11"></image></button>
 </view>
 <view class="view2">
-    <image src="https://s1.328888.xyz/2022/07/23/mHKKo.md.png" class="img2"></image><text>{{lookup}}</text>
-     <image src="https://s1.328888.xyz/2022/07/23/mHKKo.md.png" class="img2"></image><text>{{nice}}</text>
-     <image src="https://s1.328888.xyz/2022/07/23/mHKKo.md.png" class="img2"></image><text>{{talk}}</text>
+    <image src="../../assets/images/sort/lookup.png" class="img2"></image><text>{{lookup}}</text>
+     <image src="../../assets/images/sort/zan.png" class="img2"></image><text>{{nice}}</text>
+     <image src="../../assets/images/sort/liuyan.png" class="img2"></image><text>{{talk}}</text>
 </view>
 </view>
 <view class="carea">

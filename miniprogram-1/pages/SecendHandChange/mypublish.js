@@ -17,6 +17,7 @@ Page({
      */
     data: {
         navH: 0,
+        isloading:false,
         infolist: [
             {   
                 infoid: 1,
@@ -98,7 +99,31 @@ Page({
             }
         ]
     },
-
+    getinfo(){
+        this.setData({
+            isloading:true
+        })
+        wx.showLoading({
+          title: '数据加载中',
+        })
+        wx.request({
+          url: '',
+          method:'GET',
+          success: ({data:res}) => {
+              console.log(res)
+              this.setData({
+                  infolist: [...this.data.infolist,...res.data]
+              })
+          },
+          complete: () => {
+            wx.hideLoading()
+                this.setData({
+                    isloading:false
+                })
+              
+          }
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
@@ -106,6 +131,7 @@ Page({
         this.setData({
             navH: app.globalData.navHeight
           });
+        this.getinfo()
     },
     logo: function (e) {
         // 发起网络请求
@@ -147,14 +173,16 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh() {
-
+        wx.stopPullDownRefresh()
     },
 
     /**
      * 页面上拉触底事件的处理函数
      */
     onReachBottom() {
-
+        if(this.data.isloading) return
+        this.getinfo()
+        console.log('触发了上拉触底实践')
     },
 
     /**

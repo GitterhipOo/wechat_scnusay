@@ -1,5 +1,6 @@
 page {
     background-color: rgb(245, 245, 245)
+    
 }
 
 .pubinfo {
@@ -73,8 +74,12 @@ page {
     height: 60rpx;
     width: 60rpx;
     padding-left: 20rpx;
+    padding-bottom: 20rpx;
 }
-
+.catch .view1 .img11{
+    height: 60rpx;
+    width: 60rpx;
+}
 .catch .view1 {
     flex: 1;
 }
