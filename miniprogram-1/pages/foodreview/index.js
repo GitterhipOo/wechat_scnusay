@@ -126,7 +126,7 @@ Page({
           shows: !this.data.shows
         });
         wx.reLaunch({
-            url: '/pages/foodreview/index'
+            url: '/pages/foodreview/index?indexs='+this.data.indexs
           })
       },
       gotopublish(){
@@ -162,10 +162,13 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        let Indexs = JSON.parse(options.indexs);
         this.setData({
-            navH: app.globalData.navHeight
+            navH: app.globalData.navHeight,
+            indexs: Indexs
           });
           this.getinfo()
+
     },
     logo: function (e) {
         // 发起网络请求

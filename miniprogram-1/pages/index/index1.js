@@ -64,7 +64,7 @@ Page({
       // 发起网络请求
       wx.navigateTo({
       // 开发者服务器接口地址
-        url: '/pages/SecendHandChange/index',
+        url: '/pages/SecendHandChange/index?indexs=0',
       })
     },
     car: function (e) {
@@ -85,7 +85,7 @@ Page({
       // 发起网络请求
       wx.navigateTo({
       // 开发者服务器接口地址
-        url: '/pages/foodreview/index',
+        url: '/pages/foodreview/index?indexs=0',
       })
     },
     logo: function (e) {

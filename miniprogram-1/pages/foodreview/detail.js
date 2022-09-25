@@ -12,7 +12,7 @@ Page({
         time: "1小时前",
         infotitle: "熹园究极美食",
         infodetail:"非常之顶级",
-        infoimage:["../../assets/images/sort/publish.png","../../assets/images/sort/test.jpeg"],
+        infoimage:["../../assets/images/sharecars/jpg1.jpg","../../assets/images/sort/test.jpeg"],
         areaname:"南海校区",
         lookup: 300,
         nice: 50,

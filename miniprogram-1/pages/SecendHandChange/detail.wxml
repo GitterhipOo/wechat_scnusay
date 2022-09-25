@@ -7,8 +7,9 @@
         </navigator>
     </view>
 </view>
-
-<view class="pubinfo" style="margin-top:{{navH*4+50}}rpx">  
+<view   class="index" style="margin-top:{{navH*4+50}}rpx">
+    <image class="bg" src="{{infoimage[0]}}"></image>
+    <view class="pubinfo">  
         <image src="{{icon}}" class="headpic" mode="aspectFill"></image>
         <view class="titletime">
             <view><text>{{name}}</text></view>
@@ -27,11 +28,12 @@
     <image  wx:for="{{infoimage}}"wx:key="index" src="{{item}}" data-src='{{item}}'class="myimg" mode="widthFix" bindtap="gopreview"></image>
     
 </view>
+</view>
 <view class="catch">
 <view class="view1">
     <image src="../../assets/images/sort/zan2.png" bindtap="gopraise"  wx:if="{{show == false}}" class="img1"></image>
     <image src="../../assets/images/sort/zan_active.png" bindtap="gopraise"  wx:else class="img1"></image>
-    <button open-type="share" size="mini" style=" align-items: center; justify-content: center;background-color:rgb(245, 245, 245)"><image src="../../assets/images/sort/share.png"  class="img11"></image></button>
+    <button open-type="share" size="mini" style=" align-items: center; justify-content: center;background-color:#ffffff;"><image src="../../assets/images/sort/share.png"  class="img11" ></image></button>
 </view>
 <view class="view2">
     <image src="../../assets/images/sort/lookup.png" class="img2"></image><text>{{lookup}}</text>
@@ -39,6 +41,7 @@
      <image src="../../assets/images/sort/liuyan.png" class="img2"></image><text>{{talk}}</text>
 </view>
 </view>
+
 <view class="carea">
     <view>
         <text class="c1">评论区 </text><text class="c2">/{{talk}}</text>

@@ -12,7 +12,7 @@ Page({
         pubtime: "1小时前",
         infotitle: "出售顶级皮肤",
         infodetail:"非常之顶级啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦",
-        infoimage:["../../assets/images/sort/publish.png",],
+        infoimage:["../../assets/images/sharecars/jpg1.jpg",],
         infoprice: "￥9600",
         lookup: 300,
         nice: 300,

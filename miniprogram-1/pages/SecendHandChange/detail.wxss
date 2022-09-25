@@ -1,8 +1,18 @@
-page {
-    background-color: rgb(245, 245, 245)
-    
+page{
+    background-color:#ffffff;
+  }
+.index{
+    width: 100%;
 }
-
+.bg{
+    width: 100%;
+    height: 100%;
+    position:fixed; 
+    background-size:100% 100%;
+    z-index: -1;
+    /* 通过滤镜增加毛玻璃效果 */
+    filter: blur(10rpx);
+  }
 .pubinfo {
     height: 100rpx;
     width: 700rpx;
