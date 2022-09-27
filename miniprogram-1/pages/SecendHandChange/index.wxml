@@ -11,7 +11,7 @@
 <!-- 搜索 -->
 <view class="search" style="margin-top:{{navH*4+50}}rpx" >
     <input type="text" placeholder="搜索关键词" id="mysearch"/> 
-    <button type="primary" style="border-radius: 30rpx;height: 60rpx;width: 160rpx; font-size: 20rpx; ">搜索</button>
+    <button bindtap="search" type="primary" style="border-radius: 30rpx;height: 60rpx;width: 160rpx; font-size: 20rpx; ">搜索</button>
 </view>
 <!-- 导航栏 -->
 <view class="grid-list">
