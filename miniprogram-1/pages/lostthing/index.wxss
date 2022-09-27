@@ -1,6 +1,7 @@
 /* pages/lostthing/index.wxss */
 page{
     height: 100%;
+    background-color: #eee;
 }
 /* 搜索框 */
 .search {
