@@ -1,6 +1,5 @@
 {
     "pages": [
-
         "pages/index/index1",
         "pages/ShareCar/index",
         "pages/ShareCar/details/index",
@@ -26,7 +25,7 @@
         "pages/foodreview/publish",
         "pages/News/index",
         "pages/signup/index",
-
+        "pages/userknow/userknow",
         "pages/updatewxinfo/updatewxinfo",
         "pages/updatenumbers/update_phonenumbers",
         "pages/updatenumbers/update_schoolnumber",

@@ -18,6 +18,8 @@ Page({
      */
     data: {
         navH: 0,
+        jumpid:"all",
+        isloading:false,
         sortlist: [
             {
                 sortid: 1,
@@ -164,6 +166,86 @@ Page({
           url: '/pages/SecendHandChange/mypublish'
         })
     },
+    all: function (e) {
+        var id = e.currentTarget.dataset.id,
+        name = e.currentTarget.dataset.name;
+        console.log(id);
+        console.log(name);
+        // 执行页面跳转
+        wx.reLaunch({
+          url: '/pages/SecendHandChange/index'
+        })
+    },
+    book: function (e) {
+        var id = e.currentTarget.dataset.id,
+        name = e.currentTarget.dataset.name;
+        console.log(id);
+        console.log(name);
+        // 执行页面跳转
+        wx.reLaunch({
+          url: '/pages/SecendHandChange/index'
+        })
+    },
+    life: function (e) {
+        var id = e.currentTarget.dataset.id,
+        name = e.currentTarget.dataset.name;
+        console.log(id);
+        console.log(name);
+        // 执行页面跳转
+        wx.reLaunch({
+          url: '/pages/SecendHandChange/index'
+        })
+    },
+    computer: function (e) {
+        var id = e.currentTarget.dataset.id,
+        name = e.currentTarget.dataset.name;
+        console.log(id);
+        console.log(name);
+        // 执行页面跳转
+        wx.reLaunch({
+          url: '/pages/SecendHandChange/index'
+        })
+    },
+    makeup: function (e) {
+        var id = e.currentTarget.dataset.id,
+        name = e.currentTarget.dataset.name;
+        console.log(id);
+        console.log(name);
+        // 执行页面跳转
+        wx.reLaunch({
+          url: '/pages/SecendHandChange/index'
+        })
+    },
+    clothe: function (e) {
+        var id = e.currentTarget.dataset.id,
+        name = e.currentTarget.dataset.name;
+        console.log(id);
+        console.log(name);
+        // 执行页面跳转
+        wx.reLaunch({
+          url: '/pages/SecendHandChange/index'
+        })
+    },
+    others: function (e) {
+        var id = e.currentTarget.dataset.id,
+        name = e.currentTarget.dataset.name;
+        console.log(id);
+        console.log(name);
+        // 执行页面跳转
+        wx.reLaunch({
+          url: '/pages/SecendHandChange/index'
+        })
+    },
+    search: function (e) {
+        var id = e.currentTarget.dataset.id,
+        name = e.currentTarget.dataset.name;
+        console.log(id);
+        console.log(name);
+        // 执行页面跳转
+        wx.reLaunch({
+          url: '/pages/SecendHandChange/index'
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
@@ -171,6 +253,8 @@ Page({
         this.setData({
             navH: app.globalData.navHeight
           });
+          this.getinfo()
+        
     },
     logo: function (e) {
         // 发起网络请求
@@ -179,7 +263,32 @@ Page({
           url: '/pages/index/index',
         })
       },
-
+    getinfo(){
+        this.setData({
+            isloading:true
+        })
+        wx.showLoading({
+          title: '数据加载中',
+        })
+        wx.request({
+          url: '',
+          method:'GET',
+          success: ({data:res}) => {
+              console.log(res)
+              this.setData({
+                  infolist: [...this.data.infolist,...res.data]
+              })
+          },
+          complete: () => {
+            wx.hideLoading()
+                this.setData({
+                    isloading:false
+                })
+              
+          }
+        })
+    },
+    
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
@@ -212,13 +321,16 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function () {
-
+        wx.stopPullDownRefresh()
     },
 
     /**
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function () {
+        if(this.data.isloading) return
+        this.getinfo()
+        console.log('触发了上拉触底实践')
     },
 
     /**

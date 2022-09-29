@@ -36,25 +36,25 @@
         </view>
         <image wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
     </view>
-        <!-- 文后小标模块 -->
-        <view class="box3">
-            <view class="tags" wx:for="{{item.tags}}">{{item}}</view>
-            <view class="post-data">
-                <!-- 点赞   -->
-                <view class="feet" bindtap="favourMe" data-id="{{item.comment_id}}">
-                    <image class="favour_img" src="{{item.favour_src}}"></image>
-                    <text class="favour_num" style="position: relative; right:0;bottom: 0;">{{item.favour}}</text>
-                </view>
-                <view class="feet">
-                    <image class="feet_img" src="/assets/images/sort/liuyan.png"></image>
-                    <text class="feet_num">{{item.comments}}</text>
-                </view>
-                <view class="feet">
-                    <image class="feet_img" src="/assets/images/sort/lookup.png"></image>
-                    <text class="feet_num">{{item.readingtimes}}</text>
-                </view>
+    <!-- 文后小标模块 -->
+    <view class="box3">
+        <view class="tags" wx:for="{{item.tags}}">{{item}}</view>
+        <view class="post-data">
+            <!-- 点赞   -->
+            <view class="feet" bindtap="favourMe" data-id="{{item.comment_id}}">
+                <image class="favour_img" src="{{item.favour_src}}"></image>
+                <text class="favour_num" style="position: relative; right:0;bottom: 0;">{{item.favour}}</text>
+            </view>
+            <view class="feet">
+                <image class="feet_img" src="/assets/images/sort/liuyan.png"></image>
+                <text class="feet_num">{{item.comments}}</text>
+            </view>
+            <view class="feet">
+                <image class="feet_img" src="/assets/images/sort/lookup.png"></image>
+                <text class="feet_num">{{item.readingtimes}}</text>
             </view>
         </view>
+    </view>
 </view>
 
 <!-- 底下评论区 -->
@@ -73,8 +73,8 @@
             <image class="item_img" src="{{list.comment_user_avatar}}"></image>
             <view class="item_right">
                 <view class="right_name">{{list.comment_user_name}}</view>
-                <view class="favour" style="top:-20rpx; right:5rpx">
-                    <image class="favour_img2" src="{{list.favour_src}}" bindtap="favourMe" data-id="{{list.comment_id}}"  data-reply="{{list.reply_id}}"></image>
+                <view  class="favour" style="top:-20rpx; right:5rpx">
+                    <image class="favour_img2" src="{{list.favour_src}}" bindtap="favourMe" data-id="{{list.comment_id}}" data-reply="{{list.reply_id}}"></image>
                     <view class="favour_num">{{list.favour}}</view>
                 </view>
                 <view class="right_content">

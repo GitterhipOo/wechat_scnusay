@@ -1,6 +1,21 @@
 page {
     background-color:#fff
   }
+.title{
+    width: 750rpx;
+    height: 120rpx;
+    font-size: 50rpx; 
+    white-space:pre-wrap;
+    text-indent: 15rpx;
+    border-bottom: 1rpx solid rgb(233, 233, 233);
+}
+.infomation{
+    height: 248rpx;
+    width: 750rpx;
+    white-space:pre-wrap;
+    text-indent: 15rpx;
+    border-bottom: 1rpx solid rgb(233, 233, 233);
+}
 .myinput{
     width: 750rpx;
     height: 79rpx;
@@ -17,40 +32,46 @@ page {
     width: 150rpx;
 }
 /* 相机 */
-.img_list .img_li .delete{
+.img_list .img_li .delete {
     width: 50rpx;
     height: 50rpx;
     position: absolute;
-    left: 200rpx;
+    right:5rpx;
 }
-.img_list{
-	width: 100vw;
-	display: flex;
-	display: -webkit-flex;
-  padding: 0 20rpx;
-  box-sizing: border-box;
-  flex-wrap: wrap;
-  -webkit-flex-wrap:wrap;
+
+.img_list {
+    width: 100vw;
+    display: flex;
+    display: -webkit-flex;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
 }
+
 .img_list .img_li,
 
-.addimg{
-	width: 200rpx;
-	height: 200rpx;
-	border: 1px solid #999999;
-  margin: 5rpx;
-  flex-shrink: 0;
-  -webkit-flex-shrink:0;
+.addimg {
+    position: relative;
+    width: 200rpx;
+    height: 200rpx;
+    border: 1px solid #999999;
+    margin: 5rpx;
+    flex-shrink: 0;
+    -webkit-flex-shrink: 0;
 }
-.addimg image{
-	width: 150rpx;
-	height: 150rpx;
-	margin: 25rpx 25rpx;
+
+.addimg image {
+    width: 150rpx;
+    height: 150rpx;
+    margin: 25rpx 25rpx;
 }
-.img_list .img_li image{
-  width: 100%;
-  height: 100%;
+
+.img_list .img_li image {
+    width: 100%;
+    height: 100%;
 }
+
 /* 分类 */
 .fenlei{
     width: 100%;

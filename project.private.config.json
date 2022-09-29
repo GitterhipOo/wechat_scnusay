@@ -1,5 +1,5 @@
 {
-    "projectname": "wechat_scnusay",
+    "projectname": "wechat_scnusay2",
     "setting": {
         "compileHotReLoad": true
     },
@@ -59,6 +59,13 @@
                 {
                     "name": "",
                     "pathName": "pages/foodreview/detail",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/index/index1",
                     "query": "",
                     "launchMode": "default",
                     "scene": null
