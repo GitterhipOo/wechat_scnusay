@@ -1,12 +1,12 @@
 /* pages/ShareCar/index.wxss */
 
 page{
-    background-color: #f3f3f3;
+    background-color:  rgb(243, 243, 247);
 }
 .top_alarm{
     line-height: 40px;
     height: 40px;
-    background-color:rgb(238, 216, 174); 
+    /* background-color:rgb(238, 216, 174);  */
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -14,11 +14,17 @@ page{
 
 .out_index_top{
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     justify-content: center;
-    height: 100px;
+    border-radius: 30rpx;
+    /* border-radius: 20rpx; */
+    margin: 0 auto;
+    height: 200rpx;
     width: 94%;
-    padding-top: 10px;
+    padding-top: 7%;
+    /* padding-left: 7%; */
+    /* border: solid 1px black; */
+    background-color: #fff;
 }
 
  .alarm{
@@ -26,26 +32,32 @@ page{
     font-weight: 700;
  }
 
+ .index_three_box1{
+    text-align: center;
+    /* margin-left: %; */
+    /* padding-left: -20px; */
+}
+ 
  .index_three_box{
      text-align: center;
-     padding-left: 20px;
+     padding-left: 10%;
  }
 
  .img1{
-     height:80px;
-     width: 80px;
+     height:58px;
+     width: 58px;
     border-radius: 50%;
     overflow:hidden;
  }
 
  .under_img{
-    font-size: 13px;
-    font-weight: 700;
+    font-size: 30rpx;
+    font-weight: 549;
  }
 
 .mid_pinche{
-    border-top: 1px solid;
-    margin-top: 14px;
+    /* border-top: 1px solid; */
+    /* margin-top: 14px; */
     padding-top: 10px;
     display: flex;
     flex-direction: row;
@@ -65,12 +77,19 @@ page{
     font-size: 20px;
 }
 
+.call_image{
+    margin-top: 10px;
+    height: 17px;
+    width: 17px;
+}
+
 .chat{
     padding-top: 10px;
     margin: 10px auto;
-    border: rgb(32, 29, 221) solid 1px;
+    /* border: rgba(67, 67, 71, 0.472) solid 1px; */
     width: 95%;
-
+    border-radius: 9px;
+    background-color: #fff;
 }
 
 .touxiang{
@@ -81,17 +100,19 @@ page{
 }
 
 .touxianglan{
-    margin-left: -30% ;
+    position: relative;
+    margin-left: 5% ;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center; 
+    /* align-items: center; */
+    /* justify-content: center;  */
 }
 
-.name{
+.name{  
     padding-left: 10px;
     font-weight: 700;
     font-size: 16px;
+    color: rgb(33, 33, 34);
 }
 
 .time{
@@ -102,7 +123,9 @@ page{
 .in_contact{
     padding-top: 10px;
     padding-left: 10px;
-    background-color: rgba(128, 124, 124, 0.356);
+    background-color: rgba(243,243,247);
+    border-radius: 13rpx;
+    /* background-color: rgba(128, 124, 124, 0.356); */
     width: 90%;
     margin:auto;
     padding-bottom: 10px;
@@ -110,55 +133,40 @@ page{
 
 .topic{
     margin-top: 10px;
-    font-weight: 700;
+    font-weight: 550;
     font-size: 18px;
 }
 
 .date{
-    font-weight: 700;
+    font-weight: 550;
     font-size: 14px;
 }
 
-.renshu{
+.space{
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 550;
 }
 
-.qidian{
+.spot{
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 550;
 }
 
 .price_share{
-    font-weight: 700;
+    font-weight: 550;
     font-size: 14px;
     
 }
 
 .contact{
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 550;
 }
-
+.people{
+    font-weight: 550;
+    font-size: 14px;
+}
 .bottom{
         padding-top: 8px;
+        padding-bottom: 4px;
   }
-  .shoucang{
-    color: #000000;
-    border: 1px solid #000000;
-    left: 10%;
-  }
-  
-  .pinglun{
-    position: absolute;
-    right: 11.5%;
-    color: #000000;
-    border: 1px solid #000000;
-  }
-
-.call{
-    left: 36.1%;
-    position: absolute;
-    color: #000000;
-    border: 1px solid #000000;
-}
