@@ -1,5 +1,17 @@
 page {
-    background-color:rgb(230, 228, 228)
+    background-color:#ffffff
+  }
+  .index{
+    width: 100%;
+}
+.bg{
+    width: 100%;
+    height: 100%;
+    position:fixed; 
+    background-size:100% 100%;
+    z-index: -1;
+    /* 通过滤镜增加毛玻璃效果 */
+    filter: blur(10rpx);
   }
   .pubinfo {
     height: 100rpx;
@@ -54,6 +66,9 @@ page {
     display: flex;
     line-height: 100rpx;
 }
+.catch .view1{
+    flex:1;
+}
 .catch .view2 .img2{
     height: 40rpx;
     width: 40rpx;
@@ -62,9 +77,11 @@ page {
     height: 60rpx;
     width: 60rpx;
     padding-left:20rpx;
+    padding-bottom: 20rpx;
 }
-.catch .view1{
-    flex: 1;
+.catch .view1 .img11{
+    height: 60rpx;
+    width: 60rpx;
 }
 .catch .view2{
     margin-top: 10rpx;

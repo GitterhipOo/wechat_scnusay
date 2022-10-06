@@ -1,8 +1,15 @@
 /* pages/ShareCar/details/index.wxss */
+page{
+    background-color: rgb(245, 245, 245);
+}
 .chat {
+    position: relative;
     padding-top: 10px;
     margin: 10px auto;
-    border: rgb(32, 29, 221) solid 1px;
+    /* border: rgb(32, 29, 221) solid 1px; */
+    background-color: #fff;
+    border-radius: 50rpx;
+    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.4);
     width: 95%;
 
 }
@@ -124,6 +131,28 @@
     font-size: 14px;
 }
 
+.box3 .tags{
+    display: inline-block;
+    background-color: rgb(75, 200, 238);
+    border:1rpx solid rgb(1,1,1);
+    margin: 5rpx;
+    padding: 2rpx;
+  }
+  
+  .box3 .post-data{
+  float: right;
+  }
+  
+  .box3 .feet{
+    float: right;
+  }
+  
+  .box3 .feet image{
+    display: inline-block;
+    width: 35rpx;
+    height: 35rpx;
+  }
+  
 /* 评论-回复-回复评论显示区域 */
 .container {
     width: 718rpx;
@@ -135,7 +164,7 @@
     font-size: 24rpx;
     color: #999999;
     margin-left: 1rpx;
-    height:80rpx;
+    height:40rpx;
 }
 
 .container_inp {

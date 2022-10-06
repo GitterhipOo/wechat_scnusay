@@ -20,6 +20,7 @@ Page({
         shows: false, //控制下拉列表的显示隐藏，false隐藏、true显示
         selectDatas: ['南海校区', '石牌校区', '大学城校区','汕尾校区'], //下拉列表的数据
         indexs: 0, //选择的下拉列 表下标,
+        isloading:false,
         infolist: [
             {   
                 infoid: 1,
@@ -101,7 +102,16 @@ Page({
             }
         ]
     },  
-  
+    search: function (e) {
+        var id = e.currentTarget.dataset.id,
+        name = e.currentTarget.dataset.name;
+        console.log(id);
+        console.log(name);
+        // 执行页面跳转
+        wx.reLaunch({
+          url: '/pages/foodreview/index'
+        })
+    },
     selectTaps() {
         this.setData({
           shows: !this.data.shows,
@@ -115,20 +125,50 @@ Page({
           indexs: Indexs,
           shows: !this.data.shows
         });
-    
+        wx.reLaunch({
+            url: '/pages/foodreview/index?indexs='+this.data.indexs
+          })
       },
       gotopublish(){
         wx.navigateTo({
             url: '/pages/foodreview/publish',
           })    
+    },getinfo(){
+        this.setData({
+            isloading:true
+        })
+        wx.showLoading({
+          title: '数据加载中',
+        })
+        wx.request({
+          url: '',
+          method:'GET',
+          success: ({data:res}) => {
+              console.log(res)
+              this.setData({
+                  infolist: [...this.data.infolist,...res.data]
+              })
+          },
+          complete: () => {
+            wx.hideLoading()
+                this.setData({
+                    isloading:false
+                })
+              
+          }
+        })
     },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        let Indexs = JSON.parse(options.indexs);
         this.setData({
-            navH: app.globalData.navHeight
+            navH: app.globalData.navHeight,
+            indexs: Indexs
           });
+          this.getinfo()
+
     },
     logo: function (e) {
         // 发起网络请求
@@ -170,14 +210,16 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh() {
-
+        wx.stopPullDownRefresh()
     },
 
     /**
      * 页面上拉触底事件的处理函数
      */
     onReachBottom() {
-
+        if(this.data.isloading) return
+        this.getinfo()
+        console.log('触发了上拉触底实践')
     },
 
     /**
