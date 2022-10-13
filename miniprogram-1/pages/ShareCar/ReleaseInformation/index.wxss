@@ -6,36 +6,106 @@
     padding: 30rpx;
 }
 .label-list{
-    display: flex;
     width: 100%;
-    height: 120rpx;
+    height: 115rpx; 
     align-items: center;
-    border-bottom: 1px solid #e8e8e8;
+    border: 1px solid #bbbbbb;
+    background-color: #fff;
+    border-radius: 0.9ch;
+    margin-bottom: 35rpx;
 }
-.label-list .label {
-    color: #333;
-    font-size: 36rpx;
-    font-weight: bold;
+
+.label-list1{
+    width: 100%;
+    height: 115rpx; 
+    align-items: center;
+    border: 1px solid #bbbbbb;
+    border-radius: 0.9ch;
+    margin-bottom: 30rpx;
+    background-color: #fff;
 }
+
 .input-box{
     position: relative;
-    left:20px;
+    /* left:20px; */
+    height: 83rpx;
+    /* border: black solid 1px; */
+    margin-top: 2.25%;
+    display: flex;
+    align-items: center;
+    left: 3%;
 }
+
+.chose_box{
+        display: flex;
+        flex-direction: row;
+         /* justify-content: space-between; */
+        /* width: 100%; */
+        height: 83rpx;
+        line-height: 100rpx;
+        margin-top: 10rpx;
+        /* border-bottom: 1px solid #f1f1f1; */
+        font-size: 31rpx;
+        color: #918d8d;
+        margin-left: 3.5%;
+        background-color: #fff;
+}
+
+
+.sexy {
+    white-space: nowrap;
+    font-size: 36rpx;
+  }
+
+  .sexy1 {
+    width: 100%;
+    margin-left: 20rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+.inp {
+      position: relative;
+      width: 100%;
+      height: 80rpx;
+}
+.radiogroup {
+      display: flex;
+      flex-direction: row;
+}
+.radiobox {
+        display: flex;
+        flex-direction: row;
+        margin-left: 60rpx;
+      }
+
+/* radio .wx-radio-input {
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+ }
+/*边框颜色 */
+ /* radio .wx-radio-input {
+        border-color: #5c1dbb;
+ } */
+/*选中状态设置 */
+/* radio .wx-radio-input.wx-radio-input-checked {
+        border-color: #0073ff !important;
+        background: white !important;
+ } */ 
+
+.radiotext{
+    font-size: 36rpx;
+}
+
 .place {
     align-items: center;
-    font-size: 36rpx;
-    left: 30rpx;
+    line-height: 83rpx;
+    font-size: 37rpx;
+    left: 8rpx;
     vertical-align:middle;
 }
-.radio-group label{
-    padding-left: 30rpx;
-    font-size: 36rpx;
-}
-.submit {
-    margin-top: 45rpx;
-    background-color: rgb(39, 114, 16);
-    color: #fff;
-}
+
 .picker-show{
     position: relative;
     left: 80%;
@@ -44,14 +114,6 @@
     font-weight: 700;
 }
 
-.radiogroup1{
-    padding-top: 10px;
-}
-
-.radiogroup2{
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
 
 .chefei_text{
     padding-right: 10px;
@@ -70,7 +132,7 @@
     display: block;
     padding: 20rpx 30rpx;
     box-sizing: border-box;
-    width: 682rpx;
+    width: 702rpx;
     height: 250rpx;
     border-radius: 20rpx;
     border: 1rpx solid #D8D8D8;
@@ -79,6 +141,7 @@
     font-weight: 400;
     color: #222222;
     line-height: 32rpx;
+    background-color: #fff;
   }
   
   .textword {
@@ -92,3 +155,107 @@
     line-height: 24rpx;
     text-align: right;
   }
+
+  .label-list1{
+    width: 100%;
+    height: 115rpx; 
+    align-items: center;
+    border: 1px solid #bbbbbb;
+    border-radius: 0.9ch;
+    margin-bottom: 30rpx;
+}
+
+.input-box{
+    position: relative;
+    /* left:20px; */
+    height: 83rpx;
+    /* border: black solid 1px; */
+    margin-top: 2.25%;
+    display: flex;
+    align-items: center;
+    left: 3%;
+}
+
+.chose_box_people{
+        display: flex;
+        flex-direction: row;
+         /* justify-content: space-between; */
+        /* width: 100%; */
+        height: 83rpx;
+        line-height: 100rpx;
+        margin-top: 10rpx;
+        /* border-bottom: 1px solid #f1f1f1; */
+        font-size: 31rpx;
+        color: #918d8d;
+        margin-left: 3.5%;
+}
+
+
+.share_car_people {
+    white-space: nowrap;
+    font-size: 36rpx;
+  }
+
+  .share_car_people1 {
+    width: 100%;
+    margin-left: 20rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+.inp_people {
+      position: relative;
+      width: 100%;
+      height: 80rpx;
+}
+.radiogroup_people {
+      display: flex;
+      flex-direction: row;
+}
+.radiobox_people {
+        display: flex;
+        flex-direction: row;
+        margin-left: 20rpx;
+      }
+    /* 我是可爱的分割线捏 */
+      .chose_box_money{
+        display: flex;
+        flex-direction: row;
+         /* justify-content: space-between; */
+        /* width: 100%; */
+        height: 83rpx;
+        line-height: 100rpx;
+        margin-top: 10rpx;
+        /* border-bottom: 1px solid #f1f1f1; */
+        font-size: 31rpx;
+        color: #918d8d;
+        margin-left: 3.5%;
+}
+
+
+.share_car_money {
+    white-space: nowrap;
+    font-size: 36rpx;
+  }
+
+  .share_car_money1 {
+    width: 100%;
+    margin-left: 20rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+.inp_money {
+      position: relative;
+      width: 100%;
+      height: 80rpx;
+}
+.radiogroup_money {
+      display: flex;
+      flex-direction: row;
+}
+.radiobox_money {
+        display: flex;
+        flex-direction: row;
+        margin-left: 20rpx;
+      }

@@ -7,28 +7,31 @@
 </view>
 
 <view class="out_index_top">
-    <view class="index_three_box">
-        <image class="img1" src="/assets/images/sharecars/jpg1.jpg" mode='aspectFit'></image>
+    <view class="index_three_box1">
         <navigator url="/pages/ShareCar/ReleaseInformation/index" open-type="navigate">
-        <text class="under_img">发布拼车信息</text>
+        <image class="img1" src="/assets/images/sharecars/jpg1.jpg" mode='aspectFit'></image>
+        <text class="under_img">
+        发布拼车信息</text>
         </navigator>   
     </view>
     <view class="index_three_box">
-        <image class="img1" src="/assets/images/sharecars/jpg1.jpg" mode='aspectFit'></image>
         <navigator url="/pages/ShareCar/My_publish/index" open-type="navigate">
-        <text class="under_img">我的发布</text>
+        <image class="img1" src="/assets/images/sharecars/jpg1.jpg" mode='aspectFit'></image>   
+        <text class="under_img">
+        我的发布</text>
         </navigator>
     </view>
     <view class="index_three_box">
-        <image class="img1" src="/assets/images/sharecars/jpg1.jpg" mode='aspectFit'></image>
         <navigator url="/pages/ShareCar/search/index" open-type="navigate">
-        <text class="under_img">搜索拼车信息</text>
+        <image class="img1" src="/assets/images/sharecars/jpg1.jpg" mode='aspectFit'></image>
+        <text class="under_img">
+        搜索拼车信息</text>
         </navigator>
     </view>
 </view>
 
 <view class="mid_pinche">
-<image src="/assets/images/sharecars/yellow_bgc.jpg" class="mid_jpg"></image>
+<image src="/assets/images/sharecars/lightblue_bgc.jpg" class="mid_jpg"></image>
 <text class="mid_jpg_text">拼车大厅</text>
 <view class="list-msg">
     <view class="list-msg2">
@@ -36,108 +39,40 @@
     </view>
 </view>
 </view>
+<block wx:for="{{data_index}}">
 
 <view class="chat">
-<!-- woshifengexian -->
 <view class="touxianglan">
 <view>
-<image class="touxiang" src="/assets/images/sharecars/jpg2.jpg"></image>
+<image class="touxiang" src="{{item.blogger_avatar}}"></image>
 </view>
 <view>
-<text class="name">黄志敏黄志敏黄志敏</text>
-<text class="time" decode="true">\n &nbsp;&nbsp;&nbsp;11小时前发布</text>
+<text class="name">{{item.blogger_name}}</text>
+<text class="time" decode="true">\n &nbsp;&nbsp;&nbsp;{{item.blogger_time}}</text>
 </view>
 </view>
 
-<view class="in_contact">
-<text class="topic">小塘医院做核酸
+<view class="in_contact" bindtap="GOTO">
+<text class="topic">{{item.ShareCar_title}}
 </text>
-<text class="date">日期：<text style="font-weight: 400;">2022年9月1日</text></text>
-<text class="renshu">
-人数：<text style="font-weight: 400;">3人</text></text>
-<text class="qidian">
-出发地点：<text style="font-weight: 400;">南海校区北门</text></text>
+<text class="date">日期：<text style="font-weight: 400;">{{item.ShareCar_time}}</text></text>
+<text class="space">
+校区：<text style="font-weight: 400;">{{item.ShareCar_space}}</text></text>
+<text class="spot">
+出发地点：<text style="font-weight: 400;">{{item.ShareCar_spot}}</text></text>
 <text class="contact">
-联系方式：<text style="font-weight: 400;">13927423111</text></text>
+联系方式：<text style="font-weight: 400;">{{item.ShareCar_contact}}</text></text>
 <text class="price_share">
-车费分摊制度：<text style="font-weight: 400;">AA制</text>
+分类：<text style="font-weight: 400;">{{item.ShareCar_class}}</text>
+</text>
+<text class="people">
+出行人数：<text style="font-weight: 400;">{{item.ShareCar_people}}</text>
 </text>
 </view>
-
 <view class="bottom">
-            <button size="mini" class="shoucang">收藏</button>
-            <button size="mini" class="call" bindtap="calling">联系拼友</button>
-            <button size="mini" class="pinglun"  bindtap="GOTO">评论</button>
+            <button size="mini" style="width:26.5%; left: 5%; background-color: white;" bindtap="like" ><text style="font-size: large;">{{isClick?' ★ ':' ☆ '}}</text></button>
+            <button size="mini" style="width:26%; left: 36.45%;position: absolute; background-color: white;" bindtap="calling"><image class="call_image" src="/assets/images/sharecars/call.jpg"></image></button>
+            <button size="mini" style="width:26%; right: 7%;position: absolute; background-color: white;"  bindtap="GOTO"><image class="call_image" src="/assets/images/sharecars/icon4.jpg"></image></button>
  </view>
-
 </view>
-
-<view class="chat">
-<!-- woshifengexian -->
-<view class="touxianglan">
-<view>
-<image class="touxiang" src="/assets/images/sharecars/jpg2.jpg"></image>
-</view>
-<view>
-<text class="name">黄志敏黄志敏黄志敏</text>
-<text class="time" decode="true">\n &nbsp;&nbsp;&nbsp;11小时前发布</text>
-</view>
-</view>
-
-<view class="in_contact">
-<text class="topic">小塘医院做核酸
-</text>
-<text class="date">日期：<text style="font-weight: 400;">2022年9月1日</text></text>
-<text class="renshu">
-人数：<text style="font-weight: 400;">3人</text></text>
-<text class="qidian">
-出发地点：<text style="font-weight: 400;">南海校区北门</text></text>
-<text class="contact">
-联系方式：<text style="font-weight: 400;">13927423111</text></text>
-<text class="price_share">
-车费分摊制度：<text style="font-weight: 400;">AA制</text>
-</text>
-</view>
-
-<view class="bottom">
-            <button size="mini" class="shoucang">收藏</button>
-            <button size="mini" class="call" bindtap="calling">联系拼友</button>
-            <button size="mini" class="pinglun" bindtap="GOTO">评论</button>
- </view>
-
-</view>
-
-<view class="chat">
-<!-- woshifengexian -->
-<view class="touxianglan">
-<view>
-<image class="touxiang" src="/assets/images/sharecars/jpg2.jpg"></image>
-</view>
-<view>
-<text class="name">黄志敏黄志敏黄志敏</text>
-<text class="time" decode="true">\n &nbsp;&nbsp;&nbsp;11小时前发布</text>
-</view>
-</view>
-
-<view class="in_contact">
-<text class="topic">小塘医院做核酸
-</text>
-<text class="date">日期：<text style="font-weight: 400;">2022年9月1日</text></text>
-<text class="renshu">
-人数：<text style="font-weight: 400;">3人</text></text>
-<text class="qidian">
-出发地点：<text style="font-weight: 400;">南海校区北门</text></text>
-<text class="contact">
-联系方式：<text style="font-weight: 400;">13927423111</text></text>
-<text class="price_share">
-车费分摊制度：<text style="font-weight: 400;">AA制</text>
-</text>
-</view>
-
-<view class="bottom">
-            <button size="mini" class="shoucang">收藏</button>
-            <button size="mini" class="call" bindtap="calling">联系拼友</button>
-            <button size="mini" class="pinglun" bindtap="GOTO">评论</button>
- </view>
-
-</view>
+</block>
