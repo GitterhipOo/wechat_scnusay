@@ -1,26 +1,7 @@
 Page({
     data: {
         //主人公数据
-        blogger_list: [{
-            blogger_id: 1, //文章所属id
-            blogger_avatar: "https://s1.328888.xyz/2022/08/02/OF8Ay.jpg", //头像
-            blogger_name: "xhiming", //博主昵称
-            blogger_time: "1661857644662", //发布时间的时间戳、这里需要修改
-            lostthing_topic: "700出帅哥一只", //标题
-            lostthing_time: "1661857644662", //丢失时间的时间戳、这里需要修改
-            lostthing_class: "失物求寻", //发布类别（不需要可以不填充
-            lostthing_detail: "我在南海这里丢失了一块抹茶拿铁，你们可以帮我寻找一下遗失的红色精灵吗", //主要内容
-            lostthing_space: "南海校区", //
-            lostthing_space_detail: "G253与G252之间的交界处",
-            lostthing_contact: "12312311231",
-            photos: ["https://s1.328888.xyz/2022/08/29/CzMYU.png", "https://s1.328888.xyz/2022/08/29/CzgoR.png", "https://s1.328888.xyz/2022/08/29/Czf0B.png"], //放置于主要内容下方的图片
-            tags: ["图书文具", "生活用品", "夹心糖"], //标签
-            readingtimes: 49, //阅读次数
-            comments: 5, //评论数量
-            favour: 20, //点赞数量
-            had_favour: 0, //点赞判断
-            favour_src: "/assets/images/icon/unfavour.png", //点赞图标
-        }],
+        blogger_list: [],
         //评论数据
         comment_list: [{
                 comment_id: 1, //评论id
@@ -293,9 +274,12 @@ Page({
             success: function(res) {
                 console.log(res.data)  
                 _this.setData({
-                    ['blogger_list[0]']:res.data
+                    blogger_list:res.data
                 })
             } 
           })
+          wx.removeStorageSync('sendPostValue')
+          //将本次传过来的本地缓存的key对应的缓存清理掉，实现每次点击都是不一样的内容
+          
     },
 })

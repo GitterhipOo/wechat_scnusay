@@ -1,57 +1,56 @@
 <!--pages/ShareCar/details/index.wxml-->
 <!-- <text>pages/ShareCar/details/index.wxml</text> -->
-<view class="chat" wx:for="{{blogger_list}}">
+<view class="chat" >
     <!-- woshifengexian -->
     <!-- 头像栏 -->
     <view class="touxianglan">
         <view>
-            <image class="touxiang" src="{{item.blogger_avatar}}"></image>
+            <image class="touxiang" src="{{blogger_list.blogger_avatar}}"></image>
         </view>
         <view>
-            <text class="name">{{item.blogger_name}}</text>
-            <text class="time" decode="true">\n &nbsp;&nbsp;&nbsp;{{item.blogger_time}}</text>
+            <text class="name">{{blogger_list.blogger_name}}</text>
+            <text class="time" decode="true">\n &nbsp;&nbsp;&nbsp;{{blogger_list.blogger_time}}</text>
         </view>
         <button size="mini" type="primary" class="follow">关注</button>
     </view>
     <!-- 信息展览 -->
     <view class="in_contact">
-        <text class="topic">{{item.lostthing_topic}}
+        <text class="topic">{{blogger_list.lostthing_topic}}
         </text>
-        <text class="date">日期：<text style="font-weight: 400;">{{item.lostthing_time}}</text></text>
+        <text class="date">日期：<text style="font-weight: 400;">{{blogger_list.lostthing_time}}</text></text>
         <text class="space">
-            校区：<text style="font-weight: 400;">{{item.lostthing_space}}</text></text>
+            校区：<text style="font-weight: 400;">{{blogger_list.lostthing_space}}</text></text>
         <text class="space_detail">
-            地点：<text style="font-weight: 400;">{{item.lostthing_space_detail}}</text></text>
+            地点：<text style="font-weight: 400;">{{blogger_list.lostthing_space_detail}}</text></text>
         <text class="contact">
-            联系方式：<text style="font-weight: 400;">{{item.lostthing_contact}}}</text></text>
+            联系方式：<text style="font-weight: 400;">{{blogger_list.lostthing_contact}}}</text></text>
         <text class="lostthing_class">
-            分类：<text style="font-weight: 400;">{{item.lostthing_class}}</text>
+            分类：<text style="font-weight: 400;">{{blogger_list.lostthing_class}}</text>
         </text>
     </view>
     <!-- 主要内容 -->
     <view class="contact_detail">
         <text class="h1_detail">详情内容</text>
         <view style="margin-top: 5px;">
-            <text class="detail_1">{{item.lostthing_detail}}</text>
+            <text class="detail_1">{{blogger_list.lostthing_detail}}</text>
         </view>
-        <image wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
+        <image wx:for="{{blogger_list.photos}}" wx:for-blogger_list="photo" src="{{photo}}" mode="aspectFill"></image>
     </view>
     <!-- 文后小标模块 -->
     <view class="box3">
-        <view class="tags" wx:for="{{item.tags}}">{{item}}</view>
         <view class="post-data">
             <!-- 点赞   -->
-            <view class="feet" bindtap="favourMe" data-id="{{item.comment_id}}">
-                <image class="favour_img" src="{{item.favour_src}}"></image>
-                <text class="favour_num" style="position: relative; right:0;bottom: 0;">{{item.favour}}</text>
+            <view class="feet" bindtap="favourMe" data-id="{{blogger_list.comment_id}}">
+                <image class="favour_img" src="{{blogger_list.favour_src}}"></image>
+                <text class="favour_num" style="position: relative; right:0;bottom: 0;">{{blogger_list.favour}}</text>
             </view>
             <view class="feet">
                 <image class="feet_img" src="/assets/images/sort/liuyan.png"></image>
-                <text class="feet_num">{{item.comments}}</text>
+                <text class="feet_num">{{blogger_list.comments}}</text>
             </view>
             <view class="feet">
                 <image class="feet_img" src="/assets/images/sort/lookup.png"></image>
-                <text class="feet_num">{{item.readingtimes}}</text>
+                <text class="feet_num">{{blogger_list.readingtimes}}</text>
             </view>
         </view>
     </view>
