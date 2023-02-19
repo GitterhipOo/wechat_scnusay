@@ -23,7 +23,7 @@
         <text class="space_detail">
             地点：<text style="font-weight: 400;">{{blogger_list.lostthing_space_detail}}</text></text>
         <text class="contact">
-            联系方式：<text style="font-weight: 400;">{{blogger_list.lostthing_contact}}}</text></text>
+            联系方式：<text style="font-weight: 400;">{{blogger_list.lostthing_contact}}</text></text>
         <text class="lostthing_class">
             分类：<text style="font-weight: 400;">{{blogger_list.lostthing_class}}</text>
         </text>
@@ -34,7 +34,9 @@
         <view style="margin-top: 5px;">
             <text class="detail_1">{{blogger_list.lostthing_detail}}</text>
         </view>
-        <image wx:for="{{blogger_list.photos}}" wx:for-blogger_list="photo" src="{{photo}}" mode="aspectFill"></image>
+        <view>
+        <image wx:for="{{blogger_list.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
+        </view>
     </view>
     <!-- 文后小标模块 -->
     <view class="box3">
