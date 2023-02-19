@@ -6,11 +6,102 @@ Page({
      * 页面的初始数据
      */
     data: {
+            like: [],
+            likeList: [],
+            id: '',//数据的id
+            isClick: false,
+            likeStorage: [],//缓存
+            likeId: '',//缓存ID
+            data_index:[
+                {
+                    blogger_avatar: 'https://s1.328888.xyz/2022/08/02/OF8Ay.jpg',
+                    blogger_name: '黄志敏黄志敏黄志敏',
+                    blogger_time: '11小时前发布',
+                    ShareCar_title: '小塘医院做核酸',
+                    ShareCar_time: '2022年9月1日',
+                    ShareCar_space: '南海校区',
+                    ShareCar_spot: '北门门口',
+                    ShareCar_contact: '18823828238',
+                    ShareCar_class: 'AA制',
+                    ShareCar_people: '4人',
+                    readingtimes: 49, //阅读次数
+                    comments: 5, //评论数量
+                    favour: 20, //点赞数量
+                    had_favour: 0, //点赞判断
+                    had_collection:0,//收藏判断
+                },{
+                    blogger_avatar: 'https://s1.328888.xyz/2022/08/02/OF8Ay.jpg',
+                    blogger_name: '1447523',
+                    blogger_time: '1小时前发布',
+                    ShareCar_title: '零度网吧5黑CF',
+                    ShareCar_time: '2022年9月32日',
+                    ShareCar_space: '南海校区',
+                    ShareCar_spot: 'A栋201',
+                    ShareCar_contact: '13423212311',
+                    ShareCar_class: '面基协商',
+                    ShareCar_people: '3人',
+                    readingtimes: 49, //阅读次数
+                    comments: 5, //评论数量
+                    favour: 20, //点赞数量
+                    had_favour: 0, //点赞判断
+                    had_collection:0,//收藏判断
+                },{
+                    blogger_avatar: 'https://s1.328888.xyz/2022/08/02/OF8Ay.jpg',
+                    blogger_name: '黄志敏qwee',
+                    blogger_time: '11小时前发布',
+                    ShareCar_title: '小塘医院看病',
+                    ShareCar_time: '2022年9月1日',
+                    ShareCar_space: '南海校区',
+                    ShareCar_spot: '北门门口',
+                    ShareCar_contact: '18823828238',
+                    ShareCar_class: '包车请客',
+                    ShareCar_people: '2人',
+                    readingtimes: 49, //阅读次数
+                    comments: 5, //评论数量
+                    favour: 20, //点赞数量
+                    had_favour: 0, //点赞判断
+                    had_collection:0,//收藏判断
+                },{
+                    blogger_avatar: 'https://s1.328888.xyz/2022/08/02/OF8Ay.jpg',
+                    blogger_name: '黄志敏与uZI',
+                    blogger_time: '3小时前发布',
+                    ShareCar_title: '去佛山西站',
+                    ShareCar_time: '2022年9月5日',
+                    ShareCar_space: '南海校区',
+                    ShareCar_spot: '南门门口',
+                    ShareCar_contact: '18823828238',
+                    ShareCar_class: '自驾顺风车',
+                    ShareCar_people: '1人',
+                    readingtimes: 49, //阅读次数
+                    comments: 5, //评论数量
+                    favour: 20, //点赞数量
+                    had_favour: 0, //点赞判断
+                    had_collection:0,//收藏判断
+                },{
+                    blogger_avatar: 'https://s1.328888.xyz/2022/08/02/OF8Ay.jpg',
+                    blogger_name: '黄敏黄敏黄敏',
+                    blogger_time: '11小时前发布',
+                    ShareCar_title: '青年旅馆睡觉',
+                    ShareCar_time: '2022年9月1日',
+                    ShareCar_space: '南海校区',
+                    ShareCar_spot: '北门门口',
+                    ShareCar_contact: '18823828238',
+                    ShareCar_class: 'AA制',
+                    ShareCar_people: '4人',
+                    readingtimes: 49, //阅读次数
+                    comments: 5, //评论数量
+                    favour: 20, //点赞数量
+                    had_favour: 0, //点赞判断
+                    had_collection:0,//收藏判断
+                }
+            ]
+
             
     },
     calling: function () {
+        // var pnumber = this.data.data_index.ShareCar_contact;
         wx.makePhoneCall({
-        phoneNumber: '13927433111',
+        phoneNumber: '18823828238',
         success: function () {
         console.log("拨打电话成功！")
         },
@@ -21,8 +112,29 @@ Page({
         },
     GOTO:function(){
         wx.navigateTo({
-          url: '../ShareCar/details/index',
+          url: './details/details',
         })
+    },
+    like:function(){
+        if(!this.data.isClick == true){
+            // let likeData = this.data.likeStorage;
+            // likeData.push({
+            //   likeid:likeData.length,
+            //   id:this.data.like.id
+            // })
+            // wx.setStorageSync('likeData', likeData);
+            // wx.setStorageSync('id', this.data.like.id);
+            wx.showToast({
+              title: '已收藏',
+            });
+          }else{
+            wx.showToast({
+              title: '已取消收藏',
+            })
+          }
+          this.setData({
+            isClick:!this.data.isClick
+          })
     },
     /**
      * 生命周期函数--监听页面加载

@@ -1,7 +1,21 @@
 Page({
     data: {
         //主人公数据
-        blogger_list: [],
+        blogger_list: [{
+
+            pr_id: 1, //文章所属id
+            blogger_avatar: 'https://s1.328888.xyz/2022/08/02/OF8Ay.jpg', //博主头像(路径替换为你的图片路径)
+            blogger_name: '黄志敏与UZI', //博主昵称
+            blogger_time: '11小时前', //发布时间
+            ShareCar_title: '小塘医院做核酸', //标题
+            ShareCar_time: '2022年9月1日',
+            ShareCar_space: '南海校区', //大致地址
+            ShareCar_spot: '北门门口', //详细地址
+            ShareCar_contact: '18823828238',//电话号码
+            ShareCar_class: 'AA制', //分类
+            ShareCar_people: '4人', //人数
+            ShareCar_detail: 'RNG你一定要进世界赛啊呜呜呜呜阿尼亚哇酷哇酷' //详情内容
+        }],
         //评论数据
         comment_list: [{
                 comment_id: 1, //评论id
@@ -20,7 +34,7 @@ Page({
             {
                 comment_id: 2,
                 comment_pr_id: 1,
-                comment_user_avatar: '/assets/images/sharecars/jpg4.jpg',
+                comment_user_avatar: 'https://s1.328888.xyz/2022/08/02/OF8Ay.jpg',
                 comment_user_name: '张维默',
                 comment_text: '去办理优待证是挺难的，但是办理了优待证之后福利特别好',
                 comment_time: '2020年8月18日',
@@ -34,7 +48,7 @@ Page({
             {
                 comment_id: 3,
                 comment_pr_id: 1,
-                comment_user_avatar: '/assets/images/sharecars/jpg6.jpg',
+                comment_user_avatar: 'https://s1.328888.xyz/2022/08/02/OF8Ay.jpg',
                 comment_user_name: '张剑锋',
                 comment_text: '去办理优待证是挺难的，但是办理了优待证之后福利特别好',
                 comment_time: '2020年8月18日',
@@ -52,7 +66,7 @@ Page({
                 comment_id: 4,
                 comment_pr_id: 1,
                 comment_user_name: '张剑锋',
-                comment_user_avatar: '/assets/images/sharecars/jpg6.jpg',
+                comment_user_avatar: 'https://s1.328888.xyz/2022/08/02/OF8Ay.jpg',
                 comment_text: "大家快去办理吧!!!",
                 comment_time: '2020年8月18日',
                 reply_id: 3,
@@ -66,7 +80,7 @@ Page({
                 comment_id: 5,
                 comment_pr_id: 1,
                 comment_user_name: '沈非隆',
-                comment_user_avatar: '/assets/images/sharecars/jpg3.jpg',
+                comment_user_avatar: 'https://s1.328888.xyz/2022/08/02/OF8Ay.jpg',
                 comment_text: "办理优待证大概需要多长时间呢会不会需要特别长时间",
                 comment_time: '2020年8月18日',
                 reply_id: 3,
@@ -81,9 +95,12 @@ Page({
         /*定义一些数据*/
         focus: false, //输入框是否聚焦
         placeholder: '写回复', //底部输入框占字符
-        placeholder2: '说点什么，向拼主表达你的想法吧！', //顶部输入框占字符
+        // placeholder2: '说点什么，向拼主表达你的想法吧！', //顶部输入框占字符
         value: null, //顶部输入框内容
         comment_text: null, //底部评论框内容
+        favour: 20, //点赞数
+        had_favour: 0, //用户是否点赞判断
+        favour_src: "/assets/images/icon/unfavour.png", //地址
         /*
          *以下初始化数据是用户点击任意一条评论或回复时需要设置的数据
          *然后将设置好的数据传递给评论时新创建的评论数据对象
@@ -96,7 +113,7 @@ Page({
         //模拟用户信息
         userinfo: {
             nickName: '马飞', //用户昵称
-            avatarUrl: '//img/black.png' //用户头像
+            avatarUrl: '/images/assemblyNumber/discoveryDetails/per5.png' //用户头像
         }
     },
 
@@ -174,17 +191,13 @@ Page({
             }
             var comment_detail = {} //评论/回复对象
             comment_detail.comment_id = new_id; //评论Id      
-            comment_detail.comment_user_avatar = comment_user_avatar; //用户头像      
             comment_detail.comment_user_name = comment_user_name; //用户昵称      
+            comment_detail.comment_user_avatar = comment_user_avatar; //用户头像      
             comment_detail.comment_text = comment_text; //评论内容      
             comment_detail.comment_time = time; //评论时间      
             comment_detail.reply_id = reply_id; //回复谁的评论的id      
             comment_detail.parent_id = parent_id; //评论所属哪个评论id      
             comment_detail.reply_name = reply_name; //回复评论人的昵称
-            comment_detail.favour = 0; //点赞数量
-            comment_detail.had_favour = 0; //是否点赞
-            comment_detail.favour_src = "/assets/images/icon/unfavour.png" //图标
-
             //判断parent_id是否为0 为0就是评论 不为0就是回复
             if (comment_detail.parent_id > 0) {
                 //回复
@@ -214,24 +227,22 @@ Page({
         var that = this
         let commentid = e.currentTarget.dataset.id
         let reply = e.currentTarget.dataset.reply
-        let had_favour = that.data.blogger_list[0].had_favour
-        console.log(had_favour)
         if (commentid == null) { //如果不是评论区
-            if (had_favour == 0) {
+            if (that.data.had_favour == 0) {
                 this.setData({
-                    ['blogger_list[0].favour']: that.data.blogger_list[0].favour + 1,
-                    ['blogger_list[0].favour_src']: "/assets/images/icon/favour.png",
-                    ['blogger_list[0].had_favour']: 1
+                    favour: that.data.favour + 1,
+                    favour_src: "/assets/images/icon/favour.png",
+                    had_favour: 1
                 })
             } else {
                 this.setData({
-                    ['blogger_list[0].favour']: that.data.blogger_list[0].favour - 1,
-                    ['blogger_list[0].favour_src']: "/assets/images/icon/unfavour.png",
-                    ['blogger_list[0].had_favour']: 0
+                    favour: that.data.favour - 1,
+                    favour_src: "/assets/images/icon/unfavour.png",
+                    had_favour: 0
                 })
             }
         } else {
-            commentid = parseInt(commentid) - 1
+            commentid=parseInt(commentid)-1
             if (reply == 0) { //评论区
                 if (that.data.comment_list[commentid].had_favour == 0) {
                     this.setData({
@@ -248,7 +259,7 @@ Page({
                     })
                 }
             } else { //回复区
-                commentid = commentid - that.data.comment_list.length
+                commentid=commentid-that.data.comment_list.length
                 if (this.data.comment_list2[commentid].had_favour == 0) {
                     this.setData({
                         // 这里需要把点赞的数据上传给服务器
@@ -265,21 +276,5 @@ Page({
                 }
             }
         }
-    },
-    //生命周期函数--监听页面加载
-    onLoad: function (options) {
-        var _this = this;
-        wx.getStorage({
-            key: 'sendPostValue',
-            success: function(res) {
-                console.log(res.data)  
-                _this.setData({
-                    blogger_list:res.data
-                })
-            } 
-          })
-          wx.removeStorageSync('sendPostValue')
-          //将本次传过来的本地缓存的key对应的缓存清理掉，实现每次点击都是不一样的内容
-          
-    },
+    }
 })

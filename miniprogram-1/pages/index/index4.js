@@ -8,7 +8,7 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     ishide:false,
     openidget:false,
-    headimgurl:"",
+    headimgurl:"https://s1.328888.xyz/2022/10/13/8y8ZI.png",
     username:"",
     doihaveinfo:false,
   },
