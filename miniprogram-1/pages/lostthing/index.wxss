@@ -26,8 +26,8 @@ page{
 .guide {
     z-index: 99999;
     position: fixed;
-    top: 200rpx;
-    right: 40rpx;
+    top: 82%;
+    right: 8%;
     margin: 3% 1%;
     height: 90rpx;
     width: 90rpx;
@@ -49,7 +49,9 @@ page{
     margin: 0 20rpx;
 }
 /* swiper模块 */
-
+swiper{
+    height: 100%;
+}
 /* 帖子数据 */
 .box {
     position: relative;
