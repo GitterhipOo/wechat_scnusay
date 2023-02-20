@@ -8,11 +8,10 @@ Page({
     data: {
         navH: 0,
         rotationList:[
-            {imgurl: 'https://img1.imgtp.com/2022/06/01/BgYTrOiQ.jpg',},
-            //已失效
+            {imgurl: 'https://www.scnusay.cc/indexswiper/1.jpg',},
             {imgurl: 'https://news.scnu.edu.cn/media/image/2020/11/2020112537fb67.jpeg.v',},
-            {imgurl: 'https://img1.imgtp.com/2022/06/01/vFZmZtBC.png'}
-            //已失效
+            {imgurl: 'https://www.scnusay.cc/indexswiper/2.jpg'}
+            
         ],
         
     sortList:[

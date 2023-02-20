@@ -9,7 +9,7 @@
 
     <block wx:if="{{!hasUserInfo}}">
         <view class="loginhead">
-            <image bindtap="bindViewTap" class="userinfo-avatar" src="https://s1.328888.xyz/2022/05/02/ANMF7.png" mode="cover"></image>
+            <image bindtap="bindViewTap" class="userinfo-avatar" src="https://www.scnusay.cc/ren.png" mode="cover"></image>
             <text class="userinfo-nickname">未登录用户</text>
          </view>
     </block>
