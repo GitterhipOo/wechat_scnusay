@@ -13,6 +13,10 @@ page {
     box-sizing: border-box;
   } */
 /* 相机 */
+.imgInSwiper{
+    height: 400rpx;
+    width: 100%;
+}
 .img_list .img_li .delete {
     width: 50rpx;
     height: 50rpx;
