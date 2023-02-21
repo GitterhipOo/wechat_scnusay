@@ -13,6 +13,9 @@ Page({
      * 页面的初始数据
      */
     data: {
+        swiperHeight:"800px",
+        //页面切换相关数据
+        current_Page: 0,
         photocou: 0, //用户上传图片的数量
         top_using_res: wx.getMenuButtonBoundingClientRect(),
         windowInfo: wx.getWindowInfo(),
@@ -86,6 +89,7 @@ Page({
                 favour_src: "/assets/images/icon/unfavour.png", //点赞图标
             },
 
+<<<<<<< Updated upstream
         ],
         //postowner为私人发布内容，根据时间排序
         postOwner: [{
@@ -151,12 +155,33 @@ Page({
         ],
         //页面切换相关数据
         current_Page: 0,
+=======
+>>>>>>> Stashed changes
     },
     jumpToSearch: function () {
-        wx.navigateTo({
-            url: '/pages/lostthing/search',
+        this.setData({
+            swiperHeight:"1500px"
         })
+        // wx.navigateTo({
+        //     url: '/pages/lostthing/search',
+        // })
         //点击搜索跳转
+    },
+
+    //通过计算post的数量获取页面长度
+    getSwiperItemHeight:function(){
+        var postHeight
+        if (this.data.current_Page == 0){
+            postHeight=(this.data.post0.length)*480+"rpx";
+        }
+        else{
+            postHeight=(this.data.post1.length)*480+"rpx";
+        }
+        console.log("ifguoqul")
+        this.setData({
+            swiperHeight:postHeight,
+        })
+        console.log("wsbs")
     },
 
     //跳转至详情页面
@@ -210,16 +235,9 @@ Page({
 
     //触底刷新功能
     onReachBottom: function () {
-        this.setData({
-            curPage: this.data.curPage + 1
-        });
-        this.getGoodsList(0, true)
+        console.log("sbsbs")
     },
     onPullDownRefresh: function () {
-        this.setData({
-            curPage: 1
-        });
-        this.getGoodsList(0)
         wx.stopPullDownRefresh()
     },
 
@@ -249,7 +267,15 @@ Page({
             current_Page: pag
         })
     },
-
+    //滑动swiperItem修改currentPag
+    changeswiper(e){ 
+        this.setData({
+            current_Page: e.detail.current
+        })
+        console.log("切换触发")
+        this.getSwiperItemHeight()
+        console.log("切换的我触发")
+    },
     /**
      * 生命周期函数--监听页面加载
      */
