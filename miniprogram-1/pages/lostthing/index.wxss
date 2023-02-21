@@ -52,10 +52,6 @@ page{
 
 swiper{
     height: 100%;
-
-swiper,swiper-item{
-    /* height:100vh!important; */
-    /* height: 1500px; */
 }
 
 /* 帖子数据 */
@@ -137,8 +133,7 @@ swiper,swiper-item{
     display: inline-block;
     width: 35rpx;
     height: 35rpx;
-
+}
 .test{
     height: 10px;
-
 }
