@@ -51,7 +51,9 @@ page{
 /* swiper模块 */
 swiper{
     height: 100%;
+    overflow: visible;
 }
+
 /* 帖子数据 */
 .box {
     position: relative;
@@ -131,4 +133,7 @@ swiper{
     display: inline-block;
     width: 35rpx;
     height: 35rpx;
+}
+.container1{
+    overflow: visible;
 }
