@@ -51,7 +51,6 @@ page{
 /* swiper模块 */
 swiper{
     height: 100%;
-    overflow: visible;
 }
 
 /* 帖子数据 */

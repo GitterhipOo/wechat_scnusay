@@ -90,36 +90,10 @@ Page({
 
     //触底刷新功能
     onReachBottom: function () {
-        this.setData({
-            curPage: this.data.curPage + 1
-        });
-        this.getGoodsList(0, true)
     },
     onPullDownRefresh: function () {
-        this.setData({
-            curPage: 1
-        });
-        this.getGoodsList(0)
         wx.stopPullDownRefresh()
     },
-
-    //   // 滑动判断
-    //   changeswiper: function (e) {
-    //     var _this = this;
-    //     console.log(e.detail.current)
-    //     setTimeout(function () { //异步
-    //       var query = wx.createSelectorQuery(); //模仿dom获取组件的高度
-    //       query.selectAll('.list').boundingClientRect()
-    //       query.exec((res) => {
-    //         console.log(res)
-    //         var listHeight = res[0][e.detail.current].height
-    //         console.log(res[0][e.detail.current].height)
-    //         _this.setData({
-    //           height: listHeight + 20 + 'px'
-    //         })
-    //       })
-    //     }, 100)
-    //   },
 
     // 点击标签判断
     clicktab: function (e) {
@@ -130,7 +104,30 @@ Page({
             current_Page: pag
         })
     },
+    getSwiperItemHeight:function(){
+        var postHeight
+        if (this.data.current_Page == 0){
+            postHeight=(this.data.post0.length)*480+"rpx";
+        }
+        else{
+            postHeight=(this.data.post1.length)*480+"rpx";
+        }
+        console.log("ifguoqul")
+        this.setData({
+            swiperHeight:postHeight,
+        })
+        console.log("wsbs")
+    },
 
+    //滑动swiperItem修改currentPag
+    changeswiper(e){ 
+        this.setData({
+            current_Page: e.detail.current
+        })
+        console.log("切换触发")
+        this.getSwiperItemHeight()
+        console.log("切换的我触发")
+    },
     /**
      * 生命周期函数--监听页面加载
      */
