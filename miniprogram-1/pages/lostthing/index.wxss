@@ -49,8 +49,13 @@ page{
     margin: 0 20rpx;
 }
 /* swiper模块 */
+
 swiper{
     height: 100%;
+
+swiper,swiper-item{
+    /* height:100vh!important; */
+    /* height: 1500px; */
 }
 
 /* 帖子数据 */
@@ -132,7 +137,8 @@ swiper{
     display: inline-block;
     width: 35rpx;
     height: 35rpx;
-}
-.container1{
-    overflow: visible;
+
+.test{
+    height: 10px;
+
 }

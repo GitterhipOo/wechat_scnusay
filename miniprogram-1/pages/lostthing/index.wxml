@@ -32,6 +32,7 @@
 <!-- 切换栏结束 -->
 <!-- 使用<swiper></swiper>来承担切换内容 -->
 <swiper bindchange="changeswiper" current="{{current_Page}}"style="height:{{swiperHeight}} ;">
+
     <swiper-item>
         <view class="list">
             <!-- 以一个作为案例 -->
@@ -109,3 +110,6 @@
         </view>
     </swiper-item>
 </swiper>
+<view class="test">
+</view>
+
