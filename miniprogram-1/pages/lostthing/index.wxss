@@ -49,15 +49,15 @@ page{
     margin: 0 20rpx;
 }
 /* swiper模块 */
-<<<<<<< Updated upstream
+
 swiper{
     height: 100%;
-=======
+
 swiper,swiper-item{
     /* height:100vh!important; */
     /* height: 1500px; */
->>>>>>> Stashed changes
 }
+
 /* 帖子数据 */
 .box {
     position: relative;
@@ -137,10 +137,8 @@ swiper,swiper-item{
     display: inline-block;
     width: 35rpx;
     height: 35rpx;
-<<<<<<< Updated upstream
-=======
-}
+
 .test{
     height: 10px;
->>>>>>> Stashed changes
+
 }
