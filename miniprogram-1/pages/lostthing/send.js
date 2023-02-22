@@ -6,6 +6,7 @@ Page({
         imglist: [], //照片暂时的存放区域
         count: 3, //最多储存图片
         countNow: 0, //当前储存图片数量
+        current_Page: 0,//当前所在的图片位置
         array_Space: ['石牌', '大学城', '南海', '汕尾'],
         array_Tag: ['其他', '图书文具', '生活用品', '电子产品', '化妆用品', '服装鞋包'],
         lostthing_Time_Binding: "丢失",
@@ -70,6 +71,7 @@ Page({
                   console.log(res)
                      var tempFilePaths = res.tempFiles[0].tempFilePath
                         _this.setData({
+                            current_Page:_this.data.countNow,
                             countNow: _this.data.countNow + 1,
                             imglist: _this.data.imglist.concat(tempFilePaths)
                         })
@@ -77,7 +79,6 @@ Page({
                 console.log("大小为"+res.tempFiles[0].size)
               },
             })
-
         }
     },
 
