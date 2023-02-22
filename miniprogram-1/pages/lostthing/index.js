@@ -168,6 +168,20 @@ Page({
         console.log("切换触发")
         this.getSwiperItemHeight()
         console.log("切换的我触发")
+        var tabstylelost
+        var tabstylemy
+        if (this.data.current_Page == 0){
+            tabstylelost="background-color: rgb(186 , 204, 217)";
+            tabstylemy="background-color: white";
+        }
+        else{
+            tabstylelost="background-color: white";
+            tabstylemy="background-color: rgb(186 , 204, 217)";
+        }
+        this.setData({
+            tabstylelost:tabstylelost,
+            tabstylemy: tabstylemy,
+        })
     },
     /**
      * 生命周期函数--监听页面加载
