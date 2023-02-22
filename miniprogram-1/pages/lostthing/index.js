@@ -128,6 +128,20 @@ Page({
         this.setData({
             current_Page: pag
         })
+        var tabstylelost
+        var tabstylemy
+        if (this.data.current_Page == 0){
+            tabstylelost="background-color: rgb(186 , 204, 217)";
+            tabstylemy="background-color: white";
+        }
+        else{
+            tabstylelost="background-color: white";
+            tabstylemy="background-color: rgb(186 , 204, 217)";
+        }
+        this.setData({
+            tabstylelost:tabstylelost,
+            tabstylemy: tabstylemy,
+        })
     },
 
     getSwiperItemHeight:function(){
