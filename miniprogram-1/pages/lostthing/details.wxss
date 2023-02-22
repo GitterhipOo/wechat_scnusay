@@ -331,3 +331,10 @@ page{
     right: 6rpx;
     bottom: 14rpx;
 }
+.details_img{
+    width: 100%;
+    object-fit:contain;
+}
+.imgbox{
+    width: 100%;
+}

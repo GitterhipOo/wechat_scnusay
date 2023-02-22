@@ -77,6 +77,83 @@ Page({
                 favour_src: "/assets/images/icon/unfavour.png"
             }
         ],
+        //评论区已经被阉割了
+        //以下是原来的wxml的评论区部分
+        /*
+        
+<!-- 底下评论区 -->
+<view>
+
+    <!-- 评论-回复-回复评论显示区域 -->
+    <view class="container">
+        <!-- 总共评论数 -->
+        <view class="total">共{{comment_list.length + comment_list2.length}}条评论</view>
+        <!-- END -->
+        <!-- 评论框 -->
+        <input confirm-type="send" class="container_inp" value="{{value}}" placeholder="{{ placeholder2 }}" placeholder-class="container_place" bindconfirm="bindconfirm"></input>
+        <!-- END -->
+        <!-- 用户评论回复显示区域 -->
+        <view class="container-item" wx:for="{{comment_list}}" wx:for-item="list" wx:key="key">
+            <image class="item_img" src="{{list.comment_user_avatar}}"></image>
+            <view class="item_right">
+                <view class="right_name">{{list.comment_user_name}}</view>
+                <view  class="favour" style="top:-20rpx; right:5rpx">
+                    <image class="favour_img2" src="{{list.favour_src}}" bindtap="favourMe" data-id="{{list.comment_id}}" data-reply="{{list.reply_id}}"></image>
+                    <view class="favour_num">{{list.favour}}</view>
+                </view>
+                <view class="right_content">
+                    <text class="right_content_txt" bindtap='replyComment' data-type="1" data-name='{{list.comment_user_name}}' data-cid='{{list.comment_id}}' data-pid="{{list.parent_id}}">{{list.comment_text}}</text>
+                    <text class="right_content_txt2">{{list.comment_time}}</text>
+                    <!-- 回复评论 -->
+                    <!-- 判断回复列表数据中的parent_id和评论列表数据的comment_id是否相等 相等就显示 不等就不显示 -->
+                    <view class="reply" wx:for="{{comment_list2}}" wx:for-item="list2" wx:key="list2" wx:if="{{list2.parent_id == list.comment_id}}">
+                        <image class="reply_img" src="{{list2.comment_user_avatar}}"></image>
+                        <view class="reply_right">
+                            <view class="favour" style="top:-12rpx; right:-24rpx">
+                                <image class="favour_img2" src="{{list2.favour_src}}" bindtap="favourMe" data-id="{{list2.comment_id}}" data-reply="{{list2.reply_id}}"></image>
+                                <view class="favour_num">{{list2.favour}}</view>
+                            </view>
+                            <view class="right_name">{{list2.comment_user_name}}</view>
+                            <text wx:if="{{list2.reply_name == ''}}" class="right_content_txt" bindtap='replyComment' data-type="2" data-name='{{list2.comment_user_name}}' data-cid='{{list2.comment_id}}' data-pid="{{list2.parent_id}}">{{list2.comment_text}}</text>
+                            <text wx:if="{{list2.reply_name != ''}}" bindtap='replyComment' data-type="2" data-name='{{list2.comment_user_name}}' data-cid='{{list2.comment_id}}' data-pid="{{list2.parent_id}}" class="right_content_txt">回复 <text class="right_name">{{list2.reply_name}}：</text>{{list2.comment_text}}</text>
+                            <text class="right_content_txt2">{{list2.comment_time}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!-- END -->
+        <!-- 结束 -->
+        <view class="end">
+            <text class="end_txt" space="nbsp">— THE END —</text>
+        </view>
+        <!-- END -->
+    </view>
+    <!-- END -->
+    <!-- 底部评论 -->
+    <view class="foot">
+        <view class="say">
+            <view class="flex">
+                <image class="say_img" src="/assets/images/sharecars/icon6.jpg"></image>
+                <input confirm-type="send" class="say_inp" placeholder="{{ placeholder }}" value="{{ comment_text }}" focus="{{ focus }}" bindblur="blur" bindconfirm="confirm"></input>
+            </view>
+        </view>
+        <image class="foot_img" src="/assets/images/sharecars/icon4.jpg"></image>
+        <text class="foot_num">{{comment_list.length + comment_list2.length}}</text>
+        <view class="favour">
+            <image class="favour_img2" src="{{blogger_list[0].favour_src}}" bindtap="favourMe" data-id="{{blogger_list[0].comment_id}}"></image>
+            <view class="favour_num">{{blogger_list[0].favour}}</view>
+        </view>
+
+    </view>
+    <!-- END -->
+
+
+</view>
+        */
+
+
+
 
         /*定义一些数据*/
         focus: false, //输入框是否聚焦
