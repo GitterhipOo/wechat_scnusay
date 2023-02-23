@@ -27,6 +27,13 @@
                     "query": "",
                     "launchMode": "default",
                     "scene": null
+                },
+                {
+                    "name": "搜索页面",
+                    "pathName": "pages/lostthing/search",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
                 }
             ]
         }
