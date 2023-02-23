@@ -36,12 +36,9 @@ Page({
         current_Page: 0,
     },
     jumpToSearch: function () {
-        this.setData({
-            swiperHeight:"1500px"
+        wx.navigateTo({
+            url: '/pages/lostthing/search',
         })
-        // wx.navigateTo({
-        //     url: '/pages/lostthing/search',
-        // })
         //点击搜索跳转
     },
 
@@ -54,11 +51,11 @@ Page({
         else{
             postHeight=(this.data.post1.length)*480+"rpx";
         }
-        console.log("ifguoqul")
+        console.log("计算页面高度触发")
         this.setData({
             swiperHeight:postHeight,
         })
-        console.log("wsbs")
+        console.log("高度赋值完成")
     },
 
     //跳转至详情页面
@@ -113,11 +110,12 @@ Page({
 
     //触底刷新功能
     onReachBottom: function () {
-       console.log("sbsbs")
-
+       console.log("触底事件触发")
+       this.getSwiperItemHeight()
+        
     },
     onPullDownRefresh: function () {
-        wx.stopPullDownRefresh()
+        //wx.stopPullDownRefresh()
     },
 
     // 点击标签判断
@@ -152,11 +150,11 @@ Page({
         else{
             postHeight=(this.data.post1.length)*480+"rpx";
         }
-        console.log("ifguoqul")
+        console.log("计算页面高度触发")
         this.setData({
             swiperHeight:postHeight,
         })
-        console.log("wsbs")
+        console.log("高度计算完成")
     },
 
 
@@ -167,7 +165,6 @@ Page({
         })
         console.log("切换触发")
         this.getSwiperItemHeight()
-        console.log("切换的我触发")
         var tabstylelost
         var tabstylemy
         if (this.data.current_Page == 0){
@@ -289,6 +286,7 @@ Page({
         this.setData({
             navH: app.globalData.navHeight
         });
+        
     },
     logo: function (e) {
         //跳转去首页

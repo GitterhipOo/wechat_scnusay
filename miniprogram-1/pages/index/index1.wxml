@@ -11,6 +11,8 @@
             </view>
         </navigator>
     </view>
+
+
 </view>
 
 <view style="margin-top:{{navH*4+50}}rpx">
