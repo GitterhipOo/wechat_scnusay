@@ -25,9 +25,9 @@
 <!-- 发布入口结束 -->
 <!-- 切换栏 -->
 <view class='swipertab'>
-    <view class="tabitem {{currentab==0 ? 'active' : ''}}" data-current="0" bindtap='clicktab'>失主</view>
+    <view class="tabitem1" style="{{tabstylelost}}" data-current="0" bindtap='clicktab'>失主</view>
 
-    <view class="tabitem {{currentab==2 ? 'active' : ''}}" data-current="1" bindtap='clicktab'>我的</view>
+    <view class="tabitem2" style="{{tabstylemy}}" data-current="1" bindtap='clicktab'>我的</view>
 </view>
 <!-- 切换栏结束 -->
 <!-- 使用<swiper></swiper>来承担切换内容 -->

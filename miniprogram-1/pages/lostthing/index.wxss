@@ -43,10 +43,41 @@ page{
     color: #aaa;
 }
 /* 切换栏 */
-.tabitem{
-    display: inline-block;
-    background-color: rgb(185, 144, 144);
-    margin: 0 20rpx;
+.tabitem1{
+    display: flex;
+    float: left;
+    background-color: rgb(186 , 204, 217);
+    margin-top: 1rpx;
+    margin-bottom: 1rpx;
+    width: 46%;
+    height: 100%;
+    border-radius: 30rpx;
+    margin-left: 3%;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
+}
+.tabitem2{
+    float: right;
+    display: flex;
+    background-color: white;
+    margin-top: 1rpx;
+    margin-bottom: 1rpx;
+    width: 46%;
+    height: 100%;
+    border-radius: 30rpx;
+    margin-right: 3%;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+        box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
+}
+.swipertab{
+    height: 8%;
+    margin-top: 10rpx;
+    background-color: rgb(245, 245, 245);
+
 }
 /* swiper模块 */
 
