@@ -175,8 +175,6 @@ Page({
         var minute = date.getMinutes(); //获取分      
         var second = date.getSeconds(); //获取秒
         var time = `${year}年${month}月${day}日${hour}时${minute}分${second}秒`; //当前时间
-
-    
         //设置博主信息
         postValue.blogger_time = time;
         //设置图片内容

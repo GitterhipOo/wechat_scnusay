@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+    "usingComponents": {
+        "t-button": "/miniprogram_npm/tdesign-miniprogram/button/button"
+    }
 }

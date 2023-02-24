@@ -4,16 +4,13 @@
 var app = getApp();
 var startX, endX; //首先创建2个变量 来记录触摸时的原点
 var moveFlag = true; // 判断执行滑动事件
-var concat = function (str1, str2) {
-    return str1 + str2;
-}
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        swiperHeight:"800px",
+        swiperHeight:"1000px",
         //页面切换相关数据
         current_Page: 0,
         photocou: 0, //用户上传图片的数量
@@ -29,11 +26,7 @@ Page({
         post0: [],
         //post1为丢失物品，其中lostthing_class = 1
         post1: [],
-        //post1为私人发布内容，根据时间排序
-
-
-        //页面切换相关数据
-        current_Page: 0,
+        //post1为私人发布内容，根据时间排
     },
     jumpToSearch: function () {
         wx.navigateTo({
@@ -46,10 +39,10 @@ Page({
     getSwiperItemHeight:function(){
         var postHeight
         if (this.data.current_Page == 0){
-            postHeight=(this.data.post0.length)*480+"rpx";
+            postHeight=(this.data.post0.length)*500+100+"rpx";
         }
         else{
-            postHeight=(this.data.post1.length)*480+"rpx";
+            postHeight=(this.data.post1.length)*500+100+"rpx";
         }
         console.log("计算页面高度触发")
         this.setData({
@@ -83,6 +76,60 @@ Page({
         })
     },
 
+    postmenu:function(e){
+        console.log(e);
+        var that = this
+        let index = e.currentTarget.dataset.index
+        console.log("点击菜单的index值为" + index)
+        var menudeletevalue
+        //滑动以后判断当前页面是什么的辨识
+        console.log('current_page(判断当前是我的还是失物招领)为' + that.data.current_Page)
+        if (that.data.current_Page == 0) {
+            var menupostValue = that.data.post0[index].specialcode
+        } else if (that.data.current_Page == 1)
+            var menupostValue = that.data.post1[index].specialcode
+            //从已经放好的数组中获取对应的specialcode
+            console.log("选择菜蛋对应的specialcode为"+menupostValue)
+
+        wx.showActionSheet({  
+            itemList: ['删除', '已解决'],  
+            success: function(res) {  
+                //console.log("选择菜蛋对应的specialcode为"+menupostValue)
+                wx.request({
+                    url: 'https://www.scnusay.cc/lostdetail/lostdetailphoto/deletemylostpost.php',
+                    method: "POST",
+                    data: {
+                        'menupostValue':menupostValue,
+                    },
+                    header: {
+                        'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
+                    },
+                    success(res) {
+                            wx.showModal({
+                              title: '删除成功',
+                              content: '发布内容已删除',
+                              complete: (res) => {
+                                if (res.cancel) {
+                                  
+                                }
+                                if (res.confirm) {
+                                    wx.navigateTo({
+                                        url: '/pages/lostthing/index',
+                                    })
+                                }
+                              }
+                            })
+
+                    },
+                })
+
+            },
+
+            fail: function(res) {  
+                console.log(res.errMsg)  
+            }  
+        })  
+    },
     //点赞功能
     favourMe: function (e) {
         //返回commentid数据，再根据commentid能否访问/具体数字来判断点赞操作
@@ -145,10 +192,10 @@ Page({
     getSwiperItemHeight:function(){
         var postHeight
         if (this.data.current_Page == 0){
-            postHeight=(this.data.post0.length)*480+"rpx";
+            postHeight=(this.data.post0.length)*500+100+"rpx";
         }
         else{
-            postHeight=(this.data.post1.length)*480+"rpx";
+            postHeight=(this.data.post1.length)*500+100+"rpx";
         }
         console.log("计算页面高度触发")
         this.setData({
@@ -218,6 +265,7 @@ Page({
                         comments: 5, //评论数量
                         favour: res.data[i].favour, //点赞数量
                         had_favour: 0, //点赞判断
+                        specialcode:res.data[i].specialcode,
                     }
                     _this.setData({
                         post0: _this.data.post0.concat(newarray),
@@ -229,7 +277,6 @@ Page({
 
         //然后获取我的
         wx.request({
-            //先是获取失物招领的
             url: 'https://www.scnusay.cc/lostdetail/lostdetailphoto/returnmylost.php',
             method: "POST",
             data: {
@@ -261,6 +308,7 @@ Page({
                         comments: 5, //评论数量
                         favour: res.data[i].favour, //点赞数量
                         had_favour: 0, //点赞判断
+                        specialcode:res.data[i].specialcode,
                     }
                     _this.setData({
                         post1: _this.data.post1.concat(newarray),
