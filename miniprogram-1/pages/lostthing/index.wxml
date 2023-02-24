@@ -31,7 +31,7 @@
 </view>
 <!-- 切换栏结束 -->
 <!-- 使用<swiper></swiper>来承担切换内容 -->
-<swiper bindchange="changeswiper" current="{{current_Page}}"style="height:{{swiperHeight}} ;">
+<swiper bindchange="changeswiper" current="{{current_Page}}" style="height:{{swiperHeight}} ;">
 
     <swiper-item>
         <view class="list">
@@ -53,7 +53,7 @@
                 <view class="box3">
                     <view class="post-data">
                         <!-- 点赞   -->
-                        <view class="foot" bindtap="favourMe" data-id="{{item.blogger_id}}" data-class="{{item.lostthing_class}}"  data-index="{{index}}">
+                        <view class="foot" bindtap="favourMe" data-id="{{item.blogger_id}}" data-class="{{item.lostthing_class}}" data-index="{{index}}">
                             <image class="favour_img" src="{{item.favour_src}}"></image>
                             <text class="favour_num">{{item.favour}}</text>
                         </view>
@@ -70,8 +70,7 @@
             </view>
         </view>
     </swiper-item>
-    
-  
+
     <swiper-item class="container1">
         <view class="list">
             <!-- 以一个作为案例 -->
@@ -89,8 +88,9 @@
                     <image wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
                 </view>
                 <!-- 文后小标模块 -->
-                <view class="box3">
-                    <view class="post-data">
+                <view class="box3" style="width: 50%; height: 20%;">
+                    <view class="post-data" style="height: 100%;">
+                        <t-button shape="round" class="mypostmenu" bindtap="postmenu" data-index="{{index}}">更多操作</t-button>
                         <!-- 点赞   -->
                         <view class="foot" bindtap="favourMe" data-id="{{item.blogger_id}}">
                             <image class="favour_img" src="{{item.favour_src}}"></image>
@@ -112,4 +112,3 @@
 </swiper>
 <view class="test">
 </view>
-
