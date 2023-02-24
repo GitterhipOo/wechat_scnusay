@@ -4,7 +4,7 @@
     <!-- 华师小标+返回首页效果 -->
     <view style="display: flex;flex-wrap: wrap;height:100%;">
         <navigator hoverClass="none" url="/pages/index/index1" open-type="switchTab">
-            <image class="back-pre" src="../../assets/images/icon/search.png" style="height:36px;width:36px;margin: {{navH*1}}px 0 0 {{navH*0.4}}px;"></image>
+            <image class="back-pre" src="https://www.scnusay.cc/icon/search.png" style="height:36px;width:36px;margin: {{navH*1}}px 0 0 {{navH*0.4}}px;"></image>
         </navigator>
     </view>
     <!-- 搜索栏目 -->

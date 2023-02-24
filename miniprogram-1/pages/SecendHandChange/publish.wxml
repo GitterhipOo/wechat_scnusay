@@ -3,7 +3,7 @@
     <view class="nav-title" style="line-height: {{navH*2+44}}px;">发布</view>
     <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
         <navigator hoverClass="none" open-type="navigate" url="../SecendHandChange/index">
-                    <image class="back-pre" src="../../assets/images/sort/back.png" style="height:50rpx;width:50rpx;margin-top: 50rpx;"></image>
+                    <image class="back-pre" src="https://www.scnusay.cc/icon/back.png" style="height:50rpx;width:50rpx;margin-top: 50rpx;"></image>
         </navigator>
     </view>
 </view>
@@ -25,7 +25,7 @@
                         <image class='delete' bindtap="deleteImg" data-index="{{index}}" src="/assets/images/sort/delete.png"></image>
                     </view>
                     <view class='addimg' bindtap='img_w_show' wx:if="{{countNow<count}}">
-                        <image src='../../assets/images/sort/tianjia.png'></image>
+                        <image src='https://www.scnusay.cc/icon/tianjia.png'></image>
                     </view>
                 </view>
             </view>
@@ -41,7 +41,7 @@
     <view class='select_box'>
       <view class='select' catchtap='selectTaps'>
         <text class='select_text' name="category" >{{selectDatas[indexs]}}</text>
-        <image class='select_img {{shows&&"select_img_rotate"}}' src='../../assets/images/sort/xiasanjiao.png'></image>
+        <image class='select_img {{shows&&"select_img_rotate"}}' src='https://www.scnusay.cc/icon/xiasanjiao.png'></image>
       </view>
       <view class='option_box' style='height:{{shows?(selectDatas.length>5?300:selectDatas.length*60):0}}rpx;'>
         <text class='option' style='{{indexs==selectDatas.length-1&&"border:0;"}}' wx:for='{{selectDatas}}' wx:key='this' data-index='{{index}}' catchtap='optionTaps'>{{item}}</text>
