@@ -3,11 +3,11 @@
     <view class="nav-title" style="line-height: {{navH*2+44}}px;">闲置交易</view>
     <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
         <navigator hoverClass="none" open-type="switchTab" url="/pages/index/index1">
-                    <image class="back-pre" src="../../assets/images/sort/back.png" style="height:50rpx;width:50rpx;margin-top: 50rpx;"></image>
+                    <image class="back-pre" src="https://www.scnusay.cc/icon/back.png" style="height:50rpx;width:50rpx;margin-top: 50rpx;"></image>
         </navigator>
     </view>
 </view>
-<cover-image src="../../assets/images/sort/publish2.png" bindtap="gotopublish" style=" height: 80rpx;width: 80rpx; position: fixed;top:1000rpx; left:670rpx;"></cover-image>
+<cover-image src="https://www.scnusay.cc/icon/publish2.png" bindtap="gotopublish" style=" height: 80rpx;width: 80rpx; position: fixed;top:1000rpx; left:670rpx;"></cover-image>
 <!-- 搜索 -->
 <view class="search" style="margin-top:{{navH*4+50}}rpx" >
     <input type="text" placeholder="搜索关键词" id="mysearch"/> 
@@ -40,9 +40,9 @@
         <view class="info4">
         <view class="view1"></view>
         <view class="view2"> 
-            <image src="../../assets/images/sort/lookup.png" class="otherimg"></image><text>{{item.lookup}}</text>
-            <image src="../../assets/images/sort/zan.png" class="otherimg"></image><text>{{item.nice}}</text>
-            <image src="../../assets/images/sort/liuyan.png" class="otherimg"></image><text>{{item.talk}}</text></view>
+            <image src="https://www.scnusay.cc/icon/lookup.png" class="otherimg"></image><text>{{item.lookup}}</text>
+            <image src="https://www.scnusay.cc/icon/zan.png" class="otherimg"></image><text>{{item.nice}}</text>
+            <image src="https://www.scnusay.cc/icon/liuyan.png" class="otherimg"></image><text>{{item.talk}}</text></view>
         </view>
     </view>
 </view>

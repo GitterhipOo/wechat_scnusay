@@ -16,27 +16,27 @@ Page({
         
     sortList:[
       {
-        icon: "../../assets/images/sort/news.png",
+        icon: "https://www.scnusay.cc/icon/news.png",
         sortid: 1,
         text:"失物招领",
         jumpid:"lostthing"
       },{
-        icon: "../../assets/images/sort/second-hand.png",
+        icon: "https://www.scnusay.cc/icon/second-hand.png",
         sortid: 2,
         text:"闲置交易",
         jumpid:"shchange"
       },{
-        icon: "../../assets/images/sort/love-mood.png",
+        icon: "https://www.scnusay.cc/icon/love-mood.png",
         sortid: 3,
         text:"拼车同行",
         jumpid:"car"
       },{
-        icon: "../../assets/images/sort/question-ask.png",
+        icon: "https://www.scnusay.cc/icon/question-ask.png",
         sortid: 4,
         text:"队友招募",
         jumpid:"team"
       },{
-        icon: "../../assets/images/sort/part-time-job.png",
+        icon: "https://www.scnusay.cc/icon/part-time-job.png",
         sortid: 5,
         text:"美食点评",
         jumpid:"food"
