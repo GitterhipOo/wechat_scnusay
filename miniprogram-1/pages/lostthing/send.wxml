@@ -20,19 +20,19 @@
         </block>
 
     </swiper>
-
-    <!-- 标题与内容 -->
-    <input type="text" maxlength="17" style="font-size: 40rpx; margin:20rpx 5rpx;" placeholder="标题" placeholder-style="font-size:40rpx" value="{{postValue.lostthing_topic}}" bindinput="adInputChange" data-info="lostthing_topic" />
     <view class="divline"></view>
+    <!-- 标题 -->
+    <input type="text" maxlength="17" class="topic" placeholder="标题" placeholder-style="color:rgb(100, 100, 100)" value="{{postValue.lostthing_topic}}" bindinput="adInputChange" data-info="lostthing_topic" />
+    <!-- 详情内容 -->
     <textarea style="font-size: 30rpx; margin: 20rpx 5rpx; height:500rpx" placeholder="丢失（拾取）物品种类/地点具体描述" placeholder-style="font-size:30rpx" value="{{postValue.lostthing_detail}}" bindinput="adInputChange" data-info="lostthing_detail" />
 
     <view class="divline"></view>
     <!-- 失物判断 -->
-    <view class="switchCheck">
+    <!-- <view class="switchCheck">
         <view style="float: left; padding-top: 15rpx;">寻找失主</view>
         <switch style="float: right;" bindchange="bindPickerChange_Way" />
     </view>
-    <view class="divline"></view>
+    <view class="divline"></view> -->
     <!-- 丢失地点 -->
     <view class="lostChoose clearfix">
         <picker bindchange="bindPickerChange_Space" value="{{space}}" range="{{array_Space}}">
