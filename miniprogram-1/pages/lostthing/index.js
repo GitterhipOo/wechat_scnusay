@@ -91,39 +91,50 @@ Page({
             //从已经放好的数组中获取对应的specialcode
             console.log("选择菜蛋对应的specialcode为"+menupostValue)
 
-        wx.showActionSheet({  
-            itemList: ['删除', '已解决'],  
-            success: function(res) {  
-                //console.log("选择菜蛋对应的specialcode为"+menupostValue)
-                wx.request({
-                    url: 'https://www.scnusay.cc/lostdetail/lostdetailphoto/deletemylostpost.php',
-                    method: "POST",
-                    data: {
-                        'menupostValue':menupostValue,
-                    },
-                    header: {
-                        'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
-                    },
-                    success(res) {
+        wx.showActionSheet({
+                    itemList: ['删除', '已解决'],
+                    success: function (res) {
+                        if (res.tapIndex == 0) {
                             wx.showModal({
-                              title: '删除成功',
-                              content: '发布内容已删除',
-                              complete: (res) => {
-                                if (res.cancel) {
-                                  
+                                title: '删除',
+                                content: '是否删除内容',
+                                complete: (res) => {
+                                    if (res.cancel) {
+                                    }
+                                    if (res.confirm) {
+                                        //console.log("选择菜蛋对应的specialcode为"+menupostValue)
+                                        wx.request({
+                                            url: 'https://www.scnusay.cc/lostdetail/lostdetailphoto/deletemylostpost.php',
+                                            method: "POST",
+                                            data: {
+                                                'menupostValue': menupostValue,
+                                            },
+                                            header: {
+                                                'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
+                                            },
+                                            success(res) {
+                                                wx.showModal({
+                                                    title: '删除成功',
+                                                    content: '发布内容已删除',
+                                                    complete: (res) => {
+                                                        if (res.cancel) {
+
+                                                        }
+                                                        if (res.confirm) {
+                                                            wx.navigateTo({
+                                                                url: '/pages/lostthing/index',
+                                                            })
+                                                        }
+                                                    }
+                                                })
+
+                                            },
+                                        })
+                                    }
                                 }
-                                if (res.confirm) {
-                                    wx.navigateTo({
-                                        url: '/pages/lostthing/index',
-                                    })
-                                }
-                              }
                             })
-
+                        }
                     },
-                })
-
-            },
 
             fail: function(res) {  
                 console.log(res.errMsg)  
