@@ -1,4 +1,6 @@
 // pages/lostthing/search.js
+
+var documentType="lostdetail";
 Page({
 
     /**
@@ -64,3 +66,29 @@ Page({
 
     }
 })
+Component({
+    data: {
+      value: '',
+    },
+    methods: {
+        
+        submit:function(){
+            wx.request({
+                url: 'https://www.scnusay.cc/lostdetail/lostdetailphoto/searchvalue.php',
+                  method:"POST",
+                  data:{
+                        type:documentType,
+                        searchvalue:"麦当劳"
+                  },
+                  header: {
+                      'content-type': 'application/x-www-form-urlencoded;charset=utf-8'  
+                  },
+                  success(res){
+                      console.log(res.data);
+                  }
+              })
+            
+        }
+    }
+
+  });

@@ -1,13 +1,22 @@
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    var c = arguments.length,
+        r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+        d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    else
+        for (var i = decorators.length - 1; i >= 0; i--)
+            if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { SuperComponent, wxComponent } from '../common/src/index';
+import {
+    SuperComponent,
+    wxComponent
+} from '../common/src/index';
 import config from '../common/config';
 import props from './props';
-const { prefix } = config;
+const {
+    prefix
+} = config;
 const name = `${prefix}-search`;
 let Search = class Search extends SuperComponent {
     constructor() {
@@ -26,7 +35,9 @@ let Search = class Search extends SuperComponent {
         this.properties = props;
         this.observers = {
             focus(nextValue) {
-                this.setData({ 'localValue.focus': nextValue });
+                this.setData({
+                    'localValue.focus': nextValue
+                });
             },
         };
         this.data = {
@@ -38,27 +49,53 @@ let Search = class Search extends SuperComponent {
         };
     }
     onInput(e) {
-        const { value } = e.detail;
-        this.setData({ value });
-        this.triggerEvent('change', { value });
+        const {
+            value
+        } = e.detail;
+        this.setData({
+            value
+        });
+        this.triggerEvent('change', {
+            value
+        });
     }
     onFocus(e) {
-        const { value } = e.detail;
-        this.setData({ 'localValue.focus': true });
-        this.triggerEvent('focus', { value });
+        const {
+            value
+        } = e.detail;
+        this.setData({
+            'localValue.focus': true
+        });
+        this.triggerEvent('focus', {
+            value
+        });
     }
     onBlur(e) {
-        const { value } = e.detail;
-        this.setData({ 'localValue.focus': false });
-        this.triggerEvent('blur', { value });
+        const {
+            value
+        } = e.detail;
+        this.setData({
+            'localValue.focus': false
+        });
+        this.triggerEvent('blur', {
+            value
+        });
     }
     handleClear() {
-        this.setData({ value: '' });
-        this.triggerEvent('clear', { value: '' });
+        this.setData({
+            value: ''
+        });
+        this.triggerEvent('clear', {
+            value: ''
+        });
     }
     onConfirm(e) {
-        const { value } = e.detail;
-        this.triggerEvent('submit', { value });
+        const {
+            value
+        } = e.detail;
+        this.triggerEvent('submit', {
+            value
+        });
     }
     onActionClick() {
         this.triggerEvent('action-click');
