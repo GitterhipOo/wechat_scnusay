@@ -177,6 +177,18 @@ Page({
         }
     },
 
+    previewImg:function(e){
+        console.log(e.currentTarget.dataset.photoindex);
+        var index = e.currentTarget.dataset.photoindex;
+        var imgArr = this.data.blogger_list.photos;
+        wx.previewImage({
+          current: imgArr[index],     //当前图片地址
+          urls: imgArr,               //所有要预览的图片的地址集合 数组形式
+          success: function(res) {},
+          fail: function(res) {},
+          complete: function(res) {},
+        })
+    },
     //点击用户评论或回复时触发
     replyComment(e) {
         var cid = e.currentTarget.dataset.cid; //当前点击的评论id
@@ -357,6 +369,16 @@ Page({
           })
           wx.removeStorageSync('sendPostValue')
           //将本次传过来的本地缓存的key对应的缓存清理掉，实现每次点击都是不一样的内容
-          
+        var photos = _this.data.blogger_list;
+        console.log(photos);
+        for (i = photos.size() - 1; i >=0 ; i--){
+            if (photos[i] != null)
+                break;
+            photos.pop();
+        }
+        console.log(photos);
+        this.setData({
+            "blogger_list.photos":photos
+        })
     },
 })
