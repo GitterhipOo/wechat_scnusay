@@ -116,21 +116,21 @@ Page({
             }
         })
     },
-    //绑定“way”值为“寻找失主”并设置变量
-    bindPickerChange_Way: function (e) {
-        console.log('way发送选择改变，携带值为', e.detail.value)
-        if (e.detail.value) {
-            this.setData({
-                ['postValue.way']: "寻找失主",
-                lostthing_Time_Binding: "拾得"
-            })
-        } else {
-            this.setData({
-                ['postValue.way']: "失物求寻",
-                lostthing_Time_Binding: "丢失"
-            })
-        }
-    },
+    // //绑定“way”值为“寻找失主”并设置变量
+    // bindPickerChange_Way: function (e) {
+    //     console.log('way发送选择改变，携带值为', e.detail.value)
+    //     if (e.detail.value) {
+    //         this.setData({
+    //             ['postValue.way']: "寻找失主",
+    //             lostthing_Time_Binding: "拾得"
+    //         })
+    //     } else {
+    //         this.setData({
+    //             ['postValue.way']: "失物求寻",
+    //             lostthing_Time_Binding: "丢失"
+    //         })
+    //     }
+    // },
     //选择器，实现修改“地点、分类”后变换颜色为黑色
     bindPickerChange_Space: function (e) {
         // console.log('space发送选择改变，携带值为', e.detail.value);
