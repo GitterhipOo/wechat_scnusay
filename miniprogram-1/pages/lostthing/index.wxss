@@ -71,7 +71,7 @@ page{
     text-align: center;
     justify-content: space-around;
     align-items: center;
-        box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
 }
 .swipertab{
     height: 8%;
@@ -87,9 +87,12 @@ swiper{
 
 /* 帖子数据 */
 .box {
+    width: 95;
     position: relative;
     margin: 10rpx 0;
     background-color: #fff;
+    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 50rpx;
 }
 
 .box1 {
