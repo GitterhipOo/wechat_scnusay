@@ -1,5 +1,5 @@
 <!--pages/lostthing/search.wxml-->
-<t-search></t-search>
+<t-search placeholder="请输入搜索内容" action="搜索" center="{{ true }}" focus="{{ true }}" shape="round"></t-search>
 
 
 

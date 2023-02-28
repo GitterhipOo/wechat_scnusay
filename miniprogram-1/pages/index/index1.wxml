@@ -6,7 +6,7 @@
         <navigator hoverClass="none" url="/pages/serach/search">
             <view class="nav-capsule">
                 <view class="topimage">
-                    <image class="back-pre" src="../../assets/images/icon/search.png" style="height:35px;width:35px;" bindtap="logo"></image>
+                    <image class="back-pre" src="https://www.scnusay.cc/icon/search.png" style="height:35px;width:35px;" bindtap="logo"></image>
                 </view>
             </view>
         </navigator>
@@ -41,7 +41,7 @@
     <view class="mess_sort">
         <!-- 实时留言 -->
         <view class="leave-message">
-            <image class="message-image" src="../../assets/images/sort/message.png"></image>
+            <image class="message-image" src="https://www.scnusay.cc/icon/message.png"></image>
             <swiper class="swiper_message" circular vertical autoplay interval="3000" easing-function="easeInOutCubic" >
                 <swiper-item class="swiper-item-message">
                     <view class="message">
@@ -80,7 +80,7 @@
     </view>
     
     <view class="keep-students">
-        <image src="/assets/images/icon/search.png" class="left-image"></image>
+        <image src="https://www.scnusay.cc/icon/search.png" class="left-image"></image>
         <view class="say-to-keep">关注华师说，获取更多华师内容捏~</view>
     </view>
 <!-- -------------------------------------瀑布流----------------------------------------- -->
