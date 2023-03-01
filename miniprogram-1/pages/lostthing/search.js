@@ -105,7 +105,7 @@ Component({
             }
 
             // 定义非法字符的正则表达式
-            var illegalChars = /[^a-zA-Z0-9\s]/;
+            var illegalChars = /[^a-zA-Z0-9\s\u4e00-\u9fa5]/;
 
             // 检查submitValue是否有非法字符
             if (illegalChars.test(submitValue)) {
