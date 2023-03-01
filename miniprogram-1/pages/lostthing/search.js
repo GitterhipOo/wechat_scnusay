@@ -68,7 +68,7 @@ Page({
 })
 Component({
     data: {
-        submitValue:""
+        submitValue: ""
     },
     methods: {
         // 定义一个回调函数
@@ -78,22 +78,21 @@ Component({
             if (wrong == "empty")
                 wrong = "搜索内容为空"
             else if (wrong == "illegalChars")
-            wrong = "搜索内容有非法字符"
+                wrong = "搜索内容有非法字符"
             else if (wrong == "emoji")
                 wrong = "搜索内容中有emoji"
             wx.showModal({
                 title: wrong,
                 // content: '这是一个模态弹窗',
-                success (res) {
-                  if (res.confirm) {
-                    console.log('用户点击确定')
-                  } else if (res.cancel) {
-                    console.log('用户点击取消')
-                  }
+                success(res) {
+                    if (res.confirm) {
+                        console.log('用户点击确定')
+                    } else if (res.cancel) {
+                        console.log('用户点击取消')
+                    }
                 }
-              })
+            })
         },
-
         // 定义一个检查函数,返回1则代表没问题，0则停止函数
         checkSubmitValue: function () {
             var submitValue = this.data.submitValue;
@@ -147,11 +146,19 @@ Component({
                         wx.hideLoading({
                             success: (res) => {},
                         })
-                        console.log(res.data);
+                        if ("no result" == res.data) {
+                            wx.showModal({
+                                title: '搜索失败',
+                                content: '无搜索内容',
+                            })
+                        } else {
+                            console.log(res.data);
+                        }
+
+
                     }
                 })
             }
         }
-    }
-
-});
+    },
+})
