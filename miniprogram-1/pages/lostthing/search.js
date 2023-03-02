@@ -1,20 +1,33 @@
 // pages/lostthing/search.js
-
+//搜索历史：在onload时获取本地缓存得到数组，将其打印到
 var documentType = "lostdetail";
+var SearchHistory=[];
+var that;
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        SearchHistory:[]
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function (options) {
-
+    onLoad: function (options) {  
+        //拉取本地缓存至lostdetailSearchHistory中
+        wx.getStorage({
+            key: documentType+"History",
+            success: function(res) {
+              // res.data是一个字符串数组，即["apple", "banana", "orange"]
+              this.setData({
+                SearchHistory: res.data
+              });
+            }
+          });
+        //将this传到全局变量
+        that=this;
     },
 
     /**
@@ -126,6 +139,22 @@ Component({
             // 如果都没有问题，就提交到服务器
             return 1;
         },
+        addHistory: function() {
+            // 获取submitValue的值
+            var value = this.data.submitValue;
+            // 将value插入到SearchHistory数组的最前面
+            SearchHistory.unshift(value);
+            // 如果SearchHistory数组长度超过5，则删除最后一个元素
+            if (SearchHistory.length > 6) {
+              SearchHistory.pop();
+            }
+            console.log(SearchHistory);
+            wx.setStorage({
+                key: documentType+"History",
+                data: SearchHistory
+              });
+            
+        },
         submit: function () {
             if (this.checkSubmitValue() == 1) {
                 wx.showLoading({
@@ -159,6 +188,12 @@ Component({
                     }
                 })
             }
+            //将新搜索内容加入历史，存入缓存
+            this.addHistory();
+            //将数据传入
+            that.setData({
+                SearchHistory:SearchHistory
+            })
         }
     },
 })
