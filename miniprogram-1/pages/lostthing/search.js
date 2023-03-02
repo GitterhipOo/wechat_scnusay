@@ -1,5 +1,7 @@
 // pages/lostthing/search.js
-//搜索历史：在onload时获取本地缓存得到数组，将其打印到
+//搜索历史：在onload时获取本地缓存得到数组，将其打印到页面
+//全局变量isHistorySubmit用来确定是否是从历史拉取的信息，如果为1则不使用addHistory方法
+var isHistorySubmit = 0;
 var documentType = "lostdetail";
 Page({
 
@@ -109,6 +111,7 @@ Page({
                 title: '加载中',
             })
             console.log(this.data.submitValue)
+            var that = this
             wx.request({
                 url: 'https://www.scnusay.cc/lostdetail/lostdetailphoto/searchvalue.php',
                 method: "POST",
@@ -131,18 +134,21 @@ Page({
                     } else {
                         console.log(res.data);
                     }
-
-
+                    if (isHistorySubmit == 0)
+                        that.addHistory();
+                    else
+                        isHistorySubmit = 0;
                 }
             })
         }
         //将新搜索内容加入历史，存入缓存
-        this.addHistory();
         
     },
 
     //定义点击后将信息传输至搜索内容的方法
     clickHistory:function(e){
+        //将标记设为1
+        isHistorySubmit = 1;
         //将点击的内容传入函数内
         var index = e.currentTarget.dataset.index
         console.log("当前点击索引"+index)
@@ -159,7 +165,6 @@ Page({
         this.addHistory()
     },
 
-    //我要堆屎咯，因为点击历史记录的
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
