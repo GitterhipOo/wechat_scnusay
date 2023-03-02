@@ -7,21 +7,22 @@ Page({
      * 页面的初始数据
      */
     data: {
-        SearchHistory:[]
+        searchHistory:[],
+        submitValue:"",
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {  
-        //拉取本地缓存至lostdetailSearchHistory中
+        //拉取本地缓存至lostdetailsearchHistory中
         var that = this
         wx.getStorage({
             key: documentType+"History",
             success: function(res) {
               // res.data是一个字符串数组，即["apple", "banana", "orange"]
               that.setData({
-                SearchHistory: res.data
+                searchHistory: res.data
               });
             }
           });
@@ -85,20 +86,20 @@ Page({
     addHistory: function() {
         // 获取submitValue的值
         var value = this.data.submitValue;
-        var SearchHistory = this.data.SearchHistory;
-        // 将value插入到SearchHistory数组的最前面
-        SearchHistory.unshift(value);
-        // 如果SearchHistory数组长度超过5，则删除最后一个元素
-        if (SearchHistory.length > 6) {
-          SearchHistory.pop();
+        var searchHistory = this.data.searchHistory;
+        // 将value插入到searchHistory数组的最前面
+        searchHistory.unshift(value);
+        // 如果searchHistory数组长度超过5，则删除最后一个元素
+        if (searchHistory.length > 6) {
+          searchHistory.pop();
         }
-        console.log(SearchHistory);
+        console.log(searchHistory);
         this.setData({
-            SearchHistory:SearchHistory
+            searchHistory:searchHistory
         })
         wx.setStorage({
             key: documentType+"History",
-            data: SearchHistory
+            data: searchHistory
           });
         
     },
@@ -140,6 +141,25 @@ Page({
         
     },
 
+    //定义点击后将信息传输至搜索内容的方法
+    clickHistory:function(e){
+        //将点击的内容传入函数内
+        var index = e.currentTarget.dataset.index
+        console.log("当前点击索引"+index)
+
+        var searchHistory = this.data.searchHistory;
+        var tempValue = searchHistory[index];
+        //将该索引弹出
+        searchHistory.splice(index,1);
+        //将该索引的内容传输至搜索框内
+        this.setData({
+            submitValue:tempValue,
+            searchHistory:searchHistory
+        })
+        this.addHistory()
+    },
+
+    //我要堆屎咯，因为点击历史记录的
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
