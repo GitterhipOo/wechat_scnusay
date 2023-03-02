@@ -134,14 +134,23 @@ Page({
                     } else {
                         console.log(res.data);
                     }
+                    //将新搜索内容加入历史
                     if (isHistorySubmit == 0)
                         that.addHistory();
                     else
                         isHistorySubmit = 0;
+                    //将搜索内容存入缓存
+                    wx.setStorage({
+                        key: documentType+"Index",
+                        data: res.data
+                      });
+                    //跳转至searchIndex
+                    wx.navigateTo({
+                        url: '/pages/lostthing/searchIndex',
+                    })
                 }
             })
         }
-        //将新搜索内容加入历史，存入缓存
         
     },
 

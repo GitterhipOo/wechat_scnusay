@@ -1,2 +1,64 @@
-<!--pages/lostthing/searchIndex.wxml-->
-<text>pages/lostthing/searchIndex.wxml</text>
+<!-- 样式里面的"list"不要删除 -->
+<!-- 顶部导航栏 -->
+<view class="nav-wrap" style="height: {{navH*2+20}}px;position: absolute;">
+    <!-- 华师小标+返回首页效果 -->
+    <view style="display: flex;flex-wrap: wrap;height:100%;">
+        <navigator hoverClass="none" url="/pages/index/index1" open-type="switchTab">
+            <image class="back-pre" src="https://www.scnusay.cc/icon/search.png" style="height:36px;width:36px;margin: {{navH*1}}px 0 0 {{navH*0.4}}px;"></image>
+        </navigator>
+    </view>
+    <!-- 搜索栏目 -->
+    <view style="position: absolute; left: {{top_using_res.left-windowInfo.screenWidth*0.55}}px; top:{{top_using_res.top}}px;height:{{top_using_res.height}}px ;width: 350rpx;">
+        <view class="search" hover-class="search-hover" hover-stay-time="50" bindtap="jumpToSearch">
+            <icon type="search" class="icon" style="position: absolute;left: 5rpx; top:{{(top_using_res.height-23)/2}}px"></icon>
+            <text style="position: absolute;left: 30px; bottom:{{(top_using_res.height-23)/2}}px">输入标签或描述</text>
+        </view>
+    </view>
+
+</view>
+<view style="height: {{navH*2+20}}px;"></view>
+<!-- 顶部导航栏结束 -->
+<!-- 发布入口 -->
+<!-- <navigator class="guide" url="/pages/lostthing/send" open-type="navigate">
+    <view class="lostcenter">发布</view>
+</navigator> -->
+<!-- 发布入口结束 -->
+
+    <view class="list" current="{{current_Page}}">
+        <!-- 以一个作为案例 -->
+        <view class="box" wx:for="{{post0}}" wx:key="index">
+            <!-- 头像栏模块 -->
+            <view class="box1" bindtap="jumptodetails" data-index="{{index}}">
+                <image src="{{item.blogger_avatar}}"></image>
+                <text class="text1">{{item.lostthing_topic}}</text>
+                <text class="text2">{{item.blogger_time}}</text>
+            </view>
+            <view class="box-way">{{item.lostthing_class==1?"丢失物品":"寻找物品"}}</view>
+            <!-- 主要内容模块 -->
+            <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
+                <view style="margin: 20rpx 0 40rpx 0;"><text>{{item.lostthing_detail}}</text></view>
+                <image wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
+            </view>
+            <!-- 文后小标模块 -->
+            <view class="box3">
+                <view class="post-data">
+                    <!-- 点赞   -->
+                    <view class="foot" bindtap="favourMe" data-id="{{item.blogger_id}}" data-class="{{item.lostthing_class}}" data-index="{{index}}">
+                        <image class="favour_img" src="{{item.favour_src}}"></image>
+                        <text class="favour_num">{{item.favour}}</text>
+                    </view>
+                    <view class="foot">
+                        <image class="foot_img" src="/assets/images/sort/liuyan.png"></image>
+                        <text class="foot_num">{{item.comments}}</text>
+                    </view>
+                    <view class="foot">
+                        <image class="foot_img" src="/assets/images/sort/lookup.png"></image>
+                        <text class="foot_num">{{item.readingtimes}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+<view class="test">
+</view>
