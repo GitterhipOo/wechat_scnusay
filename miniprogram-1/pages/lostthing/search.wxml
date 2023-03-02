@@ -1,5 +1,11 @@
 <!--pages/lostthing/search.wxml-->
 <t-search placeholder="请输入搜索内容" bind:submit="submit" bind:action-click="submit" action="搜索" model:value="{{submitValue}}" center="{{ true }}" focus="{{ true }}" shape="round"></t-search>
+<view wx:if="{{searchHistory[0]}}">
+<view>历史记录</view>
+<view wx:for="{{searchHistory}}"  wx:key="index" bindtap="clickHistory" data-index="{{index}}">
+<text>{{item}}</text>
+</view>
+</view>
 
 
 

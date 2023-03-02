@@ -1,0 +1,173 @@
+/* pages/lostthing/index.wxss */
+page{
+    height: 100%;
+    background-color: #eee;
+}
+/* 搜索框 */
+.search {
+    z-index: 9999999;
+    height: 100%;
+    width: 110%;
+    border-radius: 50rpx;
+    background-color: #eee;
+    color: darkgray;
+}
+
+.search-hover {
+    z-index: 9999999;
+    height: 100%;
+    width: 110%;
+    border-radius: 50rpx;
+    background-color: rgb(209, 209, 209);
+}
+
+/* 搜索框结束 */
+/* 发布 */
+.guide {
+    z-index: 99999;
+    position: fixed;
+    top: 82%;
+    right: 8%;
+    margin: 3% 1%;
+    height: 90rpx;
+    width: 90rpx;
+    border-radius: 45rpx;
+    background-color: #fff;
+    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
+}
+
+.guide .lostcenter {
+    display: block;
+    text-align: center;
+    line-height: 90rpx;
+    color: #aaa;
+}
+/* 切换栏 */
+.tabitem1{
+    display: flex;
+    float: left;
+    background-color: rgb(186 , 204, 217);
+    margin-top: 1rpx;
+    margin-bottom: 1rpx;
+    width: 46%;
+    height: 100%;
+    border-radius: 30rpx;
+    margin-left: 3%;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
+}
+.tabitem2{
+    float: right;
+    display: flex;
+    background-color: white;
+    margin-top: 1rpx;
+    margin-bottom: 1rpx;
+    width: 46%;
+    height: 100%;
+    border-radius: 30rpx;
+    margin-right: 3%;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
+}
+.swipertab{
+    height: 8%;
+    margin-top: 10rpx;
+    background-color: rgb(245, 245, 245);
+
+}
+/* swiper模块 */
+
+swiper{
+    height: 100%;
+}
+
+/* 帖子数据 */
+.box {
+    width: 95;
+    position: relative;
+    margin: 10rpx 0;
+    background-color: #fff;
+    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 50rpx;
+}
+
+.box1 {
+    height: 100rpx;
+    width: 500rpx;
+}
+
+.box1 image {
+    float: left;
+    margin: 5rpx 0 5rpx 10rpx;
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 90rpx;
+}
+
+.box1 .text1 {
+    float: left;
+    margin-top: 10rpx;
+    margin-left: 20rpx;
+    font-weight: 700;
+    font-size: 34rpx;
+    width: 380rpx;
+}
+
+.box1 .text2 {
+    float: right;
+    font-size: 20rpx;
+    color: #aaa;
+}
+
+.box-way {
+    position: absolute;
+    right: 10rpx;
+    top: 10rpx;
+    color: rgb(53, 192, 247);
+    font-size: 40rpx;
+}
+
+.box2 {
+    margin: 20rpx 10rpx;
+    padding-bottom: 100rpx;
+    /* height: 400rpx; */
+}
+
+.box2 text {
+    font-size: 30rpx;
+    width: 750rpx;
+    height: 30rpx;
+}
+
+.box2 image {
+    margin: 20rpx 5rpx;
+    width: 230rpx;
+    height: 130rpx;
+}
+
+.box3{
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+}
+
+.box3 .post-data {
+    float: right;
+}
+
+.box3 .foot {
+    float: right;
+}
+
+.box3 .foot image {
+    display: inline-block;
+    width: 35rpx;
+    height: 35rpx;
+}
+.test{
+    height: 10px;
+}
