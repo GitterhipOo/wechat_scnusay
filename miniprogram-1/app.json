@@ -5,7 +5,7 @@
         "pages/ShareCar/details/index",
         "pages/ShareCar/My_publish/index",
         "pages/ShareCar/search/index",
-        "pages/ShareCar/ReleaseInformation/index",  
+        "pages/ShareCar/ReleaseInformation/index",
         "pages/index/index2",
         "pages/index/index3",
         "pages/index/index4",
@@ -35,8 +35,8 @@
         "pages/team/detail/index",
         "pages/team/search/index",
         "pages/talk/content/index",
-        "pages/index/userprivacy"
-
+        "pages/index/userprivacy",
+        "pages/lostthing/searchIndex"
     ],
     "tabBar": {
         "color": "#7A7E83",
