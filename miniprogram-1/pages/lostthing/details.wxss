@@ -267,13 +267,15 @@ page{
 
 .say {
     display: inline-block;
-    width: 360rpx;
+    width: 100%;
     padding: 20rpx 0rpx 10rpx 24rpx;
     background-color: #F2F2F2;
     border-radius: 8rpx;
+
 }
 
 .flex {
+    width: 100%;
     display: flex;
     align-items: center;
 }
@@ -337,4 +339,8 @@ page{
 }
 .imgbox{
     width: 100%;
+}
+.say_btn{
+    width: 200rpx;
+    height: 50rpx;
 }
