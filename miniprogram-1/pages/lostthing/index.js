@@ -280,6 +280,7 @@ Page({
                     }
                     _this.setData({
                         post0: _this.data.post0.concat(newarray),
+                        
                         //将数组插入post0
                     })
                 }
