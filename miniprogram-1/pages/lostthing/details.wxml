@@ -42,30 +42,12 @@
 
     </view>
     <!-- 文后小标模块 -->
-    <view class="box3">
-        <view class="post-data">
-            <!-- 点赞   -->
-            <view class="feet" bindtap="favourMe" data-id="{{blogger_list.comment_id}}">
-                <image class="favour_img" src="{{blogger_list.favour_src}}"></image>
-                <text class="favour_num" style="position: relative; right:0;bottom: 0;">{{blogger_list.favour}}</text>
-            </view>
-            <view class="feet">
-                <image class="feet_img" src="/assets/images/sort/liuyan.png"></image>
-                <text class="feet_num">{{blogger_list.comments}}</text>
-            </view>
-            <view class="feet">
-                <image class="feet_img" src="/assets/images/sort/lookup.png"></image>
-                <text class="feet_num">{{blogger_list.readingtimes}}</text>
-            </view>
-        </view>
-    </view>
+
 </view>
 
 
-
 <!-- 底下评论区 -->
-<view>
-
+<view style="height: 400rpx;">
     <!-- 评论-回复-回复评论显示区域 -->
     <view class="container">
         <!-- 总共评论数 -->
@@ -76,7 +58,7 @@
         <!-- END -->
         <!-- 用户评论回复显示区域 -->
         <view class="container-item" wx:for="{{comment_list}}" wx:for-item="list" wx:key="key">
-            <image class="item_img" src="{{list.comment_user_avatar}}"></image>
+            <image class="item_img" src="{{list.comment_user_avatar}}" style="margin-left: 20rpx;"></image>
             <view class="item_right">
                 <view class="right_name">{{list.comment_user_name}}</view>
                 <view class="right_content">
@@ -112,7 +94,7 @@
                 <!-- <image class="say_img" src="/assets/images/sharecars/icon6.jpg"></image>
                 <input confirm-type="send" class="say_inp" placeholder="{{ placeholder }}" value="{{ comment_text }}" focus="{{ focus }}" bindblur="blur" bindconfirm="confirm"></input>
                 <button class="say_btn" bindtap="confirm">确认</button> -->
-                <t-input label="评论" placeholder="{{ placeholder }}" focus="{{ focus }}" value="{{inputvalue}}" bind:change="inputCom">
+                <t-input label="评论" placeholder="{{ placeholder }}" focus="{{ focus }}" value="{{inputvalue}}" bind:change="inputCom" bind:enter="confirm" style="margin: 0 0 0 0;">
                     <t-button slot="suffix" theme="primary" size="extra-small" bindtap="confirm">发送评论</t-button>
                 </t-input>
 

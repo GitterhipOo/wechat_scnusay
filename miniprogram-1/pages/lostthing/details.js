@@ -6,44 +6,9 @@ Page({
         //主人公数据
         blogger_list: [],
         //评论数据
-        comment_list: [{
-            comment_id: 1, //评论id
-            comment_user_avatar: 'https://s1.328888.xyz/2022/07/23/mH9Op.th.jpg', //评论用户头像(路径替换为你的图片路径)
-            comment_user_name: '高飞', //评论人昵称
-            comment_text: '去办理优待证是挺难的，但是办理了优待证之后福利特别好', //评论内容
-            comment_time: '2020年8月18日', //评论时间
-            parent_id: 0, //评论所属评论id，默认为0
-            reply_name: '', //回复评论用户的昵称 默认为''
-            specialcode: '', //辨别回复的贴子是哪条
-            openid:'',//发布者的openid
-            type:'',
-        }, ],
+        comment_list: [],
         //回复数据
-        comment_list2: [{
-            comment_id: 2, //评论id
-            comment_user_avatar: 'https://s1.328888.xyz/2022/07/23/mH9Op.th.jpg', //评论用户头像(路径替换为你的图片路径)
-            comment_user_name: '马牛逼', //评论人昵称
-            comment_text: '去办理优待证是挺难的，但是办理了优待证之后福利特别好', //评论内容
-            comment_time: '2020年8月18日', //评论时间
-            parent_id: 1, //评论所属评论id，默认为0
-            reply_name: '', //回复评论用户的昵称 默认为''
-            specialcode: '', //辨别回复的贴子是哪条
-            openid:'',//发布者的openid
-            type:1,
-            },
-            {
-                comment_id: 3, //评论id
-                comment_user_avatar: 'https://s1.328888.xyz/2022/07/23/mH9Op.th.jpg', //评论用户头像(路径替换为你的图片路径)
-                comment_user_name: '高飞', //评论人昵称
-                comment_text: '去办理优待证是挺难的，但是办理了优待证之后福利特别好', //评论内容
-                comment_time: '2020年8月18日', //评论时间
-                parent_id: 1, //评论所属评论id，默认为0
-                reply_name: '马牛逼', //回复评论用户的昵称 默认为''
-                specialcode: '', //辨别回复的贴子是哪条
-                openid:'',//发布者的openid
-                type:2,
-            }
-        ],
+        comment_list2: [],
         /*定义一些数据*/
         focus: false, //输入框是否聚焦
         placeholder: '写回复', //底部输入框占字符
@@ -87,6 +52,8 @@ Page({
 
     //底部输入框提交内容时触发
     confirm: function (e) {
+        var _this = this;
+        var regExp = /^[\u4e00-\u9fa5_a-zA-Z0-9，,.。！？、；‘’“”（）：《》【】]+$/;
         console.log(e)
         //获取输入框输入的内容
         var comment_text = this.data.inputvalue;
@@ -98,7 +65,27 @@ Page({
                 title: '请输入内容', //提示内容
                 icon: 'none' //提示图标
             })
-        } else {
+        } else if(comment_text==null)
+        {
+            //用户评论输入内容为空时弹出
+            wx.showToast({
+                title: '请输入内容', //提示内容
+                icon: 'none' //提示图标
+            })
+        }else if (!regExp.test(comment_text)) {
+            // 用户评论输入内容不符合正则表达式时弹出
+            wx.showToast({
+              title: '请输入合法内容',
+              icon: 'none'
+            });
+          }else if(comment_text.length>100){
+            wx.showToast({
+              title: '输入内容过长',
+              icon: 'none'
+            });
+          }
+        else
+        {
             var date = new Date(); //创建时间对象
             var year = date.getFullYear(); //获取年      
             var month = date.getMonth() + 1; //获取月      
@@ -150,19 +137,68 @@ Page({
                 },
                 success(res) {
                     console.log(res.data)
+                    wx.request({
+                        url: 'https://www.scnusay.cc/lostdetail/getwhatisendcommentdetail.php',
+                        method: 'POST',
+                        data: {
+                            comment_time: time,
+                        },
+                        //ust the utf-8 code in the header
+                        header: {
+                            'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
+                        },
+                        success: function (res) {
+                            console.log(res.data);
+                            for (var i = 0; i < res.data.length; i++) {
+                                var newarray = {
+                                    comment_id:res.data[i].comment_id,
+                                    comment_user_avatar:res.data[i].comment_user_avatar,
+                                    comment_user_name:res.data[i].comment_user_name,
+                                    comment_text:res.data[i].comment_text,
+                                    comment_time:res.data[i].comment_time,
+                                    parent_id: res.data[i].parent_id,
+                                    reply_name: res.data[i].reply_name,
+                                    specialcode: res.data[i].specialcode,
+                                    openid: res.data[i].openid,
+                                    type: res.data[i].type,
+                                }
+                            //divice the data into the two parts use the res.data.type
+                            if(res.data[i].type==0)
+                            {
+                                _this.setData({
+                                comment_list: _this.data.comment_list.concat(newarray),
+                                })
+                            }
+                            else if(res.data[i].type!=0)
+                            {
+                                _this.setData({
+                                    comment_list2: _this.data.comment_list2.concat(newarray),
+                                })
+                            }
+                        }
+                        wx.showToast({
+                            title: '发布成功',
+                            icon: 'none'
+                          });
+                        
+                    }
+                    })
+                    _this.setData({
+                
+                        //发表评论后将以下数据初始化 为下次发表评论做准备
+                        inputvalue: null, //评论内容        
+                        now_reply: 0, //当前点击的评论id        
+                        now_reply_name: null, //当前点击的评论的用户昵称        
+                        now_reply_type: 0, //评论类型        
+                        now_parent_id: 0, //当前点击的评论所属哪个评论id        
+                        placeholder: "写回复", //输入框占字符
+                        //将加入新数据的数组渲染到页面        
+                    })
                 }
             })
+            
             //动态渲染
-            this.setData({
-                //发表评论后将以下数据初始化 为下次发表评论做准备
-                comment_text: null, //评论内容        
-                now_reply: 0, //当前点击的评论id        
-                now_reply_name: null, //当前点击的评论的用户昵称        
-                now_reply_type: 0, //评论类型        
-                now_parent_id: 0, //当前点击的评论所属哪个评论id        
-                placeholder: "写回复", //输入框占字符
-                //将加入新数据的数组渲染到页面        
-            })
+           
         }
     },
 
@@ -212,8 +248,34 @@ Page({
                     },
                     success: function (res) {
                         console.log(res.data);
-                        // 
+                        for (var i = 0; i < res.data.length; i++) {
+                            var newarray = {
+                                comment_id:res.data[i].comment_id,
+                                comment_user_avatar:res.data[i].comment_user_avatar,
+                                comment_user_name:res.data[i].comment_user_name,
+                                comment_text:res.data[i].comment_text,
+                                comment_time:res.data[i].comment_time,
+                                parent_id: res.data[i].parent_id,
+                                reply_name: res.data[i].reply_name,
+                                specialcode: res.data[i].specialcode,
+                                openid: res.data[i].openid,
+                                type: res.data[i].type,
+                            }
+                        //divice the data into the two parts use the res.data.type
+                        if(res.data[i].type==0)
+                        {
+                            _this.setData({
+                            comment_list: _this.data.comment_list.concat(newarray),
+                            })
+                        }
+                        else if(res.data[i].type!=0)
+                        {
+                            _this.setData({
+                                comment_list2: _this.data.comment_list2.concat(newarray),
+                            })
+                        }
                     }
+                }
                 })
             }
         })
