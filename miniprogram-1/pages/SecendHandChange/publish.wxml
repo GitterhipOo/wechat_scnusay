@@ -3,16 +3,16 @@
     <view class="nav-title" style="line-height: {{navH*2+44}}px;">发布</view>
     <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
         <navigator hoverClass="none" open-type="navigate" url="../SecendHandChange/index">
-                    <image class="back-pre" src="https://www.scnusay.cc/icon/back.png" style="height:50rpx;width:50rpx;margin-top: 50rpx;"></image>
+                    <image class="back-pre" src="../../assets/images/sort/back.png" style="height:50rpx;width:50rpx;margin-top: 50rpx;"></image>
         </navigator>
     </view>
 </view>
 <form bindsubmit="formsubmit">
 <view style="margin-top:{{navH*4+50}}rpx;" >
-    <textarea   placeholder="给出你的标题吧" auto-focus="true" class="title" value='{{title}}' name="title" bindblur="titleblur"/>
+    <textarea   placeholder="给出你的标题吧" auto-focus="true" class="title" value='{{postValue.SHchange_title}}' name="title" bindinput="adInputChange" data-info="SHchange_title"/>
 </view>
 <view>
-    <textarea   placeholder="描述一下物品的信息" auto-focus="true" class="information" name="info" value='{{info}}' bindblur="infoblur"/>
+    <textarea   placeholder="描述一下物品的信息" auto-focus="true" class="information" name="info" value='{{postValue.SHchange_info}}' bindinput="adInputChange"data-info="SHchange_info"/>
 </view>
 <view>
         <text>上传图片(最多3张)</text>
@@ -22,17 +22,17 @@
                 <view class='img_list'>
                     <view class='img_li' wx:for="{{imglist}}" wx:key="index">
                         <image src="{{item}}" bindtap="previewImg"></image>
-                        <image class='delete' bindtap="deleteImg" data-index="{{index}}" src="/assets/images/sort/delete.png"></image>
+                        <image class='delete' bindtap="deleteImg" data-index="{{index}}" src="https://www.scnusay.cc/icon/iconDeleteCircle.png"></image>
                     </view>
                     <view class='addimg' bindtap='img_w_show' wx:if="{{countNow<count}}">
-                        <image src='https://www.scnusay.cc/icon/tianjia.png'></image>
+                        <image src='../../assets/images/sort/tianjia.png'></image>
                     </view>
                 </view>
             </view>
         </view>
         <view class="divline"></view>
 <view class="myinput">
-   <text class="price">价格￥</text><input type="text" value="{{price}}"  name="price" bindblur="priceblur" />
+   <text class="price">价格￥</text><input type="text" value="{{postValue.SHchange_price}}"  name="price" bindinput="adInputChange"data-info="SHchange_price" />
 </view>
 <!-- 下拉选择框 -->
 <view class='fenlei'>
@@ -41,7 +41,7 @@
     <view class='select_box'>
       <view class='select' catchtap='selectTaps'>
         <text class='select_text' name="category" >{{selectDatas[indexs]}}</text>
-        <image class='select_img {{shows&&"select_img_rotate"}}' src='https://www.scnusay.cc/icon/xiasanjiao.png'></image>
+        <image class='select_img {{shows&&"select_img_rotate"}}' src='../../assets/images/sort/xiasanjiao.png'></image>
       </view>
       <view class='option_box' style='height:{{shows?(selectDatas.length>5?300:selectDatas.length*60):0}}rpx;'>
         <text class='option' style='{{indexs==selectDatas.length-1&&"border:0;"}}' wx:for='{{selectDatas}}' wx:key='this' data-index='{{index}}' catchtap='optionTaps'>{{item}}</text>
@@ -49,10 +49,10 @@
     </view>
 </view>
 <view class="myinput">
-<text>姓名（可选）</text> <input type="text" value="{{username}}" name="username" bindblur="usernameblur"/>
+<text>姓名（可选）</text> <input type="text" value="{{postValue.SHchange_username}}" name="username" bindinput="adInputChange"data-info="SHchange_username"/>
 </view>
 <view class="myinput">
-<text>备注（可选）</text><input type="text" value="{{tip}}"  name="tip"bindblur="tipblur"/>
+<text>备注（可选）</text><input type="text" value="{{postValue.SHchange_tip}}"  name="tip" bindinput="adInputChange"data-info="SHchange_tip"/>
 </view>
 <button form-type="submit" bindtap="sendToServer" style="border-radius: 40rpx;height: 80rpx;width: 700rpx; font-size: 30rpx;flex-wrap: wrap; letter-spacing:5rpx;background-color: #32CD32;color: aliceblue;">立即发布</button>
 </form>
