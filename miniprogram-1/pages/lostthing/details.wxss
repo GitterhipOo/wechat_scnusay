@@ -256,8 +256,7 @@ page{
 
 /* 底部评论 */
 .foot {
-    width: 686rpx;
-    padding: 17rpx 32rpx;
+    width: 750rpx;
     background-color: #FFFFFF;
     box-shadow: 0rpx -1rpx 4rpx 0rpx rgba(0, 0, 0, 0.08);
     position: fixed;
@@ -268,7 +267,6 @@ page{
 .say {
     display: inline-block;
     width: 100%;
-    padding: 20rpx 0rpx 10rpx 24rpx;
     background-color: #F2F2F2;
     border-radius: 8rpx;
 
@@ -291,6 +289,10 @@ page{
     display: inline-block;
     width: 300rpx;
     height: 33rpx;
+}
+.t-input{
+    margin-left: 10rpx;
+    margin-right: 10rpx;
 }
 
 .say_place {
