@@ -155,9 +155,9 @@ page{
   
 /* 评论-回复-回复评论显示区域 */
 .container {
-    width: 718rpx;
+    width: 100%;
     margin-top: 39rpx;
-    padding-left: 32rpx;
+
 }
 
 .total {
@@ -165,6 +165,7 @@ page{
     color: #999999;
     margin-left: 1rpx;
     height:40rpx;
+    padding-left: 32rpx;
 }
 
 .container_inp {
@@ -175,6 +176,7 @@ page{
     padding: 17rpx 0rpx 15rpx 25rpx;
     margin-top: 24rpx;
     margin-bottom: 47rpx;
+    padding-left: 32rpx;
 }
 
 .container_place {
@@ -256,8 +258,7 @@ page{
 
 /* 底部评论 */
 .foot {
-    width: 686rpx;
-    padding: 17rpx 32rpx;
+    width: 750rpx;
     background-color: #FFFFFF;
     box-shadow: 0rpx -1rpx 4rpx 0rpx rgba(0, 0, 0, 0.08);
     position: fixed;
@@ -267,13 +268,14 @@ page{
 
 .say {
     display: inline-block;
-    width: 360rpx;
-    padding: 20rpx 0rpx 10rpx 24rpx;
+    width: 100%;
     background-color: #F2F2F2;
     border-radius: 8rpx;
+
 }
 
 .flex {
+    width: 100%;
     display: flex;
     align-items: center;
 }
@@ -289,6 +291,10 @@ page{
     display: inline-block;
     width: 300rpx;
     height: 33rpx;
+}
+.t-input{
+    margin-left: 10rpx;
+    margin-right: 10rpx;
 }
 
 .say_place {
@@ -330,4 +336,15 @@ page{
     position: absolute;
     right: 6rpx;
     bottom: 14rpx;
+}
+.details_img{
+    width: 100%;
+    object-fit:contain;
+}
+.imgbox{
+    width: 100%;
+}
+.say_btn{
+    width: 200rpx;
+    height: 50rpx;
 }

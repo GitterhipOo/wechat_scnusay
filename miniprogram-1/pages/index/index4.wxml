@@ -12,7 +12,7 @@
     <view class="down_welcome">
         <view class="loginnow">立刻登录</view>
         <view class="userinfo" >
-                <image bindtap="bindViewTap" class="userinfo-avatar" src="https://s1.328888.xyz/2022/05/02/ANMF7.png" mode="cover"></image>
+                <image bindtap="bindViewTap" class="userinfo-avatar" src="https://www.scnusay.cc/ren.png" mode="cover"></image>
                 <text class="userinfo-nickname">未登录用户</text>
         </view>
         <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindtap="enroll">

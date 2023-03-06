@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "t-button": "tdesign-miniprogram/button/button"
+  },
   "navigationStyle": "custom",
   "enablePullDownRefresh": true
 }

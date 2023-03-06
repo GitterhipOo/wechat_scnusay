@@ -3,7 +3,7 @@
     <view class="nav-title" style="line-height: {{navH*2+44}}px;">我的发布</view>
     <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
         <navigator hoverClass="none" open-type="navigate" url="../SecendHandChange/index">
-                    <image class="back-pre" src="../../assets/images/sort/back.png" style="height:50rpx;width:50rpx;margin-top: 50rpx;"></image>
+                    <image class="back-pre" src="https://www.scnusay.cc/icon/back.png" style="height:50rpx;width:50rpx;margin-top: 50rpx;"></image>
         </navigator>
     </view>
 </view>
@@ -27,9 +27,9 @@
         <view class="info4">
         <view class="view1"></view>
         <view class="view2"> 
-            <image src="../../assets/images/sort/lookup.png" class="otherimg"></image><text>{{item.lookup}}</text>
-            <image src="../../assets/images/sort/zan.png" class="otherimg"></image><text>{{item.nice}}</text>
-            <image src="../../assets/images/sort/liuyan.png" class="otherimg"></image><text>{{item.talk}}</text></view>
+            <image src="https://www.scnusay.cc/icon/lookup.png" class="otherimg"></image><text>{{item.lookup}}</text>
+            <image src="https://www.scnusay.cc/icon/zan.png" class="otherimg"></image><text>{{item.nice}}</text>
+            <image src="https://www.scnusay.cc/icon/liuyan.png" class="otherimg"></image><text>{{item.talk}}</text></view>
         </view>
     </view>
 </view>

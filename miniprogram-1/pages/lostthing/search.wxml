@@ -1,7 +1,12 @@
 <!--pages/lostthing/search.wxml-->
-<view style="position: relative;">
-    <view class="search" hover-class="search-hover" hover-stay-time="50" bindtap="jumpToSearch">
-        <icon type="search" class="icon" style="float:left; margin:10rpx 0 0 20rpx;"></icon>
-        <input style="float:left; margin:10rpx 10rpx 10rpx 10rpx;" placeholder="输入标签、名称、描述"/>
-    </view>
+<t-search placeholder="请输入搜索内容" bind:submit="submit" bind:action-click="submit" action="搜索" model:value="{{submitValue}}" center="{{ true }}" focus="{{ true }}" shape="round"></t-search>
+<view wx:if="{{searchHistory[0]}}">
+<view>历史记录</view>
+<view wx:for="{{searchHistory}}"  wx:key="index" bindtap="clickHistory" data-index="{{index}}">
+<text>{{item}}</text>
 </view>
+</view>
+
+
+
+
