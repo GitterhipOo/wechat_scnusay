@@ -50,23 +50,7 @@
                     <image wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
                 </view>
                 <!-- 文后小标模块 -->
-                <view class="box3">
-                    <view class="post-data">
-                        <!-- 点赞   -->
-                        <view class="foot" bindtap="favourMe" data-id="{{item.blogger_id}}" data-class="{{item.lostthing_class}}" data-index="{{index}}">
-                            <image class="favour_img" src="{{item.favour_src}}"></image>
-                            <text class="favour_num">{{item.favour}}</text>
-                        </view>
-                        <view class="foot">
-                            <image class="foot_img" src="/assets/images/sort/liuyan.png"></image>
-                            <text class="foot_num">{{item.comments}}</text>
-                        </view>
-                        <view class="foot">
-                            <image class="foot_img" src="/assets/images/sort/lookup.png"></image>
-                            <text class="foot_num">{{item.readingtimes}}</text>
-                        </view>
-                    </view>
-                </view>
+      
             </view>
         </view>
     </swiper-item>
@@ -92,18 +76,6 @@
                     <view class="post-data" style="height: 100%;">
                         <t-button shape="round" class="mypostmenu" bindtap="postmenu" data-index="{{index}}">更多操作</t-button>
                         <!-- 点赞   -->
-                        <view class="foot" bindtap="favourMe" data-id="{{item.blogger_id}}">
-                            <image class="favour_img" src="{{item.favour_src}}"></image>
-                            <text class="favour_num">{{item.favour}}</text>
-                        </view>
-                        <view class="foot">
-                            <image class="foot_img" src="/assets/images/sort/liuyan.png"></image>
-                            <text class="foot_num">{{item.comments}}</text>
-                        </view>
-                        <view class="foot">
-                            <image class="foot_img" src="/assets/images/sort/lookup.png"></image>
-                            <text class="foot_num">{{item.readingtimes}}</text>
-                        </view>
                     </view>
                 </view>
             </view>
