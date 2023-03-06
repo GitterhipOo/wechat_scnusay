@@ -6,6 +6,7 @@ Page({
         imglist: [], //照片暂时的存放区域
         count: 3, //最多储存图片
         countNow: 0, //当前储存图片数量
+        current_Page: 0,//当前所在的图片位置
         array_Space: ['石牌', '大学城', '南海', '汕尾'],
         array_Tag: ['其他', '图书文具', '生活用品', '电子产品', '化妆用品', '服装鞋包'],
         lostthing_Time_Binding: "丢失",
@@ -70,6 +71,7 @@ Page({
                   console.log(res)
                      var tempFilePaths = res.tempFiles[0].tempFilePath
                         _this.setData({
+                            current_Page:_this.data.countNow,
                             countNow: _this.data.countNow + 1,
                             imglist: _this.data.imglist.concat(tempFilePaths)
                         })
@@ -77,7 +79,6 @@ Page({
                 console.log("大小为"+res.tempFiles[0].size)
               },
             })
-
         }
     },
 
@@ -115,21 +116,21 @@ Page({
             }
         })
     },
-    //绑定“way”值为“寻找失主”并设置变量
-    bindPickerChange_Way: function (e) {
-        console.log('way发送选择改变，携带值为', e.detail.value)
-        if (e.detail.value) {
-            this.setData({
-                ['postValue.way']: "寻找失主",
-                lostthing_Time_Binding: "拾得"
-            })
-        } else {
-            this.setData({
-                ['postValue.way']: "失物求寻",
-                lostthing_Time_Binding: "丢失"
-            })
-        }
-    },
+    // //绑定“way”值为“寻找失主”并设置变量
+    // bindPickerChange_Way: function (e) {
+    //     console.log('way发送选择改变，携带值为', e.detail.value)
+    //     if (e.detail.value) {
+    //         this.setData({
+    //             ['postValue.way']: "寻找失主",
+    //             lostthing_Time_Binding: "拾得"
+    //         })
+    //     } else {
+    //         this.setData({
+    //             ['postValue.way']: "失物求寻",
+    //             lostthing_Time_Binding: "丢失"
+    //         })
+    //     }
+    // },
     //选择器，实现修改“地点、分类”后变换颜色为黑色
     bindPickerChange_Space: function (e) {
         // console.log('space发送选择改变，携带值为', e.detail.value);
@@ -174,8 +175,6 @@ Page({
         var minute = date.getMinutes(); //获取分      
         var second = date.getSeconds(); //获取秒
         var time = `${year}年${month}月${day}日${hour}时${minute}分${second}秒`; //当前时间
-
-    
         //设置博主信息
         postValue.blogger_time = time;
         //设置图片内容

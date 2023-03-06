@@ -10,296 +10,347 @@ Page({
      * 页面的初始数据
      */
     data: {
+        swiperHeight:"1000px",
+        //页面切换相关数据
+        current_Page: 0,
+        photocou: 0, //用户上传图片的数量
         top_using_res: wx.getMenuButtonBoundingClientRect(),
         windowInfo: wx.getWindowInfo(),
         navH: 0,
-        height: '',
+        // height: '',
         heights: [],
+        owner_Data: {
+            owner_Openid: "ouctO4ypxLjQ_3t67gYI-urvPoQs",
+        },
+        //post0为捡到物品
+        post0: [],
         //post1为丢失物品，其中lostthing_class = 1
-        post1: [{
-                blogger_id: 1, //文章所属id
-                blogger_avatar: "https://s1.328888.xyz/2022/08/02/OF8Ay.jpg", //头像
-                blogger_name: "xhiming", //博主昵称
-                blogger_time: "2022年9月20日", //发布时间的时间戳、这里需要修改
-                lostthing_topic: "700出2帅哥一只", //标题
-                lostthing_time: "2022年9月20日", //丢失时间的时间戳、这里需要修改
-                lostthing_class: "1", //发布类别（不需要可以不填充
-                lostthing_detail: "我在南海这里丢失了一块抹茶拿铁，你们可以帮我寻找一下遗失的红色精灵吗", //主要内容
-                lostthing_space: "南海校区", //
-                lostthing_space_detail: "G253与G252之间的交界处",
-                lostthing_contact: "12312311231",
-                photos: ["https://s1.328888.xyz/2022/08/29/CzMYU.png", "https://s1.328888.xyz/2022/08/29/CzgoR.png", "https://s1.328888.xyz/2022/08/29/Czf0B.png"], //放置于主要内容下方的图片
-                tags: ["图书文具", "生活用品", "夹心糖"], //标签
-                readingtimes: 49, //阅读次数
-                comments: 5, //评论数量
-                favour: 20, //点赞数量
-                had_favour: 0, //点赞判断
-                favour_src: "/assets/images/icon/unfavour.png", //点赞图标
-            },
-            {
-                blogger_id: 2, //文章所属id
-                blogger_avatar: "https://s1.328888.xyz/2022/08/02/OF8Ay.jpg", //头像
-                blogger_name: "zhiming", //博主昵称
-                blogger_time: "2022年9月20日", //发布时间的时间戳、这里需要修改
-                lostthing_topic: "帅哥一22222", //标题
-                lostthing_time: "2022年9月20日", //丢失时间的时间戳、这里需要修改
-                lostthing_class: "1", //发布类别（不需要可以不填充
-                lostthing_detail: "我在南海这里丢失了一块抹茶拿铁，你们可以帮我寻找一下遗失的红色精灵吗", //主要内容
-                lostthing_space: "南海校区", //
-                lostthing_space_detail: "G253与G252之间的交界处",
-                lostthing_contact: "12312311231",
-                photos: ["https://s1.328888.xyz/2022/08/29/CzMYU.png", "https://s1.328888.xyz/2022/08/29/CzgoR.png", "https://s1.328888.xyz/2022/08/29/Czf0B.png"], //放置于主要内容下方的图片
-                tags: ["图书文具", "生活用品", "夹心糖"], //标签
-                readingtimes: 49, //阅读次数
-                comments: 5, //评论数量
-                favour: 20000, //点赞数量
-                had_favour: 0, //点赞判断
-                favour_src: "/assets/images/icon/unfavour.png", //点赞图标
-            },
-            {
-                blogger_id: 2, //文章所属id
-                blogger_avatar: "https://s1.328888.xyz/2022/08/02/OF8Ay.jpg", //头像
-                blogger_name: "zhiming", //博主昵称
-                blogger_time: "2022年9月20日", //发布时间的时间戳、这里需要修改
-                lostthing_topic: "帅哥一22222", //标题
-                lostthing_time: "2022年9月20日", //丢失时间的时间戳、这里需要修改
-                lostthing_class: "1", //发布类别（不需要可以不填充
-                lostthing_detail: "我在南海这里丢失了一块抹茶拿铁，你们可以帮我寻找一下遗失的红色精灵吗", //主要内容
-                lostthing_space: "南海校区", //
-                lostthing_space_detail: "G253与G252之间的交界处",
-                lostthing_contact: "12312311231",
-                photos: ["https://s1.328888.xyz/2022/08/29/CzMYU.png", "https://s1.328888.xyz/2022/08/29/CzgoR.png", "https://s1.328888.xyz/2022/08/29/Czf0B.png"], //放置于主要内容下方的图片
-                tags: ["图书文具", "生活用品", "夹心糖"], //标签
-                readingtimes: 49, //阅读次数
-                comments: 5, //评论数量
-                favour: 20000, //点赞数量
-                had_favour: 0, //点赞判断
-                favour_src: "/assets/images/icon/unfavour.png", //点赞图标
-            },
-            {
-                blogger_id: 2, //文章所属id
-                blogger_avatar: "https://s1.328888.xyz/2022/08/02/OF8Ay.jpg", //头像
-                blogger_name: "zhiming", //博主昵称
-                blogger_time: "2022年9月20日", //发布时间的时间戳、这里需要修改
-                lostthing_topic: "帅哥一22222", //标题
-                lostthing_time: "2022年9月20日", //丢失时间的时间戳、这里需要修改
-                lostthing_class: "1", //发布类别（不需要可以不填充
-                lostthing_detail: "我在南海这里丢失了一块抹茶拿铁，你们可以帮我寻找一下遗失的红色精灵吗", //主要内容
-                lostthing_space: "南海校区", //
-                lostthing_space_detail: "G253与G252之间的交界处",
-                lostthing_contact: "12312311231",
-                photos: ["https://s1.328888.xyz/2022/08/29/CzMYU.png", "https://s1.328888.xyz/2022/08/29/CzgoR.png", "https://s1.328888.xyz/2022/08/29/Czf0B.png"], //放置于主要内容下方的图片
-                tags: ["图书文具", "生活用品", "夹心糖"], //标签
-                readingtimes: 49, //阅读次数
-                comments: 5, //评论数量
-                favour: 20000, //点赞数量
-                had_favour: 0, //点赞判断
-                favour_src: "/assets/images/icon/unfavour.png", //点赞图标
-            },
-            {
-                blogger_id: 2, //文章所属id
-                blogger_avatar: "https://s1.328888.xyz/2022/08/02/OF8Ay.jpg", //头像
-                blogger_name: "zhiming", //博主昵称
-                blogger_time: "2022年9月20日", //发布时间的时间戳、这里需要修改
-                lostthing_topic: "帅哥一22222", //标题
-                lostthing_time: "2022年9月20日", //丢失时间的时间戳、这里需要修改
-                lostthing_class: "1", //发布类别（不需要可以不填充
-                lostthing_detail: "我在南海这里丢失了一块抹茶拿铁，你们可以帮我寻找一下遗失的红色精灵吗", //主要内容
-                lostthing_space: "南海校区", //
-                lostthing_space_detail: "G253与G252之间的交界处",
-                lostthing_contact: "12312311231",
-                photos: ["https://s1.328888.xyz/2022/08/29/CzMYU.png", "https://s1.328888.xyz/2022/08/29/CzgoR.png", "https://s1.328888.xyz/2022/08/29/Czf0B.png"], //放置于主要内容下方的图片
-                tags: ["图书文具", "生活用品", "夹心糖"], //标签
-                readingtimes: 49, //阅读次数
-                comments: 5, //评论数量
-                favour: 20000, //点赞数量
-                had_favour: 0, //点赞判断
-                favour_src: "/assets/images/icon/unfavour.png", //点赞图标
-            },
-            {
-                blogger_id: 2, //文章所属id
-                blogger_avatar: "https://s1.328888.xyz/2022/08/02/OF8Ay.jpg", //头像
-                blogger_name: "zhiming", //博主昵称
-                blogger_time: "2022年9月20日", //发布时间的时间戳、这里需要修改
-                lostthing_topic: "帅哥一22222", //标题
-                lostthing_time: "2022年9月20日", //丢失时间的时间戳、这里需要修改
-                lostthing_class: "1", //发布类别（不需要可以不填充
-                lostthing_detail: "我在南海这里丢失了一块抹茶拿铁，你们可以帮我寻找一下遗失的红色精灵吗", //主要内容
-                lostthing_space: "南海校区", //
-                lostthing_space_detail: "G253与G252之间的交界处",
-                lostthing_contact: "12312311231",
-                photos: ["https://s1.328888.xyz/2022/08/29/CzMYU.png", "https://s1.328888.xyz/2022/08/29/CzgoR.png", "https://s1.328888.xyz/2022/08/29/Czf0B.png"], //放置于主要内容下方的图片
-                tags: ["图书文具", "生活用品", "夹心糖"], //标签
-                readingtimes: 49, //阅读次数
-                comments: 5, //评论数量
-                favour: 20000, //点赞数量
-                had_favour: 0, //点赞判断
-                favour_src: "/assets/images/icon/unfavour.png", //点赞图标
-            },
-            {
-                blogger_id: 2, //文章所属id
-                blogger_avatar: "https://s1.328888.xyz/2022/08/02/OF8Ay.jpg", //头像
-                blogger_name: "zhiming", //博主昵称
-                blogger_time: "2022年9月20日", //发布时间的时间戳、这里需要修改
-                lostthing_topic: "帅哥一22222", //标题
-                lostthing_time: "2022年9月20日", //丢失时间的时间戳、这里需要修改
-                lostthing_class: "1", //发布类别（不需要可以不填充
-                lostthing_detail: "我在南海这里丢失了一块抹茶拿铁，你们可以帮我寻找一下遗失的红色精灵吗", //主要内容
-                lostthing_space: "南海校区", //
-                lostthing_space_detail: "G253与G252之间的交界处",
-                lostthing_contact: "12312311231",
-                photos: ["https://s1.328888.xyz/2022/08/29/CzMYU.png", "https://s1.328888.xyz/2022/08/29/CzgoR.png", "https://s1.328888.xyz/2022/08/29/Czf0B.png"], //放置于主要内容下方的图片
-                tags: ["图书文具", "生活用品", "夹心糖"], //标签
-                readingtimes: 49, //阅读次数
-                comments: 5, //评论数量
-                favour: 20000, //点赞数量
-                had_favour: 0, //点赞判断
-                favour_src: "/assets/images/icon/unfavour.png", //点赞图标
-            },
-            {
-                blogger_id: 2, //文章所属id
-                blogger_avatar: "https://s1.328888.xyz/2022/08/02/OF8Ay.jpg", //头像
-                blogger_name: "zhiming", //博主昵称
-                blogger_time: "2022年9月20日", //发布时间的时间戳、这里需要修改
-                lostthing_topic: "帅哥一22222", //标题
-                lostthing_time: "2022年9月20日", //丢失时间的时间戳、这里需要修改
-                lostthing_class: "1", //发布类别（不需要可以不填充
-                lostthing_detail: "我在南海这里丢失了一块抹茶拿铁，你们可以帮我寻找一下遗失的红色精灵吗", //主要内容
-                lostthing_space: "南海校区", //
-                lostthing_space_detail: "G253与G252之间的交界处",
-                lostthing_contact: "12312311231",
-                photos: ["https://s1.328888.xyz/2022/08/29/CzMYU.png", "https://s1.328888.xyz/2022/08/29/CzgoR.png", "https://s1.328888.xyz/2022/08/29/Czf0B.png"], //放置于主要内容下方的图片
-                tags: ["图书文具", "生活用品", "夹心糖"], //标签
-                readingtimes: 49, //阅读次数
-                comments: 5, //评论数量
-                favour: 20000, //点赞数量
-                had_favour: 0, //点赞判断
-                favour_src: "/assets/images/icon/unfavour.png", //点赞图标
-            },
-        ],
-        //post2为捡到物品，其中lostthing_class = 2
-        post2: [{
-            blogger_id: 1, //文章所属id
-            blogger_avatar: "https://s1.328888.xyz/2022/08/02/OF8Ay.jpg", //头像
-            blogger_name: "xhiming", //博主昵称
-            blogger_time: "2022年9月20日", //发布时间的时间戳、这里需要修改
-            lostthing_topic: "700出帅哥一只22222", //标题
-            lostthing_time: "2022年9月20日", //丢失时间的时间戳、这里需要修改
-            lostthing_class: "2", //发布类别（不需要可以不填充
-            lostthing_detail: "我在南海这里丢失了一块抹茶拿铁，你们可以帮我寻找一下遗失的红色精灵吗", //主要内容
-            lostthing_space: "南海校区", //
-            lostthing_space_detail: "G253与G252之间的交界处",
-            lostthing_contact: "12312311231",
-            photos: ["https://s1.328888.xyz/2022/08/29/CzMYU.png", "https://s1.328888.xyz/2022/08/29/CzgoR.png", "https://s1.328888.xyz/2022/08/29/Czf0B.png"], //放置于主要内容下方的图片
-            tags: ["图书文具", "生活用品", "夹心糖"], //标签
-            readingtimes: 49, //阅读次数
-            comments: 5, //评论数量
-            favour: 20, //点赞数量
-            had_favour: 0, //点赞判断
-            favour_src: "/assets/images/icon/unfavour.png", //点赞图标
-        },
-        {
-            blogger_id: 2, //文章所属id
-            blogger_avatar: "https://s1.328888.xyz/2022/08/02/OF8Ay.jpg", //头像
-            blogger_name: "zhiming", //博主昵称
-            blogger_time: "2022年9月20日", //发布时间的时间戳、这里需要修改
-            lostthing_topic: "帅哥一只1a", //标题
-            lostthing_time: "2022年9月20日", //丢失时间的时间戳、这里需要修改
-            lostthing_class: "2", //发布类别（不需要可以不填充
-            lostthing_detail: "我在南海这里丢失了一块抹茶拿铁，你们可以帮我寻找一下遗失的红色精灵吗", //主要内容
-            lostthing_space: "南海校区", //
-            lostthing_space_detail: "G253与G252之间的交界处",
-            lostthing_contact: "12312311231",
-            photos: ["https://s1.328888.xyz/2022/08/29/CzMYU.png", "https://s1.328888.xyz/2022/08/29/CzgoR.png", "https://s1.328888.xyz/2022/08/29/Czf0B.png"], //放置于主要内容下方的图片
-            tags: ["图书文具", "生活用品", "夹心糖"], //标签
-            readingtimes: 49, //阅读次数
-            comments: 5, //评论数量
-            favour: 20000, //点赞数量
-            had_favour: 0, //点赞判断
-            favour_src: "/assets/images/icon/unfavour.png", //点赞图标
-        },
-    ],
-        //页面切换相关数据
-        current_Page: 0,
+        post1: [],
+        //post1为私人发布内容，根据时间排
     },
     jumpToSearch: function () {
         wx.navigateTo({
             url: '/pages/lostthing/search',
         })
+        //点击搜索跳转
     },
+
+    //通过计算post的数量获取页面长度
+    getSwiperItemHeight:function(){
+        var postHeight
+        if (this.data.current_Page == 0){
+            postHeight=(this.data.post0.length)*500+100+"rpx";
+        }
+        else{
+            postHeight=(this.data.post1.length)*500+100+"rpx";
+        }
+        console.log("计算页面高度触发")
+        this.setData({
+            swiperHeight:postHeight,
+        })
+        console.log("高度赋值完成")
+    },
+
     //跳转至详情页面
     jumptodetails: function (e) {
         console.log(e);
+        var that = this
         let index = e.currentTarget.dataset.index
-        let postValue = this.data.post[index]
+        console.log("index值为" + index)
+        //滑动以后判断当前页面是什么的辨识
+        console.log('current_page(判断当前是哪种类型)为' + that.data.current_Page)
+        //这里需要拼接字符串post(0/1)
+        if (that.data.current_Page == 0) {
+            var postValue = that.data.post0[index]
+        } else if (that.data.current_Page == 1)
+            var postValue = that.data.post1[index]
+        //通过if判断现在是post0还是post1
+        console.log(postValue)
         wx.setStorage({
             key: "sendPostValue",
             data: postValue
+            //储存在缓存中带过去再删除
         })
         wx.navigateTo({
             url: '/pages/lostthing/details',
         })
     },
-    //点赞功能
-    //返回commentid数据，再根据commentid能否访问/具体数字来判断点赞操作
-    favourMe: function (e) {
+
+    postmenu:function(e){
+        console.log(e);
         var that = this
-        let blogger_id = e.currentTarget.dataset.id - 1 //帖子ID
-        if (this.data.post[blogger_id].had_favour == 0) {
-            console.log(1)
-            this.setData({
-                ['post[' + blogger_id + '].favour']: that.data.post[blogger_id].favour + 1,
-                ['post[' + blogger_id + '].favour_src']: "/assets/images/icon/favour.png",
-                ['post[' + blogger_id + '].had_favour']: 1
-            })
-        } else {
-            this.setData({
-                ['post[' + blogger_id + '].favour']: that.data.post[blogger_id].favour - 1,
-                ['post[' + blogger_id + '].favour_src']: "/assets/images/icon/unfavour.png",
-                ['post[' + blogger_id + '].had_favour']: 0
-            })
-        }
+        let index = e.currentTarget.dataset.index
+        console.log("点击菜单的index值为" + index)
+        var menudeletevalue
+        //滑动以后判断当前页面是什么的辨识
+        console.log('current_page(判断当前是我的还是失物招领)为' + that.data.current_Page)
+        if (that.data.current_Page == 0) {
+            var menupostValue = that.data.post0[index].specialcode
+        } else if (that.data.current_Page == 1)
+            var menupostValue = that.data.post1[index].specialcode
+            //从已经放好的数组中获取对应的specialcode
+            console.log("选择菜蛋对应的specialcode为"+menupostValue)
+
+        wx.showActionSheet({
+                    itemList: ['删除', '已解决'],
+                    success: function (res) {
+                        if (res.tapIndex == 0) {
+                            wx.showModal({
+                                title: '删除',
+                                content: '是否删除内容',
+                                complete: (res) => {
+                                    if (res.cancel) {
+                                    }
+                                    if (res.confirm) {
+                                        //console.log("选择菜蛋对应的specialcode为"+menupostValue)
+                                        wx.request({
+                                            url: 'https://www.scnusay.cc/lostdetail/lostdetailphoto/deletemylostpost.php',
+                                            method: "POST",
+                                            data: {
+                                                'menupostValue': menupostValue,
+                                            },
+                                            header: {
+                                                'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
+                                            },
+                                            success(res) {
+                                                wx.showModal({
+                                                    title: '删除成功',
+                                                    content: '发布内容已删除',
+                                                    complete: (res) => {
+                                                        if (res.cancel) {
+
+                                                        }
+                                                        if (res.confirm) {
+                                                            wx.navigateTo({
+                                                                url: '/pages/lostthing/index',
+                                                            })
+                                                        }
+                                                    }
+                                                })
+
+                                            },
+                                        })
+                                    }
+                                }
+                            })
+                        }
+                    },
+
+            fail: function(res) {  
+                console.log(res.errMsg)  
+            }  
+        })  
     },
+    //点赞功能
+    favourMe: function (e) {
+        //返回commentid数据，再根据commentid能否访问/具体数字来判断点赞操作
+        var that = this
+        console.log(e);
+        let blogger_id = e.currentTarget.dataset.id - 1; //帖子ID
+        let lostthingClass = e.currentTarget.dataset.class;
+        let index = e.currentTarget.dataset.index;
+        if (lostthingClass == 0) //
+            if (['this.data.post' + lostthingClass + '[' + index + '].had_favour'] == 0) {
+                console.log(1)
+                this.setData({
+                    ['post[' + blogger_id + '].favour']: that.data.post[blogger_id].favour + 1,
+                    ['post[' + blogger_id + '].favour_src']: "/assets/images/icon/favour.png",
+                    ['post[' + blogger_id + '].had_favour']: 1
+                })
+            } else {
+                this.setData({
+                    ['post[' + blogger_id + '].favour']: that.data.post[blogger_id].favour - 1,
+                    ['post[' + blogger_id + '].favour_src']: "/assets/images/icon/unfavour.png",
+                    ['post[' + blogger_id + '].had_favour']: 0
+                })
+            }
+    },
+
     //触底刷新功能
     onReachBottom: function () {
-        this.setData({
-            curPage: this.data.curPage + 1
-        });
-        this.getGoodsList(0, true)
+       console.log("触底事件触发")
+       this.getSwiperItemHeight()
+        
     },
     onPullDownRefresh: function () {
+        //wx.stopPullDownRefresh()
+    },
+
+    // 点击标签判断
+    clicktab: function (e) {
+        //点击标签切换swiper
+        var pag = e.currentTarget.dataset.current;
+        console.log("点击标签的数据为" + e.currentTarget.dataset.current)
         this.setData({
-            curPage: 1
-        });
-        this.getGoodsList(0)
-        wx.stopPullDownRefresh()
+            current_Page: pag
+        })
+        var tabstylelost
+        var tabstylemy
+        if (this.data.current_Page == 0){
+            tabstylelost="background-color: rgb(186 , 204, 217)";
+            tabstylemy="background-color: white";
+        }
+        else{
+            tabstylelost="background-color: white";
+            tabstylemy="background-color: rgb(186 , 204, 217)";
+        }
+        this.setData({
+            tabstylelost:tabstylelost,
+            tabstylemy: tabstylemy,
+        })
+    },
+
+    getSwiperItemHeight:function(){
+        var postHeight
+        if (this.data.current_Page == 0){
+            postHeight=(this.data.post0.length)*500+100+"rpx";
+        }
+        else{
+            postHeight=(this.data.post1.length)*500+100+"rpx";
+        }
+        console.log("计算页面高度触发")
+        this.setData({
+            swiperHeight:postHeight,
+        })
+        console.log("高度计算完成")
+    },
+
+
+    //滑动swiperItem修改currentPag
+    changeswiper(e){ 
+        this.setData({
+            current_Page: e.detail.current
+        })
+        console.log("切换触发")
+        this.getSwiperItemHeight()
+        var tabstylelost
+        var tabstylemy
+        if (this.data.current_Page == 0){
+            tabstylelost="background-color: rgb(186 , 204, 217)";
+            tabstylemy="background-color: white";
+        }
+        else{
+            tabstylelost="background-color: white";
+            tabstylemy="background-color: rgb(186 , 204, 217)";
+        }
+        this.setData({
+            tabstylelost:tabstylelost,
+            tabstylemy: tabstylemy,
+        })
     },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
         var _this = this
-        setTimeout(function () { //异步
-            var query = wx.createSelectorQuery();
-            query.selectAll('.list').boundingClientRect()
-            query.exec((res) => {
-                console.log(res)
-                var listHeight = res[0][0].height
-                console.log(res[0][0].height)
-                _this.setData({
-                    heights: res[0],
-                    height: listHeight + 'px'
-                })
-            })
-        }, 100)
+
+        //onload的时候需要从服务器获取数据,包括获取我的和失物招领的
+        wx.request({
+            //先是获取失物招领的
+            url: 'https://www.scnusay.cc/lostdetail/lostdetailphoto/getdetail.php',
+            method: "GET",
+            data: {},
+            header: {
+                'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
+            },
+            success(res) {
+                console.log(res.data);
+                for (var i = 0; i < res.data.length; i++) {
+                    //for是根据数据的长度插入新数组
+                    //nwearray是用于插入的数组
+                    var newarray = {
+                        blogger_id: res.data[i].id,
+                        blogger_Openid: res.data[i].openid,
+                        blogger_avatar: res.data[i].imgurl, //头像
+                        blogger_name: res.data[i].name, //博主昵称
+                        blogger_time: res.data[i].blogger_time, //发布时间的时间戳、这里需要修改
+                        lostthing_topic: res.data[i].lostthing_topic, //标题
+                        lostthing_time: res.data[i].lostthing_time, //丢失时间的时间戳、这里需要修改
+                        lostthing_class: res.data[i].lostthing_class, //发布类别（不需要可以不填充
+                        lostthing_detail: res.data[i].lostthing_detail, //主要内容
+                        lostthing_space: res.data[i].lostthing_space, //
+                        lostthing_space_detail: res.data[i].lostthing_space_detail,
+                        lostthing_contact: res.data[i].lostthing_contact,
+                        photos: [res.data[i].photo1, res.data[i].photo2, res.data[i].photo3], //放置于主要内容下方的图片
+                        readingtimes: res.data[i].readingtimes, //阅读次数
+                        comments: 5, //评论数量
+                        favour: res.data[i].favour, //点赞数量
+                        had_favour: 0, //点赞判断
+                        specialcode:res.data[i].specialcode,
+                    }
+                    _this.setData({
+                        post0: _this.data.post0.concat(newarray),
+                        
+                        //将数组插入post0
+                    })
+                }
+            }
+        })
+
+        //然后获取我的
+        wx.request({
+            url: 'https://www.scnusay.cc/lostdetail/lostdetailphoto/returnmylost.php',
+            method: "POST",
+            data: {
+                'openid':app.globalData.openid
+            },
+            header: {
+                'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
+            },
+            success(res) {
+                console.log(res.data);
+                for (var i = 0; i < res.data.length; i++) {
+                    //for是根据数据的长度插入新数组
+                    //nwearray是用于插入的数组
+                    var newarray = {
+                        blogger_id: res.data[i].id,
+                        blogger_Openid: res.data[i].openid,
+                        blogger_avatar: res.data[i].imgurl, //头像
+                        blogger_name: res.data[i].name, //博主昵称
+                        blogger_time: res.data[i].blogger_time, //发布时间的时间戳、这里需要修改
+                        lostthing_topic: res.data[i].lostthing_topic, //标题
+                        lostthing_time: res.data[i].lostthing_time, //丢失时间的时间戳、这里需要修改
+                        lostthing_class: res.data[i].lostthing_class, //发布类别（不需要可以不填充
+                        lostthing_detail: res.data[i].lostthing_detail, //主要内容
+                        lostthing_space: res.data[i].lostthing_space, //
+                        lostthing_space_detail: res.data[i].lostthing_space_detail,
+                        lostthing_contact: res.data[i].lostthing_contact,
+                        photos: [res.data[i].photo1, res.data[i].photo2, res.data[i].photo3], //放置于主要内容下方的图片
+                        readingtimes: res.data[i].readingtimes, //阅读次数
+                        comments: 5, //评论数量
+                        favour: res.data[i].favour, //点赞数量
+                        had_favour: 0, //点赞判断
+                        specialcode:res.data[i].specialcode,
+                    }
+                    _this.setData({
+                        post1: _this.data.post1.concat(newarray),
+                        //将数组插入post0
+                    })
+                }
+            }
+        })
+
+        // setTimeout(function () { //异步
+        //     var query = wx.createSelectorQuery();
+        //     query.selectAll('.list').boundingClientRect()
+        //     query.exec((res) => {
+        //         console.log(res)
+        //         var listHeight = res[0][0].height
+        //         console.log(res[0][0].height)
+        //         _this.setData({
+        //             heights: res[0],
+        //             height: listHeight + 40 + 'px'
+        //         })
+        //     })
+        // }, 100)
         this.setData({
             navH: app.globalData.navHeight
         });
+        
     },
     logo: function (e) {
-        // 发起网络请求
+        //跳转去首页
         wx.navigateTo({
-            // 开发者服务器接口地址
             url: '/pages/index/index',
         })
     },
@@ -336,30 +387,5 @@ Page({
      * 用户点击右上角分享
      */
     onShareAppMessage: function () {},
-    /**
-     * 详情与售后左滑右滑事件
-     */
-    changeswiper: function (e) {
-        var _this = this;
-        console.log(e.detail.current)
-        setTimeout(function () { //异步
-            var query = wx.createSelectorQuery(); //模仿dom获取组件的高度
-            query.selectAll('.list').boundingClientRect()
-            query.exec((res) => {
-                console.log(res)
-                var listHeight = res[0][e.detail.current].height
-                console.log(res[0][e.detail.current].height)
-                _this.setData({
-                    height: listHeight + 20 + 'px'
-                })
-            })
-        }, 800)
-    },
 
-    clicktab: function(e){
-        var pag = e.currentTarget.dataset.current;
-        this.setData({
-            current_Page:pag
-        })
-    }
 })

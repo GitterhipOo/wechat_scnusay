@@ -5,7 +5,7 @@
         <navigator hoverClass="none" url="/pages/serach/search">
             <view class="nav-capsule">
                 <view class="topimage">
-                    <image class="back-pre" src="../../assets/images/icon/search.png" style="height:35px;width:35px;"></image>
+                    <image class="back-pre" src="https://www.scnusay.cc/icon/search.png" style="height:35px;width:35px;"></image>
                 </view>
             </view>
         </navigator>

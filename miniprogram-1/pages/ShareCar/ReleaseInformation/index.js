@@ -1,65 +1,109 @@
 // pages/ShareCar/ReleaseInformation/index.js
+const app = getApp()
 Page({
-    
     /**
      * 页面的初始数据
      */
-    data: {
-    sex: [{ id: "0", name: "男", checked:"true" }, { id: "1", name: "女" }],
+    data: { 
+    sex: [{ id: "1", value: "男" }, { id: "2", value: "女" }],
     name:'',
-    sexId:"0",   // 默认是0 => 男
+    // sexId:"0",   // 默认是0 => 男
     sex1:'',
     phonenumber:'',
     school:'',
     beginsite:'',
-    ensite:'',
+    endsite:'',
     time:'',
     inputText: '',
     inputTextLen: 0,
     index:0,
-    identity:["请选择","教师","学生","其他"],
-    occupation:''
+    // identity:["请选择","教师","学生","其他"],
+    occupation:'',
+    people:[{id:"3",value:"二人"},{id:"4",value:"三人"},{id:"5",value:"四人"}],
+    money:[{id:"1",value:"支付宝"},{id:"2",value:"微信"
+}]
     },
-    getInputText: function (e) {
-        // console.log(e.detail.value);
-        // if (e.detail.value !== this.inputText) {
-        //   this.inputText = e.detail.value;
+    //输入自动计算字体长度
+    getInputText: function (e) {//length疯狂报错（抄来的代码）
+         console.log(e.detail.value.inputText);
+        if (e.detail.value.inputText !== this.inputText) {
+        this.inputText = e.detail.value.inputText;
     
-        // }
-        let inputText = e.detail.value;
+        }
+        let inputText = e.detail.value.inputText;
         if (e.detail.value.length > 100) {
-          inputText = inputText.substring(0, 100);
+        inputText = inputText.substring(0, 100);
         }
         this.setData({
           inputText: inputText,
           inputTextLen: 0 || inputText.length
         })
+
       },
+
     getForm:function(e){
-        var formdata = e.detail.value
-        this.setData({
-        name:formdata.name,
-        sex1:this.data.sex[this.data.sexId].name,
-        phonenumber:formdata.Email,
-        school:formdata.school,
-        beginsite:formate.beginsite,
-        ensite:formate.endsite,
-        time:formate.time,
-        occupation:this.data.identity[this.data.index],
-       })
+            var that = this;
+   
       },
-      radioChange:function(e){
-          this.setData({
-              sexId:e.detail.value
-          })
+
+      radioChange:function(e){//确认“性别”一栏中选中的是哪个选项
+              const sex = this.data.sex
+              for(let i = 0, len = sex.length; i < len; ++i)
+              {
+                sex[i].checked = sex[i].id == e.detail.value;
+
+              }
+              this.setData({
+                sex
+              })
+              console.log(this.data.sex);
       },
-      bindPickerChange:function(e){
-          this.setData({
-              index: e.detail.value
-          })
-      },
+
+      radioChange_people:function(e){//确认“性别”一栏中选中的是哪个选项
+                const people = this.data.people
+                for(let i = 0, len = people.length; i < len; ++i)
+                {
+                    people[i].checked = people[i].id == e.detail.value;
+
+                }
+                this.setData({
+                    people
+                })
+                console.log(this.data.people);
+        },
+        radioChange_money:function(e){//确认“性别”一栏中选中的是哪个选项
+            const money = this.data.money
+            for(let i = 0, len = money.length; i < len; ++i)
+            {
+                money[i].checked = money[i].id == e.detail.value;
+
+            }
+            this.setData({
+                money
+            })
+            console.log(this.data.money);
+        },
+      postaddManage: function () {
+            let sex = '';
+            this.data.sex.map((item, index) => {//遍历数组
+              if (item.checked) {//找到被选定的值
+                sex = item.id;
+              }
+            })
+            let params = {//提取的是sex中的ID
+                sex: sex,
+            }
+            addManage(params).then(res => {
+                console.log(res);
+            })
+        },
+        
       saveData:function(e){
-          //提交后的操作，例如将信息写入数据库等
+      
+
+
+        
+           //提交后的操作，例如将信息写入数据库等
       },
       checkboxChange:function(e){
         var that = this;

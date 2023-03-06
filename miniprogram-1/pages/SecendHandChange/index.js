@@ -23,49 +23,49 @@ Page({
         sortlist: [
             {
                 sortid: 1,
-                icon: "../../assets/images/sort/all.png",
+                icon: "https://www.scnusay.cc/icon/all.png",
                 text: "全部",
                 jump: "all"
             },
             {
                 sortid: 2,
-                icon: "../../assets/images/sort/book.png",
+                icon: "https://www.scnusay.cc/icon/book.png",
                 text: "图书文具",
                 jump: "book"
             },
             {
                 sortid: 3,
-                icon: "../../assets/images/sort/life.png",
+                icon: "https://www.scnusay.cc/icon/life.png",
                 text: "生活用品",
                 jump: "life"
             },
             {
                 sortid: 4,
-                icon: "../../assets/images/sort/computer.png",
+                icon: "https://www.scnusay.cc/icon/computer.png",
                 text: "电子产品",
                 jump: "computer"
             },
             {
                 sortid: 5,
-                icon: "../../assets/images/sort/makeup.png",
+                icon: "https://www.scnusay.cc/icon/makeup.png",
                 text: "化妆用品",
                 jump: "makeup"
             },
             {
                 sortid: 6,
-                icon: "../../assets/images/sort/clothe.png",
+                icon: "https://www.scnusay.cc/icon/clothe.png",
                 text: "服饰鞋包",
                 jump: "clothe"
             },
             {
                 sortid: 7,
-                icon: "../../assets/images/sort/others.png",
+                icon: "https://www.scnusay.cc/icon/others.png",
                 text: "其他",
                 jump: "others"
             },
             {
                 sortid: 8,
-                icon: "../../assets/images/sort/publish.png",
+                icon: "https://www.scnusay.cc/icon/publish.png",
                 text: "我的发布",
                 jump: "mypublish"
             }
@@ -73,12 +73,12 @@ Page({
         infolist: [
             {   
                 infoid: 1,
-                icon: "../../assets/images/sort/part-time-job.png",
+                icon: "https://www.scnusay.cc/icon/part-time-job.png",
                 name: "hzm",
                 time: "1小时前",
                 infotitle: "出售顶级皮肤啦啦啦",
                 infodetail:"非常之顶级啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦",
-                infoimage:"../../assets/images/sort/publish.png",
+                infoimage:"https://www.scnusay.cc/icon/publish.png",
                 infoprice: "￥9600",
                 lookup: 300,
                 nice: 50,
@@ -86,12 +86,12 @@ Page({
             },
             {
                 infoid: 2,
-                icon: "../../assets/images/sort/part-time-job.png",
+                icon: "https://www.scnusay.cc/icon/part-time-job.png",
                 name: "hzm",
                 time: "1小时前",
                 infotitle: "出售顶级皮肤",
                 infodetail:"非常之顶级",
-                infoimage:"../../assets/images/sort/publish.png",
+                infoimage:"https://www.scnusay.cc/icon/publish.png",
                 infoprice: "￥20",
                 lookup: 3,
                 nice: 4,
@@ -99,12 +99,12 @@ Page({
             },
             {
                 infoid: 3,
-                icon: "../../assets/images/sort/part-time-job.png",
+                icon: "https://www.scnusay.cc/icon/part-time-job.png",
                 name: "hzm",
                 time: "1小时前",
                 infotitle: "出售顶级皮肤",
                 infodetail:"非常之顶级",
-                infoimage:"../../assets/images/sort/publish.png",
+                infoimage:"https://www.scnusay.cc/icon/publish.png",
                 infoprice: "￥20",
                 lookup: 3,
                 nice: 4,
@@ -112,12 +112,12 @@ Page({
             },
             {
                 infoid: 4,
-                icon: "../../assets/images/sort/part-time-job.png",
+                icon: "https://www.scnusay.cc/icon/part-time-job.png",
                 name: "hzm",
                 time: "1小时前",
                 infotitle: "出售顶级皮肤",
                 infodetail:"非常之顶级",
-                infoimage:"../../assets/images/sort/publish.png",
+                infoimage:"https://www.scnusay.cc/icon/publish.png",
                 infoprice: "￥20",
                 lookup: 3,
                 nice: 4,
@@ -125,12 +125,12 @@ Page({
             },
             {
                 infoid: 5,
-                icon: "../../assets/images/sort/part-time-job.png",
+                icon: "https://www.scnusay.cc/icon/part-time-job.png",
                 name: "hzm",
                 time: "1小时前",
                 infotitle: "出售顶级皮肤",
                 infodetail:"非常之顶级",
-                infoimage:"../../assets/images/sort/publish.png",
+                infoimage:"https://www.scnusay.cc/icon/publish.png",
                 infoprice: "￥20",
                 lookup: 3,
                 nice: 4,
@@ -138,12 +138,12 @@ Page({
             },
             {
                 infoid: 6,
-                icon: "../../assets/images/sort/part-time-job.png",
+                icon: "https://www.scnusay.cc/icon/part-time-job.png",
                 name: "hzm",
                 time: "1小时前",
                 infotitle: "出售顶级皮肤",
                 infodetail:"非常之顶级",
-                infoimage:"../../assets/images/sort/publish.png",
+                infoimage:"https://www.scnusay.cc/icon/publish.png",
                 infoprice: "￥20",
                 lookup: 3,
                 nice: 4,

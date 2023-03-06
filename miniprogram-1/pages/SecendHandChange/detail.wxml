@@ -3,7 +3,7 @@
     <view class="nav-title" style="line-height: {{navH*2+44}}px;">物品详情</view>
     <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
         <navigator hoverClass="none" open-type="navigateBack" >
-                    <image class="back-pre" src="../../assets/images/sort/back.png" style="height:50rpx;width:50rpx;margin-top: 50rpx;"></image>
+                    <image class="back-pre" src="https://www.scnusay.cc/icon/back.png" style="height:50rpx;width:50rpx;margin-top: 50rpx;"></image>
         </navigator>
     </view>
 </view>
@@ -31,14 +31,14 @@
 </view>
 <view class="catch">
 <view class="view1">
-    <image src="../../assets/images/sort/zan2.png" bindtap="gopraise"  wx:if="{{show == false}}" class="img1"></image>
-    <image src="../../assets/images/sort/zan_active.png" bindtap="gopraise"  wx:else class="img1"></image>
-    <button open-type="share" size="mini" style=" align-items: center; justify-content: center;background-color:#ffffff;"><image src="../../assets/images/sort/share.png"  class="img11" ></image></button>
+    <image src="https://www.scnusay.cc/iconzan2.png" bindtap="gopraise"  wx:if="{{show == false}}" class="img1"></image>
+    <image src="https://www.scnusay.cc/iconzan_active.png" bindtap="gopraise"  wx:else class="img1"></image>
+    <button open-type="share" size="mini" style=" align-items: center; justify-content: center;background-color:#ffffff;"><image src="https://www.scnusay.cc/iconshare.png"  class="img11" ></image></button>
 </view>
 <view class="view2">
-    <image src="../../assets/images/sort/lookup.png" class="img2"></image><text>{{lookup}}</text>
-     <image src="../../assets/images/sort/zan.png" class="img2"></image><text>{{nice}}</text>
-     <image src="../../assets/images/sort/liuyan.png" class="img2"></image><text>{{talk}}</text>
+    <image src="https://www.scnusay.cc/iconlookup.png" class="img2"></image><text>{{lookup}}</text>
+     <image src="https://www.scnusay.cc/iconzan.png" class="img2"></image><text>{{nice}}</text>
+     <image src="https://www.scnusay.cc/iconliuyan.png" class="img2"></image><text>{{talk}}</text>
 </view>
 </view>
 

@@ -8,34 +8,35 @@ Page({
     data: {
         navH: 0,
         rotationList:[
-            {imgurl: 'https://img1.imgtp.com/2022/06/01/BgYTrOiQ.jpg',},
+            {imgurl: 'https://www.scnusay.cc/indexswiper/1.jpg',},
             {imgurl: 'https://news.scnu.edu.cn/media/image/2020/11/2020112537fb67.jpeg.v',},
-            {imgurl: 'https://img1.imgtp.com/2022/06/01/vFZmZtBC.png'}
+            {imgurl: 'https://www.scnusay.cc/indexswiper/2.jpg'}
+            
         ],
         
     sortList:[
       {
-        icon: "../../assets/images/sort/news.png",
+        icon: "https://www.scnusay.cc/icon/news.png",
         sortid: 1,
         text:"失物招领",
         jumpid:"lostthing"
       },{
-        icon: "../../assets/images/sort/second-hand.png",
+        icon: "https://www.scnusay.cc/icon/second-hand.png",
         sortid: 2,
         text:"闲置交易",
         jumpid:"shchange"
       },{
-        icon: "../../assets/images/sort/love-mood.png",
+        icon: "https://www.scnusay.cc/icon/love-mood.png",
         sortid: 3,
         text:"拼车同行",
         jumpid:"car"
       },{
-        icon: "../../assets/images/sort/question-ask.png",
+        icon: "https://www.scnusay.cc/icon/question-ask.png",
         sortid: 4,
         text:"队友招募",
         jumpid:"team"
       },{
-        icon: "../../assets/images/sort/part-time-job.png",
+        icon: "https://www.scnusay.cc/icon/part-time-job.png",
         sortid: 5,
         text:"美食点评",
         jumpid:"food"

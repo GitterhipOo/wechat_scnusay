@@ -1,65 +1,53 @@
 <!--pages/ShareCar/details/index.wxml-->
 <!-- <text>pages/ShareCar/details/index.wxml</text> -->
-<view class="chat" wx:for="{{blogger_list}}">
+<view class="chat">
     <!-- woshifengexian -->
     <!-- 头像栏 -->
     <view class="touxianglan">
         <view>
-            <image class="touxiang" src="{{item.blogger_avatar}}"></image>
+            <image class="touxiang" src="{{blogger_list.blogger_avatar}}"></image>
         </view>
         <view>
-            <text class="name">{{item.blogger_name}}</text>
-            <text class="time" decode="true">\n &nbsp;&nbsp;&nbsp;{{item.blogger_time}}</text>
+            <text class="name">{{blogger_list.blogger_name}}</text>
+            <text class="time" decode="true">\n &nbsp;&nbsp;&nbsp;{{blogger_list.blogger_time}}</text>
         </view>
         <button size="mini" type="primary" class="follow">关注</button>
     </view>
     <!-- 信息展览 -->
     <view class="in_contact">
-        <text class="topic">{{item.lostthing_topic}}
+        <text class="topic">{{blogger_list.lostthing_topic}}
         </text>
-        <text class="date">日期：<text style="font-weight: 400;">{{item.lostthing_time}}</text></text>
+        <text class="date">日期：<text style="font-weight: 400;">{{blogger_list.lostthing_time}}</text></text>
         <text class="space">
-            校区：<text style="font-weight: 400;">{{item.lostthing_space}}</text></text>
+            校区：<text style="font-weight: 400;">{{blogger_list.lostthing_space}}</text></text>
         <text class="space_detail">
-            地点：<text style="font-weight: 400;">{{item.lostthing_space_detail}}</text></text>
+            地点：<text style="font-weight: 400;">{{blogger_list.lostthing_space_detail}}</text></text>
         <text class="contact">
-            联系方式：<text style="font-weight: 400;">{{item.lostthing_contact}}}</text></text>
+            联系方式：<text style="font-weight: 400;">{{blogger_list.lostthing_contact}}</text></text>
         <text class="lostthing_class">
-            分类：<text style="font-weight: 400;">{{item.lostthing_class}}</text>
+            分类：<text style="font-weight: 400;">{{blogger_list.lostthing_class}}</text>
         </text>
     </view>
     <!-- 主要内容 -->
     <view class="contact_detail">
         <text class="h1_detail">详情内容</text>
         <view style="margin-top: 5px;">
-            <text class="detail_1">{{item.lostthing_detail}}</text>
+            <text class="detail_1">{{blogger_list.lostthing_detail}}</text>
         </view>
-        <image wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
+        <view class="imgbox">
+            <block wx:for="{{blogger_list.photos}}" wx:for-item="photo">
+                <image wx:if="{{photo}}" class="details_img" src="{{photo}}" data-photoindex='{{index}}' bindtap='previewImg' mode="aspectFill"></image>
+            </block>
+        </view>
+
     </view>
     <!-- 文后小标模块 -->
-    <view class="box3">
-        <view class="tags" wx:for="{{item.tags}}">{{item}}</view>
-        <view class="post-data">
-            <!-- 点赞   -->
-            <view class="feet" bindtap="favourMe" data-id="{{item.comment_id}}">
-                <image class="favour_img" src="{{item.favour_src}}"></image>
-                <text class="favour_num" style="position: relative; right:0;bottom: 0;">{{item.favour}}</text>
-            </view>
-            <view class="feet">
-                <image class="feet_img" src="/assets/images/sort/liuyan.png"></image>
-                <text class="feet_num">{{item.comments}}</text>
-            </view>
-            <view class="feet">
-                <image class="feet_img" src="/assets/images/sort/lookup.png"></image>
-                <text class="feet_num">{{item.readingtimes}}</text>
-            </view>
-        </view>
-    </view>
+
 </view>
 
-<!-- 底下评论区 -->
-<view>
 
+<!-- 底下评论区 -->
+<view style="height: 400rpx;">
     <!-- 评论-回复-回复评论显示区域 -->
     <view class="container">
         <!-- 总共评论数 -->
@@ -70,13 +58,9 @@
         <!-- END -->
         <!-- 用户评论回复显示区域 -->
         <view class="container-item" wx:for="{{comment_list}}" wx:for-item="list" wx:key="key">
-            <image class="item_img" src="{{list.comment_user_avatar}}"></image>
+            <image class="item_img" src="{{list.comment_user_avatar}}" style="margin-left: 20rpx;"></image>
             <view class="item_right">
                 <view class="right_name">{{list.comment_user_name}}</view>
-                <view  class="favour" style="top:-20rpx; right:5rpx">
-                    <image class="favour_img2" src="{{list.favour_src}}" bindtap="favourMe" data-id="{{list.comment_id}}" data-reply="{{list.reply_id}}"></image>
-                    <view class="favour_num">{{list.favour}}</view>
-                </view>
                 <view class="right_content">
                     <text class="right_content_txt" bindtap='replyComment' data-type="1" data-name='{{list.comment_user_name}}' data-cid='{{list.comment_id}}' data-pid="{{list.parent_id}}">{{list.comment_text}}</text>
                     <text class="right_content_txt2">{{list.comment_time}}</text>
@@ -85,12 +69,9 @@
                     <view class="reply" wx:for="{{comment_list2}}" wx:for-item="list2" wx:key="list2" wx:if="{{list2.parent_id == list.comment_id}}">
                         <image class="reply_img" src="{{list2.comment_user_avatar}}"></image>
                         <view class="reply_right">
-                            <view class="favour" style="top:-12rpx; right:-24rpx">
-                                <image class="favour_img2" src="{{list2.favour_src}}" bindtap="favourMe" data-id="{{list2.comment_id}}" data-reply="{{list2.reply_id}}"></image>
-                                <view class="favour_num">{{list2.favour}}</view>
-                            </view>
                             <view class="right_name">{{list2.comment_user_name}}</view>
                             <text wx:if="{{list2.reply_name == ''}}" class="right_content_txt" bindtap='replyComment' data-type="2" data-name='{{list2.comment_user_name}}' data-cid='{{list2.comment_id}}' data-pid="{{list2.parent_id}}">{{list2.comment_text}}</text>
+                            <!-- replyname如果为空，就说明他没有回复任何一条回复，而是直接把他归位在评论的回复中 -->
                             <text wx:if="{{list2.reply_name != ''}}" bindtap='replyComment' data-type="2" data-name='{{list2.comment_user_name}}' data-cid='{{list2.comment_id}}' data-pid="{{list2.parent_id}}" class="right_content_txt">回复 <text class="right_name">{{list2.reply_name}}：</text>{{list2.comment_text}}</text>
                             <text class="right_content_txt2">{{list2.comment_time}}</text>
                         </view>
@@ -110,19 +91,19 @@
     <view class="foot">
         <view class="say">
             <view class="flex">
-                <image class="say_img" src="/assets/images/sharecars/icon6.jpg"></image>
+                <!-- <image class="say_img" src="/assets/images/sharecars/icon6.jpg"></image>
                 <input confirm-type="send" class="say_inp" placeholder="{{ placeholder }}" value="{{ comment_text }}" focus="{{ focus }}" bindblur="blur" bindconfirm="confirm"></input>
+                <button class="say_btn" bindtap="confirm">确认</button> -->
+                <t-input label="评论" placeholder="{{ placeholder }}" focus="{{ focus }}" value="{{inputvalue}}" bind:change="inputCom" bind:enter="confirm" style="margin: 0 0 0 0;">
+                    <t-button slot="suffix" theme="primary" size="extra-small" bindtap="confirm">发送评论</t-button>
+                </t-input>
+
             </view>
+
         </view>
-        <image class="foot_img" src="/assets/images/sharecars/icon4.jpg"></image>
-        <text class="foot_num">{{comment_list.length + comment_list2.length}}</text>
-        <view class="favour">
-            <image class="favour_img2" src="{{blogger_list[0].favour_src}}" bindtap="favourMe" data-id="{{blogger_list[0].comment_id}}"></image>
-            <view class="favour_num">{{blogger_list[0].favour}}</view>
-        </view>
+        <!-- <image class="foot_img" src="/assets/images/sharecars/icon4.jpg"></image>
+    <text class="foot_num">{{comment_list.length + comment_list2.length}}</text> -->
 
     </view>
-    <!-- END -->
-
-
 </view>
+<!-- END -->
