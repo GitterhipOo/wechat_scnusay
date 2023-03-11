@@ -3,4 +3,86 @@
     background-color: #fff;
     padding: 16rpx 32rpx;
   }
-  
+  .history-title {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ccc;
+    
+}
+
+.history-title-text {
+    flex: 1;
+    margin-left: 40rpx;
+    margin-top: 30rpx;
+    font-size: 20px;
+}
+  .history-container {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.history-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10rpx;
+    padding-top: 5rpx;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 48%;
+    box-sizing: border-box;
+    /* make a shadow around the box*/
+    box-shadow: 0 0 3px #ccc;
+}
+
+.history-item-text {
+    font-size: 16px;
+    color: #333;
+}
+
+.history-item-icon {
+    font-size: 20px;
+    color: #999;
+}
+.nohistory{
+    /* grey center 16px */
+    color: #999;
+    font-size: 16px;
+    margin-top: 20px;
+}
+.nohistory-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.emptyhistory{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.emptyimg{
+    /* make the img on the center of de view */
+    width: 50px;
+    height: 50px;
+    margin-top: 200rpx;
+}
+.searchimg
+{
+    width: 30rpx;
+    height: 30rpx;
+    margin-top: 5rpx;
+}
