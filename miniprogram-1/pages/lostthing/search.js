@@ -11,6 +11,7 @@ Page({
     data: {
         searchHistory:[],
         submitValue:"",
+        nowpoint:'',
     },
 
     /**
@@ -105,6 +106,39 @@ Page({
           });
         
     },
+    deletehistory:function()
+    {
+        wx.showModal({
+          title: '删除',
+          content: '确认删除历史记录',
+          complete: (res) => {
+            if (res.cancel) {
+              
+            }
+        
+            if (res.confirm) {
+            //   make the searchHistory empty
+                
+                this.setData({
+                    searchHistory:[]
+                })
+                //show success
+                wx.showToast({
+                    title: '删除成功',
+                    icon: 'success',
+                    duration: 2000
+                    })
+                //delete the storage
+                wx.removeStorage({
+                    key: documentType+"History",
+                    success: function(res) {
+                        console.log("删除成功")
+                        }
+                    })
+            }
+          }
+        })
+    },
     submit: function () {
         if (this.checkSubmitValue() == 1) {
             wx.showLoading({
@@ -131,8 +165,12 @@ Page({
                             title: '搜索失败',
                             content: '无搜索内容',
                         })
+                        
                     } else {
                         console.log(res.data);
+                        wx.navigateTo({
+                            url: '/pages/lostthing/searchIndex',
+                        })
                     }
                     //将新搜索内容加入历史
                     if (isHistorySubmit == 0)
@@ -145,9 +183,7 @@ Page({
                         data: res.data
                       });
                     //跳转至searchIndex
-                    wx.navigateTo({
-                        url: '/pages/lostthing/searchIndex',
-                    })
+                    
                 }
             })
         }
@@ -169,7 +205,8 @@ Page({
         //将该索引的内容传输至搜索框内
         this.setData({
             submitValue:tempValue,
-            searchHistory:searchHistory
+            searchHistory:searchHistory,
+            nowpoint:index
         })
         this.addHistory()
     },
