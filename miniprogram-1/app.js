@@ -4,6 +4,7 @@ App({
         openid:"null000",
         headurl:"",
         wxname:"",
+        haslogin:false,
       userInfo: null,
       navHeight: 0,
       tags: [{
@@ -97,6 +98,7 @@ App({
                       "Content-Type": "application/x-www-form-urlencoded" //POST方式是这个
                   },
                   success(res){
+                    
                       //console.log(res.data);
                       that.globalData.openid=res.data;
                       console.log('全局数据的openid为'+that.globalData.openid)
@@ -108,7 +110,10 @@ App({
             }
         }
       });
+
+
     //   查询服务器有无头像
     },
+    
     
   })
