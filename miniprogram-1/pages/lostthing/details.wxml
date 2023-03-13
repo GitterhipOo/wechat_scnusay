@@ -82,7 +82,7 @@
         <!-- END -->
         <!-- 结束 -->
         <view class="end">
-            <text class="end_txt" space="nbsp">— THE END —</text>
+            <text class="end_txt" space="nbsp">— 没有更多内容啦~ —</text>
         </view>
         <!-- END -->
     </view>
