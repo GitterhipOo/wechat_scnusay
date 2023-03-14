@@ -10,6 +10,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+        haslogin:'',
         swiperHeight:"1000px",
         //页面切换相关数据
         current_Page: 0,
@@ -39,10 +40,10 @@ Page({
     getSwiperItemHeight:function(){
         var postHeight
         if (this.data.current_Page == 0){
-            postHeight=(this.data.post0.length)*400+100+"rpx";
+            postHeight=(this.data.post0.length)*400+600+"rpx";
         }
         else{
-            postHeight=(this.data.post1.length)*400+100+"rpx";
+            postHeight=(this.data.post1.length)*400+600+"rpx";
         }
         console.log("计算页面高度触发")
         this.setData({
@@ -203,10 +204,10 @@ Page({
     getSwiperItemHeight:function(){
         var postHeight
         if (this.data.current_Page == 0){
-            postHeight=(this.data.post0.length)*400+100+"rpx";
+            postHeight=(this.data.post0.length)*400+600+"rpx";
         }
         else{
-            postHeight=(this.data.post1.length)*400+100+"rpx";
+            postHeight=(this.data.post1.length)*400+600+"rpx";
         }
         console.log("计算页面高度触发")
         this.setData({
@@ -218,18 +219,26 @@ Page({
         console.log("点击去发布")
         if(app.globalData.haslogin===false)
         {
-            //take a message to tell user to login and jump to index4 page
-            wx.showToast({
-                title: '请先登录',
-                icon: 'error',
-                duration: 2000
-                })
-            //kill the current page process
-            wx.navigateBack({
-                delta: 0,
+            //出现可选择弹窗提醒用户未登录，如果用户点击确定，则跳转至登录页面，否则不跳转
+            wx.showModal({
+                title: '提示',
+                content: '您还未登录，是否前往登录？',
+                success (res) {
+                    if (res.confirm) {
+                        console.log('用户点击确定')
+                        wx.switchTab({
+                          url: '/pages/index/index4',
+                        })
+                    } else if (res.cancel) {
+                        console.log('用户点击取消')
+                    }
+                }
             })
         }
         else{
+        wx.navigateTo({
+            url: '/pages/lostthing/send',
+        })
             console.log("login 状态为"+app.globalData.haslogin)
             console.log("您已登录，获得发布权限")
         }
@@ -277,6 +286,9 @@ Page({
                 {
                     console.log(res.data)
                     app.globalData.haslogin = true;
+                    _this.setData({
+                        haslogin:true
+                    })
                     console.log("确认登陆");
                 }
                 else{
