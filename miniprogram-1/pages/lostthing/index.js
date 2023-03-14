@@ -10,6 +10,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+        haslogin:'',
         swiperHeight:"1000px",
         //页面切换相关数据
         current_Page: 0,
@@ -39,10 +40,10 @@ Page({
     getSwiperItemHeight:function(){
         var postHeight
         if (this.data.current_Page == 0){
-            postHeight=(this.data.post0.length)*400+100+"rpx";
+            postHeight=(this.data.post0.length)*450+200+"rpx";
         }
         else{
-            postHeight=(this.data.post1.length)*400+100+"rpx";
+            postHeight=(this.data.post1.length)*450+200+"rpx";
         }
         console.log("计算页面高度触发")
         this.setData({
@@ -203,10 +204,10 @@ Page({
     getSwiperItemHeight:function(){
         var postHeight
         if (this.data.current_Page == 0){
-            postHeight=(this.data.post0.length)*400+100+"rpx";
+            postHeight=(this.data.post0.length)*450+200+"rpx";
         }
         else{
-            postHeight=(this.data.post1.length)*400+100+"rpx";
+            postHeight=(this.data.post1.length)*450+200+"rpx";
         }
         console.log("计算页面高度触发")
         this.setData({
@@ -285,6 +286,9 @@ Page({
                 {
                     console.log(res.data)
                     app.globalData.haslogin = true;
+                    _this.setData({
+                        haslogin:true
+                    })
                     console.log("确认登陆");
                 }
                 else{
