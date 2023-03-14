@@ -40,10 +40,10 @@ Page({
     getSwiperItemHeight:function(){
         var postHeight
         if (this.data.current_Page == 0){
-            postHeight=(this.data.post0.length)*450+200+"rpx";
+            postHeight=(this.data.post0.length)*400+600+"rpx";
         }
         else{
-            postHeight=(this.data.post1.length)*450+200+"rpx";
+            postHeight=(this.data.post1.length)*400+600+"rpx";
         }
         console.log("计算页面高度触发")
         this.setData({
@@ -204,10 +204,10 @@ Page({
     getSwiperItemHeight:function(){
         var postHeight
         if (this.data.current_Page == 0){
-            postHeight=(this.data.post0.length)*450+200+"rpx";
+            postHeight=(this.data.post0.length)*400+600+"rpx";
         }
         else{
-            postHeight=(this.data.post1.length)*450+200+"rpx";
+            postHeight=(this.data.post1.length)*400+600+"rpx";
         }
         console.log("计算页面高度触发")
         this.setData({
