@@ -58,7 +58,7 @@
             </view>
         </view>
     </swiper-item>
-
+<block wx:if="{{haslogin}}">
     <swiper-item class="container1">
         <view class="list">
             <!-- 以一个作为案例 -->
@@ -85,6 +85,7 @@
             </view>
         </view>
     </swiper-item>
+</block>
 </swiper>
 <view class="test">
 </view>
