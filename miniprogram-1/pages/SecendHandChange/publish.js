@@ -17,8 +17,8 @@ Page({
         postValue: { //打包发送的post数组
             //判断作者直接返回openid就行了我日
             blogger_time: "", //发布时间
-            SHchange_title: "", //标题
-            SHchange_info: "", //物品信息
+            SHchange_topic: "", //标题
+            SHchange_detail: "", //物品信息
             SHchange_price:"",//价格
             SHchange_category: " ", //分类
             SHchange_username: "", //姓名
