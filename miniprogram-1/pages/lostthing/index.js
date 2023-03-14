@@ -237,7 +237,7 @@ Page({
         }
         else{
         wx.navigateTo({
-            url: '/pages/lostthing/search',
+            url: '/pages/lostthing/send',
         })
             console.log("login 状态为"+app.globalData.haslogin)
             console.log("您已登录，获得发布权限")
