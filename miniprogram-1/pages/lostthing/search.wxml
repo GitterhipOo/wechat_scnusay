@@ -1,12 +1,23 @@
-<!--pages/lostthing/search.wxml-->
+<!-- pages/lostthing/search.wxml -->
 <t-search placeholder="请输入搜索内容" bind:submit="submit" bind:action-click="submit" action="搜索" model:value="{{submitValue}}" center="{{ true }}" focus="{{ true }}" shape="round"></t-search>
-<view wx:if="{{searchHistory[0]}}">
-<view>历史记录</view>
-<view wx:for="{{searchHistory}}"  wx:key="index" bindtap="clickHistory" data-index="{{index}}">
-<text>{{item}}</text>
+<view class="history-title">
+    <view class="history-title-text">历史记录:
+        <image src="https://www.scnusay.cc/icon/delete.png" mode="" style="width: 35rpx;height: 30rpx; position: absolute; right:20rpx; margin-top: 10rpx;" bindtap="deletehistory" />
+    </view>
 </view>
+<view wx:if="{{searchHistory[0]}}" class="history-container">
+    <view wx:for="{{searchHistory}}" wx:key="index" bindtap="clickHistory" data-index="{{index}}" class="history-item">
+        <text class="history-item-text">{{item}}</text>
+        <image src="https://www.scnusay.cc/icon//search.png" mode="" class="searchimg" />
+    </view>
 </view>
+<view wx:else >
+    <!-- make its child on the center -->
+    <view class="emptyhistory">
+        <image src="https://www.scnusay.cc/icon/empty.png" mode="" class="emptyimg"/>
+    </view>
 
-
-
-
+    <view class="nohistory-container">
+        <text class="nohistory">oh!暂无历史记录</text>
+    </view>
+</view>

@@ -2,12 +2,26 @@
 var app = getApp()
 Page({
 
-    godetail: function (e) {
+    jumptodetails: function (e) {
         
-        var id = e.currentTarget.dataset.id,
-        name = e.currentTarget.dataset.name;
-        console.log(id);
-        console.log(name);
+        console.log(e);
+        var that = this
+        let index = e.currentTarget.dataset.index
+        console.log("index值为" + index)
+        //滑动以后判断当前页面是什么的辨识
+        console.log('current_page(判断当前是哪种类型)为' + that.data.current_Page)
+        //这里需要拼接字符串post(0/1)
+        if (that.data.current_Page == 0) {
+            var postValue = that.data.post0[index]
+        } else if (that.data.current_Page == 1)
+            var postValue = that.data.post1[index]
+        //通过if判断现在是post0还是post1
+        console.log(postValue)
+        wx.setStorage({
+            key: "sendPostValue",
+            data: postValue
+            //储存在缓存中带过去再删除
+        })
         // 执行页面跳转
         wx.navigateTo({
           url: '/pages/SecendHandChange/detail'
@@ -18,234 +32,104 @@ Page({
      */
     data: {
         navH: 0,
-        jumpid:"all",
-        isloading:false,
-        sortlist: [
-            {
-                sortid: 1,
-                icon: "https://www.scnusay.cc/icon/all.png",
-                text: "全部",
-                jump: "all"
-            },
-            {
-                sortid: 2,
-                icon: "https://www.scnusay.cc/icon/book.png",
-                text: "图书文具",
-                jump: "book"
-            },
-            {
-                sortid: 3,
-                icon: "https://www.scnusay.cc/icon/life.png",
-                text: "生活用品",
-                jump: "life"
-            },
-            {
-                sortid: 4,
-                icon: "https://www.scnusay.cc/icon/computer.png",
-                text: "电子产品",
-                jump: "computer"
-            },
-            {
-                sortid: 5,
-                icon: "https://www.scnusay.cc/icon/makeup.png",
-                text: "化妆用品",
-                jump: "makeup"
-            },
-            {
-                sortid: 6,
-                icon: "https://www.scnusay.cc/icon/clothe.png",
-                text: "服饰鞋包",
-                jump: "clothe"
-            },
-            {
-                sortid: 7,
-                icon: "https://www.scnusay.cc/icon/others.png",
-                text: "其他",
-                jump: "others"
-            },
-            {
-                sortid: 8,
-                icon: "https://www.scnusay.cc/icon/publish.png",
-                text: "我的发布",
-                jump: "mypublish"
-            }
-        ],
-        infolist: [
+        swiperHeight:"1000px",
+        //页面切换相关数据
+        current_Page: 0,
+        photocou: 0, //用户上传图片的数量    
+        // height: '',
+        heights: [],
+        owner_Data: {
+            owner_Openid: "ouctO4ypxLjQ_3t67gYI-urvPoQs",
+        },
+              
+        isloading:false,  
+        //post0为商品列表 lostthing_class:1  
+        post0: [
             {   
-                infoid: 1,
-                icon: "https://www.scnusay.cc/icon/part-time-job.png",
-                name: "hzm",
-                time: "1小时前",
-                infotitle: "出售顶级皮肤啦啦啦",
-                infodetail:"非常之顶级啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦",
-                infoimage:"https://www.scnusay.cc/icon/publish.png",
-                infoprice: "￥9600",
-                lookup: 300,
-                nice: 50,
-                talk: 40
-            },
-            {
-                infoid: 2,
-                icon: "https://www.scnusay.cc/icon/part-time-job.png",
-                name: "hzm",
-                time: "1小时前",
-                infotitle: "出售顶级皮肤",
-                infodetail:"非常之顶级",
-                infoimage:"https://www.scnusay.cc/icon/publish.png",
-                infoprice: "￥20",
-                lookup: 3,
-                nice: 4,
-                talk: 5
-            },
-            {
-                infoid: 3,
-                icon: "https://www.scnusay.cc/icon/part-time-job.png",
-                name: "hzm",
-                time: "1小时前",
-                infotitle: "出售顶级皮肤",
-                infodetail:"非常之顶级",
-                infoimage:"https://www.scnusay.cc/icon/publish.png",
-                infoprice: "￥20",
-                lookup: 3,
-                nice: 4,
-                talk: 5
-            },
-            {
-                infoid: 4,
-                icon: "https://www.scnusay.cc/icon/part-time-job.png",
-                name: "hzm",
-                time: "1小时前",
-                infotitle: "出售顶级皮肤",
-                infodetail:"非常之顶级",
-                infoimage:"https://www.scnusay.cc/icon/publish.png",
-                infoprice: "￥20",
-                lookup: 3,
-                nice: 4,
-                talk: 5
-            },
-            {
-                infoid: 5,
-                icon: "https://www.scnusay.cc/icon/part-time-job.png",
-                name: "hzm",
-                time: "1小时前",
-                infotitle: "出售顶级皮肤",
-                infodetail:"非常之顶级",
-                infoimage:"https://www.scnusay.cc/icon/publish.png",
-                infoprice: "￥20",
-                lookup: 3,
-                nice: 4,
-                talk: 5
-            },
-            {
-                infoid: 6,
-                icon: "https://www.scnusay.cc/icon/part-time-job.png",
-                name: "hzm",
-                time: "1小时前",
-                infotitle: "出售顶级皮肤",
-                infodetail:"非常之顶级",
-                infoimage:"https://www.scnusay.cc/icon/publish.png",
-                infoprice: "￥20",
-                lookup: 3,
-                nice: 4,
-                talk: 5
-            }
+                blogger_avatar: "https://www.scnusay.cc/icon/part-time-job.png",
+                blogger_time: "2023年3月13日15:39:23",
+                SHchange_topic: "出售顶级皮肤啦啦啦出售顶级皮肤啦啦啦出售顶级皮肤啦啦啦",
+                SHchange_detail:"非常之顶级啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦非常之顶级啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦非常之顶级啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦非常之顶级啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦非常之顶级啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦",
+                photos:["https://www.scnusay.cc/icon/part-time-job.png","https://www.scnusay.cc/icon/part-time-job.png","https://www.scnusay.cc/icon/part-time-job.png"],
+                SHchange_class:"闲置",
+                comments:235
+            }   
+        ],
+        //post1为我的发布 lostthing_class:0
+        post1: [
+            {   
+                blogger_avatar: "https://www.scnusay.cc/icon/part-time-job.png",
+                blogger_time: "2023年3月13日15:39:23",
+                SHchange_topic: "出售顶级皮肤啦啦啦出售顶级皮肤啦啦啦出售顶级皮肤啦啦啦",
+                SHchange_detail:"非常之顶级啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦非常之顶级啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦非常之顶级啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦非常之顶级啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦非常之顶级啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦",
+                photos:["https://www.scnusay.cc/icon/part-time-job.png","https://www.scnusay.cc/icon/part-time-job.png","https://www.scnusay.cc/icon/part-time-job.png"],
+                SHchange_class:"求购"
+            }       
         ]
+        
     },
-    gotopublish(){
-        wx.navigateTo({
-            url: '/pages/SecendHandChange/publish',
-          })    
+    //通过计算post的数量获取页面长度
+    getSwiperItemHeight:function(){
+        var postHeight
+        if (this.data.current_Page == 0){
+            postHeight=(this.data.post0.length)*500+100+"rpx";
+        }
+        else{
+            postHeight=(this.data.post1.length)*500+100+"rpx";
+        }
+        console.log("计算页面高度触发")
+        this.setData({
+            swiperHeight:postHeight,
+        })
+        console.log("高度赋值完成")
     },
-    mypublish: function (e) {
-        var id = e.currentTarget.dataset.id,
-        name = e.currentTarget.dataset.name;
-        console.log(id);
-        console.log(name);
-        // 执行页面跳转
-        wx.navigateTo({
-          url: '/pages/SecendHandChange/mypublish'
+    // 点击标签判断
+    clicktab: function (e) {
+        //点击标签切换swiper
+        var pag = e.currentTarget.dataset.current;
+        console.log("点击标签的数据为" + e.currentTarget.dataset.current)
+        this.getSwiperItemHeight()
+        this.setData({
+            current_Page: pag
+        })
+        var tabstylelost
+        var tabstylemy
+        if (this.data.current_Page == 0){
+            tabstylelost="color: #9bd3d3";
+            tabstylemy="color: black";
+        }
+        else{
+            tabstylelost="color: black";
+            tabstylemy="color: #9bd3d3";
+        }
+        this.setData({
+            tabstylelost:tabstylelost,
+            tabstylemy: tabstylemy,
         })
     },
-    all: function (e) {
-        var id = e.currentTarget.dataset.id,
-        name = e.currentTarget.dataset.name;
-        console.log(id);
-        console.log(name);
-        // 执行页面跳转
-        wx.reLaunch({
-          url: '/pages/SecendHandChange/index'
+    //滑动swiperItem修改currentPag
+    changeswiper(e){ 
+        this.setData({
+            current_Page: e.detail.current
         })
-    },
-    book: function (e) {
-        var id = e.currentTarget.dataset.id,
-        name = e.currentTarget.dataset.name;
-        console.log(id);
-        console.log(name);
-        // 执行页面跳转
-        wx.reLaunch({
-          url: '/pages/SecendHandChange/index'
+        console.log("切换触发")
+        this.getSwiperItemHeight()
+        var tabstylelost
+        var tabstylemy
+        if (this.data.current_Page == 0){
+            tabstylelost="color: #9bd3d3";
+            tabstylemy="color: black";
+        }
+        else{
+            tabstylelost="color: black";
+            tabstylemy="color: #9bd3d3";
+        }
+        this.setData({
+            tabstylelost:tabstylelost,
+            tabstylemy: tabstylemy,
         })
-    },
-    life: function (e) {
-        var id = e.currentTarget.dataset.id,
-        name = e.currentTarget.dataset.name;
-        console.log(id);
-        console.log(name);
-        // 执行页面跳转
-        wx.reLaunch({
-          url: '/pages/SecendHandChange/index'
-        })
-    },
-    computer: function (e) {
-        var id = e.currentTarget.dataset.id,
-        name = e.currentTarget.dataset.name;
-        console.log(id);
-        console.log(name);
-        // 执行页面跳转
-        wx.reLaunch({
-          url: '/pages/SecendHandChange/index'
-        })
-    },
-    makeup: function (e) {
-        var id = e.currentTarget.dataset.id,
-        name = e.currentTarget.dataset.name;
-        console.log(id);
-        console.log(name);
-        // 执行页面跳转
-        wx.reLaunch({
-          url: '/pages/SecendHandChange/index'
-        })
-    },
-    clothe: function (e) {
-        var id = e.currentTarget.dataset.id,
-        name = e.currentTarget.dataset.name;
-        console.log(id);
-        console.log(name);
-        // 执行页面跳转
-        wx.reLaunch({
-          url: '/pages/SecendHandChange/index'
-        })
-    },
-    others: function (e) {
-        var id = e.currentTarget.dataset.id,
-        name = e.currentTarget.dataset.name;
-        console.log(id);
-        console.log(name);
-        // 执行页面跳转
-        wx.reLaunch({
-          url: '/pages/SecendHandChange/index'
-        })
-    },
-    search: function (e) {
-        var id = e.currentTarget.dataset.id,
-        name = e.currentTarget.dataset.name;
-        console.log(id);
-        console.log(name);
-        // 执行页面跳转
-        wx.reLaunch({
-          url: '/pages/SecendHandChange/index'
-        })
-    },
+    },  
+    
     /**
      * 生命周期函数--监听页面加载
      */

@@ -40,6 +40,22 @@ Page({
     },
     onLoad:function(options){
         console.log(app.globalData.openid);
+        if(app.globalData.haslogin==false)
+        {
+            //take a message to tell user to login and jump to index4 page
+            wx.showToast({
+                title: '请先登录',
+                icon: 'error',
+                duration: 2000
+                })
+            //kill the current page process
+            wx.navigateBack({
+                delta: 0,
+            })
+        }
+        else{
+            console.log("您已登录，获得发布权限")
+        }
     },
     //添加照片功能
     img_w_show() {

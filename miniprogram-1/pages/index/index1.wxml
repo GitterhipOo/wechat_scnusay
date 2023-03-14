@@ -6,7 +6,7 @@
         <navigator hoverClass="none" url="/pages/serach/search">
             <view class="nav-capsule">
                 <view class="topimage">
-                    <image class="back-pre" src="https://www.scnusay.cc/icon/search.png" style="height:35px;width:35px;" bindtap="logo"></image>
+                    <image class="back-pre" src="https://www.scnusay.cc/icon/logo.png" style="height:35px;width:35px;" bindtap="logo"></image>
                 </view>
             </view>
         </navigator>
@@ -80,7 +80,7 @@
     </view>
     
     <view class="keep-students">
-        <image src="https://www.scnusay.cc/icon/search.png" class="left-image"></image>
+        <image src="https://www.scnusay.cc/icon/logo.png" class="left-image"></image>
         <view class="say-to-keep">关注华师说，获取更多华师内容捏~</view>
     </view>
 <!-- -------------------------------------瀑布流----------------------------------------- -->
