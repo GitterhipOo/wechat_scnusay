@@ -39,10 +39,10 @@ Page({
     getSwiperItemHeight:function(){
         var postHeight
         if (this.data.current_Page == 0){
-            postHeight=(this.data.post0.length)*500+100+"rpx";
+            postHeight=(this.data.post0.length)*400+100+"rpx";
         }
         else{
-            postHeight=(this.data.post1.length)*500+100+"rpx";
+            postHeight=(this.data.post1.length)*400+100+"rpx";
         }
         console.log("计算页面高度触发")
         this.setData({
@@ -203,10 +203,10 @@ Page({
     getSwiperItemHeight:function(){
         var postHeight
         if (this.data.current_Page == 0){
-            postHeight=(this.data.post0.length)*500+100+"rpx";
+            postHeight=(this.data.post0.length)*400+100+"rpx";
         }
         else{
-            postHeight=(this.data.post1.length)*500+100+"rpx";
+            postHeight=(this.data.post1.length)*400+100+"rpx";
         }
         console.log("计算页面高度触发")
         this.setData({
@@ -214,7 +214,26 @@ Page({
         })
         console.log("高度计算完成")
     },
-
+    gotosend:function(e){
+        console.log("点击去发布")
+        if(app.globalData.haslogin===false)
+        {
+            //take a message to tell user to login and jump to index4 page
+            wx.showToast({
+                title: '请先登录',
+                icon: 'error',
+                duration: 2000
+                })
+            //kill the current page process
+            wx.navigateBack({
+                delta: 0,
+            })
+        }
+        else{
+            console.log("login 状态为"+app.globalData.haslogin)
+            console.log("您已登录，获得发布权限")
+        }
+    },
 
     //滑动swiperItem修改currentPag
     changeswiper(e){ 
@@ -243,7 +262,30 @@ Page({
      */
     onLoad: function (options) {
         var _this = this
+        wx.request({
+            url: 'https://www.scnusay.cc/lostdetail/confirmlogin.php',
+            method: "POST",
+            data: {
+                'openid':app.globalData.openid
+            },
+            header: {
+                'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
+            },
+            success(res) {
+                //set the globaldata haslogin true
+                if(res.data!='0')
+                {
+                    console.log(res.data)
+                    app.globalData.haslogin = true;
+                    console.log("确认登陆");
+                }
+                else{
+                    console.log("未登录")
+                    console.log("login 状态为"+app.globalData.haslogin)
+                }
 
+            }
+        })
         //onload的时候需要从服务器获取数据,包括获取我的和失物招领的
         wx.request({
             //先是获取失物招领的
@@ -329,20 +371,10 @@ Page({
                 }
             }
         })
+        //request the server whether the user had login
 
-        // setTimeout(function () { //异步
-        //     var query = wx.createSelectorQuery();
-        //     query.selectAll('.list').boundingClientRect()
-        //     query.exec((res) => {
-        //         console.log(res)
-        //         var listHeight = res[0][0].height
-        //         console.log(res[0][0].height)
-        //         _this.setData({
-        //             heights: res[0],
-        //             height: listHeight + 40 + 'px'
-        //         })
-        //     })
-        // }, 100)
+
+
         this.setData({
             navH: app.globalData.navHeight
         });
