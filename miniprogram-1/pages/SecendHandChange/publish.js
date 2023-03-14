@@ -6,21 +6,30 @@ Page({
      * 页面的初始数据
      */
     data: {
-        navH: 0, 
-        productid:0,   
+        navH: 0,  
         count: 3, //最多储存图片
         countNow: 0, //当前储存图片数量
-        title:"",
-        info:"",
         imglist :[],
-        price:"",
         shows: false, //控制下拉列表的显示隐藏，false隐藏、true显示
         selectDatas: ['生活用品', '图书文具', '电子产品','化妆用品','服装鞋饰','其他'], //下拉列表的数据
         indexs: 0, //选择的下拉列 表下标,
-        category:"",
-        username:"",
-        tip:"",
         dis:false,
+        postValue: { //打包发送的post数组
+            //判断作者直接返回openid就行了我日
+            blogger_time: "", //发布时间
+            SHchange_topic: "", //标题
+            SHchange_detail: "", //物品信息
+            SHchange_price:"",//价格
+            SHchange_category: " ", //分类
+            SHchange_username: "", //姓名
+            SHchange_tip: "", //备注
+            photos: [], //放置于主要内容下方的图片
+            readingtimes: 0, //阅读次数
+            comments: 0, //评论数量
+            favour: 0, //点赞数量
+            had_favour: 0, //点赞判断
+           // favour_src: "/assets/images/icon/unfavour.png", //点赞图标
+        },
     },
     img_w_show() {
         var count = this.data.count
@@ -108,163 +117,127 @@ Page({
     this.setData({
       indexs: Indexs,
       shows: !this.data.shows,
-      category: this.data.selectDatas[Indexs]
+      ['postValue.SHchange_category']: this.data.selectDatas[Indexs]
     });
 
   },
-  titleblur(e) {
-    this.setData({
-      title: e.detail.value
+  //更新数据
+  adInputChange: function (e) {
+    let that = this;
+    let info = e.currentTarget.dataset.info; //所在的具体位置
+    that.setData({
+        ['postValue.' + info]: e.detail.value,
     })
-  },
-  infoblur(e) {
-    this.setData({
-      info: e.detail.value
-    })
-  },
-  priceblur(e) {
-    this.setData({
-     price: e.detail.value
-    })
-  },
-  usernameblur(e) {
-    this.setData({
-      username: e.detail.value
-    })
-  },
-  tipblur(e) {
-    this.setData({
-      tip: e.detail.value
-    })
-  },
-  formsubmit(e) {
-    let that = this
-    if (e.detail.value.title === "") {
-      wx.showToast({
-        title: '请输入标题',
-        icon: "none",
-        duration: 1000,
-        mask: true,
-      })
-    }  else if (e.detail.value.price === "") {
-      wx.showToast({
-        title: '请输入价格',
-        icon: "none",
-        duration: 1000,
-        mask: true,
-      })
-    } else if (e.detail.value.info === "") {
-      wx.showToast({
-        title: '请输入物品信息',
-        icon: "none",
-        duration: 1000,
-        mask: true,
-      })
-    } else {
-      let params = {
-        username: e.detail.value.username,
-        tip: e.detail.value.tip,
-        title: e.detail.value.title,
-        price: e.detail.value.price,
-        info: e.detail.value.info,
-        category: e.detail.value.category,
-      }
-      wx.showModal({
-        title: '提示',
-        content: '确定发布商品',
-        success(res) {
-          if (res.confirm) {
-            that.sureRelease(params); //发布
-            that.setData({
-              dis: true,
+},
+        //打包数据发送
+        sendToServer() {
+            var that = this;
+            var postValue = this.data.postValue
+            var blogger_information = this.data.blogger_information
+            var date = new Date(); //创建时间对象
+            var year = date.getFullYear(); //获取年      
+            var month = date.getMonth() + 1; //获取月      
+            var day = date.getDate(); //获取日      
+            var hour = date.getHours(); //获取时      
+            var minute = date.getMinutes(); //获取分      
+            var second = date.getSeconds(); //获取秒
+            var time = `${year}年${month}月${day}日${hour}时${minute}分${second}秒`; //当前时间
+    
+        
+            //设置博主信息
+            postValue.blogger_time = time;
+            //设置图片内容
+            //postValue.photos = JSON.stringify(this.data.imglist);
+            postValue.photos = this.data.imglist;
+    
+            
+            // 这里暂时使用本地缓存来传输数据，以后会使用网络请求来传输数据
+            wx.setStorage({
+                key: "sendPostValue",
+                data: postValue
             })
-          }
-        }
-      })
-    }
-  },
-  //确认发布
-  sureRelease(params) {
-    let that = this
-    app.addProduct(params).then(res => {
-      that.data.params.productID = res.data.productID;
-      that.data.params.bannerFile = res.data.bannerFile;
-      that.data.params.contentFile = res.data.contentFile;
-      for (var i = 0; i < that.data.banner.length; i++) {
-        wx.uploadFile({
-          url: app.globalData.baseUrl + '/wechat/release/addProductPhoto',
-          filePath: that.data.banner[i],
-          name: 'banner',
-          formData: {
-            'parameters': JSON.stringify(that.data.params)
-          },
-        })
-        if (that.data.banner.length === i + 1) {
-          for (var j = 0; j < that.data.detail.length; j++) {
-            if (that.data.detail.length === j + 1) {
-              that.data.params.check = true
+            //
+            //打包发送到服务器
+            wx.request({
+              url: 'https://www.scnusay.cc/lostdetail/lostdetailsave.php',
+                method:"POST",
+                data:{
+                    'openid':app.globalData.openid,
+                       //这是联系方式 得改个名字
+                      //判断作者直接返回openid就行了我日
+                    'blogger_time':that.data.postValue.blogger_time, //发布时间
+                    'lostthing_topic':that.data.postValue.lostthing_topic, //标题
+                    'lostthing_time':that.data.postValue.lostthing_time, //丢失时间，以字符串直接储存
+                    'lostthing_class':  that.data.postValue.lostthing_class, //发布类别（不需要可以不填充
+                    'lostthing_detail':that.data.postValue. lostthing_detail, //主要内容
+                    'lostthing_space':that.data.postValue.lostthing_space, //丢失地点
+                    'lostthing_space_detail':that.data.postValue.lostthing_space_detail, //丢失详细地址
+                    'lostthing_contact':that.data.postValue.lostthing_contact, //联系方式
+                    'specialcode':app.globalData.openid+year+month+day+hour+minute+second,
+                // readingtimes: 0, //阅读次数
+                // comments: 0, //评论数量
+                // favour: 0, //点赞数量
+                // had_favour: 0, //点赞判断 
+                // 这几个不用在这个时候发给后面 但是后面要存起来 方便以后的判断
+                },
+                header: {
+                    'content-type': 'application/x-www-form-urlencoded;charset=utf-8'  
+                },
+                success(res){
+                    console.log(res.data);
+                    if(res.data=="发布成功")
+                    wx.showModal({
+                        title: '提示',
+                        content: '发布成功！',
+                      })
+                }
+            })
+            // 'photos': [], //放置于主要内容下方的图片 等request第一次结束以后再放进去
+            //下面是上传图片到服务器
+            console.log(that.data.postValue.photos.length)
+            //计算photo数组长度 方便上传
+            for(var i=1;i<=that.data.postValue.photos.length;i++){
+                wx.uploadFile({
+                  filePath: that.data.postValue.photos[i-1],
+                 //filePath: "C:/Users/林木/Documents/GitHub/wechat_scnusay/miniprogram-1/img/black.png", 
+                  name: 'file',
+                  url: 'https://www.scnusay.cc/lostdetail/lostdetailphoto/savelostphoto.php',
+                  header: {
+                    "Content-Type": "multipart/form-data"
+                  },
+                  formData:{
+                      'now':i,
+                      "openid":app.globalData.openid,
+                      'specialcode':app.globalData.openid+year+month+day+hour+minute+second+i,
+                      'specialcode_inmysqlname':app.globalData.openid+year+month+day+hour+minute+second,
+                      'length':that.data.postValue.photos.length,
+                      //+i是为了避免重名 无法存入多张照片
+                      //上传图片的数量一起传过去 方便判断放在数据库的哪个位置 但是注意分辨数据库里面的不同值
+                  },
+                  success:function(res){
+                    console.log(res.data)
+                  },
+                  fail:function(res){
+                      console.log(123456);
+                  }
+    
+                  
+                })
             }
-            wx.uploadFile({
-              url: app.globalData.baseUrl + '/wechat/release/addProductPhoto',
-              filePath: that.data.detail[j],
-              name: 'detail',
-              formData: {
-                'parameters': JSON.stringify(that.data.params)
-              },
-              success: function(res) {
-                if (JSON.parse(res.data).state === 1) {
-                  wx.showToast({
-                    title: '商品发布成功',
-                    icon: "none",
-                    duration: 2000,
-                    mask: true,
-                    success() {
-                      setTimeout(function() {
-                        wx.navigateBack({
-                          delta: 0,
-                        })
-                      }, 1000);
-                    }
-                  })
-                } else {
-                  wx.showToast({
-                    title: '商品发布失败，请稍后再试',
-                    icon: "none",
-                    duration: 2000,
-                    mask: true,
-                    success() {
-                      setTimeout(function() {
-                        wx.navigateBack({
-                          delta: 0,
-                        })
-                      }, 1000);
-                    }
-                  })
-                }
-              },
-              fail: function(res) {
-                if (JSON.parse(res.errMsg) === "request:fail socket time out timeout:6000") {
-                  wx.showToast({
-                    title: '请求超时，请稍后再试！',
-                    icon: "none",
-                    duration: 2000,
-                    mask: true,
-                    success() {
-                      setTimeout(function() {
-                        wx.navigateBack({
-                          delta: 0,
-                        })
-                      }, 1000);
-                    }
-                  })
-                }
-              }
+    
+    
+            wx.showToast({
+                title: '正在跳转到详情页面', //提示内容
+                icon: 'none' //提示图标
             })
-          }
-        }
-      }
-    })
-  },
+            wx.navigateTo({
+              url: '/pages/lostthing/details',
+            })
+            // wx.navigateBack({
+            //     // 返回上 1 页
+            //     delta: 1
+            // })
+        },
     /**
      * 生命周期函数--监听页面加载
      */

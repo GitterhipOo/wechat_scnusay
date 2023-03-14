@@ -89,7 +89,9 @@ swiper{
 .box {
     width: 95;
     position: relative;
-    margin: 10rpx 0;
+    margin-top: 10rpx;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
     background-color: #fff;
     box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
     border-radius: 50rpx;
@@ -118,7 +120,7 @@ swiper{
 }
 
 .box1 .text2 {
-    float: right;
+    margin-left: 20rpx;
     font-size: 20rpx;
     color: #aaa;
 }
@@ -133,7 +135,7 @@ swiper{
 
 .box2 {
     margin: 20rpx 10rpx;
-    padding-bottom: 100rpx;
+    padding-bottom: 40rpx;
     /* height: 400rpx; */
 }
 
@@ -145,7 +147,7 @@ swiper{
 
 .box2 image {
     margin: 20rpx 5rpx;
-    width: 230rpx;
+    width: 32%;
     height: 130rpx;
 }
 
