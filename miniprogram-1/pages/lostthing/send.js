@@ -97,7 +97,10 @@ Page({
 
     // 预览图片
     previewImg: function (e) {
-
+        console.log(e)
+        wx.previewImage({
+          urls: [e.currentTarget.dataset.url],
+        })
     },
     // 点击删除
     deleteImg(e) {
