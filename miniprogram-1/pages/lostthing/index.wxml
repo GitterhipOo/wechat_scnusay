@@ -19,15 +19,20 @@
 <view style="height: {{navH*2+20}}px;"></view>
 <!-- 顶部导航栏结束 -->
 <!-- 发布入口 -->
-<navigator class="guide" url="/pages/lostthing/send" open-type="navigate" bindtap="gotosend" >
+<view class="guide" bindtap="gotosend" >
     <view class="lostcenter">发布</view>
-</navigator>
+</view>
 <!-- 发布入口结束 -->
 <!-- 切换栏 -->
+<block wx:if="{{haslogin}}">
 <view class='swipertab'>
     <view class="tabitem1" style="{{tabstylelost}}" data-current="0" bindtap='clicktab'>失主</view>
     <view class="tabitem2" style="{{tabstylemy}}" data-current="1" bindtap='clicktab'>我的</view>
 </view>
+</block>
+<block wx:if="{{!haslogin}}">
+    wssbwswsdb
+</block>
 <!-- 切换栏结束 -->
 <!-- 使用<swiper></swiper>来承担切换内容 -->
 <swiper bindchange="changeswiper" current="{{current_Page}}" style="height:{{swiperHeight}} ;">
