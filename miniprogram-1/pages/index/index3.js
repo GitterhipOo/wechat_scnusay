@@ -72,7 +72,7 @@ Page({
             //储存在缓存中带过去再删除
         })
         wx.navigateTo({
-            url: '/pages/lostthing/details',
+            url: '/pages/talk/content/index',
         })
     },
 
@@ -122,7 +122,7 @@ Page({
                                                         }
                                                         if (res.confirm) {
                                                             wx.navigateTo({
-                                                                url: '/pages/lostthing/index',
+                                                                url: '/pages/index/index3',
                                                             })
                                                         }
                                                     }

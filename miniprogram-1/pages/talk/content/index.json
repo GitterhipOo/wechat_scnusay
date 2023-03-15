@@ -1,4 +1,6 @@
 {
-    "usingComponents": {},
-    "navigationBarTitleText": "动态详情"
+    "usingComponents": {
+        "t-button": "/miniprogram_npm/tdesign-miniprogram/button/button",
+        "t-input": "/miniprogram_npm/tdesign-miniprogram/input/input"
+    }
 }

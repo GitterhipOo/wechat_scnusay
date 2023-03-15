@@ -129,9 +129,9 @@ swiper{
 
 .box-way {
     position: absolute;
-    right: 10rpx;
-    top: 10rpx;
-    color: rgb(53, 192, 247);
+    right: 3%;
+    top: 3%;
+    color: green;
     font-size: 40rpx;
 }
 

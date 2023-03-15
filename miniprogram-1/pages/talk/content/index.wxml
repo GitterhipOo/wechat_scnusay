@@ -1,52 +1,115 @@
-<!--pages/talk/content/index.wxml-->
-
-<!-- 楼主发帖内容界面 -->
+<!--pages/ShareCar/details/index.wxml-->
+<!-- <text>pages/ShareCar/details/index.wxml</text> -->
 <view class="chat">
-
-<!-- woshifengexian -->
-<view class="touxianglan">
-    <view>
-    <image class="touxiang" src="/assets/images/for_post/bella_image.jpg"></image>
+    <!-- woshifengexian -->
+    <!-- 头像栏 -->
+    <view class="touxianglan">
+        <view>
+            <image class="touxiang" src="{{blogger_list.blogger_avatar}}"></image>
+        </view>
+        <view>
+            <text class="name">{{blogger_list.blogger_name}}</text>
+            <text class="time" decode="true">\n &nbsp;&nbsp;&nbsp;{{blogger_list.blogger_time}}</text>
+        </view>
+        <button size="mini" type="primary" class="follow">关注</button>
     </view>
-    <view>
-    <text class="name">贝拉Kris</text>
-    <text class="major" decode="true">\n &nbsp;&nbsp;&nbsp;播音学院</text>
+    <!-- 信息展览 -->
+    <!-- <view class="in_contact">
+        <text class="topic">{{blogger_list.lostthing_topic}}
+        </text>
+        <text class="date">日期：<text style="font-weight: 400;">{{blogger_list.lostthing_time}}</text></text>
+        <text class="space">
+            校区：<text style="font-weight: 400;">{{blogger_list.lostthing_space}}</text></text>
+        <text class="space_detail">
+            地点：<text style="font-weight: 400;">{{blogger_list.lostthing_space_detail}}</text></text>
+        <text class="contact">
+            联系方式：<text style="font-weight: 400;">{{blogger_list.lostthing_contact}}</text></text>
+        <text class="lostthing_class">
+            分类：<text style="font-weight: 400;">{{blogger_list.lostthing_class}}</text>
+        </text>
+    </view> -->
+    <!-- 主要内容 -->
+    <view class="contact_detail">
+        <!-- <text class="h1_detail">详情内容</text> -->
+        <view style="margin-top: 15rpx;">
+            <text class="detail_1">{{blogger_list.lostthing_detail}}</text>
+        </view>
+        <view class="imgbox">
+            <block wx:for="{{blogger_list.photos}}" wx:for-item="photo">
+                <image wx:if="{{photo}}" class="details_img" src="{{photo}}" data-photoindex='{{index}}' bindtap='previewImg' mode="aspectFill"></image>
+            </block>
+        </view>
+
     </view>
-    <!-- 这里是一个功能键 可以做成举报或者关注 现在暂时用按钮代替 -->
-    <view>
-    <button class="tip" size="mini" bindtap="jubao">举办他</button>    
+    <!-- 文后小标模块 -->
+
+</view>
+
+
+<!-- 底下评论区 -->
+<view style="height: 400rpx;">
+    <!-- 评论-回复-回复评论显示区域 -->
+    <view class="container">
+        <!-- 总共评论数 -->
+        <view class="total">共{{comment_list.length + comment_list2.length}}条评论</view>
+        <!-- END -->
+        <!-- 评论框 -->
+        <input confirm-type="send" class="container_inp" value="{{value}}" placeholder="{{ placeholder2 }}" placeholder-class="container_place" bindconfirm="bindconfirm"></input>
+        <!-- END -->
+        <!-- 用户评论回复显示区域 -->
+        <view class="container-item" wx:for="{{comment_list}}" wx:for-item="list" wx:key="key">
+            <image class="item_img" src="{{list.comment_user_avatar}}" style="margin-left: 20rpx;"></image>
+
+            <view class="item_right">
+                <view class="right_name">{{list.comment_user_name}}</view>
+                <view class="right_content">
+                    <text class="right_content_txt" bindtap='replyComment' data-type="1" data-name='{{list.comment_user_name}}' data-cid='{{list.comment_id}}' data-pid="{{list.parent_id}}">{{list.comment_text}}</text>
+                    <text class="right_content_txt2">{{list.comment_time}}</text>
+                    <!-- 回复评论 -->
+                    <!-- 判断回复列表数据中的parent_id和评论列表数据的comment_id是否相等 相等就显示 不等就不显示 -->
+                    
+                    <view class="reply" wx:for="{{comment_list2}}" wx:for-item="list2" wx:key="list2" wx:if="{{list2.parent_id == list.comment_id}}">
+                        <image class="reply_img" src="{{list2.comment_user_avatar}}"></image>
+                        <view class="reply_right">
+                            <view class="right_name">{{list2.comment_user_name}}</view>
+                            <text wx:if="{{list2.reply_name == ''}}" class="right_content_txt" bindtap='replyComment' data-type="2" data-name='{{list2.comment_user_name}}' data-cid='{{list2.comment_id}}' data-pid="{{list2.parent_id}}">{{list2.comment_text}}</text>
+
+                            <!-- replyname如果为空，就说明他没有回复任何一条回复，而是直接把他归位在评论的回复中 -->
+                            <text wx:if="{{list2.reply_name != ''}}" bindtap='replyComment' data-type="2" data-name='{{list2.comment_user_name}}' data-cid='{{list2.comment_id}}' data-pid="{{list2.parent_id}}" class="right_content_txt">回复 <text class="right_name">{{list2.reply_name}}：</text>{{list2.comment_text}}</text>
+                            <text class="right_content_txt2">{{list2.comment_time}}</text>
+                        </view>
+
+                    </view>
+                </view>
+            </view>
+
+        </view>
+        <!-- END -->
+        <!-- 结束 -->
+        <view class="end">
+            <text class="end_txt" space="nbsp">— 没有更多内容啦~ —</text>
+
+        </view>
+        <!-- END -->
+    </view>
+    <!-- END -->
+    <!-- 底部评论 -->
+    <view class="foot">
+        <view class="say">
+            <view class="flex">
+                <!-- <image class="say_img" src="/assets/images/sharecars/icon6.jpg"></image>
+                <input confirm-type="send" class="say_inp" placeholder="{{ placeholder }}" value="{{ comment_text }}" focus="{{ focus }}" bindblur="blur" bindconfirm="confirm"></input>
+                <button class="say_btn" bindtap="confirm">确认</button> -->
+                <t-input label="评论" placeholder="{{ placeholder }}" focus="{{ focus }}" value="{{inputvalue}}" bind:change="inputCom" bind:enter="confirm" style="margin: 0 0 0 0;">
+                    <t-button slot="suffix" theme="primary" size="extra-small" bindtap="confirm">发送评论</t-button>
+                </t-input>
+
+            </view>
+
+        </view>
+        <!-- <image class="foot_img" src="/assets/images/sharecars/icon4.jpg"></image>
+    <text class="foot_num">{{comment_list.length + comment_list2.length}}</text> -->
+
     </view>
 </view>
-
-<!-- 文本内容 -->
-<view class="detailview">
-
-<!-- 正文的字体大小尽量和POST界面保持一致 -->
-<view class="detail_1">
-<text>贝极星们～ 
-
-    Keep × 贝拉联动课程已经正式上线啦！快来 A-SOUL 运动星球解锁更多有趣课程、心动权益，和 Keep 会员活力星推官贝拉一起锻炼心肺耐力，快乐燃脂跑吧！
-
-现在就打开 Keep，搜索🔍「A-SOUL」或者「贝拉」，了解更多联动信息
-</text>
-</view>
-
-<view>
-<image class ="postimg" src="/assets/images/for_post/bella_content.jpg" mode="aspectFill"></image>
-</view>
-
-<!-- 不显示多久之前发送而是显示具体的时间 等后面还要再改一下 调用数据 -->
-<view class="time">
-<text >2022-07-18 11:00</text>
-</view>
-</view>
-</view>
-<!-- 评论区 -->
-
-<view class="chat">
-
-<view class="bar">111</view>
-
-
-</view>
-
+<!-- END -->

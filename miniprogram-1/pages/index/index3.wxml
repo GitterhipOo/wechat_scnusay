@@ -46,7 +46,9 @@
                 <!-- 主要内容模块 -->
                 <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
                     <view style="margin: 20rpx 0 10rpx 0;"><text>{{item.lostthing_detail}}</text></view>
-                    <image src="{{item.photos[0]}}" mode="aspectFill" class="detailimg"></image>
+                    <block wx:if="{{item.photos[0]}}">
+                        <image src="{{item.photos[0]}}" mode="aspectFill" class="detailimg"></image>
+                    </block>
                 </view>
                 <!-- 文后小标模块 -->
       
@@ -64,16 +66,17 @@
                     <text class="text1">{{item.lostthing_topic}}</text>
                     <text class="text2">{{item.blogger_time}}</text>
                 </view>
-                <view class="box-way">{{item.lostthing_class==1?"丢失物品":"寻找物品"}}</view>
+                <view class="box-way"><t-button shape="round" class="mypostmenu" bindtap="postmenu" data-index="{{index}}">更多操作</t-button></view>
                 <!-- 主要内容模块 -->
                 <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
-                    <view style="margin: 20rpx 0 40rpx 0;"><text>{{item.lostthing_detail}}</text></view>
-                    <image src="{{item.photos[0]}}" mode="aspectFill"></image>
+                    <view><text>{{item.lostthing_detail}}</text></view>
+                    <block wx:if="{{item.photos[0]}}">
+                        <image src="{{item.photos[0]}}" mode="aspectFill" class="detailimg"></image>
+                    </block>
                 </view>
                 <!-- 文后小标模块 -->
                 <view class="box3" style="width: 50%; height: 20%;">
                     <view class="post-data" style="height: 100%;">
-                        <t-button shape="round" class="mypostmenu" bindtap="postmenu" data-index="{{index}}">更多操作</t-button>
                         <!-- 点赞   -->
                     </view>
                 </view>
