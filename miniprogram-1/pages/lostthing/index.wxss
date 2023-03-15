@@ -51,7 +51,7 @@ page{
     margin-bottom: 1rpx;
     width: 46%;
     height: 100%;
-    border-radius: 30rpx;
+    border-radius: 10rpx;
     margin-left: 3%;
     text-align: center;
     justify-content: space-around;
@@ -66,7 +66,7 @@ page{
     margin-bottom: 1rpx;
     width: 46%;
     height: 100%;
-    border-radius: 30rpx;
+    border-radius: 10rpx;
     margin-right: 3%;
     text-align: center;
     justify-content: space-around;
@@ -74,7 +74,7 @@ page{
     box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
 }
 .swipertab{
-    height: 8%;
+    height: 5%;
     margin-top: 10rpx;
     background-color: rgb(245, 245, 245);
 
