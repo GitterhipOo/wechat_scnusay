@@ -155,20 +155,7 @@ Page({
                                         'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
                                     },
                                     success(res) {
-                                        wx.showModal({
-                                            title: '已解决',
-                                            content: '发布内容已解决',
-                                            complete: (res) => {
-                                                if (res.cancel) {
-
-                                                }
-                                                if (res.confirm) {
-                                                    wx.navigateTo({
-                                                        url: '/pages/lostthing/index',
-                                                    })
-                                                }
-                                            }
-                                        })
+                                        console.log("已解决问题，修改内容")
 
                                     }
                             })
@@ -180,6 +167,7 @@ Page({
 
             fail: function (res) {
                 console.log(res.errMsg)
+
             }
         })
     },
@@ -375,6 +363,7 @@ Page({
                         lostthing_space: res.data[i].lostthing_space, //
                         lostthing_space_detail: res.data[i].lostthing_space_detail,
                         lostthing_contact: res.data[i].lostthing_contact,
+                        lostthing_hadsolved: res.data[i].had_solved,
                         photos: tempPhoto, //图片
                         readingtimes: res.data[i].readingtimes, //阅读次数
                         comments: 5, //评论数量
@@ -429,6 +418,7 @@ Page({
                         lostthing_class: res.data[i].lostthing_class, //发布类别（不需要可以不填充
                         lostthing_detail: res.data[i].lostthing_detail, //主要内容
                         lostthing_space: res.data[i].lostthing_space, //
+                        lostthing_hadsolved: res.data[i].had_solved,
                         lostthing_space_detail: res.data[i].lostthing_space_detail,
                         lostthing_contact: res.data[i].lostthing_contact,
                         // photos: [res.data[i].photo1, res.data[i].photo2, res.data[i].photo3], //放置于主要内容下方的图片
