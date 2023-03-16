@@ -10,8 +10,8 @@
     <!-- 搜索栏目 -->
     <view style="position: absolute; left: {{top_using_res.left-windowInfo.screenWidth*0.55}}px; top:{{top_using_res.top}}px;height:{{top_using_res.height}}px ;width: 350rpx;">
         <view class="search" hover-class="search-hover" hover-stay-time="50" bindtap="jumpToSearch">
-            <icon type="search" class="icon" style="position: absolute;left: 5rpx; top:{{(top_using_res.height-23)/2}}px"></icon>
-            <text style="position: absolute;left: 30px; bottom:{{(top_using_res.height-23)/2}}px">输入标签或描述</text>
+            <icon type="search" class="icon" style="position: absolute;left: 15rpx; top:{{(top_using_res.height-20)/2}}px"></icon>
+            <text style="position: absolute;left: 65rpx; bottom:{{(top_using_res.height-23)/2}}px">输入标签或描述</text>
         </view>
     </view>
 
@@ -43,6 +43,11 @@
         <view class="list">
             <!-- 以一个作为案例 -->
             <view class="box" wx:for="{{post0}}" wx:key="index">
+                <block wx:if="{{item.lostthing_hadsolved==1}}">
+                    <view style="position: absolute;">
+                        <image src="https://www.scnusay.cc/icon/solved.png" alt="已解决"></image>
+                    </view>
+                </block>
                 <!-- 头像栏模块 -->
                 <view class="box1" bindtap="jumptodetails" data-index="{{index}}">
                     <image src="{{item.blogger_avatar}}"></image>
@@ -66,6 +71,11 @@
         <view class="list" wx:if="{{post1.length!=0}}">
             <!-- 以一个作为案例 -->
             <view class="box" wx:for="{{post1}}" wx:key="index">
+                <block wx:if="{{item.lostthing_hadsolved==1}}">
+                    <view style="position: absolute;">
+                        <image src="https://www.scnusay.cc/icon/solved.png" alt="已解决"></image>
+                    </view>
+                </block>
                 <!-- 头像栏模块 -->
                 <view class="box1" bindtap="jumptodetails" data-index="{{index}}">
                     <image src="{{item.blogger_avatar}}"></image>
