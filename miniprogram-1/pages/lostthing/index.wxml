@@ -19,15 +19,22 @@
 <view style="height: {{navH*2+20}}px;"></view>
 <!-- 顶部导航栏结束 -->
 <!-- 发布入口 -->
-<navigator class="guide" url="/pages/lostthing/send" open-type="navigate" bindtap="gotosend" >
+<view class="guide" bindtap="gotosend" >
     <view class="lostcenter">发布</view>
-</navigator>
+</view>
 <!-- 发布入口结束 -->
 <!-- 切换栏 -->
+<block wx:if="{{haslogin}}">
 <view class='swipertab'>
     <view class="tabitem1" style="{{tabstylelost}}" data-current="0" bindtap='clicktab'>失主</view>
     <view class="tabitem2" style="{{tabstylemy}}" data-current="1" bindtap='clicktab'>我的</view>
 </view>
+</block>
+<block wx:if="{{!haslogin}}">
+    <view class="nologinmessage">
+        登录后查看更多消息~
+    </view>
+</block>
 <!-- 切换栏结束 -->
 <!-- 使用<swiper></swiper>来承担切换内容 -->
 <swiper bindchange="changeswiper" current="{{current_Page}}" style="height:{{swiperHeight}} ;">
@@ -36,6 +43,11 @@
         <view class="list">
             <!-- 以一个作为案例 -->
             <view class="box" wx:for="{{post0}}" wx:key="index">
+                <block wx:if="{{item.lostthing_hadsolved==1}}">
+                    <view style="position: absolute;">
+                        <image src="https://www.scnusay.cc/icon/solved.png" alt="已解决"></image>
+                    </view>
+                </block>
                 <!-- 头像栏模块 -->
                 <view class="box1" bindtap="jumptodetails" data-index="{{index}}">
                     <image src="{{item.blogger_avatar}}"></image>
@@ -53,11 +65,17 @@
             </view>
         </view>
     </swiper-item>
-
+<block wx:if="{{haslogin}}">
     <swiper-item class="container1">
-        <view class="list">
+
+        <view class="list" wx:if="{{post1.length!=0}}">
             <!-- 以一个作为案例 -->
             <view class="box" wx:for="{{post1}}" wx:key="index">
+                <block wx:if="{{item.lostthing_hadsolved==1}}">
+                    <view style="position: absolute;">
+                        <image src="https://www.scnusay.cc/icon/solved.png" alt="已解决"></image>
+                    </view>
+                </block>
                 <!-- 头像栏模块 -->
                 <view class="box1" bindtap="jumptodetails" data-index="{{index}}">
                     <image src="{{item.blogger_avatar}}"></image>
@@ -79,7 +97,19 @@
                 </view>
             </view>
         </view>
+                <view class="list" wx:else>
+                        <view class="emptyhistory">
+        <image src="https://www.scnusay.cc/icon/empty.png" mode="" class="emptyimg"/>
+    </view>
+
+    <view class="nohistory-container">
+        <text class="nohistory">oh!暂无历史记录</text>
+    </view>
+
+
+                            </view>
     </swiper-item>
+</block>
 </swiper>
 <view class="test">
 </view>

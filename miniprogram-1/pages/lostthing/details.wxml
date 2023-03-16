@@ -36,7 +36,7 @@
         </view>
         <view class="imgbox">
             <block wx:for="{{blogger_list.photos}}" wx:for-item="photo">
-                <image wx:if="{{photo}}" class="details_img" src="{{photo}}" data-photoindex='{{index}}' bindtap='previewImg' mode="aspectFill"></image>
+                <image wx:if="{{photo}}" class="details_img" src="{{photo}}" data-photoindex='{{index}}' bindtap='previewImg' mode="widthFix"></image>
             </block>
         </view>
 
