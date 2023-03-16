@@ -11,12 +11,18 @@
 <view style="height: {{navH*2+20}}px;"></view>
 <!-- 搜索 -->
 <!-- 发布入口 -->
-<navigator class="guide" url="/pages/SecendHandChange/publish" open-type="navigate">
+<!-- <navigator class="guide" url="/pages/SecendHandChange/publish" open-type="navigate">
     <view class="lostcenter">发布</view>
 </navigator>
 <navigator class="search" url="/pages/SecendHandChange/search" open-type="navigate">
     <view class="lostcenter">搜索</view>
-</navigator>
+</navigator> -->
+<view class="guide" bindtap="gotosend" >
+    <view class="lostcenter">发布</view>
+</view>
+<view class="guide2" bindtap="gotosearch" >
+    <view class="lostcenter">搜索</view>
+</view>
 
 <!-- 发布入口结束 -->
 <!-- 切换栏 -->
@@ -36,13 +42,13 @@
                 <!-- 头像栏模块 -->
                 <view class="box1" bindtap="jumptodetails" data-index="{{index}}">
                     <image src="{{item.blogger_avatar}}"></image>
-                    <text class="text1">{{item.SHchange_topic}}</text>
+                    <text class="text1">{{item.secendhand_topic}}</text>
                     <text class="text2">{{item.blogger_time}}</text>
                 </view>
-                <view class="box-way">{{item.SHchange_class}}</view>
+                <view class="box-way">{{item.secendhand_class}}</view>
                 <!-- 主要内容模块 -->
                 <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
-                    <view style="margin: 20rpx 30rpx 40rpx 30rpx;"><text>{{item.SHchange_detail}}</text></view>
+                    <view style="margin: 20rpx 30rpx 40rpx 30rpx;"><text>{{item.secendhand_detail}}</text></view>
                     <image wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
                 </view>
                 <!-- 文后小标模块 -->
@@ -53,27 +59,41 @@
         </view>
     </swiper-item>
     <swiper-item class="container1">
-        <view class="list">
+        <view class="list" wx:if="{{post1.length!=0}}">
             <!-- 以一个作为案例 -->
             <view class="box" wx:for="{{post1}}" wx:key="index">
                 <!-- 头像栏模块 -->
                 <view class="box1" bindtap="jumptodetails" data-index="{{index}}">
                     <image src="{{item.blogger_avatar}}"></image>
-                    <text class="text1">{{item.SHchange_topic}}</text>
+                    <text class="text1">{{item.secendhand_topic}}</text>
                     <text class="text2">{{item.blogger_time}}</text>
                 </view>
-                <view class="box-way">{{item.SHchange_class}}</view>
+                <view class="box-way">{{item.secendhand_class}}</view>
                 <!-- 主要内容模块 -->
                 <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
-                    <view style="margin: 20rpx 30rpx 40rpx 30rpx;"><text>{{item.SHchange_detail}}</text></view>
+                    <view style="margin: 20rpx 30rpx 40rpx 30rpx;"><text>{{item.secendhand_detail}}</text></view>
                     <image wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
                 </view>
                 <!-- 文后小标模块 -->
                 <view class="box3" style="width: 50%; height: 10%;">
-                    <image src="https://www.scnusay.cc/icon/liuyan.png" class="otherimg"></image><text>{{item.comments}}</text>
+                        <view class="post-data" style="height: 100%;">
+                        <t-button shape="round" class="mypostmenu" bindtap="postmenu" data-index="{{index}}">更多操作</t-button>
+                        <!-- 点赞   -->
+                    </view>
                 </view>
             </view>
         </view>
+                        <view class="list" wx:else>
+                        <view class="emptyhistory">
+        <image src="https://www.scnusay.cc/icon/empty.png" mode="" class="emptyimg"/>
+    </view>
+
+    <view class="nohistory-container">
+        <text class="nohistory">oh!暂无历史记录</text>
+    </view>
+
+
+                            </view>
     </swiper-item>
 </swiper>
 
