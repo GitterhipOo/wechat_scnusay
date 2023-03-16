@@ -43,6 +43,11 @@
         <view class="list">
             <!-- 以一个作为案例 -->
             <view class="box" wx:for="{{post0}}" wx:key="index">
+                <block wx:if="{{item.lostthing_hadsolved==1}}">
+                    <view style="position: absolute;">
+                        <image src="https://www.scnusay.cc/icon/solved.png" alt="已解决"></image>
+                    </view>
+                </block>
                 <!-- 头像栏模块 -->
                 <view class="box1" bindtap="jumptodetails" data-index="{{index}}">
                     <image src="{{item.blogger_avatar}}"></image>
@@ -66,6 +71,11 @@
         <view class="list" wx:if="{{post1.length!=0}}">
             <!-- 以一个作为案例 -->
             <view class="box" wx:for="{{post1}}" wx:key="index">
+                <block wx:if="{{item.lostthing_hadsolved==1}}">
+                    <view style="position: absolute;">
+                        <image src="https://www.scnusay.cc/icon/solved.png" alt="已解决"></image>
+                    </view>
+                </block>
                 <!-- 头像栏模块 -->
                 <view class="box1" bindtap="jumptodetails" data-index="{{index}}">
                     <image src="{{item.blogger_avatar}}"></image>
