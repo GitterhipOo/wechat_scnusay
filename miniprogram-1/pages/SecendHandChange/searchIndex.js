@@ -4,6 +4,7 @@
 var app = getApp();
 var startX, endX; //首先创建2个变量 来记录触摸时的原点
 var moveFlag = true; // 判断执行滑动事件
+var documentType = "lostdetail";
 Page({
 
     /**
@@ -39,10 +40,10 @@ Page({
     getSwiperItemHeight:function(){
         var postHeight
         if (this.data.current_Page == 0){
-            postHeight=(this.data.post0.length)*400+100+"rpx";
+            postHeight=(this.data.post0.length)*500+100+"rpx";
         }
         else{
-            postHeight=(this.data.post1.length)*400+100+"rpx";
+            postHeight=(this.data.post1.length)*500+100+"rpx";
         }
         console.log("计算页面高度触发")
         this.setData({
@@ -67,12 +68,12 @@ Page({
         //通过if判断现在是post0还是post1
         console.log(postValue)
         wx.setStorage({
-            key: "sendPostValue",
+            key: "secendhandsendPostValue",
             data: postValue
             //储存在缓存中带过去再删除
         })
         wx.navigateTo({
-            url: '/pages/talk/content/index',
+            url: '/pages/lostthing/details',
         })
     },
 
@@ -122,7 +123,7 @@ Page({
                                                         }
                                                         if (res.confirm) {
                                                             wx.navigateTo({
-                                                                url: '/pages/index/index3',
+                                                                url: '/pages/lostthing/index',
                                                             })
                                                         }
                                                     }
@@ -203,10 +204,10 @@ Page({
     getSwiperItemHeight:function(){
         var postHeight
         if (this.data.current_Page == 0){
-            postHeight=(this.data.post0.length)*400+100+"rpx";
+            postHeight=(this.data.post0.length)*500+100+"rpx";
         }
         else{
-            postHeight=(this.data.post1.length)*400+100+"rpx";
+            postHeight=(this.data.post1.length)*500+100+"rpx";
         }
         console.log("计算页面高度触发")
         this.setData({
@@ -214,26 +215,7 @@ Page({
         })
         console.log("高度计算完成")
     },
-    gotosend:function(e){
-        console.log("点击去发布")
-        if(app.globalData.haslogin===false)
-        {
-            //take a message to tell user to login and jump to index4 page
-            wx.showToast({
-                title: '请先登录',
-                icon: 'error',
-                duration: 2000
-                })
-            //kill the current page process
-            wx.navigateBack({
-                delta: 0,
-            })
-        }
-        else{
-            console.log("login 状态为"+app.globalData.haslogin)
-            console.log("您已登录，获得发布权限")
-        }
-    },
+
 
     //滑动swiperItem修改currentPag
     changeswiper(e){ 
@@ -262,118 +244,45 @@ Page({
      */
     onLoad: function (options) {
         var _this = this
-        wx.request({
-            url: 'https://www.scnusay.cc/lostdetail/confirmlogin.php',
-            method: "POST",
-            data: {
-                'openid':app.globalData.openid
-            },
-            header: {
-                'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
-            },
-            success(res) {
-                //set the globaldata haslogin true
-                if(res.data!='0')
-                {
-                    console.log(res.data)
-                    app.globalData.haslogin = true;
-                    console.log("确认登陆");
+        //拉取从search中传递的数据
+        var that = this
+        wx.getStorage({
+            key: documentType+"Index",
+            success: function(res) {
+              // res.data是一个字符串数组，即["apple", "banana", "orange"]
+              for (var i = 0; i < res.data.length; i++) {
+                //for是根据数据的长度插入新数组
+                //nwearray是用于插入的数组
+                var newarray = {
+                    blogger_id: res.data[i].id,
+                    blogger_Openid: res.data[i].openid,
+                    blogger_avatar: res.data[i].imgurl, //头像
+                    blogger_name: res.data[i].name, //博主昵称
+                    blogger_time: res.data[i].blogger_time, //发布时间的时间戳、这里需要修改
+                    lostthing_topic: res.data[i].lostthing_topic, //标题
+                    lostthing_time: res.data[i].lostthing_time, //丢失时间的时间戳、这里需要修改
+                    lostthing_class: res.data[i].lostthing_class, //发布类别（不需要可以不填充
+                    lostthing_detail: res.data[i].lostthing_detail, //主要内容
+                    lostthing_space: res.data[i].lostthing_space, //
+                    lostthing_space_detail: res.data[i].lostthing_space_detail,
+                    lostthing_contact: res.data[i].lostthing_contact,
+                    photos: [res.data[i].photo1, res.data[i].photo2, res.data[i].photo3], //放置于主要内容下方的图片
+                    readingtimes: res.data[i].readingtimes, //阅读次数
+                    comments: 5, //评论数量
+                    favour: res.data[i].favour, //点赞数量
+                    had_favour: 0, //点赞判断
+                    specialcode:res.data[i].specialcode,
                 }
-                else{
-                    console.log("未登录")
-                    console.log("login 状态为"+app.globalData.haslogin)
-                }
-
+                _this.setData({
+                    post0: _this.data.post0.concat(newarray),
+                    //将数组插入post0
+                })
             }
-        })
-        //onload的时候需要从服务器获取数据,包括获取我的和失物招领的
-        wx.request({
-            //先是获取失物招领的
-            url: 'https://www.scnusay.cc/lostdetail/lostdetailphoto/getdetail.php',
-            method: "GET",
-            data: {},
-            header: {
-                'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
-            },
-            success(res) {
-                console.log(res.data);
-                for (var i = 0; i < res.data.length; i++) {
-                    //for是根据数据的长度插入新数组
-                    //nwearray是用于插入的数组
-                    var newarray = {
-                        blogger_id: res.data[i].id,
-                        blogger_Openid: res.data[i].openid,
-                        blogger_avatar: res.data[i].imgurl, //头像
-                        blogger_name: res.data[i].name, //博主昵称
-                        blogger_time: res.data[i].blogger_time, //发布时间的时间戳、这里需要修改
-                        lostthing_topic: res.data[i].lostthing_topic, //标题
-                        lostthing_time: res.data[i].lostthing_time, //丢失时间的时间戳、这里需要修改
-                        lostthing_class: res.data[i].lostthing_class, //发布类别（不需要可以不填充
-                        lostthing_detail: res.data[i].lostthing_detail, //主要内容
-                        lostthing_space: res.data[i].lostthing_space, //
-                        lostthing_space_detail: res.data[i].lostthing_space_detail,
-                        lostthing_contact: res.data[i].lostthing_contact,
-                        photos: [res.data[i].photo1, res.data[i].photo2, res.data[i].photo3], //放置于主要内容下方的图片
-                        readingtimes: res.data[i].readingtimes, //阅读次数
-                        comments: 5, //评论数量
-                        favour: res.data[i].favour, //点赞数量
-                        had_favour: 0, //点赞判断
-                        specialcode:res.data[i].specialcode,
-                    }
-                    _this.setData({
-                        post0: _this.data.post0.concat(newarray),
-                        
-                        //将数组插入post0
-                    })
-                }
             }
+          });
+        wx.removeStorage({
+            key: documentType+"Index",
         })
-
-        //然后获取我的
-        wx.request({
-            url: 'https://www.scnusay.cc/lostdetail/lostdetailphoto/returnmylost.php',
-            method: "POST",
-            data: {
-                'openid':app.globalData.openid
-            },
-            header: {
-                'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
-            },
-            success(res) {
-                console.log(res.data);
-                for (var i = 0; i < res.data.length; i++) {
-                    //for是根据数据的长度插入新数组
-                    //nwearray是用于插入的数组
-                    var newarray = {
-                        blogger_id: res.data[i].id,
-                        blogger_Openid: res.data[i].openid,
-                        blogger_avatar: res.data[i].imgurl, //头像
-                        blogger_name: res.data[i].name, //博主昵称
-                        blogger_time: res.data[i].blogger_time, //发布时间的时间戳、这里需要修改
-                        lostthing_topic: res.data[i].lostthing_topic, //标题
-                        lostthing_time: res.data[i].lostthing_time, //丢失时间的时间戳、这里需要修改
-                        lostthing_class: res.data[i].lostthing_class, //发布类别（不需要可以不填充
-                        lostthing_detail: res.data[i].lostthing_detail, //主要内容
-                        lostthing_space: res.data[i].lostthing_space, //
-                        lostthing_space_detail: res.data[i].lostthing_space_detail,
-                        lostthing_contact: res.data[i].lostthing_contact,
-                        photos: [res.data[i].photo1, res.data[i].photo2, res.data[i].photo3], //放置于主要内容下方的图片
-                        readingtimes: res.data[i].readingtimes, //阅读次数
-                        comments: 5, //评论数量
-                        favour: res.data[i].favour, //点赞数量
-                        had_favour: 0, //点赞判断
-                        specialcode:res.data[i].specialcode,
-                    }
-                    _this.setData({
-                        post1: _this.data.post1.concat(newarray),
-                        //将数组插入post0
-                    })
-                }
-            }
-        })
-        //request the server whether the user had login
-
-
 
         this.setData({
             navH: app.globalData.navHeight

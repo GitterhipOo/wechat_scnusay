@@ -68,6 +68,18 @@ page {
     background-color: #fff;
     box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
 }
+.guide2 {
+    z-index: 99999;
+    position: fixed;
+    top: 70%;
+    right: 0%;
+    margin: 3% 1%;
+    height: 90rpx;
+    width: 90rpx;
+    border-radius: 45rpx;
+    background-color: #fff;
+    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
+}
 
 .guide .lostcenter {
     display: block;
@@ -75,6 +87,13 @@ page {
     line-height: 90rpx;
     color: #aaa;
 }
+.guide2{
+    display: block;
+    text-align: center;
+    line-height: 90rpx;
+    color: #aaa;
+}
+
 
 
 /* swiper模块 */
@@ -192,3 +211,30 @@ swiper{
     left: 82%;
 }
 
+.nohistory{
+    /* grey center 16px */
+    color: #999;
+    font-size: 16px;
+    margin-top: 20px;
+}
+.nohistory-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.emptyhistory{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.emptyimg{
+    /* make the img on the center of de view */
+    width: 50px;
+    height: 50px;
+    margin-top: 200rpx;
+}
