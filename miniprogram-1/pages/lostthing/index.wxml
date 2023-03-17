@@ -44,9 +44,7 @@
             <!-- 以一个作为案例 -->
             <view class="box" wx:for="{{post0}}" wx:key="index">
                 <block wx:if="{{item.lostthing_hadsolved==1}}">
-                    <view style="position: absolute;">
-                        <image src="https://www.scnusay.cc/icon/solved.png" alt="已解决"></image>
-                    </view>
+                        <image class="photo-finish" src="https://www.scnusay.cc/icon/solved.png" alt="已解决"></image>
                 </block>
                 <!-- 头像栏模块 -->
                 <view class="box1" bindtap="jumptodetails" data-index="{{index}}">
@@ -72,9 +70,7 @@
             <!-- 以一个作为案例 -->
             <view class="box" wx:for="{{post1}}" wx:key="index">
                 <block wx:if="{{item.lostthing_hadsolved==1}}">
-                    <view style="position: absolute;">
-                        <image src="https://www.scnusay.cc/icon/solved.png" alt="已解决"></image>
-                    </view>
+                        <image class = "photo-finish" src="https://www.scnusay.cc/icon/solved.png" alt="已解决"></image>
                 </block>
                 <!-- 头像栏模块 -->
                 <view class="box1" bindtap="jumptodetails" data-index="{{index}}">
@@ -82,7 +78,6 @@
                     <text class="text1">{{item.lostthing_topic}}</text>
                     <text class="text2">{{item.blogger_time}}</text>
                 </view>
-                <view class="box-way">{{item.lostthing_class==1?"丢失物品":"寻找物品"}}</view>
                 <!-- 主要内容模块 -->
                 <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
                     <view style="margin: 20rpx 0 40rpx 0;"><text>{{item.lostthing_detail}}</text></view>

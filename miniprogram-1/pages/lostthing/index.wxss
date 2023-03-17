@@ -207,3 +207,11 @@ swiper{
     margin-top: 10rpx;
     margin-bottom: 10rpx;
 }
+
+/* 图片已完成的样式 */
+.photo-finish{
+    position: absolute;
+    right: 0;
+    width: 20%;
+    height: 30%;
+}
