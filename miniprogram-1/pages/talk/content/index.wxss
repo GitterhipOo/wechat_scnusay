@@ -1,95 +1,374 @@
-/* pages/talk/content/index.wxss */
+/* pages/ShareCar/details/index.wxss */
+page{
+    background-color: rgb(245, 245, 245);
+}
 
-/* 发帖内容界面 */
-.chat{
-    padding-top: 20rpx;
-    margin: 25rpx auto;
-    width: 95%;
-    border-radius: 15rpx;
-    box-shadow: 0px 0px 8rpx 0px rgba(0, 0, 0, 0.7);
+/* 楼主主贴内容 */
+
+.chat {
+    position: relative;
+    /* padding-top: 10px; */
+    /* margin: 10px auto; */
+    /* border: rgb(32, 29, 221) solid 1px; */
     background-color: #fff;
+    /* border-radius: 20rpx; */
+    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
+    width: 100%;
+
 }
 
-/* 头像栏 */
-.touxiang{
-    height:80rpx;
-    width: 80rpx;
+.touxiang {
+    height: 45px;
+    width: 45px;
     border-radius: 50%;
-    overflow:hidden;
-    /* box-shadow: 0px 0px 8rpx 0px rgba(0, 0, 0, 0.7); */
+    overflow: hidden;
 }
 
-.touxianglan{
-    margin-top: 15rpx;
-    margin-left: 5%;
+.touxianglan {
+    margin-left: 4.5%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: left;
-    /* box-shadow: 0px 0px 8rpx 0px rgba(0, 0, 0, 0.7); */
+    justify-content: center;
 }
 
-.name{
-    padding-left: 23rpx;
+.follow {
+    right: -2%;
+
+}
+
+.name {
+    padding-left: 10px;
     font-weight: 700;
-    font-size: 34rpx;
-    /* box-shadow: 0px 0px 8rpx 0px rgba(0, 0, 0, 0.7); */
+    font-size: 15px;
 }
 
-.major{
-    font-size: 30rpx;
-    /* box-shadow: 0px 0px 8rpx 0px rgba(0, 0, 0, 0.7); */
-    color: rgba(131, 131, 131, 0.9);
+.time {
+    font-weight: 450;
+    font-size: 13px;
 }
 
-.tip{
+.in_contact {
+    padding-top: 10px;
+    padding-left: 10px;
+    background-color: rgba(128, 124, 124, 0.356);
+    width: 90%;
+    margin: 10px auto;
+    padding-bottom: 10px;
+
+}
+
+.topic {
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.date {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.space {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.space_detail {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.lostthing_class {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.contact {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.bottom {
+    padding-top: 8px;
+}
+
+.shoucang {
     color: #000000;
     border: 1px solid #000000;
-    margin-left: 200rpx;
+    left: 10%;
 }
 
-/* 文本内容 */
+.pinglun {
+    position: absolute;
+    right: 11.5%;
+    color: #000000;
+    border: 1px solid #000000;
+}
 
-.detailview{
-    padding-left: 20rpx;
+.call {
+    left: 36.1%;
+    position: absolute;
+    color: #000000;
+    border: 1px solid #000000;
+}
+
+/* 正文内容 */
+
+.contact_detail {
+    /* margin: 0 auto; */
     width: 90%;
-    margin:auto;
-    padding-bottom: 20rpx;
-    /* box-shadow: 0px 0px 8rpx 0px rgba(0, 0, 0, 0.7); */
+    /* background-color: rgba(128, 124, 124, 0.356); */
+    margin: 0 auto;
+    padding-bottom: 12px;
 }
 
-.detail_1{
-
-  font-weight: 530;
-  color: rgb(32, 27, 27);
-  font-size: 35rpx;
-  display: -webkit-box;
-  word-break: break-all;
-  margin-top: 30rpx;
-  /* box-shadow: 0px 0px 8rpx 0px rgba(0, 0, 0, 0.7); */
-
+.h1_detail {
+    /* padding-bottom: 10px; */
+    font-weight: 700;
+    font-size: 17px;
 }
 
+.detail_1 {
+    font-size: 14px;
+}
 
-.postimg{
-    height: 600rpx;
-    margin-top: 45rpx;
-    margin-bottom: 15rpx;
+.details_img{
+    margin-top: 15rpx;
+    margin-bottom: 5rpx;
+    border-radius: 20rpx;
+    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
+}
+
+.box3 .tags{
+    display: inline-block;
+    background-color: rgb(75, 200, 238);
+    border:1rpx solid rgb(1,1,1);
+    margin: 5rpx;
+    padding: 2rpx;
+  }
+  
+  .box3 .post-data{
+  float: right;
+  }
+  
+  .box3 .feet{
+    float: right;
+  }
+  
+  .box3 .feet image{
+    display: inline-block;
+    width: 35rpx;
+    height: 35rpx;
+  }
+  
+/* 评论-回复-回复评论显示区域 */
+
+.container {
     width: 100%;
-    border-radius: 15rpx;
-    box-shadow: 0px 0px 8rpx 0px rgba(0, 0, 0, 0.2);
-   
+    margin-top: 34rpx;
+    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
 }
 
-.time{
-  margin-top: 20rpx;
-  font-weight: 530;
-  color: rgba(131, 131, 131, 0.9);
-  font-size: 30rpx;
-  /* box-shadow: 0px 0px 8rpx 0px rgba(0, 0, 0, 0.7); */
-  margin-bottom: 20rpx;
+.total {
+    font-size: 24rpx;
+    color: #999999;
+    padding-top: 2%;
+    /* margin-left: 1rpx; */
+    height:40rpx;
+    padding-left: 32rpx;
 }
 
-/* 评论区 */
+.container_inp {
+    /* width: 661rpx; */
+    height: 32rpx;
+    background-color: #F2F2F2;
+    border-radius: 40rpx;
+    padding: 17rpx 0rpx 15rpx 25rpx;
+    margin-top: 10rpx;
+    margin-bottom: 47rpx;
+    padding-left: 32rpx;
+}
 
+.container_place {
+    font-size: 24rpx;
+    color: #999999;
+}
 
+/* 用户回复 */
+
+.container-item {
+    display: flex;
+    margin-bottom: 34rpx;
+    align-items: flex-start;
+}
+
+.item_img {
+    width: 64rpx;
+    height: 64rpx;
+    margin-right: 17rpx;
+    border-radius: 50rpx;
+    /* border-bottom: 2rpx solid #CCCCCC; */
+}
+
+.item_right {
+    display: inline-block;
+    position: relative;
+    width: 636rpx;
+    border-bottom: 2rpx solid #CCCCCC;
+    padding-bottom: 30rpx;
+}
+
+.right_name {
+    font-size: 24rpx;
+    color: #999999;
+    font-weight: 550;
+}
+
+.right_content {
+    
+    width: 603rpx;
+    margin-top: 20rpx;
+    
+}
+
+.right_content_txt {
+    font-size: 26rpx;
+    color: #333333;
+}
+
+.right_content_txt2 {
+    font-size: 24rpx;
+    color: #CCCCCC;
+    margin-left: 30rpx;
+    /* padding-bottom: 30rpx;
+    border-bottom: 2rpx solid #CCCCCC; */
+}
+
+.reply {
+    display: flex;
+    margin-top: 34rpx;
+    /* padding-top: 5rpx; */
+    align-items: flex-start;
+}
+
+.reply_img {
+    padding-top: 30rpx;
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 17rpx;
+}
+
+.reply_right {
+    position: relative;
+    display: inline-block;
+    width: 546rpx;
+    padding-top: 30rpx;
+    border-top: 2rpx solid #CCCCCC;
+}
+
+/* 结束 */
+.end {
+    margin-top: 47rpx;
+    margin-bottom: 48rpx;
+    text-align: center;
+}
+
+.end_txt {
+    font-size: 24rpx;
+    color: #999999;
+}
+
+/* 底部评论 */
+.foot {
+    width: 750rpx;
+    background-color: #FFFFFF;
+    box-shadow: 0rpx -1rpx 4rpx 0rpx rgba(0, 0, 0, 0.08);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.say {
+    display: inline-block;
+    width: 100%;
+    background-color: #F2F2F2;
+    border-radius: 8rpx;
+
+}
+
+.flex {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.say_img {
+    width: 24rpx;
+    height: 24rpx;
+    margin-right: 13rpx;
+    /* vertical-align: 10rpx; */
+}
+
+.say_inp {
+    display: inline-block;
+    width: 300rpx;
+    height: 33rpx;
+}
+.t-input{
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+}
+
+.say_place {
+    font-size: 28rpx;
+    color: #333333;
+}
+
+.foot_img {
+    width: 45rpx;
+    height: 40rpx;
+    margin-left: 50rpx;
+    margin-right: 17rpx;
+}
+
+.foot_num {
+    font-size: 24rpx;
+    vertical-align: 10rpx;
+}
+
+.favour{
+    position: absolute;
+    top:15rpx;
+    right:65rpx;
+    width:80rpx;
+    margin-right: 5%;
+    margin-top: 2%;
+    font-size:24rpx;
+    line-height: 5rpx;
+}
+
+.favour_img2 {
+    width: 35rpx;
+    height: 35rpx;
+    margin-right: 17rpx;
+    margin-top: 5rpx;
+}
+
+.favour_num{
+    position: absolute;
+    right: 6rpx;
+    bottom: 14rpx;
+}
+.details_img{
+    width: 100%;
+    object-fit:contain;
+}
+.imgbox{
+    width: 100%;
+}
+.say_btn{
+    width: 200rpx;
+    height: 50rpx;
+}
