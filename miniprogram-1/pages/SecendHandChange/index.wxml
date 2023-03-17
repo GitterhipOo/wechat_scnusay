@@ -45,7 +45,6 @@
                     <text class="text1">{{item.secendhand_topic}}</text>
                     <text class="text2">{{item.blogger_time}}</text>
                 </view>
-                <view class="box-way">{{item.secendhand_class}}</view>
                 <!-- 主要内容模块 -->
                 <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
                     <view style="margin: 20rpx 30rpx 40rpx 30rpx;"><text>{{item.secendhand_detail}}</text></view>
@@ -53,7 +52,7 @@
                 </view>
                 <!-- 文后小标模块 -->
                 <view class="box3" style="width: 50%; height: 10%;">
-                    <image src="https://www.scnusay.cc/icon/liuyan.png" class="otherimg"></image><text>{{item.comments}}</text>
+                   
                 </view>
             </view>
         </view>
