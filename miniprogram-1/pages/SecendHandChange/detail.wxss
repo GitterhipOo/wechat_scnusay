@@ -29,11 +29,17 @@ page{
     justify-content: center;
 }
 
-.follow {
-    right: -2%;
-
+ .follow { 
+     background-color: #fff;
+     border-color: #fff;
+     color: rgb(75, 200, 238);
+     font-size: 35rpx;
+     right: -6%;
+ }
+  
+.follow::after{
+    border: none;
 }
-
 .name {
     padding-left: 10px;
     font-weight: 700;
@@ -48,38 +54,30 @@ page{
 .in_contact {
     padding-top: 10px;
     padding-left: 10px;
-    background-color: rgba(128, 124, 124, 0.356);
+    
     width: 90%;
     margin: 10px auto;
     padding-bottom: 10px;
 
 }
-
+/* 标题内容全显示，自动换行，不会溢出 */
 .topic {
+    text-indent: 20rpx;
     margin-top: 10px;
     font-weight: 700;
     font-size: 17px;
+    display: block;
+    white-space: pre-line;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    flex-flow:row wrap;
 }
-
-.date {
+.secendhand_class {
     font-weight: 700;
     font-size: 14px;
-}
-
-.space {
-    font-size: 14px;
-    font-weight: 700;
-}
-
-.space_detail {
-    font-size: 14px;
-    font-weight: 700;
-}
-
-.lostthing_class {
-    font-weight: 700;
-    font-size: 14px;
-
+    color: rgb(75, 200, 238);
 }
 
 .contact {
@@ -125,10 +123,17 @@ page{
     font-weight: 700;
     font-size: 17px;
 }
-
+/* 详情内容全显示，自动换行，不会溢出 */
 .detail_1 {
-
+    text-indent: 20rpx;
     font-size: 14px;
+    display: block;
+    white-space: pre-line;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    flex-flow:row wrap;
 }
 
 .box3 .tags{
@@ -343,6 +348,7 @@ page{
 }
 .imgbox{
     width: 100%;
+    margin-top: 30rpx;
 }
 .say_btn{
     width: 200rpx;

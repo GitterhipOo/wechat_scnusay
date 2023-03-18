@@ -2,7 +2,8 @@ var app = getApp()
 
 Page({
     data: {
-
+        navH: 0,
+        swiperHeight:"1000px",
         //主人公数据
         blogger_list: [],
         //评论数据
@@ -227,6 +228,9 @@ Page({
     //生命周期函数--监听页面加载
     onLoad: function (options) {
         var _this = this;
+        this.setData({
+            navH: app.globalData.navHeight
+          });
         wx.getStorage({
             key: 'secendhandsendPostValue',
             success: function (res) {
