@@ -8,6 +8,8 @@ page {
     position: relative;
     margin: 10rpx 0;
     background-color: #fff;
+    border-radius: 50rpx;
+    box-shadow: -1px 2px 6px 0px rgba(0, 0, 0, 0.4)
 }
 
 .box1 {
@@ -50,7 +52,7 @@ page {
     position: absolute;
     right: 30rpx;
     top: 10rpx;
-    color: rgb(53, 192, 247);
+    color: rgb(224, 92, 40);
     font-size: 40rpx;
 }
 
