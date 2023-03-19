@@ -1,4 +1,5 @@
 {
-    "usingComponents": {        "t-input": "/miniprogram_npm/tdesign-miniprogram/input/input"}
-
+    "usingComponents": {        "t-input": "/miniprogram_npm/tdesign-miniprogram/input/input"},
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": true
 }

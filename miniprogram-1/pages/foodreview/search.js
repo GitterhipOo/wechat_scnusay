@@ -175,7 +175,7 @@ Page({
                     } else {
                         console.log(res.data);
                         wx.navigateTo({
-                            url: '/pages/SecendHandChange/searchIndex',
+                            url: '/pages/foodreview/searchIndex',
                         })
                     }
                     //将新搜索内容加入历史

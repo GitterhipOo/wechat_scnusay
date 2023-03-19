@@ -7,7 +7,6 @@
         </navigator>
     </view>
 </view>
-
 <view style="height: {{navH*2+20}}px;"></view>
 <!-- 搜索 -->
 <!-- 发布入口 -->

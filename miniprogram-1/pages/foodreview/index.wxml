@@ -3,56 +3,89 @@
     <view class="nav-title" style="line-height: {{navH*2+44}}px;">美食点评</view>
     <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
         <navigator hoverClass="none" open-type="switchTab" url="/pages/index/index1">
-                    <image class="back-pre" src="../../assets/images/sort/back.png" style="height:50rpx;width:50rpx;margin-top: 50rpx;"></image>
+                    <image class="back-pre" src="https://www.scnusay.cc/icon/back.png" style="height:50rpx;width:50rpx;margin-top: 50rpx;"></image>
         </navigator>
     </view>
 </view>
-<cover-image src="../../assets/images/sort/publish2.png" bindtap="gotopublish" style=" height: 80rpx;width: 80rpx; position: fixed;top:1000rpx; left:670rpx;"></cover-image>
+<view style="height: {{navH*2+20}}px;"></view>
 <!-- 搜索 -->
-<view class="search" style="margin-top:{{navH*4+50}}rpx" >
-    <input type="text" placeholder="搜索关键词" id="mysearch"/> 
-    <button bindtap="search" type="primary" style="border-radius: 30rpx;height: 60rpx;width: 160rpx; font-size: 20rpx; ">搜索</button>
+<view class="search"bindtap="gotosearch"  >
+    <input type="text" placeholder="搜索关键词" id="mysearch"/>  
 </view>
-<!-- 下拉选择框 -->
-<view class='fenlei'>
-    <text style="color: black; font-weight: 400;">校区</text>
-  <!-- 下拉框 -->
-    <view class='select_box'>
-      <view class='select' catchtap='selectTaps' >
-        <text class='select_text'>{{selectDatas[indexs]}}</text>
-        <image class='select_img {{shows&&"select_img_rotate"}}' src='../../assets/images/sort/xiasanjiao.png'></image>
-      </view>
-      <view class='option_box' style='height:{{shows?(selectDatas.length>5?300:selectDatas.length*60):0}}rpx;'>
-        <text class='option' style='{{indexs==selectDatas.length-1&&"border:0;"}}' wx:for='{{selectDatas}}' wx:key='this' data-index='{{index}}' catchtap='optionTaps'>{{item}}</text>
-      </view>
-    </view>
-    <navigator hoverClass="none" open-type="navigate" url="../foodreview/mypublish" style="width: 180rpx;height: 80rpx;line-height: 80rpx;">
-             <view style="margin-left: 20rpx;background-color:skyblue;text-align: center;font-size: 30rpx;border-radius: 30rpx;">我的分享</view>       
-    </navigator>
+<view class="guide" bindtap="gotosend" >
+    <view class="lostcenter">发布</view>
 </view>
-<!-- 美食信息 -->
-<view class="pubinfo" wx:for="{{infolist}}" wx:key="infoid" data-id="{{item.infoid}}" data-name="{{item.name}}" bindtap="godetail"> 
-   <view class="info1">
-        <image src="{{item.icon}}" class="headpic" mode="aspectFill"></image>
-        <view class="titletime">
-            <view class="text1">{{item.infotitle}}</view>
-            <view class="time"><text >{{item.time}}</text></view>
-        </view>
-        <text class="price">{{item.areaname}}</text>
-    </view>
-    <view class="info2">
-        <view class="info3">
-            <text>{{item.infodetail}}</text> 
-        </view>
-        <view class="img1">
-            <image src="{{item.infoimage}}" class="infoimg" mode="aspectFill"></image>
-        </view>
-        <view class="info4">
-        <view class="view1"></view>
-        <view class="view2"> 
-            <image src="../../assets/images/sort/lookup.png" class="otherimg"></image><text>{{item.lookup}}</text>
-            <image src="../../assets/images/sort/zan.png" class="otherimg"></image><text>{{item.nice}}</text>
-            <image src="../../assets/images/sort/liuyan.png" class="otherimg"></image><text>{{item.talk}}</text></view>
-        </view>
-    </view>
+
+
+<!-- 发布入口结束 -->
+<!-- 切换栏 -->
+<view class='swipertab'>
+    <view class="tabitem1" style="{{tabstylelost}}" data-current="0" bindtap='clicktab'>好评/吐槽</view>
+
+    <view class="tabitem2" style="{{tabstylemy}}" data-current="1" bindtap='clicktab'>我的发布</view>
 </view>
+<!-- 切换栏结束 -->
+
+<!-- 商品栏用<swiper></swiper> -->
+<swiper bindchange="changeswiper" current="{{current_Page}}" style="height:{{swiperHeight}} ;">
+    <swiper-item>
+        <view class="list">
+            <!-- 以一个作为案例 -->
+            <view class="box" wx:for="{{post0}}" wx:key="index">
+                <!-- 头像栏模块 -->
+                <view class="box1" bindtap="jumptodetails" data-index="{{index}}">
+                    <image src="{{item.blogger_avatar}}"></image>
+                    <text class="text1">{{item.foodreview_topic}}</text>
+                    <text class="text2">{{item.blogger_time}}</text>
+                </view>
+                <view class="box-way">{{item.foodreview_class}}</view>
+                <!-- 主要内容模块 -->
+                <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
+                    <view style="margin: 20rpx 30rpx 40rpx 30rpx;"><text>{{item.foodreview_detail}}</text></view>
+                    <image wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
+                </view>
+                <!-- 文后小标模块 -->
+                <view class="box3" style="width: 50%; height: 10%;">
+                    <image src="https://www.scnusay.cc/icon/liuyan.png" class="otherimg"></image><text>{{item.comments}}</text>
+                </view>
+            </view>
+        </view>
+    </swiper-item>
+    <swiper-item class="container1">
+        <view class="list" wx:if="{{post1.length!=0}}">
+            <!-- 以一个作为案例 -->
+            <view class="box" wx:for="{{post1}}" wx:key="index">
+                <!-- 头像栏模块 -->
+                <view class="box1" bindtap="jumptodetails" data-index="{{index}}">
+                    <image src="{{item.blogger_avatar}}"></image>
+                    <text class="text1">{{item.foodreview_topic}}</text>
+                    <text class="text2">{{item.blogger_time}}</text>
+                </view>
+                <view class="box-way">{{item.foodreview_class}}</view>
+                <!-- 主要内容模块 -->
+                <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
+                    <view style="margin: 20rpx 30rpx 40rpx 30rpx;"><text>{{item.foodreview_detail}}</text></view>
+                    <image wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
+                </view>
+                <!-- 文后小标模块 -->
+                <view class="box3" style="width: 50%; height: 10%;">
+                        <view class="post-data" style="height: 100%;">
+                        <t-button shape="round" class="mypostmenu" bindtap="postmenu" data-index="{{index}}">更多操作</t-button>
+                        <!-- 点赞   -->
+                    </view>
+                </view>
+            </view>
+        </view>
+                        <view class="list" wx:else>
+                        <view class="emptyhistory">
+        <image src="https://www.scnusay.cc/icon/empty.png" mode="" class="emptyimg"/>
+    </view>
+
+    <view class="nohistory-container">
+        <text class="nohistory">oh!暂无历史记录</text>
+    </view>
+
+
+                            </view>
+    </swiper-item>
+</swiper>
