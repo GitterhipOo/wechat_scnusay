@@ -1,127 +1,175 @@
 page {
-    background-color:#fff
+    background-color: #f5f5f5;
   }
 .search{
+    width: 100%;
     display: flex;
+    justify-content: center;
     background-color: #fff;
+    margin-top: 4rpx;
+    margin-bottom: 4rpx;
+    padding-top: 4rpx;
 }
 .search input{
     background-color: rgb(235, 235, 235);
     border-radius: 30rpx;
-    margin-left: 50rpx;
+    margin-right: 20%;
     height: 60rpx;
     width: 500rpx;
     font-size: 24rpx;
     padding-left: 30rpx;
 }
-.fenlei{
-    width: 100%;
-    height: 90rpx;
-    line-height: 90rpx;
-    border-bottom: 1rpx solid #e6e6e6;
+/* 切换栏 */
+.tabitem1{
     display: flex;
+    float: left;
+    color: #e2a22a;
+    background-color: white;
+    margin-top: 1rpx;
+    margin-bottom: 1rpx;
+    width: 46%;
+    height: 100%;
+    margin-left: 3%;
+    text-align: center;
+    justify-content: space-around;
     align-items: center;
-    margin: auto;
-    background: #ffffff;
-  }
-  .fenlei text{
-    font-size: 30rpx;
-    color: #999999;
-    background: #fff;
-    margin-left: 50rpx;
-  }
-  /* 下拉框 */
-  .select_box {
-    background: #fff;
-    width: 450rpx;
-    /* margin: 0 auto; */
-    height: 90rpx;
-    line-height: 90rpx;
-    text-align: left;
-    position: relative;
-  }
-  
-  .select {
-    box-sizing: border-box;
-    width: 100%;
-    height: 86rpx;
-    /* border: 1px solid #efefef; */
-    border-radius: 8rpx;
+}
+.tabitem2{
+    float: right;
     display: flex;
+    background-color: white;
+    margin-top: 1rpx;
+    margin-bottom: 1rpx;
+    width: 46%;
+    height: 100%;
+    margin-right: 3%;
+    text-align: center;
+    justify-content: space-around;
     align-items: center;
-    padding: 0 20rpx;
-  }
-  
-  .select_text {
-    font-size: 28rpx;
-    flex: 1;
-    color: rgb(102, 102, 102);
-    line-height: 86rpx;
-    height: 86rpx;
-  }
-  
-  .select_img {
-    width: 40rpx;
-    height: 40rpx;
-    display: block;
-    transition: transform 0.3s;
-  }
-  
-  .select_img_rotate {
-    transform: rotate(180deg);
-  }
-  
-  .option_box {
-    position: absolute;
-    top: 86rpx;
-    width: 100%;
-    /* border: 1px solid #efefef; */
-    box-sizing: border-box;
-    height: 0;
-    overflow-y: auto;
-    border-top: 0;
-    background: #fff;
-    transition: height 0.3s;
-    z-index: 100;
-  }
-  
-  .option {
-    display: block;
-    line-height: 40rpx;
-    font-size: 28rpx;
-    border-bottom: 1px solid #efefef;
-    padding: 10rpx;
-    color: rgb(102, 102, 102);
-  }
+}
+.swipertab{
+    height:80rpx;
+    margin-top: 10rpx;
+    background-color: white;
 
-   
-.pubinfo{
-    height: 400rpx;
-    width: 700rpx;
-    background-color: rgb(210, 243, 252);
-    border: 1rpx solid #efefef;
-    border-radius: 30rpx;
-    margin:auto;
-    margin-top: 5rpx;
 }
-.pubinfo .info1{
+/*搜索*/
+
+/* 发布 */
+.guide {
+    z-index: 99999;
+    position: fixed;
+    top: 82%;
+    right: 0%;
+    margin: 3% 1%;
+    height: 90rpx;
+    width: 90rpx;
+    border-radius: 45rpx;
+    background-color: #fff;
+    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
+}
+.guide2 {
+    z-index: 99999;
+    position: fixed;
+    top: 70%;
+    right: 0%;
+    margin: 3% 1%;
+    height: 90rpx;
+    width: 90rpx;
+    border-radius: 45rpx;
+    background-color: #fff;
+    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
+}
+
+.guide .lostcenter {
+    display: block;
+    text-align: center;
+    line-height: 90rpx;
+    color: #e2a22a;
+}
+.guide2{
+    display: block;
+    text-align: center;
+    line-height: 90rpx;
+    color: #aaa;
+}
+
+
+
+/* swiper模块 */
+
+swiper{
+    height: 100%;
+}
+
+
+
+/* 帖子数据 */
+.box {
+    width: 95;
+    position: relative;
+    margin: 10rpx 0;
+    background-color: #fff;
+    border-radius: 50rpx;
+    box-shadow: -1px 2px 6px 0px rgba(0, 0, 0, 0.4)
+}
+
+.box1 {
     height: 100rpx;
-    width: 100%;
-    display: flex;
+    width: 500rpx;
 }
-.pubinfo .info2{
-    height: 330rpx;
+
+.box1 image {
+    float: left;
+    margin: 5rpx 0 5rpx 10rpx;
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 90rpx;
 }
-.pubinfo .info2 .img1{
-    height: 150rpx;
-    width: 700rpx;
+
+.box1 .text1 {
+    float: left;
+    margin-top: 10rpx;
+    margin-left: 20rpx;
+    font-weight: 700;
+    font-size: 34rpx;
+    width: 380rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-flow:row wrap;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
 }
-.pubinfo .info3{
+
+.box1 .text2 {
+    float: left;
+    margin-left: 20rpx;
+    font-size: 20rpx;
+    color: #aaa;
+}
+
+.box-way {
+    position: absolute;
+    right: 30rpx;
+    top: 10rpx;
+    color: rgb(224, 92, 40);
+    font-size: 40rpx;
+}
+
+.box2 {
+    margin: 20rpx 10rpx;
+    padding-bottom: 50rpx;
+     height: 400rpx; 
+}
+
+.box2 text {
     text-indent: 20rpx;
-    height: 80rpx;
+    height: 30%;
     width: 600rpx;
     margin: 0 auto;
-    font-size: 32rpx;
+    font-size: 28rpx;
     display: block;
     white-space: pre-line;
     overflow: hidden;
@@ -132,57 +180,65 @@ page {
     -webkit-line-clamp: 2;
     flex-flow:row wrap;
 }
-.pubinfo .info4{
-    height: 100rpx;
-    width: 700rpx;
-    margin: 0 auto;
-    display: flex;
-}
-.pubinfo .info4 .view1{
-    background-color: rgb(210, 243, 252);
-    height: 1rpx;
-    width: 1rpx;
-    flex: 1;
-}
-.pubinfo .info4 .view2{
-    margin-right: 10rpx;
-    height: 100rpx;
-}
-.pubinfo .headpic{
-    height: 60rpx;
-    width: 60rpx;
-    margin-top: 20rpx;
-    margin-left: 10rpx;
-}
-.pubinfo .titletime{
-    height: 100rpx;
-    width: 400rpx;
-    margin-left: 10rpx;
-    flex: 1;
-}
-.pubinfo .titletime .text1{
-    width: 300rpx;
-    border-right: 1rpx solid rgb(210, 243, 252);
-    border-bottom: 1rpx solid rgb(210, 243, 252);
-    overflow: hidden; /* 超出一行文字自动隐藏 */
-    text-overflow: ellipsis; /* 文字隐藏后添加省略号 */
-    white-space: nowrap; /* 强制不换行 */
-}
-.pubinfo .titletime .time{
-    font-size: 24rpx;
-}
-.pubinfo .price{
-    margin-right: 20rpx;
-    font-size: 40rpx;
-    color: #9e1919;
-}
-.pubinfo .infoimg{
-    height: 150rpx;
+
+.box2 image {
+    margin: 20rpx 20rpx;
     width: 200rpx;
-    border: 1rpx solid #efefef;
-    margin-left: 49rpx;
+    height: 200rpx;
 }
-.pubinfo .otherimg{
-    height: 40rpx;
+
+.box3{
+    position: absolute;
+    bottom: 0%;
+
+
+    right: 0%;
+}
+
+.box3 .post-data {
+    float: right;
+}
+.box3 .mypostmenu{
+    
+    font-size: 30rpx;
+}
+.box3  image {
+    display: inline-block;
+    position: absolute;
+    right: 20%;
     width: 40rpx;
+    height: 40rpx;
+}
+.box3  text {
+    font-size: 30rpx;
+    position: absolute;
+    left: 82%;
+}
+
+.nohistory{
+    /* grey center 16px */
+    color: #999;
+    font-size: 16px;
+    margin-top: 20px;
+}
+.nohistory-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.emptyhistory{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.emptyimg{
+    /* make the img on the center of de view */
+    width: 50px;
+    height: 50px;
+    margin-top: 200rpx;
 }
