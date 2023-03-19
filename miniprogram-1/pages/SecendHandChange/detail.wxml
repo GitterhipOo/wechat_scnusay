@@ -33,7 +33,9 @@
         </text> 
         <text class="topic">{{blogger_list.secendhand_topic}}
         </text>
-        <!-- <text class="date">日期：<text style="font-weight: 400;">{{blogger_list.secendhand_time}}</text></text>
+
+        <text class="date">价格：<text style="font-weight: 400;">{{blogger_list.secendhand_time}}</text></text>
+
         <text class="space">
             校区：<text style="font-weight: 400;">{{blogger_list.secendhand_space}}</text></text>
         <text class="space_detail">

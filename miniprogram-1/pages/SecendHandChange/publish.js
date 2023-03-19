@@ -21,8 +21,10 @@ Page({
             //判断作者直接返回openid就行了我日
             blogger_time: "", //发布时间
             secendhand_topic: "", //标题
-            //secendhand_time: "", //丢失时间，以字符串直接储存
-            secendhand_class: "其他", //发布类别（不需要可以不填充
+
+            secendhand_time: "", //丢失时间，以字符串直接储存
+            secendhand_class: "", //发布类别（不需要可以不填充
+
             secendhand_detail: "", //主要内容
             //secendhand_space: "石牌", //丢失地点
             //secendhand_space_detail: "", //丢失详细地址
@@ -202,7 +204,6 @@ Page({
         //postValue.photos = JSON.stringify(this.data.imglist);
         postValue.photos = this.data.imglist;
 
-
         // 这里暂时使用本地缓存来传输数据，以后会使用网络请求来传输数据
         wx.setStorage({
             key: "secendhandsendPostValue",
@@ -219,8 +220,9 @@ Page({
                 //判断作者直接返回openid就行了我日
                 'blogger_time': that.data.postValue.blogger_time, //发布时间
                 'secendhand_topic': that.data.postValue.secendhand_topic, //标题
-                //'secendhand_time': that.data.postValue.secendhand_time, //丢失时间，以字符串直接储存
-                'secendhand_class': that.data.postValue.secendhand_class, //发布类别（不需要可以不填充
+                'secendhand_time': that.data.postValue.secendhand_time, //丢失时间，以字符串直接储存
+                'secendhand_class': that.data.array_Tag[that.data.tag], //发布类别（不需要可以不填充
+
                 'secendhand_detail': that.data.postValue.secendhand_detail, //主要内容
                 //'secendhand_space': that.data.postValue.secendhand_space, //丢失地点
                 //'secendhand_space_detail': that.data.postValue.secendhand_space_detail, //丢失详细地址
