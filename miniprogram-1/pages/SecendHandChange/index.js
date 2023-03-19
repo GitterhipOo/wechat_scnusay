@@ -443,6 +443,7 @@ Page({
         if(this.data.isloading) return
         this.getinfo()
         console.log('触发了上拉触底实践')
+        this.getSwiperItemHeight()
     },
 
     /**
