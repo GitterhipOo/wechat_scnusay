@@ -37,19 +37,30 @@ Page({
     },
 
     //通过计算post的数量获取页面长度
-    getSwiperItemHeight: function () {
-        var postHeight
-        if (this.data.current_Page == 0) {
-            postHeight = (this.data.post0.length) * 400 + 600 + "rpx";
+    getSwiperItemHeight:function(){
+        var postHeight = 0
+        var post
+        if (this.data.current_Page == 0){
+            post = this.data.post0
         }
-        else {
-            postHeight = (this.data.post1.length) * 400 + 600 + "rpx";
+        else{
+            post = this.data.post1
         }
-        console.log("计算页面高度触发")
+        console.log(post)
+        for (var i = 0; i < post.length; i++){
+            if (post[i].photos.length > 0){
+                postHeight+=400
+            }
+            else{ 
+                postHeight+=220
+            }
+        }
+        postHeight=postHeight+600;
+        postHeight = postHeight+"rpx";
         this.setData({
-            swiperHeight: postHeight,
+            swiperHeight:postHeight,
         })
-        console.log("高度赋值完成")
+        console.log("高度赋值完成,计算高度为",postHeight)
     },
 
     //跳转至详情页面
@@ -233,20 +244,20 @@ Page({
         })
     },
 
-    getSwiperItemHeight: function () {
-        var postHeight
-        if (this.data.current_Page == 0) {
-            postHeight = (this.data.post0.length) * 400 + 600 + "rpx";
-        }
-        else {
-            postHeight = (this.data.post1.length) * 400 + 600 + "rpx";
-        }
-        console.log("计算页面高度触发")
-        this.setData({
-            swiperHeight: postHeight,
-        })
-        console.log("高度计算完成")
-    },
+    // getSwiperItemHeight: function () {
+    //     var postHeight
+    //     if (this.data.current_Page == 0) {
+    //         postHeight = (this.data.post0.length) * 400 + 600 + "rpx";
+    //     }
+    //     else {
+    //         postHeight = (this.data.post1.length) * 400 + 600 + "rpx";
+    //     }
+    //     console.log("计算页面高度触发")
+    //     this.setData({
+    //         swiperHeight: postHeight,
+    //     })
+    //     console.log("高度计算完成")
+    // },
     gotosend: function (e) {
         console.log("点击去发布")
         if (app.globalData.haslogin === false) {
