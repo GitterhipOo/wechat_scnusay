@@ -14,9 +14,7 @@ Page({
         photocou: 0, //用户上传图片的数量    
         // height: '',
         heights: [],
-        owner_Data: {
-            owner_Openid: "ouctO4ypxLjQ_3t67gYI-urvPoQs",
-        },
+
               
         isloading:false,  
         //post0为商品列表 secendhand_class:1  
@@ -139,7 +137,7 @@ Page({
                             if (res.confirm) {
                                 //console.log("选择菜蛋对应的specialcode为"+menupostValue)
                                 wx.request({
-                                    url: 'https://www.scnusay.cc/SecendHandDetail/SecendHandDetailPhoto/deletemysecendhandpost.php',
+                                    url: 'https://www.scnusay.cc/foodreview/foodreviewphoto/deletemyfoodreviewpost.php',
                                     method: "POST",
                                     data: {
                                         'menupostValue': menupostValue,
@@ -184,7 +182,7 @@ Page({
         var _this=this
         
         wx.request({
-            url: 'https://www.scnusay.cc/SecendHandDetail/confirmlogin.php',
+            url: 'https://www.scnusay.cc/foodreview/confirmlogin.php',
             method: "POST",
             data: {
                 'openid': app.globalData.openid
@@ -212,7 +210,7 @@ Page({
         //onload的时候需要从服务器获取数据,包括获取我的和失物招领的
         wx.request({
             //先是获取失物招领的
-            url: 'https://www.scnusay.cc/SecendHandDetail/SecendHandDetailPhoto/getdetail.php',
+            url: 'https://www.scnusay.cc/foodreview/foodreviewphoto/getdetail.php',
             method: "GET",
             data: {},
             header: {
@@ -241,12 +239,8 @@ Page({
                         blogger_name: res.data[i].name, //博主昵称
                         blogger_time: res.data[i].blogger_time, //发布时间的时间戳、这里需要修改
                         foodreview_topic: res.data[i].foodreview_topic, //标题
-                        //secendhand_time: res.data[i].secendhand_time, //丢失时间的时间戳、这里需要修改
                         foodreview_class: res.data[i].foodreview_class, //发布类别（不需要可以不填充
                         foodreview_detail: res.data[i].foodreview_detail, //主要内容
-                        //secendhand_space: res.data[i].secendhand_space, //
-                        //secendhand_space_detail: res.data[i].secendhand_space_detail,
-                       // foodreview_contact: res.data[i].foodreview_contact,//联系方式
                         photos: tempPhoto, //图片
                         readingtimes: res.data[i].readingtimes, //阅读次数
                         comments: 5, //评论数量
@@ -265,7 +259,7 @@ Page({
 
         //然后获取我的
         wx.request({
-            url: 'https://www.scnusay.cc/SecendHandDetail/SecendHandDetailPhoto/returnmysecendhand.php',
+            url: 'https://www.scnusay.cc/foodreview/foodreviewphoto/returnmyfoodreview.php',
             method: "POST",
             data: {
                 'openid': app.globalData.openid
@@ -297,13 +291,8 @@ Page({
                         blogger_name: res.data[i].name, //博主昵称
                         blogger_time: res.data[i].blogger_time, //发布时间的时间戳、这里需要修改
                         foodreview_topic: res.data[i].foodreview_topic, //标题
-                        //foodreview_time: res.data[i].foodreview_time, //丢失时间的时间戳、这里需要修改
                         foodreview_class: res.data[i].foodreview_class, //发布类别（不需要可以不填充
                         foodreview_detail: res.data[i].foodreview_detail, //主要内容
-                        //foodreview_space: res.data[i].foodreview_space, //
-                        //foodreview_space_detail: res.data[i].foodreview_space_detail,
-                        //foodreview_contact: res.data[i].foodreview_contact,
-                        // photos: [res.data[i].photo1, res.data[i].photo2, res.data[i].photo3], //放置于主要内容下方的图片
                         photos: tempPhoto,
                         readingtimes: res.data[i].readingtimes, //阅读次数
                         comments: 5, //评论数量

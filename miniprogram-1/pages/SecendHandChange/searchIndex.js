@@ -262,12 +262,12 @@ Page({
                     blogger_name: res.data[i].name, //博主昵称
                     blogger_time: res.data[i].blogger_time, //发布时间的时间戳、这里需要修改
                     secendhand_topic: res.data[i].secendhand_topic, //标题
-                    //secendhand_time: res.data[i].secendhand_time, //丢失时间的时间戳、这里需要修改
+                    secendhand_time: res.data[i].secendhand_time, //丢失时间的时间戳、这里需要修改
                     secendhand_class: res.data[i].secendhand_class, //发布类别（不需要可以不填充
                     secendhand_detail: res.data[i].secendhand_detail, //主要内容
-                    //lostthing_space: res.data[i].lostthing_space, //
-                    //lostthing_space_detail: res.data[i].lostthing_space_detail,
-                    //lostthing_contact: res.data[i].lostthing_contact,
+                    secendhand_space: res.data[i].secendhand_space, //
+                    secendhand_space_detail: res.data[i].secendhand_space_detail,
+                    secendhand_contact: res.data[i].secendhand_contact,
                     photos: [res.data[i].photo1, res.data[i].photo2, res.data[i].photo3], //放置于主要内容下方的图片
                     readingtimes: res.data[i].readingtimes, //阅读次数
                     comments: 5, //评论数量
