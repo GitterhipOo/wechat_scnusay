@@ -37,19 +37,30 @@ Page({
     },
 
     //通过计算post的数量获取页面长度
-    getSwiperItemHeight: function () {
-        var postHeight
-        if (this.data.current_Page == 0) {
-            postHeight = (this.data.post0.length) * 400 + 600 + "rpx";
+    getSwiperItemHeight:function(){
+        var postHeight = 0
+        var post
+        if (this.data.current_Page == 0){
+            post = this.data.post0
         }
-        else {
-            postHeight = (this.data.post1.length) * 400 + 600 + "rpx";
+        else{
+            post = this.data.post1
         }
-        console.log("计算页面高度触发")
+        console.log(post)
+        for (var i = 0; i < post.length; i++){
+            if (post[i].photos.length > 0){
+                postHeight+=400
+            }
+            else{ 
+                postHeight+=220
+            }
+        }
+        postHeight=postHeight+600;
+        postHeight = postHeight+"rpx";
         this.setData({
-            swiperHeight: postHeight,
+            swiperHeight:postHeight,
         })
-        console.log("高度赋值完成")
+        console.log("高度赋值完成,计算高度为",postHeight)
     },
 
     //跳转至详情页面
@@ -138,7 +149,7 @@ Page({
                 if (res.tapIndex == 1) {
                     wx.showModal({
                         title: '已解决',
-                        content: '是否确认已解决',
+                        content: '确认已解决问题',
                         complete: (res) => {
                             //如果用户点击了取消，那么就不执行任何操作，如果用户点击了确定，那么就执行下面的操作
                             if (res.cancel) {
@@ -156,6 +167,9 @@ Page({
                                     },
                                     success(res) {
                                         console.log("已解决问题，修改内容")
+                                        wx.navigateTo({
+                                            url: '/pages/lostthing/index',
+                                        })
 
                                     }
                             })
@@ -230,20 +244,20 @@ Page({
         })
     },
 
-    getSwiperItemHeight: function () {
-        var postHeight
-        if (this.data.current_Page == 0) {
-            postHeight = (this.data.post0.length) * 400 + 600 + "rpx";
-        }
-        else {
-            postHeight = (this.data.post1.length) * 400 + 600 + "rpx";
-        }
-        console.log("计算页面高度触发")
-        this.setData({
-            swiperHeight: postHeight,
-        })
-        console.log("高度计算完成")
-    },
+    // getSwiperItemHeight: function () {
+    //     var postHeight
+    //     if (this.data.current_Page == 0) {
+    //         postHeight = (this.data.post0.length) * 400 + 600 + "rpx";
+    //     }
+    //     else {
+    //         postHeight = (this.data.post1.length) * 400 + 600 + "rpx";
+    //     }
+    //     console.log("计算页面高度触发")
+    //     this.setData({
+    //         swiperHeight: postHeight,
+    //     })
+    //     console.log("高度计算完成")
+    // },
     gotosend: function (e) {
         console.log("点击去发布")
         if (app.globalData.haslogin === false) {

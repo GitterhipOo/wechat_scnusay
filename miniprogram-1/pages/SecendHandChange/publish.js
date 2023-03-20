@@ -280,11 +280,12 @@ Page({
 
 
         wx.showToast({
-            title: '正在跳转到详情页面', //提示内容
-            icon: 'none' //提示图标
+            title: '正在跳转到首页', //提示内容
+            icon: 'none' ,//提示图标
+            duration:4000
         })
         wx.navigateTo({
-            url: '/pages/SecendHandChange/detail',
+            url: '/pages/SecendHandChange/index',
         })
         // wx.navigateBack({
         //     // 返回上 1 页
