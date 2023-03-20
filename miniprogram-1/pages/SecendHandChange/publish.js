@@ -26,8 +26,8 @@ Page({
             secendhand_class: "", //发布类别（不需要可以不填充
 
             secendhand_detail: "", //主要内容
-            //secendhand_space: "石牌", //丢失地点
-            //secendhand_space_detail: "", //丢失详细地址
+            secendhand_space: "石牌", //丢失地点
+            secendhand_space_detail: "", //丢失详细地址
             secendhand_contact: "", //联系方式
             photos: [], //放置于主要内容下方的图片
             // tags: ["其他", "生活用品", "夹心糖"], //标签
@@ -222,10 +222,9 @@ Page({
                 'secendhand_topic': that.data.postValue.secendhand_topic, //标题
                 'secendhand_time': that.data.postValue.secendhand_time, //丢失时间，以字符串直接储存
                 'secendhand_class': that.data.array_Tag[that.data.tag], //发布类别（不需要可以不填充
-
                 'secendhand_detail': that.data.postValue.secendhand_detail, //主要内容
-                //'secendhand_space': that.data.postValue.secendhand_space, //丢失地点
-                //'secendhand_space_detail': that.data.postValue.secendhand_space_detail, //丢失详细地址
+                'secendhand_space': that.data.postValue.secendhand_space, //丢失地点
+                'secendhand_space_detail': that.data.postValue.secendhand_space_detail, //丢失详细地址
                 'secendhand_contact': that.data.postValue.secendhand_contact, //联系方式
                 'specialcode': app.globalData.openid + year + month + day + hour + minute + second,
                 // readingtimes: 0, //阅读次数
@@ -281,11 +280,12 @@ Page({
 
 
         wx.showToast({
-            title: '正在跳转到详情页面', //提示内容
-            icon: 'none' //提示图标
+            title: '正在跳转到首页', //提示内容
+            icon: 'none' ,//提示图标
+            duration:4000
         })
         wx.navigateTo({
-            url: '/pages/SecendHandChange/detail',
+            url: '/pages/SecendHandChange/index',
         })
         // wx.navigateBack({
         //     // 返回上 1 页

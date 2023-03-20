@@ -159,7 +159,6 @@ swiper{
 .box2 {
     margin: 20rpx 10rpx;
     padding-bottom: 50rpx;
-     height: 400rpx; 
 }
 
 .box2 text {

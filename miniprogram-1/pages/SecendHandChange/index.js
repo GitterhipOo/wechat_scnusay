@@ -52,13 +52,25 @@ Page({
     },
     //通过计算post的数量获取页面长度
     getSwiperItemHeight:function(){
-        var postHeight
+        var postHeight = 0
+        var post
         if (this.data.current_Page == 0){
-            postHeight=(this.data.post0.length)*500+600+"rpx";
+            post = this.data.post0
         }
         else{
-            postHeight=(this.data.post1.length)*500+600+"rpx";
+            post = this.data.post1
         }
+        console.log(post)
+        for (var i = 0; i < post.length; i++){
+            if (post[i].photos.length > 0){
+                postHeight+=500
+            }
+            else{
+                postHeight+=300
+            }
+        }
+        postHeight=postHeight+300;
+        postHeight = postHeight + "rpx";
         console.log("计算页面高度触发")
         this.setData({
             swiperHeight:postHeight,
@@ -443,6 +455,7 @@ Page({
         if(this.data.isloading) return
         this.getinfo()
         console.log('触发了上拉触底实践')
+        this.getSwiperItemHeight()
     },
 
     /**
