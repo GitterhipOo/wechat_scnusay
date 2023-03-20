@@ -1,4 +1,4 @@
-// pages/lostthing/index.js
+// pages/talking/index.js
 //暂定将标签第一个设置为大致地址，详细地址将进行隐瞒
 //使用函数直接插入地址
 var app = getApp();
@@ -24,13 +24,13 @@ Page({
         },
         //post0为捡到物品
         post0: [],
-        //post1为丢失物品，其中lostthing_class = 1
+        //post1为丢失物品，其中talking_class = 1
         post1: [],
         //post1为私人发布内容，根据时间排
     },
     jumpToSearch: function () {
         wx.navigateTo({
-            url: '/pages/lostthing/search',
+            url: '/pages/talking/search',
         })
         //点击搜索跳转
     },
@@ -147,10 +147,10 @@ Page({
         var that = this
         console.log(e);
         let blogger_id = e.currentTarget.dataset.id - 1; //帖子ID
-        let lostthingClass = e.currentTarget.dataset.class;
+        let talkingClass = e.currentTarget.dataset.class;
         let index = e.currentTarget.dataset.index;
-        if (lostthingClass == 0) //
-            if (['this.data.post' + lostthingClass + '[' + index + '].had_favour'] == 0) {
+        if (talkingClass == 0) //
+            if (['this.data.post' + talkingClass + '[' + index + '].had_favour'] == 0) {
                 console.log(1)
                 this.setData({
                     ['post[' + blogger_id + '].favour']: that.data.post[blogger_id].favour + 1,
@@ -184,18 +184,18 @@ Page({
         this.setData({
             current_Page: pag
         })
-        var tabstylelost
+        var tabstyletalk
         var tabstylemy
         if (this.data.current_Page == 0){
-            tabstylelost="background-color: rgb(186 , 204, 217)";
+            tabstyletalk="background-color: rgb(186 , 204, 217)";
             tabstylemy="background-color: white";
         }
         else{
-            tabstylelost="background-color: white";
+            tabstyletalk="background-color: white";
             tabstylemy="background-color: rgb(186 , 204, 217)";
         }
         this.setData({
-            tabstylelost:tabstylelost,
+            tabstyletalk:tabstyletalk,
             tabstylemy: tabstylemy,
         })
     },
@@ -242,18 +242,18 @@ Page({
         })
         console.log("切换触发")
         this.getSwiperItemHeight()
-        var tabstylelost
+        var tabstyletalk
         var tabstylemy
         if (this.data.current_Page == 0){
-            tabstylelost="background-color: rgb(186 , 204, 217)";
+            tabstyletalk="background-color: rgb(186 , 204, 217)";
             tabstylemy="background-color: white";
         }
         else{
-            tabstylelost="background-color: white";
+            tabstyletalk="background-color: white";
             tabstylemy="background-color: rgb(186 , 204, 217)";
         }
         this.setData({
-            tabstylelost:tabstylelost,
+            tabstyletalk:tabstyletalk,
             tabstylemy: tabstylemy,
         })
     },
@@ -306,18 +306,18 @@ Page({
                         blogger_avatar: res.data[i].imgurl, //头像
                         blogger_name: res.data[i].name, //博主昵称
                         blogger_time: res.data[i].blogger_time, //发布时间的时间戳、这里需要修改
-                        lostthing_topic: res.data[i].lostthing_topic, //标题
-                        lostthing_time: res.data[i].lostthing_time, //丢失时间的时间戳、这里需要修改
-                        lostthing_class: res.data[i].lostthing_class, //发布类别（不需要可以不填充
-                        lostthing_detail: res.data[i].lostthing_detail, //主要内容
-                        lostthing_space: res.data[i].lostthing_space, //
-                        lostthing_space_detail: res.data[i].lostthing_space_detail,
-                        lostthing_contact: res.data[i].lostthing_contact,
+                        talking_topic: res.data[i].talking_topic, //标题
+                        talking_time: res.data[i].talking_time, //丢失时间的时间戳、这里需要修改
+                        talking_class: res.data[i].talking_class, //发布类别（不需要可以不填充
+                        talking_detail: res.data[i].talking_detail, //主要内容
+                        talking_space: res.data[i].talking_space, //
+                        talking_space_detail: res.data[i].talking_space_detail,
+                        talking_contact: res.data[i].talking_contact,
                         photos: [res.data[i].photo1, res.data[i].photo2, res.data[i].photo3], //放置于主要内容下方的图片
-                        readingtimes: res.data[i].readingtimes, //阅读次数
-                        comments: 5, //评论数量
-                        favour: res.data[i].favour, //点赞数量
-                        had_favour: 0, //点赞判断
+                        // readingtimes: res.data[i].readingtimes, //阅读次数
+                        // comments: 5, //评论数量
+                        // favour: res.data[i].favour, //点赞数量
+                        // had_favour: 0, //点赞判断
                         specialcode:res.data[i].specialcode,
                     }
                     _this.setData({
@@ -350,18 +350,18 @@ Page({
                         blogger_avatar: res.data[i].imgurl, //头像
                         blogger_name: res.data[i].name, //博主昵称
                         blogger_time: res.data[i].blogger_time, //发布时间的时间戳、这里需要修改
-                        lostthing_topic: res.data[i].lostthing_topic, //标题
-                        lostthing_time: res.data[i].lostthing_time, //丢失时间的时间戳、这里需要修改
-                        lostthing_class: res.data[i].lostthing_class, //发布类别（不需要可以不填充
-                        lostthing_detail: res.data[i].lostthing_detail, //主要内容
-                        lostthing_space: res.data[i].lostthing_space, //
-                        lostthing_space_detail: res.data[i].lostthing_space_detail,
-                        lostthing_contact: res.data[i].lostthing_contact,
+                        talking_topic: res.data[i].talking_topic, //标题
+                        talking_time: res.data[i].talking_time, //丢失时间的时间戳、这里需要修改
+                        talking_class: res.data[i].talking_class, //发布类别（不需要可以不填充
+                        talking_detail: res.data[i].talking_detail, //主要内容
+                        talking_space: res.data[i].talking_space, //
+                        talking_space_detail: res.data[i].talking_space_detail,
+                        talking_contact: res.data[i].talking_contact,
                         photos: [res.data[i].photo1, res.data[i].photo2, res.data[i].photo3], //放置于主要内容下方的图片
-                        readingtimes: res.data[i].readingtimes, //阅读次数
-                        comments: 5, //评论数量
-                        favour: res.data[i].favour, //点赞数量
-                        had_favour: 0, //点赞判断
+                        // readingtimes: res.data[i].readingtimes, //阅读次数
+                        // comments: 5, //评论数量
+                        // favour: res.data[i].favour, //点赞数量
+                        // had_favour: 0, //点赞判断
                         specialcode:res.data[i].specialcode,
                     }
                     _this.setData({

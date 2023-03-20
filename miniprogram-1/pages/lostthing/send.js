@@ -274,11 +274,12 @@ Page({
 
 
         wx.showToast({
-            title: '正在跳转到详情页面', //提示内容
-            icon: 'none' //提示图标
+            title: '正在返回首页', //提示内容
+            icon: 'none' ,//提示图标
+            duration:2000
         })
         wx.navigateTo({
-            url: '/pages/lostthing/details',
+            url: '/pages/lostthing/index',
         })
         // wx.navigateBack({
         //     // 返回上 1 页

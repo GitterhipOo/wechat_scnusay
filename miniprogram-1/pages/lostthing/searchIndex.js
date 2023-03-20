@@ -270,6 +270,7 @@ Page({
                     readingtimes: res.data[i].readingtimes, //阅读次数
                     comments: 5, //评论数量
                     favour: res.data[i].favour, //点赞数量
+                    lostthing_hadsolved: res.data[i].had_solved,
                     had_favour: 0, //点赞判断
                     specialcode:res.data[i].specialcode,
                 }

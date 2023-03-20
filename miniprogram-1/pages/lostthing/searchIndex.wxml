@@ -24,41 +24,43 @@
 </navigator> -->
 <!-- 发布入口结束 -->
 
-    <view class="list" current="{{current_Page}}">
-        <!-- 以一个作为案例 -->
-        <view class="box" wx:for="{{post0}}" wx:key="index">
-            <!-- 头像栏模块 -->
-            <view class="box1" bindtap="jumptodetails" data-index="{{index}}">
-                <image src="{{item.blogger_avatar}}"></image>
-                <text class="text1">{{item.lostthing_topic}}</text>
-                <text class="text2">{{item.blogger_time}}</text>
-            </view>
-            <view class="box-way">{{item.lostthing_class==1?"丢失物品":"寻找物品"}}</view>
-            <!-- 主要内容模块 -->
-            <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
-                <view style="margin: 20rpx 0 40rpx 0;"><text>{{item.lostthing_detail}}</text></view>
-                <image wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
-            </view>
-            <!-- 文后小标模块 -->
-            <view class="box3">
-                <view class="post-data">
-                    <!-- 点赞   -->
-                    <view class="foot" bindtap="favourMe" data-id="{{item.blogger_id}}" data-class="{{item.lostthing_class}}" data-index="{{index}}">
-                        <image class="favour_img" src="{{item.favour_src}}"></image>
-                        <text class="favour_num">{{item.favour}}</text>
-                    </view>
-                    <view class="foot">
-                        <image class="foot_img" src="/assets/images/sort/liuyan.png"></image>
-                        <text class="foot_num">{{item.comments}}</text>
-                    </view>
-                    <view class="foot">
-                        <image class="foot_img" src="/assets/images/sort/lookup.png"></image>
-                        <text class="foot_num">{{item.readingtimes}}</text>
-                    </view>
+<view class="list" current="{{current_Page}}">
+    <!-- 以一个作为案例 -->
+    <view class="box" wx:for="{{post0}}" wx:key="index">
+        <block wx:if="{{item.lostthing_hadsolved==1}}">
+            <image class="photo-finish" src="https://www.scnusay.cc/icon/solved.png" alt="已解决"></image>
+        </block>
+        <!-- 头像栏模块 -->
+        <view class="box1" bindtap="jumptodetails" data-index="{{index}}">
+            <image src="{{item.blogger_avatar}}"></image>
+            <text class="text1">{{item.lostthing_topic}}</text>
+            <text class="text2">{{item.blogger_time}}</text>
+        </view>、
+        <!-- 主要内容模块 -->
+        <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
+            <view style="margin: 20rpx 0 40rpx 0;"><text>{{item.lostthing_detail}}</text></view>
+            <image wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
+        </view>
+        <!-- 文后小标模块 -->
+        <view class="box3">
+            <view class="post-data">
+                <!-- 点赞   -->
+                <view class="foot" bindtap="favourMe" data-id="{{item.blogger_id}}" data-class="{{item.lostthing_class}}" data-index="{{index}}">
+                    <image class="favour_img" src="{{item.favour_src}}"></image>
+                    <text class="favour_num">{{item.favour}}</text>
+                </view>
+                <view class="foot">
+                    <image class="foot_img" src="/assets/images/sort/liuyan.png"></image>
+                    <text class="foot_num">{{item.comments}}</text>
+                </view>
+                <view class="foot">
+                    <image class="foot_img" src="/assets/images/sort/lookup.png"></image>
+                    <text class="foot_num">{{item.readingtimes}}</text>
                 </view>
             </view>
         </view>
     </view>
+</view>
 
 <view class="test">
 </view>
