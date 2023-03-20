@@ -147,10 +147,10 @@ Page({
         var that = this
         console.log(e);
         let blogger_id = e.currentTarget.dataset.id - 1; //帖子ID
-        let TalkingClass = e.currentTarget.dataset.class;
+        let talkingClass = e.currentTarget.dataset.class;
         let index = e.currentTarget.dataset.index;
         if (talkingClass == 0) //
-            if (['this.data.post' + TalkingClass + '[' + index + '].had_favour'] == 0) {
+            if (['this.data.post' + talkingClass + '[' + index + '].had_favour'] == 0) {
                 console.log(1)
                 this.setData({
                     ['post[' + blogger_id + '].favour']: that.data.post[blogger_id].favour + 1,

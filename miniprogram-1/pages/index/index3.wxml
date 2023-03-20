@@ -25,7 +25,7 @@
 <!-- 发布入口结束 -->
 <!-- 切换栏 -->
 <view class='swipertab'>
-    <view class="tabitem1" style="{{tabstylelost}}" data-current="0" bindtap='clicktab'>新鲜出炉</view>
+    <view class="tabitem1" style="{{tabstyletalk}}" data-current="0" bindtap='clicktab'>新鲜出炉</view>
     <view class="tabitem2" style="{{tabstylemy}}" data-current="1" bindtap='clicktab'>我的碎碎念</view>
 </view>
 <!-- 切换栏结束 -->
