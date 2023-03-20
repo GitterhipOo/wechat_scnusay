@@ -39,7 +39,7 @@ Page({
         //通过if判断现在是post0还是post1
         console.log(postValue)
         wx.setStorage({
-            key: "secendhandsendPostValue",
+            key: "foodreviewsendPostValue",
             data: postValue
             //储存在缓存中带过去再删除
         })
@@ -155,7 +155,7 @@ Page({
                                                 }
                                                 if (res.confirm) {
                                                     wx.navigateTo({
-                                                        url: '/pages/SecendHandChange/index',
+                                                        url: '/pages/foodreview/index',
                                                     })
                                                 }
                                             }

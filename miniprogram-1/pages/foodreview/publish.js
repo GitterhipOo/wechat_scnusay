@@ -245,7 +245,7 @@ Page({
             icon: 'none' //提示图标
         })
         wx.navigateTo({
-            url: '/pages/foodreview/detail',
+            url: '/pages/foodreview/index',
         })
         // wx.navigateBack({
         //     // 返回上 1 页
