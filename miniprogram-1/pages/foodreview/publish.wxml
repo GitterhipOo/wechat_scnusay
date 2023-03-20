@@ -33,9 +33,9 @@
     </swiper>
     <view class="divline"></view>
     <!-- 标题 -->
-    <input type="text" maxlength="17" class="topic" placeholder="标题" placeholder-style="color:rgb(100, 100, 100)" value="{{postValue.foodreview_topic}}" bindinput="adInputChange" data-info="secendhand_topic" />
+    <input type="text" maxlength="17" class="topic" placeholder="标题" placeholder-style="color:rgb(100, 100, 100)" value="{{postValue.foodreview_topic}}" bindinput="adInputChange" data-info="foodreview_topic" />
     <!-- 详情内容 -->
-    <textarea style="font-size: 30rpx; margin: 20rpx 5rpx; height:500rpx" placeholder="具体评价信息、地址等" placeholder-style="font-size:30rpx" value="{{postValue.foodreview_detail}}" bindinput="adInputChange" data-info="secendhand_detail" />
+    <textarea style="font-size: 30rpx; margin: 20rpx 5rpx; height:500rpx" placeholder="具体评价信息、地址等" placeholder-style="font-size:30rpx" value="{{postValue.foodreview_detail}}" bindinput="adInputChange" data-info="foodreview_detail" />
     <view class="divline"></view>
   
     <!-- 分类 -->
@@ -49,13 +49,13 @@
     <view class="divline"></view>
     <!-- 联系方式+标签 -->
    <!-- <view class="moreInfor">
-        <view style="position: absolute;">{{secendhand_Time_Binding}}时间：</view>
-        <input type="number" maxlength="17" style="float:left;; margin: 0rpx 140rpx; " placeholder="9月19日18:00:00" value="{{postValue.secendhand_time}}" bindinput="adInputChange" data-info="secendhand_time" />
+        <view style="position: absolute;">{{foodreview_Time_Binding}}时间：</view>
+        <input type="number" maxlength="17" style="float:left;; margin: 0rpx 140rpx; " placeholder="9月19日18:00:00" value="{{postValue.foodreview_time}}" bindinput="adInputChange" data-info="foodreview_time" />
     </view>
     <view class="divline"></view> -->
     <!-- <view class="moreInfor">
         <view style="position: absolute;">联系方式：</view>
-        <input type="text" maxlength="17" style="float:left;; margin: 0rpx 25%; " placeholder="19999999999" value="{{postValue.secendhand_contact}}" bindinput="adInputChange" data-info="secendhand_contact" />
+        <input type="text" maxlength="17" style="float:left;; margin: 0rpx 25%; " placeholder="19999999999" value="{{postValue.foodreview_contact}}" bindinput="adInputChange" data-info="foodreview_contact" />
     </view>
     <view class="divline"></view> -->
     <!-- <view class="moreInfor">

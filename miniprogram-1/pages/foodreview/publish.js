@@ -1,4 +1,4 @@
-// pages/secendhand/send.js
+// pages/foodreview/send.js
 var app = getApp()
 Page({
 
@@ -10,30 +10,23 @@ Page({
         current_Page: 0, //当前所在的图片位置
         //array_Space: ['石牌', '大学城', '南海', '汕尾'],
         array_Tag: ['好评', '吐槽','推荐'],
-        secendhand_Time_Binding: "丢失",
+        foodreview_Time_Binding: "丢失",
         space: 0, //地点绑定的初始值
         tag: 0, //分类绑定的初始值
         spaceColor: "#afeeee",
         tagColor: "#e2a22a",
-
-
         postValue: { //打包发送的post数组
             //判断作者直接返回openid就行了我日
             blogger_time: "", //发布时间
             foodreview_topic: "", //标题
-            //secendhand_time: "", //丢失时间，以字符串直接储存
             foodreview_class: "推荐", //发布类别（不需要可以不填充
             foodreview_detail: "", //主要内容
-            //secendhand_space: "石牌", //丢失地点
-            //secendhand_space_detail: "", //丢失详细地址
-            //secendhand_contact: "", //联系方式
             photos: [], //放置于主要内容下方的图片
             // tags: ["其他", "生活用品", "夹心糖"], //标签
             readingtimes: 0, //阅读次数
             comments: 0, //评论数量
             favour: 0, //点赞数量
             had_favour: 0, //点赞判断
-            // favour_src: "/assets/images/icon/unfavour.png", //点赞图标
         },
 
 
@@ -136,32 +129,7 @@ Page({
             }
         })
     },
-    // //绑定“way”值为“寻找失主”并设置变量
-    // bindPickerChange_Way: function (e) {
-    //     console.log('way发送选择改变，携带值为', e.detail.value)
-    //     if (e.detail.value) {
-    //         this.setData({
-    //             ['postValue.way']: "寻找失主",
-    //             secendhand_Time_Binding: "拾得"
-    //         })
-    //     } else {
-    //         this.setData({
-    //             ['postValue.way']: "失物求寻",
-    //             secendhand_Time_Binding: "丢失"
-    //         })
-    //     }
-    // },
-    //选择器，实现修改“地点、分类”后变换颜色为黑色
-   /* bindPickerChange_Space: function (e) {
-        // console.log('space发送选择改变，携带值为', e.detail.value);
-        let temp = this.data.array_Space[e.detail.value];
-        let space = e.detail.value;
-        this.setData({
-            space: space,
-            ['postValue.secendhand_space']: temp,
-            spaceColor: '#000',
-        })
-    },*/
+
     //选择器，实现修改“地点、分类”后变换颜色为黑色
     bindPickerChange_Tag: function (e) {
         // console.log('Tag发送选择改变，携带值为', e.detail.value)
@@ -187,7 +155,6 @@ Page({
     sendToServer() {
         var that = this;
         var postValue = this.data.postValue
-        var blogger_information = this.data.blogger_information
         var date = new Date(); //创建时间对象
         var year = date.getFullYear(); //获取年      
         var month = date.getMonth() + 1; //获取月      
@@ -198,33 +165,28 @@ Page({
         var time = `${year}年${month}月${day}日${hour}时${minute}分${second}秒`; //当前时间
         //设置博主信息
         postValue.blogger_time = time;
+        console.log(postValue.blogger_time)
         //设置图片内容
         //postValue.photos = JSON.stringify(this.data.imglist);
         postValue.photos = this.data.imglist;
-
-
         // 这里暂时使用本地缓存来传输数据，以后会使用网络请求来传输数据
         wx.setStorage({
-            key: "secendhandsendPostValue",
+            key: "foodreviewsendPostValue",
             data: postValue
         })
         //
         //打包发送到服务器
         wx.request({
-            url: 'https://www.scnusay.cc/SecendHandDetail/secendhanddetailsave.php',
+            url: 'https://www.scnusay.cc/foodreview/foodreviewdetailsave.php',
             method: "POST",
             data: {
                 'openid': app.globalData.openid,
                 //这是联系方式 得改个名字
                 //判断作者直接返回openid就行了我日
                 'blogger_time': that.data.postValue.blogger_time, //发布时间
-                'foodreview_topic': that.data.postValue.foodreview_topic, //标题
-                //'secendhand_time': that.data.postValue.secendhand_time, //丢失时间，以字符串直接储存
+                'foodreview_topic': that.data.postValue.foodreview_topic, //标题      
                 'foodreview_class': that.data.postValue.foodreview_class, //发布类别（不需要可以不填充
                 'foodreview_detail': that.data.postValue.foodreview_detail, //主要内容
-                //'secendhand_space': that.data.postValue.secendhand_space, //丢失地点
-                //'secendhand_space_detail': that.data.postValue.secendhand_space_detail, //丢失详细地址
-                //'foodreview_contact': that.data.postValue.foodreview_contact, //联系方式
                 'specialcode': app.globalData.openid + year + month + day + hour + minute + second,
                 // readingtimes: 0, //阅读次数
                 // comments: 0, //评论数量
@@ -253,7 +215,7 @@ Page({
                 filePath: that.data.postValue.photos[i - 1],
                 //filePath: "C:/Users/林木/Documents/GitHub/wechat_scnusay/miniprogram-1/img/black.png", 
                 name: 'file',
-                url: 'https://www.scnusay.cc/SecendHandDetail/SecendHandDetailPhoto/savesecendhandphoto.php',
+                url: 'https://www.scnusay.cc/foodreview/foodreviewphoto/savefoodreviewphoto.php',
                 header: {
                     "Content-Type": "multipart/form-data"
                 },
@@ -283,7 +245,7 @@ Page({
             icon: 'none' //提示图标
         })
         wx.navigateTo({
-            url: '/pages/foodreview/detail',
+            url: '/pages/foodreview/index',
         })
         // wx.navigateBack({
         //     // 返回上 1 页
