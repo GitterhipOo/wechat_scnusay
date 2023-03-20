@@ -57,6 +57,7 @@ page{
     justify-content: space-around;
     align-items: center;
     box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
+    font-weight: 550;
 }
 .tabitem2{
     float: right;
@@ -72,6 +73,7 @@ page{
     justify-content: space-around;
     align-items: center;
     box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
+    font-weight: 550;
 }
 .swipertab{
     height: 5%;
