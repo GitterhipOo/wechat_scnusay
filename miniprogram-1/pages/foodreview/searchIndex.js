@@ -69,13 +69,13 @@ Page({
         //通过if判断现在是post0还是post1
         console.log(postValue)
         wx.setStorage({
-            key: "secendhandsendPostValue",
+            key: "foodreviewsendPostValue",
             data: postValue
             //储存在缓存中带过去再删除
         })
         // 执行页面跳转
         wx.navigateTo({
-          url: '/pages/SecendHandChange/detail'
+          url: '/pages/foodreview/detail'
         })
     },
 
@@ -107,7 +107,7 @@ Page({
                                     if (res.confirm) {
                                         //console.log("选择菜蛋对应的specialcode为"+menupostValue)
                                         wx.request({
-                                            url: 'https://www.scnusay.cc/lostdetail/lostdetailphoto/deletemylostpost.php',
+                                            url: 'https://www.scnusay.cc/foodreview/foodreviewphoto/deletemyfoodreviewpost.php',
                                             method: "POST",
                                             data: {
                                                 'menupostValue': menupostValue,
@@ -261,13 +261,9 @@ Page({
                     blogger_avatar: res.data[i].imgurl, //头像
                     blogger_name: res.data[i].name, //博主昵称
                     blogger_time: res.data[i].blogger_time, //发布时间的时间戳、这里需要修改
-                    secendhand_topic: res.data[i].secendhand_topic, //标题
-                    secendhand_time: res.data[i].secendhand_time, //丢失时间的时间戳、这里需要修改
-                    secendhand_class: res.data[i].secendhand_class, //发布类别（不需要可以不填充
-                    secendhand_detail: res.data[i].secendhand_detail, //主要内容
-                    secendhand_space: res.data[i].secendhand_space, //
-                    secendhand_space_detail: res.data[i].secendhand_space_detail,
-                    secendhand_contact: res.data[i].secendhand_contact,
+                    foodreview_topic: res.data[i].foodreview_topic, //标题
+                    foodreview_class: res.data[i].foodreview_class, //发布类别（不需要可以不填充
+                    foodreview_detail: res.data[i].foodreview_detail, //主要内容
                     photos: [res.data[i].photo1, res.data[i].photo2, res.data[i].photo3], //放置于主要内容下方的图片
                     readingtimes: res.data[i].readingtimes, //阅读次数
                     comments: 5, //评论数量
@@ -285,105 +281,7 @@ Page({
         wx.removeStorage({
             key: documentType+"Index",
         })
-        // 这里是可爱的搜索详情，是不用获取的捏
-        //onload的时候需要从服务器获取数据,包括获取我的和失物招领的
-        // wx.request({
-        //     //先是获取失物招领的
-        //     url: 'https://www.scnusay.cc/lostdetail/lostdetailphoto/getdetail.php',
-        //     method: "GET",
-        //     data: {},
-        //     header: {
-        //         'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
-        //     },
-        //     success(res) {
-        //         console.log(res.data);
-        //         for (var i = 0; i < res.data.length; i++) {
-        //             //for是根据数据的长度插入新数组
-        //             //nwearray是用于插入的数组
-        //             var newarray = {
-        //                 blogger_id: res.data[i].id,
-        //                 blogger_Openid: res.data[i].openid,
-        //                 blogger_avatar: res.data[i].imgurl, //头像
-        //                 blogger_name: res.data[i].name, //博主昵称
-        //                 blogger_time: res.data[i].blogger_time, //发布时间的时间戳、这里需要修改
-        //                 lostthing_topic: res.data[i].lostthing_topic, //标题
-        //                 lostthing_time: res.data[i].lostthing_time, //丢失时间的时间戳、这里需要修改
-        //                 lostthing_class: res.data[i].lostthing_class, //发布类别（不需要可以不填充
-        //                 lostthing_detail: res.data[i].lostthing_detail, //主要内容
-        //                 lostthing_space: res.data[i].lostthing_space, //
-        //                 lostthing_space_detail: res.data[i].lostthing_space_detail,
-        //                 lostthing_contact: res.data[i].lostthing_contact,
-        //                 photos: [res.data[i].photo1, res.data[i].photo2, res.data[i].photo3], //放置于主要内容下方的图片
-        //                 readingtimes: res.data[i].readingtimes, //阅读次数
-        //                 comments: 5, //评论数量
-        //                 favour: res.data[i].favour, //点赞数量
-        //                 had_favour: 0, //点赞判断
-        //                 specialcode:res.data[i].specialcode,
-        //             }
-        //             _this.setData({
-        //                 post0: _this.data.post0.concat(newarray),
-        //                 //将数组插入post0
-        //             })
-        //         }
-        //     }
-        // })
 
-        // //然后获取我的
-        // wx.request({
-        //     url: 'https://www.scnusay.cc/lostdetail/lostdetailphoto/returnmylost.php',
-        //     method: "POST",
-        //     data: {
-        //         'openid':app.globalData.openid
-        //     },
-        //     header: {
-        //         'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
-        //     },
-        //     success(res) {
-        //         console.log(res.data);
-        //         for (var i = 0; i < res.data.length; i++) {
-        //             //for是根据数据的长度插入新数组
-        //             //nwearray是用于插入的数组
-        //             var newarray = {
-        //                 blogger_id: res.data[i].id,
-        //                 blogger_Openid: res.data[i].openid,
-        //                 blogger_avatar: res.data[i].imgurl, //头像
-        //                 blogger_name: res.data[i].name, //博主昵称
-        //                 blogger_time: res.data[i].blogger_time, //发布时间的时间戳、这里需要修改
-        //                 lostthing_topic: res.data[i].lostthing_topic, //标题
-        //                 lostthing_time: res.data[i].lostthing_time, //丢失时间的时间戳、这里需要修改
-        //                 lostthing_class: res.data[i].lostthing_class, //发布类别（不需要可以不填充
-        //                 lostthing_detail: res.data[i].lostthing_detail, //主要内容
-        //                 lostthing_space: res.data[i].lostthing_space, //
-        //                 lostthing_space_detail: res.data[i].lostthing_space_detail,
-        //                 lostthing_contact: res.data[i].lostthing_contact,
-        //                 photos: [res.data[i].photo1, res.data[i].photo2, res.data[i].photo3], //放置于主要内容下方的图片
-        //                 readingtimes: res.data[i].readingtimes, //阅读次数
-        //                 comments: 5, //评论数量
-        //                 favour: res.data[i].favour, //点赞数量
-        //                 had_favour: 0, //点赞判断
-        //                 specialcode:res.data[i].specialcode,
-        //             }
-        //             _this.setData({
-        //                 post1: _this.data.post1.concat(newarray),
-        //                 //将数组插入post0
-        //             })
-        //         }
-        //     }
-        // })
-
-        // setTimeout(function () { //异步
-        //     var query = wx.createSelectorQuery();
-        //     query.selectAll('.list').boundingClientRect()
-        //     query.exec((res) => {
-        //         console.log(res)
-        //         var listHeight = res[0][0].height
-        //         console.log(res[0][0].height)
-        //         _this.setData({
-        //             heights: res[0],
-        //             height: listHeight + 40 + 'px'
-        //         })
-        //     })
-        // }, 100)
         this.setData({
             navH: app.globalData.navHeight
         });

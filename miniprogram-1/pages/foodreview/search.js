@@ -153,7 +153,7 @@ Page({
             console.log(this.data.submitValue)
             var that = this
             wx.request({
-                url: 'https://www.scnusay.cc/SecendHandDetail/SecendHandDetailPhoto/searchvalue.php',
+                url: 'https://www.scnusay.cc/foodreview/foodreviewphoto/searchvalue.php',
                 method: "POST",
                 data: {
                     type: documentType,
@@ -175,7 +175,7 @@ Page({
                     } else {
                         console.log(res.data);
                         wx.navigateTo({
-                            url: '/pages/SecendHandChange/searchIndex',
+                            url: '/pages/foodreview/searchIndex',
                         })
                     }
                     //将新搜索内容加入历史

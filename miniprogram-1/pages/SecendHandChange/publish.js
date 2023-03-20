@@ -3,6 +3,7 @@ var app = getApp()
 Page({
 
     data: {
+        navH: 0,
         imglist: [], //照片暂时的存放区域
         count: 3, //最多储存图片
         countNow: 0, //当前储存图片数量
@@ -20,8 +21,10 @@ Page({
             //判断作者直接返回openid就行了我日
             blogger_time: "", //发布时间
             secendhand_topic: "", //标题
+
             secendhand_time: "", //丢失时间，以字符串直接储存
-            secendhand_class: "失物招领", //发布类别（不需要可以不填充
+            secendhand_class: "", //发布类别（不需要可以不填充
+
             secendhand_detail: "", //主要内容
             secendhand_space: "石牌", //丢失地点
             secendhand_space_detail: "", //丢失详细地址
@@ -40,6 +43,9 @@ Page({
     },
     onLoad: function (options) {
         console.log(app.globalData.openid);
+        this.setData({
+            navH: app.globalData.navHeight
+          });
         if (app.globalData.haslogin == false) {
             //take a message to tell user to login and jump to index4 page
             wx.showToast({
@@ -148,7 +154,7 @@ Page({
     //     }
     // },
     //选择器，实现修改“地点、分类”后变换颜色为黑色
-    bindPickerChange_Space: function (e) {
+   /* bindPickerChange_Space: function (e) {
         // console.log('space发送选择改变，携带值为', e.detail.value);
         let temp = this.data.array_Space[e.detail.value];
         let space = e.detail.value;
@@ -157,7 +163,7 @@ Page({
             ['postValue.secendhand_space']: temp,
             spaceColor: '#000',
         })
-    },
+    },*/
     //选择器，实现修改“地点、分类”后变换颜色为黑色
     bindPickerChange_Tag: function (e) {
         // console.log('Tag发送选择改变，携带值为', e.detail.value)
@@ -166,6 +172,7 @@ Page({
         this.setData({
             tag: tag,
             ['postValue.tags[0]']: temp,
+            ['postValue.secendhand_class' ]: temp,
             tagColor: '#000',
         })
     },
@@ -197,7 +204,6 @@ Page({
         //postValue.photos = JSON.stringify(this.data.imglist);
         postValue.photos = this.data.imglist;
 
-
         // 这里暂时使用本地缓存来传输数据，以后会使用网络请求来传输数据
         wx.setStorage({
             key: "secendhandsendPostValue",
@@ -215,7 +221,7 @@ Page({
                 'blogger_time': that.data.postValue.blogger_time, //发布时间
                 'secendhand_topic': that.data.postValue.secendhand_topic, //标题
                 'secendhand_time': that.data.postValue.secendhand_time, //丢失时间，以字符串直接储存
-                'secendhand_class': that.data.postValue.secendhand_class, //发布类别（不需要可以不填充
+                'secendhand_class': that.data.array_Tag[that.data.tag], //发布类别（不需要可以不填充
                 'secendhand_detail': that.data.postValue.secendhand_detail, //主要内容
                 'secendhand_space': that.data.postValue.secendhand_space, //丢失地点
                 'secendhand_space_detail': that.data.postValue.secendhand_space_detail, //丢失详细地址
@@ -274,11 +280,12 @@ Page({
 
 
         wx.showToast({
-            title: '正在跳转到详情页面', //提示内容
-            icon: 'none' //提示图标
+            title: '正在跳转到首页', //提示内容
+            icon: 'none' ,//提示图标
+            duration:4000
         })
         wx.navigateTo({
-            url: '/pages/secendhand/detail',
+            url: '/pages/SecendHandChange/index',
         })
         // wx.navigateBack({
         //     // 返回上 1 页

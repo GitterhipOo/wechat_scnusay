@@ -159,7 +159,6 @@ swiper{
 .box2 {
     margin: 20rpx 10rpx;
     padding-bottom: 50rpx;
-     height: 400rpx; 
 }
 
 .box2 text {
@@ -196,8 +195,10 @@ swiper{
 .box3 .post-data {
     float: right;
 }
-
-
+.box3 .mypostmenu{
+    
+    font-size: 30rpx;
+}
 .box3  image {
     display: inline-block;
     position: absolute;

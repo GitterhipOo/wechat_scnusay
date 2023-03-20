@@ -1,3 +1,14 @@
+<view class="nav-wrap" style="height: {{navH*2+20}}px;position: absolute;">
+    <!-- 自定义导航栏 -->
+    <view class="nav-title" style="line-height: {{navH*2+44}}px;">发布</view>
+    <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
+        <navigator hoverClass="none" open-type="navigate" url="/pages/SecendHandChange/index">
+                    <image class="back-pre" src="https://www.scnusay.cc/icon/back.png" style="height:50rpx;width:50rpx;margin-top: 50rpx;"></image>
+        </navigator>
+    </view>
+</view>
+
+<view style="height: {{navH*2+20}}px;"></view>
 <view style="margin: 3%;">
     <!-- 这里将图片作为swiper模块摆放, -->
     <view class="divline"></view>
@@ -22,18 +33,13 @@
     </swiper>
     <view class="divline"></view>
     <!-- 标题 -->
-    <input type="text" maxlength="17" class="topic" placeholder="标题" placeholder-style="color:rgb(100, 100, 100)" value="{{postValue.secendhand_topic}}" bindinput="adInputChange" data-info="secendhand_topic" />
+    <input type="text" maxlength="17" class="topic" placeholder="商品名字" placeholder-style="color:rgb(100, 100, 100)" value="{{postValue.secendhand_topic}}" bindinput="adInputChange" data-info="secendhand_topic" />
     <!-- 详情内容 -->
-    <textarea style="font-size: 30rpx; margin: 20rpx 5rpx; height:500rpx" placeholder="丢失（拾取）物品种类/地点具体描述" placeholder-style="font-size:30rpx" value="{{postValue.secendhand_detail}}" bindinput="adInputChange" data-info="secendhand_detail" />
+
+    <textarea style="font-size: 30rpx; margin: 20rpx 5rpx; height:500rpx" placeholder="对于商品的具体描述、价格等信息" placeholder-style="font-size:30rpx" value="{{postValue.secendhand_detail}}" bindinput="adInputChange" data-info="secendhand_detail" />
 
     <view class="divline"></view>
-    <!-- 失物判断 -->
-    <!-- <view class="switchCheck">
-        <view style="float: left; padding-top: 15rpx;">寻找失主</view>
-        <switch style="float: right;" bindchange="bindPickerChange_Way" />
-    </view>
-    <view class="divline"></view> -->
-    <!-- 丢失地点 -->
+
     <view class="lostChoose clearfix">
         <picker bindchange="bindPickerChange_Space" value="{{space}}" range="{{array_Space}}">
             <view style="float: left;color:{{spaceColor}}">
@@ -43,25 +49,30 @@
         <input type="text" maxlength="17" style="display: inline-block; margin: 0rpx 30rpx; " placeholder="详细地址:" value="{{postValue.secendhand_space_detail}}" bindinput="adInputChange" data-info="secendhand_space_detail" />
 
     </view>
+
     <view class="divline"></view>
+  
     <!-- 分类 -->
     <view style="margin: 20rpx 5rpx;">
         <picker bindchange="bindPickerChange_Tag" value="{{tag}}" range="{{array_Tag}}">
             <view style="margin-right: 20rpx;color:{{tagColor}}">
-                <text style="color:#000 ;">分类：</text>{{array_Tag[tag]}}
+                <text style="color:#000 ;" >分类：</text>{{array_Tag[tag]}}
             </view>
         </picker>
     </view>
     <view class="divline"></view>
     <!-- 联系方式+标签 -->
+
     <view class="moreInfor">
-        <view style="position: absolute;">{{secendhand_Time_Binding}}时间：</view>
-        <input type="number" maxlength="17" style="float:left;; margin: 0rpx 140rpx; " placeholder="9月19日18:00:00" value="{{postValue.secendhand_time}}" bindinput="adInputChange" data-info="secendhand_time" />
+        <view style="position: absolute;">宝贝价格：</view>
+        <input type="number" maxlength="17" style="float:left;; margin: 0rpx 140rpx; " placeholder=" 给宝贝定个价吧~" value="{{postValue.secendhand_time}}" bindinput="adInputChange" data-info="secendhand_time" />
+
     </view>
-    <view class="divline"></view>
+    <view class="divline"></view> -->
     <view class="moreInfor">
         <view style="position: absolute;">联系方式：</view>
-        <input type="text" maxlength="17" style="float:left;; margin: 0rpx 140rpx; " placeholder="19999999999" value="{{postValue.secendhand_contact}}" bindinput="adInputChange" data-info="secendhand_contact" />
+
+        <input type="text" maxlength="17" style="float:left;; margin: 0rpx 140rpx; " placeholder="手机或微信号" value="{{postValue.secendhand_contact}}" bindinput="adInputChange" data-info="secendhand_contact" />
     </view>
     <view class="divline"></view>
     <!-- <view class="moreInfor">
