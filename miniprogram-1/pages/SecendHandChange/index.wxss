@@ -245,7 +245,7 @@ swiper{
 .photo-finish{
     position: absolute;
     right: 0;
-    width: 20%;
-    height: 30%;
+    width: 150rpx;
+    height: 150rpx;
     opacity: 40%;
 }
