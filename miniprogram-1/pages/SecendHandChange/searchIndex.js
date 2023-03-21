@@ -268,6 +268,7 @@ Page({
                     secendhand_space: res.data[i].secendhand_space, //
                     secendhand_space_detail: res.data[i].secendhand_space_detail,
                     secendhand_contact: res.data[i].secendhand_contact,
+                    saled: res.data[i].had_saled,
                     photos: [res.data[i].photo1, res.data[i].photo2, res.data[i].photo3], //放置于主要内容下方的图片
                     readingtimes: res.data[i].readingtimes, //阅读次数
                     comments: 5, //评论数量
