@@ -4,7 +4,7 @@
     <!-- 华师小标+返回首页效果 -->
     <view style="display: flex;flex-wrap: wrap;height:100%;">
         <navigator hoverClass="none" url="/pages/index/index1" open-type="switchTab">
-            <image class="back-pre" src="https://www.scnusay.cc/icon/search.png" style="height:36px;width:36px;margin: {{navH*1}}px 0 0 {{navH*0.4}}px;"></image>
+            <image class="back-pre" src="https://www.scnusay.cc/icon/logo.png" style="height:36px;width:36px;margin: {{navH*1}}px 0 0 {{navH*0.4}}px;"></image>
         </navigator>
     </view>
     <!-- 搜索栏目 -->
@@ -19,13 +19,13 @@
 <view style="height: {{navH*2+20}}px;"></view>
 <!-- 顶部导航栏结束 -->
 <!-- 发布入口 -->
-<navigator class="guide" url="/pages/lostthing/send" open-type="navigate" bindtap="gotosend" >
+<navigator class="guide" url="/pages/index/index3post" open-type="navigate" bindtap="gotosend" >
     <view class="lostcenter">发布</view>
 </navigator>
 <!-- 发布入口结束 -->
 <!-- 切换栏 -->
 <view class='swipertab'>
-    <view class="tabitem1" style="{{tabstyletalk}}" data-current="0" bindtap='clicktab'>新鲜出炉</view>
+    <view class="tabitem1" style="{{tabstylelost}}" data-current="0" bindtap='clicktab'>新鲜出炉</view>
     <view class="tabitem2" style="{{tabstylemy}}" data-current="1" bindtap='clicktab'>我的碎碎念</view>
 </view>
 <!-- 切换栏结束 -->
@@ -39,13 +39,13 @@
                 <!-- 头像栏模块 -->
                 <view class="box1" bindtap="jumptodetails" data-index="{{index}}">
                     <image src="{{item.blogger_avatar}}"></image>
-                    <text class="text1">{{item.lostthing_topic}}</text>
+                    <text class="text1">{{item.talking_topic}}</text>
                     <text class="text2">{{item.blogger_time}}</text>
                 </view>
-                <!-- <view class="box-way">{{item.lostthing_class==1?"丢失物品":"寻找物品"}}</view> -->
+                <!-- <view class="box-way">{{item.talking_class==1?"丢失物品":"寻找物品"}}</view> -->
                 <!-- 主要内容模块 -->
                 <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
-                    <view style="margin: 20rpx 0 10rpx 0;"><text>{{item.lostthing_detail}}</text></view>
+                    <view style="margin: 20rpx 0 10rpx 0;"><text>{{item.talking_detail}}</text></view>
                     <block wx:if="{{item.photos[0]}}">
                         <image src="{{item.photos[0]}}" mode="aspectFill" class="detailimg"></image>
                     </block>
@@ -63,13 +63,13 @@
                 <!-- 头像栏模块 -->
                 <view class="box1" bindtap="jumptodetails" data-index="{{index}}">
                     <image src="{{item.blogger_avatar}}"></image>
-                    <text class="text1">{{item.lostthing_topic}}</text>
+                    <text class="text1">{{item.talking_topic}}</text>
                     <text class="text2">{{item.blogger_time}}</text>
                 </view>
                 <view class="box-way"><t-button shape="round" class="mypostmenu" bindtap="postmenu" data-index="{{index}}">更多操作</t-button></view>
                 <!-- 主要内容模块 -->
                 <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
-                    <view><text>{{item.lostthing_detail}}</text></view>
+                    <view><text>{{item.talking_detail}}</text></view>
                     <block wx:if="{{item.photos[0]}}">
                         <image src="{{item.photos[0]}}" mode="aspectFill" class="detailimg"></image>
                     </block>
