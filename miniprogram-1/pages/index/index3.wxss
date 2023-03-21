@@ -104,6 +104,7 @@ swiper{
     padding-left: 3%;
     height: 100rpx;
     width: 500rpx;
+    
 }
 
 .box1 image {
