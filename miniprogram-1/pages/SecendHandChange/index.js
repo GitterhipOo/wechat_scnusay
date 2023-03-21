@@ -8,7 +8,7 @@ Page({
      */
     data: {
         navH: 0,
-        swiperHeight:"1000px",
+        swiperHeight: "1000px",
         //页面切换相关数据
         current_Page: 0,
         photocou: 0, //用户上传图片的数量    
@@ -17,16 +17,16 @@ Page({
         owner_Data: {
             owner_Openid: "ouctO4ypxLjQ_3t67gYI-urvPoQs",
         },
-              
-        isloading:false,  
+
+        isloading: false,
         //post0为商品列表 secendhand_class:1  
         post0: [],
         //post1为我的发布 secendhand_class:0
         post1: [],
-        
+
     },
     jumptodetails: function (e) {
-        
+
         console.log(e);
         var that = this
         let index = e.currentTarget.dataset.index
@@ -47,33 +47,31 @@ Page({
         })
         // 执行页面跳转
         wx.navigateTo({
-          url: '/pages/SecendHandChange/detail'
+            url: '/pages/SecendHandChange/detail'
         })
     },
     //通过计算post的数量获取页面长度
-    getSwiperItemHeight:function(){
+    getSwiperItemHeight: function () {
         var postHeight = 0
         var post
-        if (this.data.current_Page == 0){
+        if (this.data.current_Page == 0) {
             post = this.data.post0
-        }
-        else{
+        } else {
             post = this.data.post1
         }
         console.log(post)
-        for (var i = 0; i < post.length; i++){
-            if (post[i].photos.length > 0){
-                postHeight+=500
-            }
-            else{
-                postHeight+=300
+        for (var i = 0; i < post.length; i++) {
+            if (post[i].photos.length > 0) {
+                postHeight += 500
+            } else {
+                postHeight += 300
             }
         }
-        postHeight=postHeight+300;
+        postHeight = postHeight + 300;
         postHeight = postHeight + "rpx";
         console.log("计算页面高度触发")
         this.setData({
-            swiperHeight:postHeight,
+            swiperHeight: postHeight,
         })
         console.log("高度赋值完成")
     },
@@ -88,21 +86,20 @@ Page({
         })
         var tabstylelost
         var tabstylemy
-        if (this.data.current_Page == 0){
-            tabstylelost="color: #9bd3d3";
-            tabstylemy="color: black";
-        }
-        else{
-            tabstylelost="color: black";
-            tabstylemy="color: #9bd3d3";
+        if (this.data.current_Page == 0) {
+            tabstylelost = "color: #9bd3d3";
+            tabstylemy = "color: black";
+        } else {
+            tabstylelost = "color: black";
+            tabstylemy = "color: #9bd3d3";
         }
         this.setData({
-            tabstylelost:tabstylelost,
+            tabstylelost: tabstylelost,
             tabstylemy: tabstylemy,
         })
     },
     //滑动swiperItem修改currentPag
-    changeswiper(e){ 
+    changeswiper(e) {
         this.setData({
             current_Page: e.detail.current
         })
@@ -110,19 +107,18 @@ Page({
         this.getSwiperItemHeight()
         var tabstylelost
         var tabstylemy
-        if (this.data.current_Page == 0){
-            tabstylelost="color: #9bd3d3";
-            tabstylemy="color: black";
-        }
-        else{
-            tabstylelost="color: black";
-            tabstylemy="color: #9bd3d3";
+        if (this.data.current_Page == 0) {
+            tabstylelost = "color: #9bd3d3";
+            tabstylemy = "color: black";
+        } else {
+            tabstylelost = "color: black";
+            tabstylemy = "color: #9bd3d3";
         }
         this.setData({
-            tabstylelost:tabstylelost,
+            tabstylelost: tabstylelost,
             tabstylemy: tabstylemy,
         })
-    },  
+    },
     postmenu: function (e) {
         console.log(e);
         var that = this
@@ -139,15 +135,14 @@ Page({
         console.log("选择菜蛋对应的specialcode为" + menupostValue)
 
         wx.showActionSheet({
-            itemList: ['删除', '已解决'],
+            itemList: ['删除', '已售出'],
             success: function (res) {
                 if (res.tapIndex == 0) {
                     wx.showModal({
                         title: '删除',
                         content: '是否删除内容',
                         complete: (res) => {
-                            if (res.cancel) {
-                            }
+                            if (res.cancel) {}
                             if (res.confirm) {
                                 //console.log("选择菜蛋对应的specialcode为"+menupostValue)
                                 wx.request({
@@ -181,6 +176,37 @@ Page({
                         }
                     })
                 }
+                //点击已解决
+                if (res.tapIndex == 1) {
+                    wx.showModal({
+                        title: '已出售',
+                        content: '确认已售出该物品',
+                        complete: (res) => {
+                            //如果用户点击了取消，那么就不执行任何操作，如果用户点击了确定，那么就执行下面的操作
+                            if (res.cancel) {}
+                            if (res.confirm) {
+                                //发起wx.quest的post请求，传递id至https://www.scnusay.cc/lostdetail/lost_had_solved.php
+                                wx.request({
+                                    url: 'https://www.scnusay.cc/SecendHandDetail/secend_had_saled.php',
+                                    method: "POST",
+                                    data: {
+                                        'menupostValue': menupostValue,
+                                    },
+                                    header: {
+                                        'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
+                                    },
+                                    success(res) {
+                                        console.log("已标记为售出")
+                                        wx.navigateTo({
+                                            url: '/pages/SecendHandChange/index',
+                                        })
+
+                                    }
+                                })
+                            }
+                        }
+                    })
+                }
             },
 
             fail: function (res) {
@@ -193,8 +219,8 @@ Page({
      */
     onLoad: function (options) {
         //let _this=this
-        var _this=this
-        
+        var _this = this
+
         wx.request({
             url: 'https://www.scnusay.cc/SecendHandDetail/confirmlogin.php',
             method: "POST",
@@ -213,8 +239,7 @@ Page({
                         haslogin: true
                     })
                     console.log("确认登陆");
-                }
-                else {
+                } else {
                     console.log("未登录")
                     console.log("login 状态为" + app.globalData.haslogin)
                 }
@@ -259,7 +284,7 @@ Page({
                         secendhand_space: res.data[i].secendhand_space, //
                         secendhand_space_detail: res.data[i].secendhand_space_detail,
                         secendhand_contact: res.data[i].secendhand_contact,
-                        // saled:res.data[i].
+                        saled: res.data[i].had_saled,
                         photos: tempPhoto, //图片
                         readingtimes: res.data[i].readingtimes, //阅读次数
                         comments: 5, //评论数量
@@ -318,6 +343,7 @@ Page({
                         secendhand_contact: res.data[i].secendhand_contact,
                         // photos: [res.data[i].photo1, res.data[i].photo2, res.data[i].photo3], //放置于主要内容下方的图片
                         photos: tempPhoto,
+                        saled: res.data[i].had_saled,
                         readingtimes: res.data[i].readingtimes, //阅读次数
                         comments: 5, //评论数量
                         favour: res.data[i].favour, //点赞数量
@@ -338,9 +364,9 @@ Page({
 
         this.setData({
             navH: app.globalData.navHeight
-          });
-          this.getinfo()
-        
+        });
+        this.getinfo()
+
 
 
 
@@ -363,8 +389,7 @@ Page({
                     }
                 }
             })
-        }
-        else {
+        } else {
             wx.navigateTo({
                 url: '/pages/SecendHandChange/publish',
             })
@@ -374,9 +399,9 @@ Page({
     },
     gotosearch: function (e) {
         console.log("点击去发布")
-            wx.navigateTo({
-                url: '/pages/SecendHandChange/search',
-            })
+        wx.navigateTo({
+            url: '/pages/SecendHandChange/search',
+        })
 
     },
 
@@ -384,36 +409,38 @@ Page({
     logo: function (e) {
         // 发起网络请求
         wx.navigateTo({
-        // 开发者服务器接口地址
-          url: '/pages/index/index',
-        })
-      },
-    getinfo(){
-        this.setData({
-            isloading:true
-        })
-        wx.showLoading({
-          title: '数据加载中',
-        })
-        wx.request({
-          url: '',
-          method:'GET',
-          success: ({data:res}) => {
-              console.log(res)
-              this.setData({
-                  infolist: [...this.data.infolist,...res.data]
-              })
-          },
-          complete: () => {
-            wx.hideLoading()
-                this.setData({
-                    isloading:false
-                })
-              
-          }
+            // 开发者服务器接口地址
+            url: '/pages/index/index',
         })
     },
-    
+    getinfo() {
+        this.setData({
+            isloading: true
+        })
+        wx.showLoading({
+            title: '数据加载中',
+        })
+        wx.request({
+            url: '',
+            method: 'GET',
+            success: ({
+                data: res
+            }) => {
+                console.log(res)
+                this.setData({
+                    infolist: [...this.data.infolist, ...res.data]
+                })
+            },
+            complete: () => {
+                wx.hideLoading()
+                this.setData({
+                    isloading: false
+                })
+
+            }
+        })
+    },
+
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
@@ -453,7 +480,7 @@ Page({
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function () {
-        if(this.data.isloading) return
+        if (this.data.isloading) return
         this.getinfo()
         console.log('触发了上拉触底实践')
         this.getSwiperItemHeight()
