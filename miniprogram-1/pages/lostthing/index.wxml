@@ -43,8 +43,8 @@
         <view class="list">
             <!-- 以一个作为案例 -->
             <view class="box" wx:for="{{post0}}" wx:key="index">
-                <block wx:if="{{item.lostthing_hadsolved==1}}">
-                        <image class="photo-finish" src="https://www.scnusay.cc/icon/solved.png" alt="已解决"></image>
+                <block wx:if="{{item.saled==1}}">
+                        <image class="photo-finish" src="https://www.scnusay.cc/icon/saled.png" alt="已售"></image>
                 </block>
                 <!-- 头像栏模块 -->
                 <view class="box1" bindtap="jumptodetails" data-index="{{index}}">
@@ -69,8 +69,8 @@
         <view class="list" wx:if="{{post1.length!=0}}">
             <!-- 以一个作为案例 -->
             <view class="box" wx:for="{{post1}}" wx:key="index">
-                <block wx:if="{{item.lostthing_hadsolved==1}}">
-                        <image class = "photo-finish" src="https://www.scnusay.cc/icon/solved.png" alt="已解决"></image>
+                <block wx:if="{{item.saled==1}}">
+                        <image class="photo-finish" src="https://www.scnusay.cc/icon/saled.png" alt="已售"></image>
                 </block>
                 <!-- 头像栏模块 -->
                 <view class="box1" bindtap="jumptodetails" data-index="{{index}}">
