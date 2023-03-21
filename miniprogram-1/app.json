@@ -29,7 +29,6 @@
         "pages/foodreview/publish",
         "pages/foodreview/search", 
         "pages/foodreview/searchIndex",
-        "pages/News/index",
         "pages/signup/index",
         "pages/userknow/userknow",
         "pages/updatewxinfo/updatewxinfo",
