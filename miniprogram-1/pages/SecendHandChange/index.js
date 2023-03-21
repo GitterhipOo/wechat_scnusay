@@ -259,6 +259,7 @@ Page({
                         secendhand_space: res.data[i].secendhand_space, //
                         secendhand_space_detail: res.data[i].secendhand_space_detail,
                         secendhand_contact: res.data[i].secendhand_contact,
+                        // saled:res.data[i].
                         photos: tempPhoto, //图片
                         readingtimes: res.data[i].readingtimes, //阅读次数
                         comments: 5, //评论数量
