@@ -117,6 +117,13 @@ swiper{
     font-weight: 700;
     font-size: 34rpx;
     width: 380rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-flow:row wrap;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
 }
 
 .box1 .text2 {
@@ -140,9 +147,20 @@ swiper{
 }
 
 .box2 text {
-    font-size: 30rpx;
-    width: 750rpx;
-    height: 30rpx;
+    text-indent: 20rpx;
+    height: 30%;
+    width: 600rpx;
+    margin: 0 auto;
+    font-size: 28rpx;
+    display: block;
+    white-space: pre-line;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    flex-flow:row wrap;
 }
 
 .box2 image {
