@@ -51,13 +51,12 @@ page{
     margin-bottom: 1rpx;
     width: 46%;
     height: 100%;
-    border-radius: 10rpx;
+    border-radius: 30rpx;
     margin-left: 3%;
     text-align: center;
     justify-content: space-around;
     align-items: center;
     box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
-    font-weight: 550;
 }
 .tabitem2{
     float: right;
@@ -67,16 +66,15 @@ page{
     margin-bottom: 1rpx;
     width: 46%;
     height: 100%;
-    border-radius: 10rpx;
+    border-radius: 30rpx;
     margin-right: 3%;
     text-align: center;
     justify-content: space-around;
     align-items: center;
     box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
-    font-weight: 550;
 }
 .swipertab{
-    height: 5%;
+    height: 8%;
     margin-top: 10rpx;
     background-color: rgb(245, 245, 245);
 
@@ -89,22 +87,17 @@ swiper{
 
 /* 帖子数据 */
 .box {
-    /* width: 95%; */
+    width: 95;
     position: relative;
-    margin-top: 15rpx;
-    margin-left: 4%;
-    margin-right: 4%;
+    margin: 10rpx 0;
     background-color: #fff;
-    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.4);
-    border-radius: 16rpx;
+    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 50rpx;
 }
 
 .box1 {
-    padding-top: 3%;
-    padding-left: 3%;
     height: 100rpx;
     width: 500rpx;
-    
 }
 
 .box1 image {
@@ -120,42 +113,40 @@ swiper{
     margin-top: 10rpx;
     margin-left: 20rpx;
     font-weight: 700;
-    font-size: 30rpx;
+    font-size: 34rpx;
     width: 380rpx;
 }
 
 .box1 .text2 {
-    margin-left: 20rpx;
+    float: right;
     font-size: 20rpx;
     color: #aaa;
 }
 
 .box-way {
     position: absolute;
-    right: 3%;
-    top: 3%;
-    color: green;
+    right: 10rpx;
+    top: 10rpx;
+    color: rgb(53, 192, 247);
     font-size: 40rpx;
 }
 
 .box2 {
     margin: 20rpx 10rpx;
-    margin-left: 3%;
-    padding-bottom: 40rpx;
+    padding-bottom: 100rpx;
     /* height: 400rpx; */
 }
 
 .box2 text {
     font-size: 30rpx;
-    padding-right: 3%;
     width: 750rpx;
     height: 30rpx;
 }
 
 .box2 image {
-    margin: 20rpx 5rpx 5rpx;
-    border-radius: 20rpx;
-    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.3);
+    margin: 20rpx 5rpx;
+    width: 230rpx;
+    height: 130rpx;
 }
 
 .box3{
@@ -179,4 +170,11 @@ swiper{
 }
 .test{
     height: 10px;
+}
+
+.photo-finish{
+    position: absolute;
+    right: 0;
+    width: 20%;
+    height: 30%;
 }
