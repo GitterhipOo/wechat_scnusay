@@ -232,4 +232,5 @@ swiper{
     right: 0;
     width: 20%;
     height: 30%;
+    opacity: 40%;
 }
