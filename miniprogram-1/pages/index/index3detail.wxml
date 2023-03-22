@@ -14,7 +14,7 @@
         <button size="mini" type="primary" class="follow">关注</button>
     </view>
     <!-- 信息展览 -->
-    <view class="in_contact">
+    <!-- <view class="in_contact">
         <text class="topic">{{blogger_list.talking_topic}}
         </text>
         <text class="date">日期：<text style="font-weight: 400;">{{blogger_list.talking_time}}</text></text>
@@ -27,10 +27,10 @@
         <text class="talking_class">
             分类：<text style="font-weight: 400;">{{blogger_list.talking_class}}</text>
         </text>
-    </view>
+    </view> -->
     <!-- 主要内容 -->
     <view class="contact_detail">
-        <text class="h1_detail">详情内容</text>
+        <!-- <text class="h1_detail">详情内容</text> -->
         <view style="margin-top: 5px;">
             <text class="detail_1">{{blogger_list.talking_detail}}</text>
         </view>
