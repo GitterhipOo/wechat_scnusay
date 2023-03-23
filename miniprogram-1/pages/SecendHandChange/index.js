@@ -1,5 +1,7 @@
 // pages/SecendHandChange/index.js
 var app = getApp()
+var startX, endX; //首先创建2个变量 来记录触摸时的原点
+var moveFlag = true; // 判断执行滑动事件
 Page({
 
 
