@@ -146,37 +146,37 @@ Page({
                     })
                 }
                 //点击已解决
-                if (res.tapIndex == 1) {
-                    wx.showModal({
-                        title: '已解决',
-                        content: '确认已解决问题',
-                        complete: (res) => {
-                            //如果用户点击了取消，那么就不执行任何操作，如果用户点击了确定，那么就执行下面的操作
-                            if (res.cancel) {
-                            }
-                            if (res.confirm) {
-                            //发起wx.quest的post请求，传递id至https://www.scnusay.cc/lostdetail/lost_had_solved.php
-                                wx.request({
-                                    url: 'https://www.scnusay.cc/lostdetail/lost_had_solved.php',
-                                    method: "POST",
-                                    data: {
-                                        'menupostValue': menupostValue,
-                                    },
-                                    header: {
-                                        'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
-                                    },
-                                    success(res) {
-                                        console.log("已解决问题，修改内容")
-                                        wx.navigateTo({
-                                            url: '/pages/talking/index',
-                                        })
+                // if (res.tapIndex == 1) {
+                //     wx.showModal({
+                //         title: '已解决',
+                //         content: '确认已解决问题',
+                //         complete: (res) => {
+                //             //如果用户点击了取消，那么就不执行任何操作，如果用户点击了确定，那么就执行下面的操作
+                //             if (res.cancel) {
+                //             }
+                //             if (res.confirm) {
+                //             //发起wx.quest的post请求，传递id至https://www.scnusay.cc/lostdetail/lost_had_solved.php
+                //                 wx.request({
+                //                     url: 'https://www.scnusay.cc/lostdetail/lost_had_solved.php',
+                //                     method: "POST",
+                //                     data: {
+                //                         'menupostValue': menupostValue,
+                //                     },
+                //                     header: {
+                //                         'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
+                //                     },
+                //                     success(res) {
+                //                         console.log("已解决问题，修改内容")
+                //                         wx.navigateTo({
+                //                             url: '/pages/talking/index',
+                //                         })
 
-                                    }
-                            })
-                            }
-                        }
-                    })
-                }
+                //                     }
+                //             })
+                //             }
+                //         }
+                //     })
+                // }
             },
 
             fail: function (res) {

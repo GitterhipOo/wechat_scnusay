@@ -1,0 +1,59 @@
+<!--pages/team/publish/index.wxml-->
+<!-- <text>pages/team/publish/index.wxml</text> -->
+<view class="nav-wrap" style="height: {{navH*2+20}}px;position: absolute;">
+    <!-- 自定义导航栏 -->
+    <view class="nav-title" style="line-height: {{navH*2+44}}px;">发布</view>
+    <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
+        <navigator hoverClass="none" open-type="navigate" url="/pages/team/team">
+                    <image class="back-pre" src="https://www.scnusay.cc/icon/back.png" style="height:50rpx;width:50rpx;margin-top: 50rpx;"></image>
+        </navigator>
+    </view>
+</view>
+
+<view style="height: {{navH*2+20}}px;"></view>
+<view>
+
+<view class="modify-form">
+<form bindsubmit='getForm'>
+    <view class="label-list">
+        <view class="label">标题介绍：</view>
+        <view class="input-box">
+        <input  value="{{postValue.team_topic}}" bindinput="adInputChange" data-info="team_topic" placeholder-class="topic" name='school'/>
+        </view>
+    </view>  
+    <view class="label-list">
+        <view class="label">所在校区：</view>
+        <view class="input-box">
+        <input placeholder="请输入您所在校区" value="{{postValue.team_space}}" bindinput="adInputChange" data-info=" team_space" placeholder-class="place" name='school'/>
+        </view>
+    </view>  
+    <view class="label-list">
+        <view class="label">联系方式：</view>
+        <view class="input-box">
+        <input placeholder="微信/邮箱/电话号码" value="{{postValue.team_contact}}" bindinput="adInputChange" data-info=" team_contact" placeholder-class="place" name='Phonenumber'/>
+        </view>
+    </view>
+    <view class="label-list">
+        <view class="label">截止日期：</view>
+        <view class="input-box">
+        <input value="{{postValue.team_time}}" bindinput="adInputChange" data-info=" team_time"placeholder="请输入截止时间"  placeholder-class="place" name="name"/>
+        </view>
+    </view>
+    
+   
+
+<view class="con">
+        <textarea class="inputText" maxlength="-1"  value="{{postValue.team_detail}}" bindinput="adInputChange" data-info=" team_detail" placeholder="留下您的队伍详情情况吧～" bindinput="getInputText"></textarea>
+        
+    </view>
+
+
+    <button formType="submit" bindtap="sendToServer" class="submit">发布</button>
+</form>
+
+</view>
+
+
+
+
+</view>

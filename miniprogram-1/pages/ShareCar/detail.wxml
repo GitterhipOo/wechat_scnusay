@@ -1,5 +1,15 @@
 <!--pages/ShareCar/details/index.wxml-->
 <!-- <text>pages/ShareCar/details/index.wxml</text> -->
+<view class="nav-wrap" style="height: {{navH*2+20}}px;position: absolute;">
+    <!-- 自定义导航栏 -->
+    <view class="nav-title" style="line-height: {{navH*2+44}}px;">拼车详情</view>
+    <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
+        <navigator hoverClass="none" open-type="navigateBack">
+                    <image class="back-pre" src="https://www.scnusay.cc/icon/back.png" style="height:50rpx;width:50rpx;margin-top: 50rpx;"></image>
+        </navigator>
+    </view>
+</view>
+<view style="height: {{navH*2+20}}px;"></view>
 <view class="chat">
     <!-- woshifengexian -->
     <!-- 头像栏 -->
@@ -11,34 +21,36 @@
             <text class="name">{{blogger_list.blogger_name}}</text>
             <text class="time" decode="true">\n &nbsp;&nbsp;&nbsp;{{blogger_list.blogger_time}}</text>
         </view>
-        <button size="mini" type="primary" class="follow">关注</button>
+        <button   class="follow"></button>
+        <!-- <view class="follow">
+           闲置
+        </view> -->
     </view>
     <!-- 信息展览 -->
-    <!-- <view class="in_contact">
-        <text class="topic">{{blogger_list.talking_topic}}
+    <view class="in_contact">
+        
+        <text class="topic">{{blogger_list.sharecar_topic}}
         </text>
-        <text class="date">日期：<text style="font-weight: 400;">{{blogger_list.talking_time}}</text></text>
         <text class="space">
-            校区：<text style="font-weight: 400;">{{blogger_list.talking_space}}</text></text>
-        <text class="space_detail">
-            地点：<text style="font-weight: 400;">{{blogger_list.talking_space_detail}}</text></text>
+            人数：<text style="font-weight: 400;font-size: 17px; ">{{blogger_list.sharecar_number}}</text></text>
+            <text class="space">
+            时间：<text style="font-weight: 400;">{{blogger_list.sharecar_time}}</text></text>
+        <text class="space">
+            校区：<text style="font-weight: 400;">{{blogger_list.sharecar_space}}</text></text>
+        <text class="from">
+            出发地：<text style="font-weight: 400;">{{blogger_list.sharecar_from}}</text></text>
+        <text class="to">
+            目的地：<text style="font-weight: 400;">{{blogger_list.sharecar_to}}</text></text>    
         <text class="contact">
-            联系方式：<text style="font-weight: 400;">{{blogger_list.talking_contact}}</text></text>
-        <text class="talking_class">
-            分类：<text style="font-weight: 400;">{{blogger_list.talking_class}}</text>
-        </text>
-    </view> -->
+            联系方式：<text style="font-weight: 400;">{{blogger_list.sharecar_contact}}</text></text>
+       
+    </view>
     <!-- 主要内容 -->
     <view class="contact_detail">
-        <!-- <text class="h1_detail">详情内容</text> -->
+        <text class="h1_detail">详情内容</text>
         <view style="margin-top: 5px;">
-            <text class="detail_1">{{blogger_list.talking_detail}}</text>
-        </view>
-        <view class="imgbox">
-            <block wx:for="{{blogger_list.photos}}" wx:for-item="photo">
-                <image wx:if="{{photo}}" class="details_img" src="{{photo}}" data-photoindex='{{index}}' bindtap='previewImg' mode="widthFix"></image>
-            </block>
-        </view>
+            <text class="detail_1">{{blogger_list.sharecar_detail}}</text>
+        </view>     
 
     </view>
     <!-- 文后小标模块 -->

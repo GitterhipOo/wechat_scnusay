@@ -2,18 +2,15 @@
 page{
     background-color: rgb(245, 245, 245);
 }
-
-/* 楼主主贴内容 */
-
 .chat {
     position: relative;
-    /* padding-top: 10px; */
-    /* margin: 10px auto; */
+    padding-top: 10px;
+    margin: 10px auto;
     /* border: rgb(32, 29, 221) solid 1px; */
     background-color: #fff;
-    /* border-radius: 20rpx; */
-    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
-    width: 100%;
+    border-radius: 50rpx;
+    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.4);
+    width: 95%;
 
 }
 
@@ -32,11 +29,17 @@ page{
     justify-content: center;
 }
 
-.follow {
-    right: -2%;
-
+ .follow { 
+     background-color: #fff;
+     border-color: #fff;
+     color: rgb(75, 200, 238);
+     font-size: 35rpx;
+     right: -6%;
+ }
+  
+.follow::after{
+    border: none;
 }
-
 .name {
     padding-left: 10px;
     font-weight: 700;
@@ -51,41 +54,35 @@ page{
 .in_contact {
     padding-top: 10px;
     padding-left: 10px;
-    background-color: rgba(128, 124, 124, 0.356);
+    margin-top: 30rpx;
     width: 90%;
     margin: 10px auto;
     padding-bottom: 10px;
-
+    background-color: #f5f5f5;
 }
-
+.in_contact text{
+    margin-top: 20rpx;
+    font-weight: 700;
+    
+}
+/* 标题内容全显示，自动换行，不会溢出 */
 .topic {
-    margin-top: 10px;
+    text-indent: 20rpx;
+    margin-right: 30rpx;
     font-weight: 700;
     font-size: 17px;
+    display: block;
+    white-space: pre-line;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    flex-flow:row wrap;
 }
 
-.date {
-    font-weight: 700;
-    font-size: 14px;
-}
-
-.space {
-    font-size: 14px;
-    font-weight: 700;
-}
-
-.space_detail {
-    font-size: 14px;
-    font-weight: 700;
-}
-
-.lostthing_class {
-    font-weight: 700;
-    font-size: 14px;
-}
 
 .contact {
-    font-size: 14px;
+    
     font-weight: 700;
 }
 
@@ -113,13 +110,12 @@ page{
     border: 1px solid #000000;
 }
 
-/* 正文内容 */
-
 .contact_detail {
     /* margin: 0 auto; */
     width: 90%;
     /* background-color: rgba(128, 124, 124, 0.356); */
     margin: 0 auto;
+    padding-left: 10px;
     padding-bottom: 12px;
 }
 
@@ -128,16 +124,17 @@ page{
     font-weight: 700;
     font-size: 17px;
 }
-
+/* 详情内容全显示，自动换行，不会溢出 */
 .detail_1 {
-    font-size: 14px;
-}
-
-.details_img{
-    margin-top: 15rpx;
-    margin-bottom: 5rpx;
-    border-radius: 20rpx;
-    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
+    text-indent: 20rpx;
+    font-size: 16px;
+    display: block;
+    white-space: pre-line;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    flex-flow:row wrap;
 }
 
 .box3 .tags{
@@ -156,37 +153,30 @@ page{
     float: right;
   }
   
-  .box3 .feet image{
-    display: inline-block;
-    width: 35rpx;
-    height: 35rpx;
-  }
+
   
 /* 评论-回复-回复评论显示区域 */
-
 .container {
     width: 100%;
-    margin-top: 34rpx;
-    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
-    background-color: #fff;
+    margin-top: 39rpx;
+
 }
 
 .total {
     font-size: 24rpx;
     color: #999999;
-    padding-top: 2%;
-    /* margin-left: 1rpx; */
+    margin-left: 1rpx;
     height:40rpx;
     padding-left: 32rpx;
 }
 
 .container_inp {
-    /* width: 661rpx; */
+    width: 661rpx;
     height: 32rpx;
     background-color: #F2F2F2;
-    border-radius: 40rpx;
+    border-radius: 8rpx;
     padding: 17rpx 0rpx 15rpx 25rpx;
-    margin-top: 10rpx;
+    margin-top: 24rpx;
     margin-bottom: 47rpx;
     padding-left: 32rpx;
 }
@@ -195,8 +185,6 @@ page{
     font-size: 24rpx;
     color: #999999;
 }
-
-/* 用户回复 */
 
 .container-item {
     display: flex;
@@ -208,29 +196,25 @@ page{
     width: 64rpx;
     height: 64rpx;
     margin-right: 17rpx;
-    border-radius: 50rpx;
-    /* border-bottom: 2rpx solid #CCCCCC; */
 }
 
 .item_right {
     display: inline-block;
     position: relative;
     width: 636rpx;
-    border-bottom: 2rpx solid #CCCCCC;
-    padding-bottom: 30rpx;
+    border-bottom: 2rpx solid #E5E5E5;
+    padding-bottom: 40rpx;
 }
 
 .right_name {
     font-size: 24rpx;
     color: #999999;
-    font-weight: 550;
 }
 
 .right_content {
     
     width: 603rpx;
     margin-top: 20rpx;
-    
 }
 
 .right_content_txt {
@@ -242,19 +226,15 @@ page{
     font-size: 24rpx;
     color: #CCCCCC;
     margin-left: 30rpx;
-    /* padding-bottom: 30rpx;
-    border-bottom: 2rpx solid #CCCCCC; */
 }
 
 .reply {
     display: flex;
-    margin-top: 34rpx;
-    /* padding-top: 5rpx; */
+    margin-top: 32rpx;
     align-items: flex-start;
 }
 
 .reply_img {
-    padding-top: 30rpx;
     width: 40rpx;
     height: 40rpx;
     margin-right: 17rpx;
@@ -264,8 +244,6 @@ page{
     position: relative;
     display: inline-block;
     width: 546rpx;
-    padding-top: 30rpx;
-    border-top: 2rpx solid #CCCCCC;
 }
 
 /* 结束 */
@@ -367,6 +345,7 @@ page{
 }
 .imgbox{
     width: 100%;
+    margin-top: 30rpx;
 }
 .say_btn{
     width: 200rpx;
