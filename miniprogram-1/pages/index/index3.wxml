@@ -19,9 +19,9 @@
 <view style="height: {{navH*2+20}}px;"></view>
 <!-- 顶部导航栏结束 -->
 <!-- 发布入口 -->
-<navigator class="guide" url="/pages/index/index3post" open-type="navigate" bindtap="gotosend" >
+<view class="guide" bindtap="gotosend" >
     <view class="lostcenter">发布</view>
-</navigator>
+</view>
 <!-- 发布入口结束 -->
 <!-- 切换栏 -->
 <view class='swipertab'>
