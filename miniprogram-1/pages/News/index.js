@@ -1,4 +1,5 @@
 // pages/News/index.js
+var app=getApp();
 Page({
 
     /**
