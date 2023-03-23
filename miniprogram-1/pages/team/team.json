@@ -1,4 +1,5 @@
 {
-    "usingComponents": {},
-    "navigationBarTitleText": "队友招募"
+    "usingComponents": { },
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": true
 }
