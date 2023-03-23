@@ -49,7 +49,7 @@ Page({
         console.log(post)
         for (var i = 0; i < post.length; i++){
             if (post[i].photos.length > 0){
-                postHeight+=600
+                postHeight+=700
             }
             else{ 
                 postHeight+=220
@@ -279,7 +279,7 @@ Page({
         }
         else {
             wx.navigateTo({
-                url: '/pages/talking/send',
+                url: '/pages/index/index3post',
             })
             console.log("login 状态为" + app.globalData.haslogin)
             console.log("您已登录，获得发布权限")

@@ -24,7 +24,19 @@ Page({
             owner_Openid: "ouctO4ypxLjQ_3t67gYI-urvPoQs",
         },
         //post0为捡到物品
-        post0: [],
+        post0: [{     
+            blogger_name:"11122",                
+            blogger_avatar: 'https://s1.328888.xyz/2022/08/02/OF8Ay.jpg',                  
+            blogger_time: '2023年3月22日10:25分11秒',
+            team_topic: '零度网吧5黑1316546487899878979456546546546565446565465',
+            team_time: '2022年9月32日',
+            team_space: '南海校区',    
+            team_contact: '13423212311',
+            team_detail:"帮转 #互联网+队员招募核心词：阿尔茨海默症筛查 游戏设计 健康管理系统👥团队简述：本团队已完成项目框架搭建，具备合理的商业运营模式，完成游戏demo制作，项目计划书已完成初稿，处于完善阶段。 项目已获得国家级大创立项。项目负责人曾获数模省二等奖、美国大学生数学建模比赛(MCM)特等奖提名奖、连续两年保持绩点第一并获校级综合奖学金一等奖。项目成员曾独立主持校级大创项目，并有互联网+银、铜奖等创赛奖项经历。  项目有丰富资源，导师团队阵容强大，配置合理。已获得来自心理学院、经管学院、创业学院的优秀老师指导。导师经验丰富，为人和善亲切，曾多次指导同学参加挑战杯省级、大创国家级、省级比赛等。   现诚招募：【技术人员】1人 💧具备能力：进行网页/软件开发、能够做出基础交互页面、进行ui设计💧工作内容：依据目前产品需求，负责基于网页/软件的健康系统开发、ui设计部分💧相关要求：态度认真，协作沟通能力强，近期时间充裕，认真负责，不拖ddl 💧软院、计算机等学院优先考虑，20级、21级学生优先🛎 有意者请直接发简历至邮箱📪Joshuazsy@163.com请备注AD筛查+年级+专业姓名，有相关作品的可以发送辅证资料）📍截止日期：2023.3.25 24:00",
+            readingtimes: 49, //阅读次数
+            comments: 5, //评论数量
+            favour: 20, //点赞数量
+        }],
         //post1为丢失物品，其中lostthing_class = 1
         post1: [],
         //post1为私人发布内容，根据时间排
@@ -75,7 +87,7 @@ Page({
         })
         // 执行页面跳转
         wx.navigateTo({
-          url: '/pages/SecendHandChange/detail'
+          url: '/pages/team/detail'
         })
     },
 
@@ -125,7 +137,7 @@ Page({
                                                         }
                                                         if (res.confirm) {
                                                             wx.navigateTo({
-                                                                url: '/pages/lostthing/index',
+                                                                url: '/pages/team/index',
                                                             })
                                                         }
                                                     }
@@ -261,15 +273,12 @@ Page({
                     blogger_avatar: res.data[i].imgurl, //头像
                     blogger_name: res.data[i].name, //博主昵称
                     blogger_time: res.data[i].blogger_time, //发布时间的时间戳、这里需要修改
-                    secendhand_topic: res.data[i].secendhand_topic, //标题
-                    secendhand_time: res.data[i].secendhand_time, //丢失时间的时间戳、这里需要修改
-                    secendhand_class: res.data[i].secendhand_class, //发布类别（不需要可以不填充
-                    secendhand_detail: res.data[i].secendhand_detail, //主要内容
-                    secendhand_space: res.data[i].secendhand_space, //
-                    secendhand_space_detail: res.data[i].secendhand_space_detail,
-                    secendhand_contact: res.data[i].secendhand_contact,
-                    saled: res.data[i].had_saled,
-                    photos: [res.data[i].photo1, res.data[i].photo2, res.data[i].photo3], //放置于主要内容下方的图片
+                    team_topic: res.data[i].team_topic, //标题
+                    team_time: res.data[i].team_time, //截止时间
+                    team_detail: res.data[i].team_detail, //详细内容
+                    team_space: res.data[i].team_space, //所在校区
+                    team_contact: res.data[i].team_contact,//联系方式
+                    //photos: [res.data[i].photo1, res.data[i].photo2, res.data[i].photo3], //放置于主要内容下方的图片
                     readingtimes: res.data[i].readingtimes, //阅读次数
                     comments: 5, //评论数量
                     favour: res.data[i].favour, //点赞数量

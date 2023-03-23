@@ -24,7 +24,22 @@ Page({
             owner_Openid: "ouctO4ypxLjQ_3t67gYI-urvPoQs",
         },
         //post0为捡到物品
-        post0: [],
+        post0: [{     
+            blogger_name:"11122",                
+            blogger_avatar: 'https://s1.328888.xyz/2022/08/02/OF8Ay.jpg',                  
+            blogger_time: '2023年3月22日10:25分11秒',
+            sharecar_topic: '零度网吧5黑1316546487899878979456546546546565446565465',
+            sharecar_time: '2022年9月32日',
+            sharecar_space: '南海校区',
+            sharecar_from:"华师南海东南门",
+            sharecar_to:"石牌校区",
+            sharecar_contact: '13423212311',
+            sharecar_number: '3人',
+            sharecar_detail:"hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh",
+            readingtimes: 49, //阅读次数
+            comments: 5, //评论数量
+            favour: 20, //点赞数量
+        }],
         //post1为丢失物品，其中lostthing_class = 1
         post1: [],
         //post1为私人发布内容，根据时间排
@@ -75,7 +90,7 @@ Page({
         })
         // 执行页面跳转
         wx.navigateTo({
-          url: '/pages/SecendHandChange/detail'
+          url: '/pages/ShareCar/detail'
         })
     },
 
@@ -125,7 +140,7 @@ Page({
                                                         }
                                                         if (res.confirm) {
                                                             wx.navigateTo({
-                                                                url: '/pages/lostthing/index',
+                                                                url: '/pages/ShareCar/index',
                                                             })
                                                         }
                                                     }
@@ -261,15 +276,15 @@ Page({
                     blogger_avatar: res.data[i].imgurl, //头像
                     blogger_name: res.data[i].name, //博主昵称
                     blogger_time: res.data[i].blogger_time, //发布时间的时间戳、这里需要修改
-                    secendhand_topic: res.data[i].secendhand_topic, //标题
-                    secendhand_time: res.data[i].secendhand_time, //丢失时间的时间戳、这里需要修改
-                    secendhand_class: res.data[i].secendhand_class, //发布类别（不需要可以不填充
-                    secendhand_detail: res.data[i].secendhand_detail, //主要内容
-                    secendhand_space: res.data[i].secendhand_space, //
-                    secendhand_space_detail: res.data[i].secendhand_space_detail,
-                    secendhand_contact: res.data[i].secendhand_contact,
-                    saled: res.data[i].had_saled,
-                    photos: [res.data[i].photo1, res.data[i].photo2, res.data[i].photo3], //放置于主要内容下方的图片
+                    sharecar_topic: res.data[i].sharecar_topic, //标题
+                    sharecar_time: res.data[i].sharecar_time, //出发时间
+                    sharecar_number: res.data[i].sharecar_number, //人数
+                    sharecar_detail: res.data[i].sharecar_detail, //详细内容
+                    sharecar_space: res.data[i].sharecar_space, //所在校区
+                    sharecar_from: res.data[i].sharecar_from,//出发地点
+                    sharecar_go: res.data[i].sharecar_go,//目的地
+                    sharecar_contact: res.data[i].sharecar_contact,//联系方式
+                    //photos: [res.data[i].photo1, res.data[i].photo2, res.data[i].photo3], //放置于主要内容下方的图片
                     readingtimes: res.data[i].readingtimes, //阅读次数
                     comments: 5, //评论数量
                     favour: res.data[i].favour, //点赞数量

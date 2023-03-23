@@ -4,10 +4,13 @@ page {
 
 /* 帖子数据 */
 .box {
-    width: 95;
+    width: 96%;
     position: relative;
-    margin: 10rpx 0;
+    margin: 10rpx auto;
     background-color: #fff;
+    border-radius: 50rpx;
+    box-shadow: -1px 2px 6px 0px rgba(0, 0, 0, 0.4);
+    height:480rpx
 }
 
 .box1 {
@@ -22,6 +25,7 @@ page {
     height: 90rpx;
     border-radius: 90rpx;
 }
+
 
 .box1 .text1 {
     float: left;
@@ -51,19 +55,22 @@ page {
     right: 30rpx;
     top: 10rpx;
     color: rgb(53, 192, 247);
-    font-size: 40rpx;
+    font-size: 36rpx;
 }
 
 .box2 {
-    margin: 20rpx 10rpx;
+    margin: 20rpx auto;
+    width: 80%;
+    padding-top: 10rpx;
     padding-bottom: 50rpx;
-     height: 400rpx; 
+    background-color: #f5f5f5;
+    border-radius: 30rpx;
 }
 
 .box2 text {
     text-indent: 20rpx;
     height: 30%;
-    width: 600rpx;
+    width: 100%;
     margin: 0 auto;
     font-size: 28rpx;
     display: block;
@@ -73,7 +80,7 @@ page {
     display: -webkit-box;
     word-break: break-all;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     flex-flow:row wrap;
 }
 
@@ -111,15 +118,6 @@ page {
     left: 82%;
 }
 
-
-/* 图片已完成的样式 */
-.photo-finish{
-    position: absolute;
-    right: 0;
-    width: 150rpx;
-    height: 150rpx;
-    opacity: 40%;
-}
  /* .nohistory{
      grey center 16px 
     color: #999;
