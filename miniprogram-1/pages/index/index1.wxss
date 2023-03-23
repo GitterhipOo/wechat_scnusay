@@ -174,7 +174,9 @@
 
 .keep-students {
     position: relative;
-    margin: 3% 1%;
+    margin-bottom: 3%;
+    margin-left: 1%;
+    margin-right: 1%;
     height: 120rpx;
     border-radius: 30rpx;
     background-color: #fff;
@@ -198,7 +200,6 @@
 
 .article-title{
     line-height: 120rpx;
-    margin-top: 10rpx;
     margin-left: 30rpx;
     font-weight: 700;
     font-size: 34rpx;
@@ -209,4 +210,37 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
+}
+
+
+.important-news-title{
+    /* Rounded Rectangle */
+    border-radius: 30rpx;
+    /* background color */
+    margin-top: 20rpx;
+    width: 30%;
+    text-align: center;
+    /* on the right side */
+    /* background color */
+    margin-left: 5%;
+}
+.important-news-line{
+    margin-bottom: 20rpx;
+    line-height: 20rpx;
+    height:4rpx;
+    background:#aaa;
+    /* make the line a half */
+    width: 80%;
+    margin-left: 5%;
+
+}
+.newsimg{
+    width: 70rpx;
+    display: inline-block;
+    height: 70rpx;
+}
+.scnunewstext{
+    display: inline-flex;
+    float: right;
+    line-height: 70rpx;
 }
