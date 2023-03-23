@@ -6,7 +6,6 @@
         "pages/ShareCar/My_publish/index",
         "pages/ShareCar/search/index",
         "pages/ShareCar/ReleaseInformation/index",
-        "pages/index/index2",
         "pages/index/index3",
         "pages/index/index3post",
         "pages/index/index3search",
@@ -18,7 +17,6 @@
         "pages/lostthing/details",
         "pages/lostthing/search",
         "pages/lostthing/send",
-        "pages/hots/index",
         "pages/SecendHandChange/index",
         "pages/SecendHandChange/detail",
         "pages/SecendHandChange/publish", 
@@ -54,12 +52,6 @@
                 "iconPath": "img/blackindex.png",
                 "selectedIconPath": "img/blue.png",
                 "text": "首页"
-            },
-            {
-                "pagePath": "pages/index/index2",
-                "iconPath": "img/blackfire.png",
-                "selectedIconPath": "img/redfire.png",
-                "text": "热点"
             },
             {
                 "pagePath": "pages/index/index3",
