@@ -1,1 +1,42 @@
 /* pages/News/index.wxss */
+
+page{
+    height: 100%;
+    background-color: #fff;
+}
+.pre-title{
+    border-bottom: 2rpx solid rgb(218, 218, 218);
+    margin-bottom: 20rpx;
+}
+
+.box{
+    margin: auto 20rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    border-radius: 30rpx;
+
+}
+
+.title{
+    font-family: youyuan;
+    font-size: 20px;
+    color: black;
+    font-weight: 800;
+    margin-top: 8%;
+    margin-bottom: 5%;
+}
+
+.date{
+    float: right;
+    font-size: 12px;
+    color: rgb(139, 139, 139);
+}
+
+.para{
+    text-indent: 28px;
+    font-size: 14px;
+    margin-bottom: 40rpx;
+    color: rgb(61, 61, 61);
+}

@@ -8,22 +8,38 @@ Page({
     data: {
         navH: 0,
     },
-
+    jumpToIndex: function () {
+        wx.switchTab({
+            url: '../index/index1',
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        this.setData({
-            navH: app.globalData.navHeight
-          });
+        var _this = this;
+        wx.getStorage({
+            key: 'article',
+            success: function (res) {
+                console.log(res.data)
+                var newarray = {
+                    title:res.data.title,
+                    para:res.data.para
+                }
+                _this.setData({
+                    navH: app.globalData.navHeight,
+                    article:newarray
+                });
+            },
+        })
     },
     logo: function (e) {
         // 发起网络请求
         wx.navigateTo({
-        // 开发者服务器接口地址
-          url: '/pages/index/index',
+            // 开发者服务器接口地址
+            url: '/pages/index/index',
         })
-      },
+    },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
