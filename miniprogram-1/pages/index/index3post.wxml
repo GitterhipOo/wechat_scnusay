@@ -1,5 +1,12 @@
 <view style="margin: 3%;">
     <!-- 这里将图片作为swiper模块摆放, -->
+    <!-- <view class="divline"></view> -->
+    <view class="divline"></view>
+    <!-- 标题 -->
+    <input type="text" maxlength="17" class="topic" placeholder="标题" placeholder-style="color:rgb(100, 100, 100)" value="{{postValue.talking_topic}}" bindinput="adInputChange" data-info="talking_topic" />
+    <!-- 详情内容 -->
+    <textarea style="font-size: 30rpx; margin: 20rpx 5rpx; height:500rpx" placeholder="丢失（拾取）物品种类/地点具体描述" placeholder-style="font-size:30rpx" value="{{postValue.talking_detail}}" bindinput="adInputChange" data-info="talking_detail" />
+
     <view class="divline"></view>
     <swiper style="height: 480rpx;" current="{{current_Page}}">
         <!-- 通过循环生成img的图片,当图片为0时仅出现上传图片按钮,图片大于1时出现图片,同时图片下面生成删除按钮与添加按钮 -->
@@ -20,11 +27,6 @@
         </block>
 
     </swiper>
-    <view class="divline"></view>
-    <!-- 标题 -->
-    <input type="text" maxlength="17" class="topic" placeholder="标题" placeholder-style="color:rgb(100, 100, 100)" value="{{postValue.talking_topic}}" bindinput="adInputChange" data-info="talking_topic" />
-    <!-- 详情内容 -->
-    <textarea style="font-size: 30rpx; margin: 20rpx 5rpx; height:500rpx" placeholder="丢失（拾取）物品种类/地点具体描述" placeholder-style="font-size:30rpx" value="{{postValue.talking_detail}}" bindinput="adInputChange" data-info="talking_detail" />
 
     <view class="divline"></view>
     <!-- 失物判断 -->

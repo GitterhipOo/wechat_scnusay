@@ -76,15 +76,23 @@
     </scroll-view>
 </view>
 
-<view class="keep-students">
+
+<!-- <view class="keep-students">
     <image src="https://www.scnusay.cc/icon/logo.png" class="left-image"></image>
     <view class="say-to-keep">关注华师说，获取更多华师内容捏~</view>
-</view>
+</view> -->
 
+<!-- make a line -->
+
+<!-- Draw a dividing line and write the important news of China Normal University -->
+<view class="important-news-title">
+<image src="https://www.scnusay.cc/icon/logo.png" class="newsimg" mode=""/><view class="scnunewstext">华师要闻</view>
+</view>
+    <!-- add a line under the text -->
+<view class="important-news-line"></view>
+
+<view class="important-news">
 <view class="keep-students" wx:for="{{article}}" data-index="{{index}}" bindtap="jumpToArticle">
     <view class="article-title">{{item.title}}</view>
 </view>
-<!-- -------------------------------------瀑布流----------------------------------------- -->
-
-<!-- 123 -->
-<!-- 123 -->
+</view>

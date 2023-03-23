@@ -93,6 +93,7 @@ Page({
                         title:res.data[i].title,
                         para:para
                     }
+
                     // console.log(newarray)
                     _this.setData({
                         article: _this.data.article.concat(newarray),
