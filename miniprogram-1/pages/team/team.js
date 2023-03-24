@@ -413,9 +413,22 @@ Page({
     /**
      * 页面相关事件处理函数--监听用户下拉动作
      */
-    onPullDownRefresh() {
-
+    onPullDownRefresh: function () {
+        if (this.data.isRefreshing || this.data.isLoadingMoreData) {
+            return
+        }
+        this.setData({
+            isRefreshing: true,
+            hasMoreData: true
+        })
+        //wait for 1 second
+        setTimeout(() => {
+            wx.reLaunch({
+                url: 'team',
+              })
+        }, 300)
     },
+
 
     /**
      * 页面上拉触底事件的处理函数
