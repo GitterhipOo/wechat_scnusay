@@ -303,7 +303,21 @@ Page({
         console.log("now begin request");
 
         
-        wx.removeStorageSync('foodreviewsendPostValue')
     },
 
+    onPullDownRefresh: function () {
+        if (this.data.isRefreshing || this.data.isLoadingMoreData) {
+            return
+        }
+        this.setData({
+            isRefreshing: true,
+            hasMoreData: true
+        })
+        //wait for 1 second
+        setTimeout(() => {
+            wx.reLaunch({
+                url: 'detail',
+              })
+        }, 300)
+    },
 })
