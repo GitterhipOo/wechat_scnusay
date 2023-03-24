@@ -8,9 +8,9 @@
     </view>
     </block>
     <block wx:if="{{!hasUserInfo}}">
-<view class="loginhead">
-    <image bindtap="bindViewTap" class="userinfo-avatar" src="https://www.scnusay.cc/ren.png" mode="cover"></image>
-      <text class="userinfo-nickname">未登录用户</text>
+        <view class="loginhead">
+         <image bindtap="bindViewTap" class="userinfo-avatar" src="https://www.scnusay.cc/ren.png" mode="cover"></image>
+        <text class="userinfo-nickname">未登录用户</text>
     </view>
 </block>
 		<view>
