@@ -24,22 +24,7 @@ Page({
             owner_Openid: "ouctO4ypxLjQ_3t67gYI-urvPoQs",
         },
         //post0为捡到物品
-        post0: [{     
-            blogger_name:"11122",                
-            blogger_avatar: 'https://s1.328888.xyz/2022/08/02/OF8Ay.jpg',                  
-            blogger_time: '2023年3月22日10:25分11秒',
-            sharecar_topic: '零度网吧5黑1316546487899878979456546546546565446565465',
-            sharecar_time: '2022年9月32日',
-            sharecar_space: '南海校区',
-            sharecar_from:"华师南海东南门",
-            sharecar_to:"石牌校区",
-            sharecar_contact: '13423212311',
-            sharecar_number: '3人',
-            sharecar_detail:"hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh",
-            readingtimes: 49, //阅读次数
-            comments: 5, //评论数量
-            favour: 20, //点赞数量
-        }],
+        post0: [],
         //post1为丢失物品，其中lostthing_class = 1
         post1: [],
         //post1为私人发布内容，根据时间排
@@ -84,7 +69,7 @@ Page({
         //通过if判断现在是post0还是post1
         console.log(postValue)
         wx.setStorage({
-            key: "secendhandsendPostValue",
+            key: "sharecarsendPostValue",
             data: postValue
             //储存在缓存中带过去再删除
         })

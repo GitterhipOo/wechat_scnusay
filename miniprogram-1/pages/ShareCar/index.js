@@ -18,40 +18,10 @@ Page({
         },
         //post0为拼车大厅信息
             post0:[            
-                {     
-                    blogger_name:"11122",                
-                    blogger_avatar: 'https://s1.328888.xyz/2022/08/02/OF8Ay.jpg',                  
-                    blogger_time: '2023年3月22日10:25分11秒',
-                    sharecar_topic: '零度网吧5黑1316546487899878979456546546546565446565465',
-                    sharecar_time: '2022年9月32日',
-                    sharecar_space: '南海校区',
-                    sharecar_from:"华师南海东南门",
-                    sharecar_to:"石牌校区",
-                    sharecar_contact: '13423212311',
-                    sharecar_number: '3人',
-                    sharecar_detail:"hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh",
-                    readingtimes: 49, //阅读次数
-                    comments: 5, //评论数量
-                    favour: 20, //点赞数量
-                }
+
             ],
             //post1为我的发布信息
-            post1: [ { 
-                blogger_name:"11122",                
-                blogger_avatar: 'https://s1.328888.xyz/2022/08/02/OF8Ay.jpg',                  
-                blogger_time: '2023年3月22日10:25分11秒',
-                sharecar_topic: '零度网吧5黑1316546487899878979456546546546565446565465',
-                sharecar_time: '2022年9月32日',
-                sharecar_space: '南海校区',
-                sharecar_from:"华师南海东南门",
-                sharecar_to:"石牌校区",
-                sharecar_contact: '13423212311',
-                sharecar_number: '3人',
-                sharecar_detail:"hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh",
-                readingtimes: 49, //阅读次数
-                comments: 5, //评论数量
-                favour: 20, //点赞数量
-            }],
+            post1: [],
             
     },
     jumptodetails: function (e) {
@@ -70,7 +40,7 @@ Page({
         //通过if判断现在是post0还是post1
         console.log(postValue)
         wx.setStorage({
-            key: "secendhandsendPostValue",
+            key: "sharecarsendPostValue",
             data: postValue
             //储存在缓存中带过去再删除
         })
@@ -209,7 +179,7 @@ Page({
                             if (res.confirm) {
                                 //console.log("选择菜蛋对应的specialcode为"+menupostValue)
                                 wx.request({
-                                    url: 'https://www.scnusay.cc/SecendHandDetail/SecendHandDetailPhoto/deletemysecendhandpost.php',
+                                    url: 'https://www.scnusay.cc/sharecar/sharecarphoto/deletemysharecarpost.php',
                                     method: "POST",
                                     data: {
                                         'menupostValue': menupostValue,
@@ -256,7 +226,7 @@ Page({
           var _this=this
         
           wx.request({
-              url: 'https://www.scnusay.cc/SecendHandDetail/confirmlogin.php',
+              url: 'https://www.scnusay.cc/sharecar/confirmlogin.php',
               method: "POST",
               data: {
                   'openid': app.globalData.openid
@@ -284,7 +254,7 @@ Page({
           //onload的时候需要从服务器获取数据,包括获取我的和失物招领的
           wx.request({
               //先是获取失物招领的
-              url: 'https://www.scnusay.cc/SecendHandDetail/SecendHandDetailPhoto/getdetail.php',
+              url: 'https://www.scnusay.cc/sharecar/sharecarphoto/getdetail.php',
               method: "GET",
               data: {},
               header: {
@@ -295,16 +265,16 @@ Page({
                   for (var i = 0; i < res.data.length; i++) {
                       //for是根据数据的长度插入新数组
                       //如果photo1为null，则不保存到tempPhoto中，photo2,photo3同理
-                    //   var tempPhoto = []
-                    //   if (res.data[i].photo1 != null) {
-                    //       tempPhoto.push(res.data[i].photo1)
-                    //   }
-                    //   if (res.data[i].photo2 != null) {
-                    //       tempPhoto.push(res.data[i].photo2)
-                    //   }
-                    //   if (res.data[i].photo3 != null) {
-                    //       tempPhoto.push(res.data[i].photo3)
-                    //   }
+                      var tempPhoto = []
+                      if (res.data[i].photo1 != null) {
+                          tempPhoto.push(res.data[i].photo1)
+                      }
+                      if (res.data[i].photo2 != null) {
+                          tempPhoto.push(res.data[i].photo2)
+                      }
+                      if (res.data[i].photo3 != null) {
+                          tempPhoto.push(res.data[i].photo3)
+                      }
                       //nwearray是用于插入的数组
                       var newarray = {
                         blogger_id: res.data[i].id,
@@ -339,7 +309,7 @@ Page({
   
           //然后获取我的
           wx.request({
-              url: 'https://www.scnusay.cc/SecendHandDetail/SecendHandDetailPhoto/returnmysecendhand.php',
+              url: 'https://www.scnusay.cc/sharecar/sharecarphoto/returnmysharecar.php',
               method: "POST",
               data: {
                   'openid': app.globalData.openid
@@ -354,16 +324,16 @@ Page({
                       //nwearray是用于插入的数组
   
                       //如果photo1为null，则不保存到tempPhoto中，photo2,photo3同理
-                    //   var tempPhoto = []
-                    //   if (res.data[i].photo1 != null) {
-                    //       tempPhoto.push(res.data[i].photo1)
-                    //   }
-                    //   if (res.data[i].photo2 != null) {
-                    //       tempPhoto.push(res.data[i].photo2)
-                    //   }
-                    //   if (res.data[i].photo3 != null) {
-                    //       tempPhoto.push(res.data[i].photo3)
-                    //   }
+                      var tempPhoto = []
+                      if (res.data[i].photo1 != null) {
+                          tempPhoto.push(res.data[i].photo1)
+                      }
+                      if (res.data[i].photo2 != null) {
+                          tempPhoto.push(res.data[i].photo2)
+                      }
+                      if (res.data[i].photo3 != null) {
+                          tempPhoto.push(res.data[i].photo3)
+                      }
                       var newarray = {
                           blogger_id: res.data[i].id,
                           blogger_Openid: res.data[i].openid,
@@ -451,10 +421,21 @@ Page({
     /**
      * 页面相关事件处理函数--监听用户下拉动作
      */
-    onPullDownRefresh() {
-
+    onPullDownRefresh: function () {
+        if (this.data.isRefreshing || this.data.isLoadingMoreData) {
+            return
+        }
+        this.setData({
+            isRefreshing: true,
+            hasMoreData: true
+        })
+        //wait for 1 second
+        setTimeout(() => {
+            wx.reLaunch({
+                url: 'index',
+              })
+        }, 300)
     },
-
     /**
      * 页面上拉触底事件的处理函数
      */

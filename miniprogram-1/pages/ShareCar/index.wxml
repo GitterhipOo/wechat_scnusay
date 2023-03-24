@@ -10,6 +10,10 @@
     </view>
 </view>
 <view style="height: {{navH*2+20}}px;"></view>
+<view class="weui-loadmore" wx:if='{{isRefreshing}}'>
+  <view class="weui-loading"></view>
+  <view class="weui-loadmore-tips">正在刷新...</view>
+</view>
 <view class="guide" bindtap="gotosend" >
     <view class="lostcenter">发布</view>
 </view>
@@ -45,7 +49,7 @@
                 <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
                     <view style="margin: 10rpx 30rpx 0rpx 30rpx;"><text>人数：{{item.sharecar_number}}</text></view>
                     <view style="margin: 10rpx 30rpx 0rpx 30rpx;"><text>起点：{{item.sharecar_from}}</text></view>
-                    <view style="margin: 10rpx 30rpx 0rpx 30rpx;"><text>目的地：{{item.sharecar_to}}</text></view>
+                    <view style="margin: 10rpx 30rpx 0rpx 30rpx;"><text>目的地：{{item.sharecar_go}}</text></view>
                     <view style="margin: 10rpx 30rpx 0rpx 30rpx;"><text>出发时间：{{item.sharecar_time}}</text></view>
                     <view style="margin: 10rpx 30rpx 0rpx 30rpx;"><text>其他详情：{{item.sharecar_detail}}</text></view>
  
@@ -72,7 +76,7 @@
                 <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
                     <view style="margin: 10rpx 30rpx 0rpx 30rpx;"><text>人数：{{item.sharecar_number}}</text></view>
                     <view style="margin: 10rpx 30rpx 0rpx 30rpx;"><text>起点：{{item.sharecar_from}}</text></view>
-                    <view style="margin: 10rpx 30rpx 0rpx 30rpx;"><text>目的地：{{item.sharecar_to}}</text></view>
+                    <view style="margin: 10rpx 30rpx 0rpx 30rpx;"><text>目的地：{{item.sharecar_go}}</text></view>
                     <view style="margin: 10rpx 30rpx 0rpx 30rpx;"><text>出发时间：{{item.sharecar_time}}</text></view>
                     <view style="margin: 10rpx 30rpx 0rpx 30rpx;"><text>其他详情：{{item.sharecar_detail}}</text></view>
                 </view>
