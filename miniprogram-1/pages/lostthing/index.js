@@ -217,7 +217,21 @@ Page({
 
     },
     onPullDownRefresh: function () {
-        //wx.stopPullDownRefresh()
+        if (this.data.isRefreshing || this.data.isLoadingMoreData) {
+            return
+        }
+        this.setData({
+            isRefreshing: true,
+            hasMoreData: true
+        })
+        //wait for 1 second
+        setTimeout(() => {
+            wx.reLaunch({
+                url: 'index',
+              })
+        }, 300)
+        
+        
     },
 
     // 点击标签判断
