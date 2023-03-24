@@ -1,21 +1,23 @@
-<!-- 这个页面是未注册过的人点登录 然后引导登录用的 -->
-<view>
-    <block wx:if="{{hasUserInfo}}">
-        <view class="loginhead">
-            <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-         </view>
-    </block>
+<view data-weui-theme="{{theme}}">
+  <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" >
+    <image class="avatar" src="{{avatarUrl}}"></image>
+  </button> 
 
-    <block wx:if="{{!hasUserInfo}}">
-        <view class="loginhead">
-            <image bindtap="bindViewTap" class="userinfo-avatar" src="https://www.scnusay.cc/ren.png" mode="cover"></image>
-            <text class="userinfo-nickname">未登录用户</text>
-         </view>
-    </block>
+    <view class="chooseimgtext">请选择你的头像</view>
 
-		<view>
-			<button class="loginBtn" type="primary" form-type='submit' bindtap="getUserProfile">授权/更新信息</button>
-		</view>
+  <mp-form>
+    <mp-cells>
+      <!-- <mp-cell title="昵称">
+        <input type="nickname" class="weui-input" placeholder="请输入昵称"/>
+      </mp-cell> -->
 
+      <t-input type="nickname" value="{{user_wxname}}" bind:change="inputCom" label="用户昵称" placeholder="请输入昵称" />
+    </mp-cells>
+  </mp-form>
 </view>
+<t-button theme="primary" block content="确认授权" shape="round" bindtap="confirmlogin" loading="{{ false }}" class="comfirmlogin">
+</t-button>
+
+
+
+

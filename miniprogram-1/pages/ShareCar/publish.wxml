@@ -16,7 +16,7 @@
     <form bindsubmit='getForm'>
         <view class="label-list1">
             <view class="input-box">
-                <input placeholder="人数" value="{{postValue.sharecar_number}}" bindinput="adInputChange" data-info=" sharecar_number" placeholder-class="place" name='time' />
+                <input placeholder="人数" value="{{postValue.sharecar_number}}" bindinput="adInputChange" data-info="sharecar_number" placeholder-class="place" name='time' />
             </view>
         </view>
         <view class="label-list">
@@ -49,7 +49,7 @@
         <view class="label-list">
             <!-- <view class="label">出发时间</view> -->
             <view class="input-box">
-                <input placeholder="出发时间"value="{{postValue.sharecar_time}}" bindinput="adInputChange" data-info=" sharecar_time" placeholder-class="place" name='time' />
+                <input placeholder="出发时间"value="{{postValue.sharecar_time}}" bindinput="adInputChange" data-info="sharecar_time" placeholder-class="place" name='time' />
             </view>
         </view>
         <view class="label-list1">

@@ -115,7 +115,7 @@ Page({
 
 
             wx.request({
-                url: 'https://www.scnusay.cc/SecendHandDetail/secendhanddetailcomment.php',
+                url: 'https://www.scnusay.cc/sharecar/sharecardetailcomment.php',
                 data: {
                     //发送type parent_id reply_name comment_text comment_time openid specialcode 7个参数
                     type: this.data.now_reply_type,
@@ -139,7 +139,7 @@ Page({
                 success(res) {
                     console.log(res.data)
                     wx.request({
-                        url: 'https://www.scnusay.cc/SecendHandDetail/getwhatisendcommentdetail.php',
+                        url: 'https://www.scnusay.cc/sharecar/getwhatisendcommentdetail.php',
                         method: 'POST',
                         data: {
                             comment_time: time,
@@ -232,7 +232,7 @@ Page({
             navH: app.globalData.navHeight
           });
         wx.getStorage({
-            key: 'secendhandsendPostValue',
+            key: 'sharecarsendPostValue',
             success: function (res) {
                 console.log(res.data)
                 _this.setData({
@@ -241,7 +241,7 @@ Page({
                 })
                 console.log("缓存已经拿出")
                 wx.request({
-                    url: 'https://www.scnusay.cc/SecendHandDetail/getcommentdetail.php',
+                    url: 'https://www.scnusay.cc/sharecar/getcommentdetail.php',
                     method: 'POST',
                     data: {
                         specialcode: _this.data.detail_specialcode
@@ -303,7 +303,7 @@ Page({
         console.log("now begin request");
 
         
-        wx.removeStorageSync('secendhandsendPostValue')
+        wx.removeStorageSync('sharecarsendPostValue')
     },
 
 })

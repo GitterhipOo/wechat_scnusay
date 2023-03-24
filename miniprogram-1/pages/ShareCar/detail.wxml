@@ -40,7 +40,7 @@
         <text class="from">
             出发地：<text style="font-weight: 400;">{{blogger_list.sharecar_from}}</text></text>
         <text class="to">
-            目的地：<text style="font-weight: 400;">{{blogger_list.sharecar_to}}</text></text>    
+            目的地：<text style="font-weight: 400;">{{blogger_list.sharecar_go}}</text></text>    
         <text class="contact">
             联系方式：<text style="font-weight: 400;">{{blogger_list.sharecar_contact}}</text></text>
        
