@@ -7,25 +7,50 @@ page {
     border-bottom: 1rpx solid darkgray;
 }
 
+/* 发布文章的内容 */
 .TextBox {
-    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.3);
     border-radius: 20rpx;
+    padding: 20rpx 5rpx;
+    margin-bottom: 20rpx;
 }
 
+.title{
+    padding-top: 2%;
+    padding-left: 2%;
+}
+
+.detail{
+    padding-left: 2%;
+    height:400rpx;
+    /* width: 95%; */
+}
+
+/* 上传图片位子 */
 .ImgBox {
-    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.3);
     border-radius: 20rpx;
+    padding: 20rpx 5rpx;
+    margin-bottom: 20rpx;
 }
 
-/* 图片 */
+/* 这个是那个上传图片的图标的样式= = */
 .imgInSwiper{
     height: 400rpx;
-    width: 100%;
+    /* width: 80%; */
 }
 
-.KeyBox {
-    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.4);
+/* 真正的图片样式 */
+.Img{
+    width: auto;    
+}
+
+/* 信息盒子 */
+.InfBox {
+    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.3);
     border-radius: 20rpx;
+    padding: 20rpx 5rpx;
+    /* margin-bottom: 20rpx; */
 }
 
 /* 输入内容 */
