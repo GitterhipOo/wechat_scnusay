@@ -6,11 +6,28 @@ page {
 .divline {
     border-bottom: 1rpx solid darkgray;
 }
+
+.TextBox {
+    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.4);
+    border-radius: 20rpx;
+}
+
+.ImgBox {
+    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.4);
+    border-radius: 20rpx;
+}
+
 /* 图片 */
 .imgInSwiper{
     height: 400rpx;
     width: 100%;
 }
+
+.KeyBox {
+    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.4);
+    border-radius: 20rpx;
+}
+
 /* 输入内容 */
 .topic{
     font-size: 45rpx;

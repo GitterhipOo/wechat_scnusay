@@ -1,6 +1,15 @@
 <view style="margin: 3%;">
     <!-- 这里将图片作为swiper模块摆放, -->
-    <view class="divline"></view>
+    <!-- <view class="divline"></view> -->
+    <!-- <view class="divline"></view> -->
+    <view class="TextBox"> 
+        <!-- 标题 -->
+        <input type="text" maxlength="17" class="topic" placeholder="标题" placeholder-style="color:rgb(100, 100, 100)" value="{{postValue.lostthing_topic}}" bindinput="adInputChange" data-info="lostthing_topic" />
+            <!-- 详情内容 -->
+            <textarea style="font-size: 30rpx; margin: 20rpx 5rpx; height:500rpx" placeholder="丢失（拾取）物品种类/地点具体描述" placeholder-style="font-size:30rpx" value="{{postValue.lostthing_detail}}" bindinput="adInputChange" data-info="lostthing_detail" />
+    </view> 
+
+         <!-- 图片 -->
     <swiper style="height: 480rpx;" current="{{current_Page}}">
         <!-- 通过循环生成img的图片,当图片为0时仅出现上传图片按钮,图片大于1时出现图片,同时图片下面生成删除按钮与添加按钮 -->
         <block wx:if="{{countNow==0}}">
@@ -18,55 +27,51 @@
                 <image bindtap="deleteImg" data-index="{{index}}" src="https://www.scnusay.cc/icon/iconDeleteCircle.png" style="position: absolute; bottom: 6%; right: 4%;height: 50rpx; width: 50rpx;"></image>
             </swiper-item>
         </block>
+     </swiper>
 
-    </swiper>
-    <view class="divline"></view>
-    <!-- 标题 -->
-    <input type="text" maxlength="17" class="topic" placeholder="标题" placeholder-style="color:rgb(100, 100, 100)" value="{{postValue.lostthing_topic}}" bindinput="adInputChange" data-info="lostthing_topic" />
-    <!-- 详情内容 -->
-    <textarea style="font-size: 30rpx; margin: 20rpx 5rpx; height:500rpx" placeholder="丢失（拾取）物品种类/地点具体描述" placeholder-style="font-size:30rpx" value="{{postValue.lostthing_detail}}" bindinput="adInputChange" data-info="lostthing_detail" />
 
-    <view class="divline"></view>
-    <!-- 失物判断 -->
-    <!-- <view class="switchCheck">
-        <view style="float: left; padding-top: 15rpx;">寻找失主</view>
-        <switch style="float: right;" bindchange="bindPickerChange_Way" />
-    </view>
-    <view class="divline"></view> -->
-    <!-- 丢失地点 -->
-    <view class="lostChoose clearfix">
-        <picker bindchange="bindPickerChange_Space" value="{{space}}" range="{{array_Space}}">
-            <view style="float: left;color:{{spaceColor}}">
-                <text style="color:#000 ;">地点：</text>{{array_Space[space]}}
-            </view>
-        </picker>
-        <input type="text" maxlength="17" style="display: inline-block; margin: 0rpx 30rpx; " placeholder="详细地址:" value="{{postValue.lostthing_space_detail}}" bindinput="adInputChange" data-info="lostthing_space_detail" />
+        <!-- <view class="divline"></view> -->
+        <!-- 失物判断 -->
+        <!-- <view class="switchCheck">
+            <view style="float: left; padding-top: 15rpx;">寻找失主</view>
+            <switch style="float: right;" bindchange="bindPickerChange_Way" />
+        </view>
+        <view class="divline"></view> -->
+        <!-- 丢失地点 -->
+        <view class="lostChoose clearfix">
+            <picker bindchange="bindPickerChange_Space" value="{{space}}" range="{{array_Space}}">
+                <view style="float: left;color:{{spaceColor}}">
+                    <text style="color:#000 ;">地点：</text>{{array_Space[space]}}
+                </view>
+            </picker>
+            <input type="text" maxlength="17" style="display: inline-block; margin: 0rpx 30rpx; " placeholder="详细地址:" value="{{postValue.lostthing_space_detail}}" bindinput="adInputChange" data-info="lostthing_space_detail" />
 
-    </view>
-    <view class="divline"></view>
-    <!-- 分类 -->
-    <view style="margin: 20rpx 5rpx;">
-        <picker bindchange="bindPickerChange_Tag" value="{{tag}}" range="{{array_Tag}}">
-            <view style="margin-right: 20rpx;color:{{tagColor}}">
-                <text style="color:#000 ;">分类：</text>{{array_Tag[tag]}}
-            </view>
-        </picker>
-    </view>
-    <view class="divline"></view>
-    <!-- 联系方式+标签 -->
-    <view class="moreInfor">
-        <view style="position: absolute;">{{lostthing_Time_Binding}}时间：</view>
-        <input type="number" maxlength="17" style="float:left;; margin: 0rpx 140rpx; " placeholder="9月19日18:00:00" value="{{postValue.lostthing_time}}" bindinput="adInputChange" data-info="lostthing_time" />
-    </view>
-    <view class="divline"></view>
-    <view class="moreInfor">
-        <view style="position: absolute;">联系方式：</view>
-        <input type="text" maxlength="17" style="float:left;; margin: 0rpx 140rpx; " placeholder="19999999999" value="{{postValue.lostthing_contact}}" bindinput="adInputChange" data-info="lostthing_contact" />
-    </view>
-    <view class="divline"></view>
-    <!-- <view class="moreInfor">
-            <view style="position: absolute;">标签：</view>
-            <input type="text" maxlength="30" style="float:left;width:100%; margin: 0rpx 90rpx;" placeholder="希望分享的标签（可选）以顿号‘、’分割" placeholder-style="" />
-        </view> -->
-    <button class="send" hover-class="send-hover" bindtap="sendToServer">发送</button>
+        </view>
+        <!-- <view class="divline"></view> -->
+        <!-- 分类 -->
+        <view style="margin: 20rpx 5rpx;">
+            <picker bindchange="bindPickerChange_Tag" value="{{tag}}" range="{{array_Tag}}">
+                <view style="margin-right: 20rpx;color:{{tagColor}}">
+                    <text style="color:#000 ;">分类：</text>{{array_Tag[tag]}}
+                </view>
+            </picker>
+        </view>
+        <!-- <view class="divline"></view> -->
+        <!-- 联系方式+标签 -->
+        <view class="moreInfor">
+            <view style="position: absolute;">{{lostthing_Time_Binding}}时间：</view>
+            <input type="number" maxlength="17" style="float:left;; margin: 0rpx 140rpx; " placeholder="9月19日18:00:00" value="{{postValue.lostthing_time}}" bindinput="adInputChange" data-info="lostthing_time" />
+        </view>
+        <!-- <view class="divline"></view> -->
+        <view class="moreInfor">
+            <view style="position: absolute;">联系方式：</view>
+            <input type="text" maxlength="17" style="float:left;; margin: 0rpx 140rpx; " placeholder="19999999999" value="{{postValue.lostthing_contact}}" bindinput="adInputChange" data-info="lostthing_contact" />
+        </view>
+        <!-- <view class="divline"></view> -->
+        <!-- <view class="moreInfor">
+                <view style="position: absolute;">标签：</view>
+                <input type="text" maxlength="30" style="float:left;width:100%; margin: 0rpx 90rpx;" placeholder="希望分享的标签（可选）以顿号‘、’分割" placeholder-style="" />
+            </view> -->
+        <button class="send" hover-class="send-hover" bindtap="sendToServer">发送</button>
+  
 </view>
