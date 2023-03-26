@@ -24,26 +24,26 @@
     <view class="label-list">
         <view class="label">所在校区：</view>
         <view class="input-box">
-        <input placeholder="请输入您所在校区" value="{{postValue.team_space}}" bindinput="adInputChange" data-info=" team_space" placeholder-class="place" name='school'/>
+        <input placeholder="请输入您所在校区" value="{{postValue.team_space}}" bindinput="adInputChange" data-info="team_space" placeholder-class="place" name='school'/>
         </view>
     </view>  
     <view class="label-list">
         <view class="label">联系方式：</view>
         <view class="input-box">
-        <input placeholder="微信/邮箱/电话号码" value="{{postValue.team_contact}}" bindinput="adInputChange" data-info=" team_contact" placeholder-class="place" name='Phonenumber'/>
+        <input placeholder="微信/邮箱/电话号码" value="{{postValue.team_contact}}" bindinput="adInputChange" data-info="team_contact" placeholder-class="place" name='Phonenumber'/>
         </view>
     </view>
     <view class="label-list">
         <view class="label">截止日期：</view>
         <view class="input-box">
-        <input value="{{postValue.team_time}}" bindinput="adInputChange" data-info=" team_time"placeholder="请输入截止时间"  placeholder-class="place" name="name"/>
+        <input value="{{postValue.team_time}}" bindinput="adInputChange" data-info="team_time"placeholder="请输入截止时间"  placeholder-class="place" name="name"/>
         </view>
     </view>
     
    
 
 <view class="con">
-        <textarea class="inputText" maxlength="-1"  value="{{postValue.team_detail}}" bindinput="adInputChange" data-info=" team_detail" placeholder="留下您的队伍详情情况吧～" bindinput="getInputText"></textarea>
+        <textarea class="inputText" maxlength="-1"  value="{{postValue.team_detail}}" bindinput="adInputChange" data-info="team_detail" placeholder="留下您的队伍详情情况吧～" ></textarea>
         
     </view>
 

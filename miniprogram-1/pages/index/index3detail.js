@@ -297,9 +297,23 @@ Page({
                 //get all the comment data form the server
         console.log("get the specialcode为"+this.data.detail_specialcode);
         console.log("now begin request");
-
-        
-        wx.removeStorageSync('sendPostValue')
     },
 
+    onPullDownRefresh: function () {
+        if (this.data.isRefreshing || this.data.isLoadingMoreData) {
+            return
+        }
+        this.setData({
+            isRefreshing: true,
+            hasMoreData: true
+        })
+        //wait for 1 second
+        setTimeout(() => {
+            wx.reLaunch({
+                url: 'index3detail',
+              })
+        }, 300)
+        
+        
+    },
 })

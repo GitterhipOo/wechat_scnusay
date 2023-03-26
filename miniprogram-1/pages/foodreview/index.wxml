@@ -8,6 +8,12 @@
     </view>
 </view>
 <view style="height: {{navH*2+20}}px;"></view>
+
+<view class="weui-loadmore" wx:if='{{isRefreshing}}'>
+  <view class="weui-loading"></view>
+  <view class="weui-loadmore-tips">正在刷新...</view>
+</view>
+
 <!-- 搜索 -->
 <view class="search"bindtap="gotosearch"  >
     <input type="text" placeholder="搜索关键词" id="mysearch"/>  
