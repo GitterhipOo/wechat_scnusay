@@ -1,5 +1,9 @@
 <!--pages/ShareCar/details/index.wxml-->
 <!-- <text>pages/ShareCar/details/index.wxml</text> -->
+<view class="weui-loadmore" wx:if='{{isRefreshing}}'>
+  <view class="weui-loading"></view>
+  <view class="weui-loadmore-tips">正在刷新...</view>
+</view>
 <view class="nav-wrap" style="height: {{navH*2+20}}px;position: absolute;">
     <!-- 自定义导航栏 -->
     <view class="nav-title" style="line-height: {{navH*2+44}}px;">闲置交易</view>

@@ -48,6 +48,13 @@
                     "query": "",
                     "launchMode": "default",
                     "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/updatewxinfo/updatewxinfo",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
                 }
             ]
         }

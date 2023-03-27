@@ -28,6 +28,10 @@ Page({
         //post1为丢失物品，其中talking_class = 1
         post1: [],
         //post1为私人发布内容，根据时间排
+        hasMoreData: true,
+        isRefreshing: false,
+        isLoadingMoreData: false
+
     },
     jumpToSearch: function () {
         wx.navigateTo({
@@ -37,30 +41,28 @@ Page({
     },
 
     //通过计算post的数量获取页面长度
-    getSwiperItemHeight:function(){
+    getSwiperItemHeight: function () {
         var postHeight = 0
         var post
-        if (this.data.current_Page == 0){
+        if (this.data.current_Page == 0) {
             post = this.data.post0
-        }
-        else{
+        } else {
             post = this.data.post1
         }
         console.log(post)
-        for (var i = 0; i < post.length; i++){
-            if (post[i].photos.length > 0){
-                postHeight+=700
-            }
-            else{ 
-                postHeight+=220
+        for (var i = 0; i < post.length; i++) {
+            if (post[i].photos.length > 0) {
+                postHeight += 700
+            } else {
+                postHeight += 220
             }
         }
-        postHeight=postHeight+600;
-        postHeight = postHeight+"rpx";
+        postHeight = postHeight + 600;
+        postHeight = postHeight + "rpx";
         this.setData({
-            swiperHeight:postHeight,
+            swiperHeight: postHeight,
         })
-        console.log("高度赋值完成,计算高度为",postHeight)
+        console.log("高度赋值完成,计算高度为", postHeight)
     },
 
     //跳转至详情页面
@@ -111,8 +113,7 @@ Page({
                         title: '删除',
                         content: '是否删除内容',
                         complete: (res) => {
-                            if (res.cancel) {
-                            }
+                            if (res.cancel) {}
                             if (res.confirm) {
                                 //console.log("选择菜蛋对应的specialcode为"+menupostValue)
                                 wx.request({
@@ -129,8 +130,7 @@ Page({
                                             title: '删除成功',
                                             content: '发布内容已删除',
                                             complete: (res) => {
-                                                if (res.cancel) {
-                                                }
+                                                if (res.cancel) {}
                                                 if (res.confirm) {
                                                     wx.navigateTo({
                                                         url: '/pages/talking/index',
@@ -217,8 +217,23 @@ Page({
 
     },
     onPullDownRefresh: function () {
-        //wx.stopPullDownRefresh()
+        if (this.data.isRefreshing || this.data.isLoadingMoreData) {
+            return
+        }
+        this.setData({
+            isRefreshing: true,
+            hasMoreData: true
+        })
+        //wait for 1 second
+        setTimeout(() => {
+            wx.reLaunch({
+                url: 'index3',
+              })
+        }, 300)
+        
+        
     },
+
 
     // 点击标签判断
     clicktab: function (e) {
@@ -233,8 +248,7 @@ Page({
         if (this.data.current_Page == 0) {
             tabstylelost = "background-color: rgb(186 , 204, 217)";
             tabstylemy = "background-color: white";
-        }
-        else {
+        } else {
             tabstylelost = "background-color: white";
             tabstylemy = "background-color: rgb(186 , 204, 217)";
         }
@@ -276,8 +290,7 @@ Page({
                     }
                 }
             })
-        }
-        else {
+        } else {
             wx.navigateTo({
                 url: '/pages/index/index3post',
             })
@@ -298,8 +311,7 @@ Page({
         if (this.data.current_Page == 0) {
             tabstylelost = "background-color: rgb(186 , 204, 217)";
             tabstylemy = "background-color: white";
-        }
-        else {
+        } else {
             tabstylelost = "background-color: white";
             tabstylemy = "background-color: rgb(186 , 204, 217)";
         }
@@ -331,8 +343,7 @@ Page({
                         haslogin: true
                     })
                     console.log("确认登陆");
-                }
-                else {
+                } else {
                     console.log("未登录")
                     console.log("login 状态为" + app.globalData.haslogin)
                 }
@@ -496,6 +507,6 @@ Page({
     /**
      * 用户点击右上角分享
      */
-    onShareAppMessage: function () { },
+    onShareAppMessage: function () {},
 
 })

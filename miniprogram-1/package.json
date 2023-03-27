@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "tdesign-miniprogram": "^1.0.0-rc.3"
+    "tdesign-miniprogram": "^1.0.0-rc.3",
+    "weui-miniprogram": "^1.2.7"
   }
 }
