@@ -65,21 +65,28 @@
                         <text style="color:#000 ;">地点：</text>{{array_Space[space]}}
                     </view>
                 </picker>
-                <input type="text" maxlength="17" style="display: inline-block; margin: 0rpx 30rpx; " placeholder="详细地址:" value="{{postValue.lostthing_space_detail}}" bindinput="adInputChange" data-info="lostthing_space_detail" />
 
+            
+            </view>
+            <view class="detail_box">
+                    <input type="text" maxlength="17" style="display: inline-block; margin: 0rpx 30rpx; " placeholder="详细地址:" value="{{postValue.lostthing_space_detail}}" bindinput="adInputChange" data-info="lostthing_space_detail" />
             </view>
             <!-- <view class="divline"></view> -->
 
             <!-- 联系方式+标签 -->
             <view class="moreInfor" style="padding: 2%;">
                 <view style="position: absolute;">{{lostthing_Time_Binding}}时间：</view>
-                <input type="number" maxlength="17" style="float:left;; margin: 0rpx 140rpx; " placeholder="9月19日18:00:00" value="{{postValue.lostthing_time}}" bindinput="adInputChange" data-info="lostthing_time" />
+            </view>
+            <view class="detail_box">
+                <input type="number" maxlength="17" style="display: inline-block; margin: 0rpx 30rpx;" placeholder="9月19日18:00:00" value="{{postValue.lostthing_time}}" bindinput="adInputChange" data-info="lostthing_time" />
             </view>
             <!-- <view class="divline"></view> -->
 
             <view class="moreInfor" style="padding: 2%;">
                 <view style="position: absolute;">联系方式：</view>
-                <input type="text" maxlength="17" style="float:left;; margin: 0rpx 140rpx; " placeholder="19999999999" value="{{postValue.lostthing_contact}}" bindinput="adInputChange" data-info="lostthing_contact" />
+            </view>
+            <view class="detail_box">
+                <input type="text" maxlength="17" style="display: inline-block; margin: 0rpx 30rpx;" placeholder="19999999999" value="{{postValue.lostthing_contact}}" bindinput="adInputChange" data-info="lostthing_contact" />
             </view>
             <!-- <view class="divline"></view> -->
             <!-- <view class="moreInfor">
