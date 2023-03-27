@@ -1,0 +1,72 @@
+<!--pages/ShareCar/ReleaseInformation/index.wxml-->
+<!-- <text>pages/ShareCar/ReleaseInformation/index.wxml</text> -->
+<view class="nav-wrap" style="height: {{navH*2+20}}px;position: absolute;">
+    <!-- 自定义导航栏 -->
+    <view class="nav-title" style="line-height: {{navH*2+44}}px;">发布</view>
+    <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
+        <navigator hoverClass="none" open-type="navigate" url="/pages/ShareCar/index">
+                    <image class="back-pre" src="https://www.scnusay.cc/icon/back.png" style="height:50rpx;width:50rpx;margin-top: 50rpx;"></image>
+        </navigator>
+    </view>
+</view>
+
+<view style="height: {{navH*2+20}}px;"></view>
+<view>
+<view class="modify-form">
+    <form bindsubmit='getForm'>
+        <view class="label-list1">
+            <view class="input-box">
+                <input placeholder="人数" value="{{postValue.sharecar_number}}" bindinput="adInputChange" data-info="sharecar_number" placeholder-class="place" name='time' />
+            </view>
+        </view>
+        <view class="label-list">
+            <!-- <view class="label">电话</view> -->
+            <view class="input-box">
+                <input placeholder="联系方式"value="{{postValue.sharecar_contact}}" bindinput="adInputChange" data-info="sharecar_contact" placeholder-class="place" name='Phonenumber' />
+            </view>
+        </view>
+        <view class="label-list">
+            <!-- <view class="label">电话</view> -->
+            <view class="input-box">
+                <input placeholder="所在校区"value="{{postValue.sharecar_space}}" bindinput="adInputChange" data-info="sharecar_space" placeholder-class="place" name='Phonenumber' />
+            </view>
+        </view>
+
+        <view class="label-list">
+            <!-- <view class="label">出发地点</view> -->
+            <view class="input-box">
+                <input placeholder="出发地点" value="{{postValue.sharecar_from}}" bindinput="adInputChange" data-info="sharecar_from" placeholder-class="place" name='beginsite' />
+            </view>
+        </view>
+
+        <view class="label-list">
+            
+            <view class="input-box">
+                <input placeholder="目的地点" value="{{postValue.sharecar_go}}" bindinput="adInputChange" data-info="sharecar_go" placeholder-class="place" name='endsite' />
+            </view>
+        </view>
+
+        <view class="label-list">
+            <!-- <view class="label">出发时间</view> -->
+            <view class="input-box">
+                <input placeholder="出发时间"value="{{postValue.sharecar_time}}" bindinput="adInputChange" data-info="sharecar_time" placeholder-class="place" name='time' />
+            </view>
+        </view>
+        <view class="label-list1">
+            <view class="input-box">
+                <input placeholder="标题信息" value="{{postValue.sharecar_topic}}" bindinput="adInputChange" data-info="sharecar_topic"placeholder-class="place" name='time' />
+            </view>
+        </view>
+        <view class="con">
+            <textarea class="inputText" maxlength="-1"value="{{postValue.sharecar_detail}}" bindinput="adInputChange" data-info="sharecar_detail" placeholder="留下您的行程情况吧！" ></textarea>
+           
+        </view>
+        <button formType="submit" bindtap="sendToServer" style="color: white;background-color: lightseagreen;">发布</button>
+    </form>
+
+</view>
+
+
+
+
+</view>

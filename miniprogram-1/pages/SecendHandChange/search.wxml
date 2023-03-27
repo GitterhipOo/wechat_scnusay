@@ -1,0 +1,33 @@
+<!-- pages/lostthing/search.wxml -->
+<view class="nav-wrap" style="height: {{navH*2+20}}px;position: absolute;">
+    <!-- 自定义导航栏 -->
+    <view class="nav-title" style="line-height: {{navH*2+44}}px;">闲置交易</view>
+    <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
+        <navigator hoverClass="none" open-type="navigate" url="/pages/SecendHandChange/index">
+                    <image class="back-pre" src="https://www.scnusay.cc/icon/back.png" style="height:50rpx;width:50rpx;margin-top: 50rpx;"></image>
+        </navigator>
+    </view>
+</view>
+<view style="height: {{navH*2+20}}px;"></view>
+<t-search placeholder="请输入搜索内容" bind:submit="submit" bind:action-click="submit" action="搜索" model:value="{{submitValue}}" center="{{ true }}" focus="{{ true }}" shape="round"></t-search>
+<view class="history-title">
+    <view class="history-title-text">历史记录:
+        <image src="https://www.scnusay.cc/icon/delete.png" mode="" style="width: 35rpx;height: 30rpx; position: absolute; right:20rpx; margin-top: 10rpx;" bindtap="deletehistory" />
+    </view>
+</view>
+<view wx:if="{{searchHistory[0]}}" class="history-container">
+    <view wx:for="{{searchHistory}}" wx:key="index" bindtap="clickHistory" data-index="{{index}}" class="history-item">
+        <text class="history-item-text">{{item}}</text>
+        <image src="https://www.scnusay.cc/icon//search.png" mode="" class="searchimg" />
+    </view>
+</view>
+<view wx:else >
+    <!-- make its child on the center -->
+    <view class="emptyhistory">
+        <image src="https://www.scnusay.cc/icon/empty.png" mode="" class="emptyimg"/>
+    </view>
+
+    <view class="nohistory-container">
+        <text class="nohistory">oh!暂无历史记录</text>
+    </view>
+</view>

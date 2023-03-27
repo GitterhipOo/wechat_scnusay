@@ -1,78 +1,105 @@
 <!--pages/ShareCar/index.wxml-->
 <!-- <text>pages/ShareCar/index.wxml</text> -->
-<view class="top_alarm">
-<navigator url="#" open-type="navigate">
-    <text class="alarm">《拼车免责声明》</text>
-</navigator>
-</view>
-
-<view class="out_index_top">
-    <view class="index_three_box1">
-        <navigator url="/pages/ShareCar/ReleaseInformation/index" open-type="navigate">
-        <image class="img1" src="/assets/images/sharecars/jpg1.jpg" mode='aspectFit'></image>
-        <text class="under_img">
-        发布拼车信息</text>
-        </navigator>   
-    </view>
-    <view class="index_three_box">
-        <navigator url="/pages/ShareCar/My_publish/index" open-type="navigate">
-        <image class="img1" src="/assets/images/sharecars/jpg1.jpg" mode='aspectFit'></image>   
-        <text class="under_img">
-        我的发布</text>
-        </navigator>
-    </view>
-    <view class="index_three_box">
-        <navigator url="/pages/ShareCar/search/index" open-type="navigate">
-        <image class="img1" src="/assets/images/sharecars/jpg1.jpg" mode='aspectFit'></image>
-        <text class="under_img">
-        搜索拼车信息</text>
+<view class="nav-wrap" style="height: {{navH*2+20}}px;position: absolute;">
+    <!-- 自定义导航栏 -->
+    <view class="nav-title" style="line-height: {{navH*2+44}}px;">拼车同行</view>
+    <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
+        <navigator hoverClass="none" open-type="switchTab" url="/pages/index/index1">
+                    <image class="back-pre" src="https://www.scnusay.cc/icon/back.png" style="height:50rpx;width:50rpx;margin-top: 50rpx;"></image>
         </navigator>
     </view>
 </view>
-
-<view class="mid_pinche">
-<image src="/assets/images/sharecars/lightblue_bgc.jpg" class="mid_jpg"></image>
-<text class="mid_jpg_text">拼车大厅</text>
-<view class="list-msg">
-    <view class="list-msg2">
-        <text>{{tihuoway}}</text>
+<view style="height: {{navH*2+20}}px;"></view>
+<view class="weui-loadmore" wx:if='{{isRefreshing}}'>
+  <view class="weui-loading"></view>
+  <view class="weui-loadmore-tips">正在刷新...</view>
+</view>
+<view class="guide" bindtap="gotosend" >
+    <view class="lostcenter">发布</view>
+</view>
+<view class='page_row'bindtap='gotosearch' >
+    <view class="search">
+      <view class="df search_arr">
+        <icon class="searchcion" size='16' type='search'></icon>
+        <input class="sousuo" disabled placeholder="搜索" bindtap='gotosearch'/>
+      </view>
     </view>
 </view>
-</view>
-<block wx:for="{{data_index}}">
+<!-- 切换栏 -->
+<view class='swipertab'>
+    <view class="tabitem1" style="{{tabstylelost}}" data-current="0" bindtap='clicktab'>拼车大厅</view>
 
-<view class="chat">
-<view class="touxianglan">
-<view>
-<image class="touxiang" src="{{item.blogger_avatar}}"></image>
+    <view class="tabitem2" style="{{tabstylemy}}" data-current="1" bindtap='clicktab'>我的发布</view>
 </view>
-<view>
-<text class="name">{{item.blogger_name}}</text>
-<text class="time" decode="true">\n &nbsp;&nbsp;&nbsp;{{item.blogger_time}}</text>
-</view>
-</view>
+<!-- 切换栏结束 -->
+<!-- 商品栏用<swiper></swiper> -->
+<swiper bindchange="changeswiper" current="{{current_Page}}" style="height:{{swiperHeight}} ;">
+    <swiper-item>
+        <view class="list">
+            <!-- 以一个作为案例 -->
+            <view class="box" wx:for="{{post0}}" wx:key="index">
+                <!-- 头像栏模块 -->
+                <view class="box1" bindtap="jumptodetails" data-index="{{index}}">
+                    <image src="{{item.blogger_avatar}}"></image>
+                    <text class="text1">{{item.sharecar_topic}}</text>
+                    <text class="text2">{{item.blogger_time}}</text>
+                </view>
+                <view class="box-way">{{item.sharecar_space}}</view>
+                <!-- 主要内容模块 -->
+                <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
+                    <view style="margin: 10rpx 30rpx 0rpx 30rpx;"><text>人数：{{item.sharecar_number}}</text></view>
+                    <view style="margin: 10rpx 30rpx 0rpx 30rpx;"><text>起点：{{item.sharecar_from}}</text></view>
+                    <view style="margin: 10rpx 30rpx 0rpx 30rpx;"><text>目的地：{{item.sharecar_go}}</text></view>
+                    <view style="margin: 10rpx 30rpx 0rpx 30rpx;"><text>出发时间：{{item.sharecar_time}}</text></view>
+                    <view style="margin: 10rpx 30rpx 0rpx 30rpx;"><text>其他详情：{{item.sharecar_detail}}</text></view>
+ 
+                </view>
+                <!-- 文后小标模块 -->
+                <view class="box3" style="width: 50%; height: 10%;">
+                   
+                </view>
+            </view>
+        </view>
+    </swiper-item>
+    <swiper-item class="container1">
+        <view class="list" wx:if="{{post1.length!=0}}">
+            <!-- 以一个作为案例 -->
+            <view class="box" wx:for="{{post1}}" wx:key="index">
+                <!-- 头像栏模块 -->
+                <view class="box1" bindtap="jumptodetails" data-index="{{index}}">
+                    <image src="{{item.blogger_avatar}}"></image>
+                    <text class="text1">{{item.sharecar_topic}}</text>
+                    <text class="text2">{{item.blogger_time}}</text>
+                </view>
+                <view class="box-way">{{item.sharecar_space}}</view>
+                <!-- 主要内容模块 -->
+                <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
+                    <view style="margin: 10rpx 30rpx 0rpx 30rpx;"><text>人数：{{item.sharecar_number}}</text></view>
+                    <view style="margin: 10rpx 30rpx 0rpx 30rpx;"><text>起点：{{item.sharecar_from}}</text></view>
+                    <view style="margin: 10rpx 30rpx 0rpx 30rpx;"><text>目的地：{{item.sharecar_go}}</text></view>
+                    <view style="margin: 10rpx 30rpx 0rpx 30rpx;"><text>出发时间：{{item.sharecar_time}}</text></view>
+                    <view style="margin: 10rpx 30rpx 0rpx 30rpx;"><text>其他详情：{{item.sharecar_detail}}</text></view>
+                </view>
+                <!-- 文后小标模块 -->
+                <view class="box3" style="width: 50%; height: 10%;">
+                        <view class="post-data" style="height: 100%;">
+                        <t-button shape="round" class="mypostmenu" bindtap="postmenu" data-index="{{index}}">更多操作</t-button>
+                        <!-- 点赞   -->
+                    </view>
+                </view>
+            </view>
+        </view>
+                        <view class="list" wx:else>
+                        <view class="emptyhistory">
+        <image src="https://www.scnusay.cc/icon/empty.png" mode="" class="emptyimg"/>
+    </view>
 
-<view class="in_contact" bindtap="GOTO">
-<text class="topic">{{item.ShareCar_title}}
-</text>
-<text class="date">日期：<text style="font-weight: 400;">{{item.ShareCar_time}}</text></text>
-<text class="space">
-校区：<text style="font-weight: 400;">{{item.ShareCar_space}}</text></text>
-<text class="spot">
-出发地点：<text style="font-weight: 400;">{{item.ShareCar_spot}}</text></text>
-<text class="contact">
-联系方式：<text style="font-weight: 400;">{{item.ShareCar_contact}}</text></text>
-<text class="price_share">
-分类：<text style="font-weight: 400;">{{item.ShareCar_class}}</text>
-</text>
-<text class="people">
-出行人数：<text style="font-weight: 400;">{{item.ShareCar_people}}</text>
-</text>
-</view>
-<view class="bottom">
-            <button size="mini" style="width:26.5%; left: 5%; background-color: white;" bindtap="like" ><text style="font-size: large;">{{isClick?' ★ ':' ☆ '}}</text></button>
-            <button size="mini" style="width:26%; left: 36.45%;position: absolute; background-color: white;" bindtap="calling"><image class="call_image" src="/assets/images/sharecars/call.jpg"></image></button>
-            <button size="mini" style="width:26%; right: 7%;position: absolute; background-color: white;"  bindtap="GOTO"><image class="call_image" src="/assets/images/sharecars/icon4.jpg"></image></button>
- </view>
-</view>
-</block>
+    <view class="nohistory-container">
+        <text class="nohistory">oh!暂无历史记录</text>
+    </view>
+
+
+                            </view>
+    </swiper-item>
+</swiper>
+

@@ -1,5 +1,5 @@
 {
-    "projectname": "wechat_scnusay2",
+    "projectname": "wechat_scnusay",
     "setting": {
         "compileHotReLoad": true
     },
@@ -66,6 +66,41 @@
                 {
                     "name": "",
                     "pathName": "pages/index/index1",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/ShareCar/detail",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/ShareCar/publish",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/ShareCar/searchIndex",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/team/publish",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/team/searchIndex",
                     "query": "",
                     "launchMode": "default",
                     "scene": null

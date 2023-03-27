@@ -1,158 +1,100 @@
-<!--pages/team/team.wxml-->
-<!-- <text>pages/team/team.wxml</text> -->
-<view class='page_row' bindtap="suo">
+<!--pages/ShareCar/index.wxml-->
+<!-- <text>pages/ShareCar/index.wxml</text> -->
+<view class="nav-wrap" style="height: {{navH*2+20}}px;position: absolute;">
+    <!-- 自定义导航栏 -->
+    <view class="nav-title" style="line-height: {{navH*2+44}}px;">队友招募</view>
+    <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
+        <navigator hoverClass="none" open-type="switchTab" url="/pages/index/index1">
+                    <image class="back-pre" src="https://www.scnusay.cc/icon/back.png" style="height:50rpx;width:50rpx;margin-top: 50rpx;"></image>
+        </navigator>
+    </view>
+</view>
+<view style="height: {{navH*2+20}}px;"></view>
+<view class="weui-loadmore" wx:if='{{isRefreshing}}'>
+  <view class="weui-loading"></view>
+  <view class="weui-loadmore-tips">正在刷新...</view>
+</view>
+
+<view class="guide" bindtap="gotosend" >
+    <view class="lostcenter">发布</view>
+</view>
+<view class='page_row'bindtap='gotosearch' >
     <view class="search">
       <view class="df search_arr">
         <icon class="searchcion" size='16' type='search'></icon>
-        <input class="sousuo" disabled placeholder="搜索" bindtap='search'/>
+        <input class="sousuo" disabled placeholder="搜索" bindtap='gotosearch'/>
       </view>
     </view>
 </view>
+<!-- 切换栏 -->
+<view class='swipertab'>
+    <view class="tabitem1" style="{{tabstylelost}}" data-current="0" bindtap='clicktab'>招募大厅</view>
 
-<view>
-
-    <view class="out_index_top">
-
-    <view class="index_three_box">
-        <image class="img1" src="/assets/images/sharecars/jpg5.jpg" mode='aspectFit'></image>
-        <navigator url="/pages/team/publish/index" open-type="navigate">
-        <text class="under_img">发布招募令</text>
-        </navigator>   
-    </view>
-    
-    <view class="index_three_box">
-        <image class="img1" src="/assets/images/sharecars/jpg5.jpg" mode='aspectFit'></image>
-        <navigator url="/pages/team/my_publish/index" open-type="navigate">
-        <text class="under_img">我的招募令</text>
-        </navigator>   
-    </view>
-
-    <view class="index_three_box">
-        <image class="img1" src="/assets/images/sharecars/jpg5.jpg" mode='aspectFit'></image>
-        <navigator url="#" open-type="navigate">
-        <text class="under_img">我的消息</text>
-        </navigator>   
-    </view>
-
-    <view class="index_three_box">
-        <image class="img1" src="/assets/images/sharecars/jpg5.jpg" mode='aspectFit'></image>
-        <navigator url="#" open-type="navigate">
-        <text class="under_img">我的收藏</text>
-        </navigator>   
-    </view>
+    <view class="tabitem2" style="{{tabstylemy}}" data-current="1" bindtap='clicktab'>我的发布</view>
 </view>
-
-</view>
-
-<view class="mid_zhaomu">
-<image src="/assets/images/team/blue_bgc.jpg" class="mid_jpg"></image>
-<text class="mid_jpg_text">招募大厅</text>
-<view class="list-msg">
-    <view class="list-msg2">
-        <text>{{tihuoway}}</text>
-    </view>
-</view>
-</view>
-
-<view class="chat">
-<!-- woshifengexian -->
-<view class="touxianglan">
-<view>
-<image class="touxiang" src="/assets/images/sharecars/yellow_bgc.jpg"></image>
-</view>
-<view>
-<text class="name">女装大姐姐</text>
-<text class="time" decode="true">\n &nbsp;&nbsp;&nbsp;1小时前发布</text>
-</view>
-</view>
-
-<view class="in_contact">
-<text class="topic">挑战杯初赛（A组）
-</text>
-<text class="team_name">队伍名：<text style="font-weight: 400;">我这什么队</text></text>
-<text class="xiaoqu">
-校区：<text style="font-weight: 400;">南海校区</text></text>
-<text class="kuaxiao">
-是否支持跨校区组队：<text style="font-weight: 400;">否</text></text>
-<text class="contact">
-联系方式：<text style="font-weight: 400;">13927423111</text></text>
-<view>
-    <text class="detail">
-    #帮转
-#互联网+队友招募
- 关键词：财商教育 绿色经济 公益
-📌现有资源：
-现有两名经验丰富的老师担任指导
-财商工作室已成立
-已被学院推荐至校种子营
-商业计划书与ppt已完成
-
-🚩 项目获奖经历：
-省级大创立项
-“与人杯”全国20强
-互联网+校赛银奖
-挑战杯校赛银奖
+<!-- 切换栏结束 -->
+<!-- 商品栏用<swiper></swiper> -->
+<swiper bindchange="changeswiper" current="{{current_Page}}" style="height:{{swiperHeight}} ;">
+    <swiper-item>
+        <view class="list">
+            <!-- 以一个作为案例 -->
+            <view class="box" wx:for="{{post0}}" wx:key="index">
+                <!-- 头像栏模块 -->
+                <view class="box1" bindtap="jumptodetails" data-index="{{index}}">
+                    <image src="{{item.blogger_avatar}}"></image>
+                    <text class="text1">{{item.team_topic}}</text>
+                    <text class="text2">{{item.blogger_time}}</text>
+                </view>
+                <view class="box-way">{{item.team_space}}</view>
+                <!-- 主要内容模块 -->
+                <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
+                   <text style="margin: 10rpx 30rpx 0rpx 30rpx;font-weight: 700;font-size: 34rpx;">招募信息：</text>
+                    <view style="margin: 10rpx 30rpx 0rpx 30rpx;font-weight: 500;"><text>{{item.team_detail}}</text></view>
  
-👥 团队成员介绍：团队成员具有互联网+、大创、挑战杯、三创赛、众创杯等项目经验，项目成员有小挑校银奖，互联网+校赛银奖，国家级大创立项等获奖经历。
-现有成员分别来自经管、政管、旅游管理、文学院、城市与文化学院，专业知识掌握牢固，综合能力强。多名成员为校综合奖学金获得者，且团队氛围十分和睦。
- 
-💫 团队现招募1-2名负责线上平台搭建，计算机能力和设计灵感较强的同学
+                </view>
+                <!-- 文后小标模块 -->
+                <view class="box3" style="width: 50%; height: 10%;">
+                   
+                </view>
+            </view>
+        </view>
+    </swiper-item>
+    <swiper-item class="container1">
+        <view class="list" wx:if="{{post1.length!=0}}">
+            <!-- 以一个作为案例 -->
+            <view class="box" wx:for="{{post1}}" wx:key="index">
+                <!-- 头像栏模块 -->
+                <view class="box1" bindtap="jumptodetails" data-index="{{index}}">
+                    <image src="{{item.blogger_avatar}}"></image>
+                    <text class="text1">{{item.team_topic}}</text>
+                    <text class="text2">{{item.blogger_time}}</text>
+                </view>
+                <view class="box-way">{{item.team_space}}</view>
+                <!-- 主要内容模块 -->
+                <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
+                   
+                    <view style="margin: 10rpx 30rpx 0rpx 30rpx;"><text>其他详情：{{item.team_detail}}</text></view>
+                </view>
+                <!-- 文后小标模块 -->
+                <view class="box3" style="width: 50%; height: 10%;">
+                        <view class="post-data" style="height: 100%;">
+                        <t-button shape="round" class="mypostmenu" bindtap="postmenu" data-index="{{index}}">更多操作</t-button>
+                        <!-- 点赞   -->
+                    </view>
+                </view>
+            </view>
+        </view>
+                        <view class="list" wx:else>
+                        <view class="emptyhistory">
+        <image src="https://www.scnusay.cc/icon/empty.png" mode="" class="emptyimg"/>
+    </view>
 
- 💫 我们希望你：
- 在4月份到5月份有充足的时间投入比赛，中途不退出
- 不拖ddl，不摸鱼，向上积极
- 有想法，灵感丰富，创新能力强
+    <view class="nohistory-container">
+        <text class="nohistory">oh!暂无历史记录</text>
+    </view>
 
-  投递简历或发送微信号至邮箱直接联系 3287548928@qq.com
- 截止时间：4月14号晚上23:00
 
-我们期待你的到来
-</text>
-  </view>
-</view>
+                            </view>
+    </swiper-item>
+</swiper>
 
-<view class="bottom">
-            <button size="mini" class="shoucang" bindtap="shoucang">收藏</button>
-            <button size="mini" class="call" bindtap="calling">联系队长</button>
-            <button size="mini" class="pinglun"  bindtap="jump_page">评论</button>
- </view>
-</view>
-
-<view class="chat">
-<!-- woshifengexian -->
-<view class="touxianglan">
-<view>
-<image class="touxiang" src="/assets/images/sharecars/yellow_bgc.jpg"></image>
-</view>
-<view>
-<text class="name">女装大姐姐</text>
-<text class="time" decode="true">\n &nbsp;&nbsp;&nbsp;1小时前发布</text>
-</view>
-</view>
-
-<view class="in_contact">
-<text class="topic">挑战杯初赛（A组）
-</text>
-<text class="team_name">队伍名：<text style="font-weight: 400;">我这什么队</text></text>
-<text class="xiaoqu">
-校区：<text style="font-weight: 400;">南海校区</text></text>
-<text class="kuaxiao">
-是否支持跨校区组队：<text style="font-weight: 400;">否</text></text>
-<text class="contact">
-联系方式：<text style="font-weight: 400;">13927423111</text></text>
-<view>
-    <text class="detail">
-    #帮转
-#互联网+队友招募
- 关键词：财商教育 绿色经济 公益
-
-</text>
-  </view>
-</view>
-
-<view class="bottom">
-            <button size="mini" class="shoucang" bindtap="shoucang">收藏</button>
-            <button size="mini" class="call" bindtap="calling">联系队长</button>
-            <button size="mini" class="pinglun"  bindtap="jump_page">评论</button>
- </view>
-</view>

@@ -51,7 +51,7 @@ page{
     margin-bottom: 1rpx;
     width: 46%;
     height: 100%;
-    border-radius: 30rpx;
+    border-radius: 10rpx;
     margin-left: 3%;
     text-align: center;
     justify-content: space-around;
@@ -66,7 +66,7 @@ page{
     margin-bottom: 1rpx;
     width: 46%;
     height: 100%;
-    border-radius: 30rpx;
+    border-radius: 10rpx;
     margin-right: 3%;
     text-align: center;
     justify-content: space-around;
@@ -74,7 +74,7 @@ page{
     box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
 }
 .swipertab{
-    height: 8%;
+    height: 5%;
     margin-top: 10rpx;
     background-color: rgb(245, 245, 245);
 
@@ -89,7 +89,9 @@ swiper{
 .box {
     width: 95;
     position: relative;
-    margin: 10rpx 0;
+    margin-top: 10rpx;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
     background-color: #fff;
     box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
     border-radius: 50rpx;
@@ -115,10 +117,17 @@ swiper{
     font-weight: 700;
     font-size: 34rpx;
     width: 380rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-flow:row wrap;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
 }
 
 .box1 .text2 {
-    float: right;
+    margin-left: 20rpx;
     font-size: 20rpx;
     color: #aaa;
 }
@@ -133,19 +142,30 @@ swiper{
 
 .box2 {
     margin: 20rpx 10rpx;
-    padding-bottom: 100rpx;
+    padding-bottom: 40rpx;
     /* height: 400rpx; */
 }
 
 .box2 text {
-    font-size: 30rpx;
-    width: 750rpx;
-    height: 30rpx;
+    text-indent: 20rpx;
+    height: 30%;
+    width: 600rpx;
+    margin: 0 auto;
+    font-size: 28rpx;
+    display: block;
+    white-space: pre-line;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    flex-flow:row wrap;
 }
 
 .box2 image {
     margin: 20rpx 5rpx;
-    width: 230rpx;
+    width: 32%;
     height: 130rpx;
 }
 
@@ -171,3 +191,71 @@ swiper{
 .test{
     height: 10px;
 }
+.nohistory{
+    /* grey center 16px */
+    color: #999;
+    font-size: 16px;
+    margin-top: 20px;
+}
+.nohistory-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.emptyhistory{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.emptyimg{
+    /* make the img on the center of de view */
+    width: 50px;
+    height: 50px;
+    margin-top: 200rpx;
+}
+.nologinmessage
+{
+    text-align: center;
+    color: grey;
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+}
+
+/* 图片已完成的样式 */
+.photo-finish{
+    position: absolute;
+    right: 0;
+    width: 150rpx;
+    height: 150rpx;
+    opacity: 40%;
+}
+
+.weui-loadmore {
+    width: 100%;
+    height: 100rpx;
+    font-size: 30rpx;
+    text-align: center;
+    margin-top: 30rpx;
+  }
+  
+  .weui-loading {
+    width: 50rpx;
+    height: 50rpx;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-animation: weuiLoading 1s steps(12, end) infinite;
+    animation: weuiLoading 1s steps(12, end) infinite;
+    background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgxMDB2MTAwSDB6Ii8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTlFOUU5IiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgLTMwKSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iIzk4OTY5NyIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgzMCAxMDUuOTggNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjOUI5OTlBIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDYwIDc1Ljk4IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0EzQTFBMiIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSg5MCA2NSA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNBQkE5QUEiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoMTIwIDU4LjY2IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0IyQjJCMiIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgxNTAgNTQuMDIgNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjQkFCOEI5IiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDE4MCA1MCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDMkMwQzEiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTE1MCA0NS45OCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDQkNCQ0IiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTEyMCA0MS4zNCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNEMkQyRDIiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDM1IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0RBREFEQSIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgtNjAgMjQuMDIgNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTJFMkUyIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKC0zMCAtNS45OCA2NSkiLz48L3N2Zz4=) no-repeat;
+    background-size: 100%;
+  }
+  
+  .weui-loadmore-tips {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
