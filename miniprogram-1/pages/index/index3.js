@@ -133,7 +133,7 @@ Page({
                                                 if (res.cancel) {}
                                                 if (res.confirm) {
                                                     wx.navigateTo({
-                                                        url: '/pages/talking/index',
+                                                        url: '/pages/index/index3',
                                                     })
                                                 }
                                             }
