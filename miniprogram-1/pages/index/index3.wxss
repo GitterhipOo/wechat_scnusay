@@ -153,15 +153,18 @@ swiper{
 .box2 text {
     font-size: 30rpx;
     padding-right: 3%;
-    width: 750rpx;
-    height: 30rpx;
+    padding-left: 1%;
+    width: 95%;
+    height: 30%;
     /* 多行省略 */
-    /* overflow: hidden;
+    white-space: pre-line;
+    overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-
+    word-break: break-all;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3; */
+    -webkit-line-clamp: 6;
+    flex-flow:row wrap;
 }
 
 .box2 image {

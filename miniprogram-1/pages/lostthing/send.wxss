@@ -67,8 +67,16 @@ page {
 } */
 
 .lostChoose {
-    margin: 20rpx 5rpx;
+    margin: 10rpx 5rpx;
     height: 40rpx;
+}
+
+.detail_box{
+    /* box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.4); */
+    border-radius: 10rpx;
+    border:solid black 4rpx;
+    margin:0% 3% 3% 3%;
+    padding-top: 1%;
 }
 
 picker {
@@ -77,18 +85,20 @@ picker {
 
 .moreInfor {
     position: relative;
-    margin: 20rpx 5rpx;
+    margin: 0rpx 5rpx;
     height: 50rpx;
 }
 
 .send {
-    margin: 40rpx 0;
+    margin: 40rpx 0rpx;
+    /* box-align:center; */
+
     height: 70rpx;
     border-radius: 70rpx;
     box-shadow: 0px 0px 8px #999 inset;
     line-height: 45rpx;
     text-align: center;
-    background-color: steelblue;
+    background-color: purple;
     color: white
 }
 
@@ -98,10 +108,33 @@ picker {
     border-radius: 70rpx;
     line-height: 45rpx;
     text-align: center;
-    background-color: rgb(47, 101, 145);
+    background-color: rgb(101, 47, 145);
     color: white;
     box-shadow: 0px 0px 0px rgb(253, 252, 252) inset;
 }
+
+.button {
+    /* display: inline-block; */
+    /* padding: 15px 25px; */
+    /* font-size: 24px; */
+    cursor: pointer;
+    text-align: center;   
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    /* background-color: #4CAF50; */
+    /* border: none; */
+    /* border-radius: 15px; */
+    box-shadow: 0 9px #999;
+  }
+  
+  .button:hover {background-color: #69267a}
+  
+  .button:active {
+    background-color: #8b45a7;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
 
 .clearfix:after,
 .clearfix:before {
