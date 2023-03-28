@@ -171,3 +171,11 @@ swiper{
 .test{
     height: 10px;
 }
+
+.photo-finish{
+    position: absolute;
+    right: 0;
+    width: 150rpx;
+    height: 150rpx;
+    opacity: 40%;
+}

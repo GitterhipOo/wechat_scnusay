@@ -1,0 +1,33 @@
+<view class="nav-wrap" style="height: {{navH*2+20}}px;position: absolute;">
+    <!-- 自定义导航栏 -->
+    <view class="nav-title" style="line-height: {{navH*2+44}}px;">搜索结果</view>
+    <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
+        <navigator hoverClass="none" open-type="navigate" url="/pages/team/team">
+                    <image class="back-pre" src="https://www.scnusay.cc/icon/back.png" style="height:50rpx;width:50rpx;margin-top: 50rpx;"></image>
+        </navigator>
+    </view>
+</view>
+
+<view style="height: {{navH*2+20}}px;"></view>
+<view class="list">
+            <!-- 以一个作为案例 -->
+            <view class="box" wx:for="{{post0}}" wx:key="index">
+                <!-- 头像栏模块 -->
+                <view class="box1" bindtap="jumptodetails" data-index="{{index}}">
+                    <image src="{{item.blogger_avatar}}"></image>
+                    <text class="text1">{{item.team_topic}}</text>
+                    <text class="text2">{{item.blogger_time}}</text>
+                </view>
+                <view class="box-way">{{item.team_space}}</view>
+                <!-- 主要内容模块 -->
+                <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
+                   <text style="margin: 10rpx 30rpx 0rpx 30rpx;font-weight: 700;font-size: 34rpx;">招募信息：</text>
+                    <view style="margin: 10rpx 30rpx 0rpx 30rpx;font-weight: 500;"><text>{{item.team_detail}}</text></view>
+ 
+                </view>
+                <!-- 文后小标模块 -->
+                <view class="box3" style="width: 50%; height: 10%;">
+                   
+                </view>
+            </view>
+        </view>

@@ -6,7 +6,7 @@
         <navigator hoverClass="none" url="/pages/serach/search">
             <view class="nav-capsule">
                 <view class="topimage">
-                    <image class="back-pre" src="https://www.scnusay.cc/icon/search.png" style="height:35px;width:35px;" bindtap="logo"></image>
+                    <image class="back-pre" src="https://www.scnusay.cc/icon/logo.png" style="height:35px;width:35px;" bindtap="logo"></image>
                 </view>
             </view>
         </navigator>
@@ -18,72 +18,81 @@
 <view style="margin-top:{{navH*4+50}}rpx">
     <!-- 轮播图 -->
     <view class="bbs-swiper-container">
-        <swiper class="bbs-swiper" autoplay="true" circular="true" 
-            interval="3000" easing-function="easeOutCubic" 
-            current="{{swiperCurrent}}" 
-            bindchange="swiperChange">
+        <swiper class="bbs-swiper" autoplay="true" circular="true" interval="3000" easing-function="easeOutCubic" current="{{swiperCurrent}}" bindchange="swiperChange">
             <!-- 轮播图图片 -->
             <swiper-item class="bbs-swiper-item" wx:for="{{rotationList}}" wx:key="index">
-            <!-- 加上widthFix可以使图片自适应 -->
-            <image src="{{item.imgurl}}"></image>
+                <!-- 加上widthFix可以使图片自适应 -->
+                <image src="{{item.imgurl}}"></image>
             </swiper-item>
         </swiper>
         <!-- 定制轮播图dots -->
         <view class="bbs-dots">
             <block wx:for="{{rotationList.length}}" wx:key="index">
-            <view class="bbs-dots-item{{index == swiperCurrent ? ' bbs-dot-active' : ''}}"></view>
+                <view class="bbs-dots-item{{index == swiperCurrent ? ' bbs-dot-active' : ''}}"></view>
             </block>
         </view>
     </view>
-    </view>
+</view>
 
-    
-    <view class="mess_sort">
-        <!-- 实时留言 -->
-        <view class="leave-message">
-            <image class="message-image" src="https://www.scnusay.cc/icon/message.png"></image>
-            <swiper class="swiper_message" circular vertical autoplay interval="3000" easing-function="easeInOutCubic" >
-                <swiper-item class="swiper-item-message">
-                    <view class="message">
-                        
-                        <text class="message-name">卢本伟</text>
-                        <text class="message-content">图书馆又漏水辣</text>
-                    </view>
-                </swiper-item>
-                <swiper-item class="swiper-item-message">
-                    <view class="message">
-                        <!-- <image class="message-image" src="../../assets/images/sort/love-mood.png"></image> -->
-                        <text class="message-name">财务处 </text>
-                        <text class="message-content">2022年华南师范大学部门预算</text>
-                    </view>
-                </swiper-item>
-                <swiper-item class="swiper-item-message">
-                    <view class="message">
-                        <!-- <image class="message-image" src="../../assets/images/sort/love-mood.png"></image> -->
-                        <text class="message-name">软件学院 </text>
-                        <text class="message-content">第二轮转专业结果已公示</text>
-                    </view>
-                </swiper-item>
-            </swiper>
+
+<view class="mess_sort">
+    <!-- 实时留言 -->
+    <view class="leave-message">
+        <image class="message-image" src="https://www.scnusay.cc/icon/message.png"></image>
+        <swiper class="swiper_message" circular vertical autoplay interval="3000" easing-function="easeInOutCubic">
+            <swiper-item class="swiper-item-message">
+                <view class="message">
+
+                    <text class="message-name">卢本伟</text>
+                    <text class="message-content">图书馆又漏水辣</text>
+                </view>
+            </swiper-item>
+            <swiper-item class="swiper-item-message">
+                <view class="message">
+                    <!-- <image class="message-image" src="../../assets/images/sort/love-mood.png"></image> -->
+                    <text class="message-name">财务处 </text>
+                    <text class="message-content">2022年华南师范大学部门预算</text>
+                </view>
+            </swiper-item>
+            <swiper-item class="swiper-item-message">
+                <view class="message">
+                    <!-- <image class="message-image" src="../../assets/images/sort/love-mood.png"></image> -->
+                    <text class="message-name">软件学院 </text>
+                    <text class="message-content">第二轮转专业结果已公示</text>
+                </view>
+            </swiper-item>
+        </swiper>
+    </view>
+</view>
+
+
+<view class="bigleavemessage">
+    <!-- 分类标签 -->
+    <scroll-view scroll-x class="sort-nav" scroll-with-animation enable-flex="true">
+        <view class="sort-nav-item" wx:for="{{sortList}}" wx:key="index" bindtap="{{item.jumpid}}">
+            <image class="sort-nav-icon" src="{{item.icon}}" mode="widthFix" lazy-load="false"></image>
+            <text class="sort-nav-text">{{item.text}}</text>
         </view>
-    </view>
-        
+    </scroll-view>
+</view>
 
-    <view class="bigleavemessage">
-        <!-- 分类标签 -->
-        <scroll-view scroll-x class="sort-nav" scroll-with-animation enable-flex="true">
-            <view class="sort-nav-item" wx:for="{{sortList}}"  wx:key="index" bindtap="{{item.jumpid}}">
-                <image class="sort-nav-icon" src="{{item.icon}}" mode="widthFix" lazy-load="false"></image>
-                <text class="sort-nav-text">{{item.text}}</text>
-            </view>
-        </scroll-view>   
-    </view>
-    
-    <view class="keep-students">
-        <image src="https://www.scnusay.cc/icon/search.png" class="left-image"></image>
-        <view class="say-to-keep">关注华师说，获取更多华师内容捏~</view>
-    </view>
-<!-- -------------------------------------瀑布流----------------------------------------- -->
 
-<!-- 123 -->
-<!-- 123 -->
+<!-- <view class="keep-students">
+    <image src="https://www.scnusay.cc/icon/logo.png" class="left-image"></image>
+    <view class="say-to-keep">关注华师说，获取更多华师内容捏~</view>
+</view> -->
+
+<!-- make a line -->
+
+<!-- Draw a dividing line and write the important news of China Normal University -->
+<view class="important-news-title">
+<image src="https://www.scnusay.cc/icon/logo.png" class="newsimg" mode=""/><view class="scnunewstext">华师要闻</view>
+</view>
+    <!-- add a line under the text -->
+<view class="important-news-line"></view>
+
+<view class="important-news">
+<view class="keep-students" wx:for="{{article}}" data-index="{{index}}" bindtap="jumpToArticle">
+    <view class="article-title">{{item.title}}</view>
+</view>
+</view>

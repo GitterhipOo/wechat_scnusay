@@ -10,7 +10,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-        swiperHeight:"1000px",
+        haslogin: '',
+        swiperHeight: "1000px",
         //页面切换相关数据
         current_Page: 0,
         photocou: 0, //用户上传图片的数量
@@ -37,18 +38,29 @@ Page({
 
     //通过计算post的数量获取页面长度
     getSwiperItemHeight:function(){
-        var postHeight
+        var postHeight = 0
+        var post
         if (this.data.current_Page == 0){
-            postHeight=(this.data.post0.length)*500+100+"rpx";
+            post = this.data.post0
         }
         else{
-            postHeight=(this.data.post1.length)*500+100+"rpx";
+            post = this.data.post1
         }
-        console.log("计算页面高度触发")
+        console.log(post)
+        for (var i = 0; i < post.length; i++){
+            if (post[i].photos.length > 0){
+                postHeight+=400
+            }
+            else{ 
+                postHeight+=220
+            }
+        }
+        postHeight=postHeight+600;
+        postHeight = postHeight+"rpx";
         this.setData({
             swiperHeight:postHeight,
         })
-        console.log("高度赋值完成")
+        console.log("高度赋值完成,计算高度为",postHeight)
     },
 
     //跳转至详情页面
@@ -76,7 +88,7 @@ Page({
         })
     },
 
-    postmenu:function(e){
+    postmenu: function (e) {
         console.log(e);
         var that = this
         let index = e.currentTarget.dataset.index
@@ -88,58 +100,90 @@ Page({
             var menupostValue = that.data.post0[index].specialcode
         } else if (that.data.current_Page == 1)
             var menupostValue = that.data.post1[index].specialcode
-            //从已经放好的数组中获取对应的specialcode
-            console.log("选择菜蛋对应的specialcode为"+menupostValue)
+        //从已经放好的数组中获取对应的specialcode
+        console.log("选择菜蛋对应的specialcode为" + menupostValue)
 
         wx.showActionSheet({
-                    itemList: ['删除', '已解决'],
-                    success: function (res) {
-                        if (res.tapIndex == 0) {
-                            wx.showModal({
-                                title: '删除',
-                                content: '是否删除内容',
-                                complete: (res) => {
-                                    if (res.cancel) {
-                                    }
-                                    if (res.confirm) {
-                                        //console.log("选择菜蛋对应的specialcode为"+menupostValue)
-                                        wx.request({
-                                            url: 'https://www.scnusay.cc/lostdetail/lostdetailphoto/deletemylostpost.php',
-                                            method: "POST",
-                                            data: {
-                                                'menupostValue': menupostValue,
-                                            },
-                                            header: {
-                                                'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
-                                            },
-                                            success(res) {
-                                                wx.showModal({
-                                                    title: '删除成功',
-                                                    content: '发布内容已删除',
-                                                    complete: (res) => {
-                                                        if (res.cancel) {
-
-                                                        }
-                                                        if (res.confirm) {
-                                                            wx.navigateTo({
-                                                                url: '/pages/lostthing/index',
-                                                            })
-                                                        }
-                                                    }
-                                                })
-
-                                            },
+            itemList: ['删除', '已解决'],
+            success: function (res) {
+                if (res.tapIndex == 0) {
+                    wx.showModal({
+                        title: '删除',
+                        content: '是否删除内容',
+                        complete: (res) => {
+                            if (res.cancel) {
+                            }
+                            if (res.confirm) {
+                                //console.log("选择菜蛋对应的specialcode为"+menupostValue)
+                                wx.request({
+                                    url: 'https://www.scnusay.cc/lostdetail/lostdetailphoto/deletemylostpost.php',
+                                    method: "POST",
+                                    data: {
+                                        'menupostValue': menupostValue,
+                                    },
+                                    header: {
+                                        'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
+                                    },
+                                    success(res) {
+                                        wx.showModal({
+                                            title: '删除成功',
+                                            content: '发布内容已删除',
+                                            complete: (res) => {
+                                                if (res.cancel) {
+                                                }
+                                                if (res.confirm) {
+                                                    wx.navigateTo({
+                                                        url: '/pages/lostthing/index',
+                                                    })
+                                                }
+                                            }
                                         })
-                                    }
-                                }
-                            })
-                        }
-                    },
 
-            fail: function(res) {  
-                console.log(res.errMsg)  
-            }  
-        })  
+                                    },
+                                })
+                            }
+                        }
+                    })
+                }
+                //点击已解决
+                if (res.tapIndex == 1) {
+                    wx.showModal({
+                        title: '已解决',
+                        content: '确认已解决问题',
+                        complete: (res) => {
+                            //如果用户点击了取消，那么就不执行任何操作，如果用户点击了确定，那么就执行下面的操作
+                            if (res.cancel) {
+                            }
+                            if (res.confirm) {
+                            //发起wx.quest的post请求，传递id至https://www.scnusay.cc/lostdetail/lost_had_solved.php
+                                wx.request({
+                                    url: 'https://www.scnusay.cc/lostdetail/lost_had_solved.php',
+                                    method: "POST",
+                                    data: {
+                                        'menupostValue': menupostValue,
+                                    },
+                                    header: {
+                                        'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
+                                    },
+                                    success(res) {
+                                        console.log("已解决问题，修改内容")
+                                        wx.navigateTo({
+                                            url: '/pages/lostthing/index',
+                                        })
+
+                                    }
+                            })
+                            }
+                        }
+                    })
+                }
+            },
+
+            fail: function (res) {
+                console.log(res.errMsg)
+
+            }
+        })
     },
     //点赞功能
     favourMe: function (e) {
@@ -168,12 +212,24 @@ Page({
 
     //触底刷新功能
     onReachBottom: function () {
-       console.log("触底事件触发")
-       this.getSwiperItemHeight()
-        
+        console.log("触底事件触发")
+        this.getSwiperItemHeight()
+
     },
     onPullDownRefresh: function () {
-        //wx.stopPullDownRefresh()
+        if (this.data.isRefreshing || this.data.isLoadingMoreData) {
+            return
+        }
+        this.setData({
+            isRefreshing: true,
+            hasMoreData: true
+        })
+        //wait for 1 second
+        setTimeout(() => {
+            wx.reLaunch({
+                url: 'index',
+              })
+        }, 300)
     },
 
     // 点击标签判断
@@ -186,38 +242,64 @@ Page({
         })
         var tabstylelost
         var tabstylemy
-        if (this.data.current_Page == 0){
-            tabstylelost="background-color: rgb(186 , 204, 217)";
-            tabstylemy="background-color: white";
+        if (this.data.current_Page == 0) {
+            tabstylelost = "background-color: rgb(186 , 204, 217)";
+            tabstylemy = "background-color: white";
         }
-        else{
-            tabstylelost="background-color: white";
-            tabstylemy="background-color: rgb(186 , 204, 217)";
+        else {
+            tabstylelost = "background-color: white";
+            tabstylemy = "background-color: rgb(186 , 204, 217)";
         }
         this.setData({
-            tabstylelost:tabstylelost,
+            tabstylelost: tabstylelost,
             tabstylemy: tabstylemy,
         })
     },
 
-    getSwiperItemHeight:function(){
-        var postHeight
-        if (this.data.current_Page == 0){
-            postHeight=(this.data.post0.length)*500+100+"rpx";
+    // getSwiperItemHeight: function () {
+    //     var postHeight
+    //     if (this.data.current_Page == 0) {
+    //         postHeight = (this.data.post0.length) * 400 + 600 + "rpx";
+    //     }
+    //     else {
+    //         postHeight = (this.data.post1.length) * 400 + 600 + "rpx";
+    //     }
+    //     console.log("计算页面高度触发")
+    //     this.setData({
+    //         swiperHeight: postHeight,
+    //     })
+    //     console.log("高度计算完成")
+    // },
+    gotosend: function (e) {
+        console.log("点击去发布")
+        if (app.globalData.haslogin === false) {
+            //出现可选择弹窗提醒用户未登录，如果用户点击确定，则跳转至登录页面，否则不跳转
+            wx.showModal({
+                title: '提示',
+                content: '您还未登录，是否前往登录？',
+                success(res) {
+                    if (res.confirm) {
+                        console.log('用户点击确定')
+                        wx.switchTab({
+                            url: '/pages/index/index4',
+                        })
+                    } else if (res.cancel) {
+                        console.log('用户点击取消')
+                    }
+                }
+            })
         }
-        else{
-            postHeight=(this.data.post1.length)*500+100+"rpx";
+        else {
+            wx.navigateTo({
+                url: '/pages/lostthing/send',
+            })
+            console.log("login 状态为" + app.globalData.haslogin)
+            console.log("您已登录，获得发布权限")
         }
-        console.log("计算页面高度触发")
-        this.setData({
-            swiperHeight:postHeight,
-        })
-        console.log("高度计算完成")
     },
 
-
     //滑动swiperItem修改currentPag
-    changeswiper(e){ 
+    changeswiper(e) {
         this.setData({
             current_Page: e.detail.current
         })
@@ -225,16 +307,16 @@ Page({
         this.getSwiperItemHeight()
         var tabstylelost
         var tabstylemy
-        if (this.data.current_Page == 0){
-            tabstylelost="background-color: rgb(186 , 204, 217)";
-            tabstylemy="background-color: white";
+        if (this.data.current_Page == 0) {
+            tabstylelost = "background-color: rgb(186 , 204, 217)";
+            tabstylemy = "background-color: white";
         }
-        else{
-            tabstylelost="background-color: white";
-            tabstylemy="background-color: rgb(186 , 204, 217)";
+        else {
+            tabstylelost = "background-color: white";
+            tabstylemy = "background-color: rgb(186 , 204, 217)";
         }
         this.setData({
-            tabstylelost:tabstylelost,
+            tabstylelost: tabstylelost,
             tabstylemy: tabstylemy,
         })
     },
@@ -243,7 +325,32 @@ Page({
      */
     onLoad: function (options) {
         var _this = this
+        wx.request({
+            url: 'https://www.scnusay.cc/lostdetail/confirmlogin.php',
+            method: "POST",
+            data: {
+                'openid': app.globalData.openid
+            },
+            header: {
+                'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
+            },
+            success(res) {
+                //set the globaldata haslogin true
+                if (res.data != '0') {
+                    console.log(res.data)
+                    app.globalData.haslogin = true;
+                    _this.setData({
+                        haslogin: true
+                    })
+                    console.log("确认登陆");
+                }
+                else {
+                    console.log("未登录")
+                    console.log("login 状态为" + app.globalData.haslogin)
+                }
 
+            }
+        })
         //onload的时候需要从服务器获取数据,包括获取我的和失物招领的
         wx.request({
             //先是获取失物招领的
@@ -257,6 +364,17 @@ Page({
                 console.log(res.data);
                 for (var i = 0; i < res.data.length; i++) {
                     //for是根据数据的长度插入新数组
+                    //如果photo1为null，则不保存到tempPhoto中，photo2,photo3同理
+                    var tempPhoto = []
+                    if (res.data[i].photo1 != null) {
+                        tempPhoto.push(res.data[i].photo1)
+                    }
+                    if (res.data[i].photo2 != null) {
+                        tempPhoto.push(res.data[i].photo2)
+                    }
+                    if (res.data[i].photo3 != null) {
+                        tempPhoto.push(res.data[i].photo3)
+                    }
                     //nwearray是用于插入的数组
                     var newarray = {
                         blogger_id: res.data[i].id,
@@ -271,16 +389,17 @@ Page({
                         lostthing_space: res.data[i].lostthing_space, //
                         lostthing_space_detail: res.data[i].lostthing_space_detail,
                         lostthing_contact: res.data[i].lostthing_contact,
-                        photos: [res.data[i].photo1, res.data[i].photo2, res.data[i].photo3], //放置于主要内容下方的图片
+                        lostthing_hadsolved: res.data[i].had_solved,
+                        photos: tempPhoto, //图片
                         readingtimes: res.data[i].readingtimes, //阅读次数
                         comments: 5, //评论数量
                         favour: res.data[i].favour, //点赞数量
                         had_favour: 0, //点赞判断
-                        specialcode:res.data[i].specialcode,
+                        specialcode: res.data[i].specialcode,
                     }
                     _this.setData({
                         post0: _this.data.post0.concat(newarray),
-                        
+
                         //将数组插入post0
                     })
                 }
@@ -292,7 +411,7 @@ Page({
             url: 'https://www.scnusay.cc/lostdetail/lostdetailphoto/returnmylost.php',
             method: "POST",
             data: {
-                'openid':app.globalData.openid
+                'openid': app.globalData.openid
             },
             header: {
                 'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
@@ -302,6 +421,18 @@ Page({
                 for (var i = 0; i < res.data.length; i++) {
                     //for是根据数据的长度插入新数组
                     //nwearray是用于插入的数组
+
+                    //如果photo1为null，则不保存到tempPhoto中，photo2,photo3同理
+                    var tempPhoto = []
+                    if (res.data[i].photo1 != null) {
+                        tempPhoto.push(res.data[i].photo1)
+                    }
+                    if (res.data[i].photo2 != null) {
+                        tempPhoto.push(res.data[i].photo2)
+                    }
+                    if (res.data[i].photo3 != null) {
+                        tempPhoto.push(res.data[i].photo3)
+                    }
                     var newarray = {
                         blogger_id: res.data[i].id,
                         blogger_Openid: res.data[i].openid,
@@ -313,14 +444,16 @@ Page({
                         lostthing_class: res.data[i].lostthing_class, //发布类别（不需要可以不填充
                         lostthing_detail: res.data[i].lostthing_detail, //主要内容
                         lostthing_space: res.data[i].lostthing_space, //
+                        lostthing_hadsolved: res.data[i].had_solved,
                         lostthing_space_detail: res.data[i].lostthing_space_detail,
                         lostthing_contact: res.data[i].lostthing_contact,
-                        photos: [res.data[i].photo1, res.data[i].photo2, res.data[i].photo3], //放置于主要内容下方的图片
+                        // photos: [res.data[i].photo1, res.data[i].photo2, res.data[i].photo3], //放置于主要内容下方的图片
+                        photos: tempPhoto,
                         readingtimes: res.data[i].readingtimes, //阅读次数
                         comments: 5, //评论数量
                         favour: res.data[i].favour, //点赞数量
                         had_favour: 0, //点赞判断
-                        specialcode:res.data[i].specialcode,
+                        specialcode: res.data[i].specialcode,
                     }
                     _this.setData({
                         post1: _this.data.post1.concat(newarray),
@@ -329,24 +462,14 @@ Page({
                 }
             }
         })
+        //request the server whether the user had login
 
-        // setTimeout(function () { //异步
-        //     var query = wx.createSelectorQuery();
-        //     query.selectAll('.list').boundingClientRect()
-        //     query.exec((res) => {
-        //         console.log(res)
-        //         var listHeight = res[0][0].height
-        //         console.log(res[0][0].height)
-        //         _this.setData({
-        //             heights: res[0],
-        //             height: listHeight + 40 + 'px'
-        //         })
-        //     })
-        // }, 100)
+
+
         this.setData({
             navH: app.globalData.navHeight
         });
-        
+
     },
     logo: function (e) {
         //跳转去首页
@@ -386,6 +509,6 @@ Page({
     /**
      * 用户点击右上角分享
      */
-    onShareAppMessage: function () {},
+    onShareAppMessage: function () { },
 
 })

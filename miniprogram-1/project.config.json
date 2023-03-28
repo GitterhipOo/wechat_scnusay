@@ -37,14 +37,9 @@
         "minifyWXML": true,
         "showES6CompileOption": false,
         "useCompilerPlugins": false,
-        "ignoreUploadUnusedFiles": true,
         "useStaticServer": true,
-<<<<<<< Updated upstream
-=======
         "ignoreDevUnusedFiles": false,
-        "ignoreUploadUnusedFiles": false,
->>>>>>> Stashed changes
-        "condition": false
+        "ignoreUploadUnusedFiles": false
     },
     "compileType": "miniprogram",
     "editorSetting": {

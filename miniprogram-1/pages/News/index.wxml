@@ -1,3 +1,4 @@
+
 <view class="nav-wrap" style="height: {{navH*2+20}}px;">
     <!-- 自定义导航栏 -->
     <view class="nav-title" style="line-height: {{navH*2+44}}px;">华师说</view>
@@ -5,9 +6,20 @@
         <navigator hoverClass="none" url="/pages/serach/search">
             <view class="nav-capsule">
                 <view class="topimage">
-                    <image class="back-pre" src="https://www.scnusay.cc/icon/search.png" style="height:35px;width:35px;"></image>
+                    <image class="back-pre" src="https://www.scnusay.cc/icon/logo.png" style="height:35px;width:35px;" bindtap="jumpToIndex"></image>
                 </view>
             </view>
         </navigator>
     </view>
 </view>
+
+<view style="height: {{navH*2+20}}px;"></view>
+
+<view class="box">
+    <view class="pre-title">
+        <view class="title">{{article.title}}</view>
+        <view class="date">{{article.date}}</view>
+    </view>
+    <view class="para" wx:for="{{article.para}}">{{item}}</view>
+</view>
+

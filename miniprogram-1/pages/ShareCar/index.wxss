@@ -1,35 +1,16 @@
 /* pages/ShareCar/index.wxss */
 
 page{
-    background-color:  rgb(243, 243, 247);
+ background-color: #f5f5f5;
 }
-<<<<<<< Updated upstream
-.top_alarm{
-    line-height: 40px;
-    height: 40px;
-    /* background-color:rgb(238, 216, 174);  */
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.out_index_top{
-    display: flex;
-    /* flex-direction: row; */
-    justify-content: center;
-    border-radius: 30rpx;
-    /* border-radius: 20rpx; */
-    margin: 0 auto;
-=======
 .search{
     width: 98%;
   }
   .search_arr {
-      margin-top: 12rpx;
+      margin-top: 10px;
     border: 1px solid #d0d0d0;
-    border-radius: 100rpx;
+    border-radius: 10rpx;
     margin-left: 20rpx;
-    background-color: #fff;
   }
   .search_arr input{
     margin-left: 60rpx;
@@ -37,12 +18,12 @@ page{
     border-radius: 5px;
   }
   .sousuo {
-    padding-left: 1.5%;
+    padding-left: 38%;
     width: 15%;
     line-height: 150%;
     text-align: center;
     font-weight: 700;
-    font-size: 35rpx;
+    font-size: 14px;
   }
   .page_row{
     display: flex;
@@ -51,7 +32,7 @@ page{
   .searchcion {
     margin: 10rpx 10rpx 10rpx 10rpx;
     position: absolute;
-    margin-left:2.5%;
+    margin-left:38%;
     z-index: 2;
     width: 15px;
     height: 15px;
@@ -66,7 +47,7 @@ page{
     margin: 3% 1%;
     height: 90rpx;
     width: 90rpx;
-    border-radius: 40rpx;
+    border-radius: 45rpx;
     background-color: #fff;
     box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
 }
@@ -74,14 +55,13 @@ page{
     display: block;
     text-align: center;
     line-height: 90rpx;
-    font-weight: 550;
-    color: rgb(142, 206, 231);
+    color: rgb(53, 192, 247);
 }
 /* 切换栏 */
 .tabitem1{
     display: flex;
     float: left;
-    color: #10b1b1;
+    color: #9bd3d3;
     background-color: white;
     margin-top: 1rpx;
     margin-bottom: 1rpx;
@@ -91,7 +71,6 @@ page{
     text-align: center;
     justify-content: space-around;
     align-items: center;
-    font-weight: 700;
 }
 .tabitem2{
     float: right;
@@ -105,15 +84,13 @@ page{
     text-align: center;
     justify-content: space-around;
     align-items: center;
-    font-weight: 700;
 }
 .swipertab{
     height:80rpx;
     background-color: white;
     width: 96%;
-    margin: 25rpx auto 0rpx auto;
-    border-radius: 23rpx;
-    
+    margin: 10rpx auto;
+    border-radius: 20rpx;
 }
 /* 切换栏 */
 /* swiper模块 */
@@ -128,24 +105,21 @@ swiper{
 .box {
     width: 96%;
     position: relative;
-    margin: 35rpx auto;
+    margin: 10rpx auto;
     background-color: #fff;
-    border-radius: 25rpx;
+    border-radius: 50rpx;
     box-shadow: -1px 2px 6px 0px rgba(0, 0, 0, 0.4);
-    height:480rpx;
-    border: rgba(116, 202, 202, 0.6) solid 1rpx;
+    height:480rpx
 }
 
 .box1 {
     height: 100rpx;
     width: 500rpx;
-    padding-top: 23rpx;
-    padding-left: 20rpx;
 }
 
 .box1 image {
     float: left;
-    margin: 0rpx 0 5rpx 14rpx;
+    margin: 5rpx 0 5rpx 10rpx;
     width: 90rpx;
     height: 90rpx;
     border-radius: 90rpx;
@@ -154,10 +128,10 @@ swiper{
 
 .box1 .text1 {
     float: left;
-    margin-top: 7rpx;
+    margin-top: 10rpx;
     margin-left: 20rpx;
     font-weight: 700;
-    font-size: 35rpx;
+    font-size: 34rpx;
     width: 380rpx;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -171,37 +145,33 @@ swiper{
 .box1 .text2 {
     float: left;
     margin-left: 20rpx;
-    margin-top: 5rpx;
-    font-size: 23rpx;
+    font-size: 20rpx;
     color: #aaa;
-    font-weight: 520;
 }
 
 .box-way {
     position: absolute;
-    right: 35rpx;
-    top: 36rpx;
-    color: rgb(91, 102, 106);
+    right: 30rpx;
+    top: 10rpx;
+    color: rgb(53, 192, 247);
     font-size: 36rpx;
-    font-weight: 700;
 }
 
 .box2 {
-    margin: 5rpx auto 0rpx auto;
-    width: 94%;
-    padding-top: 5rpx;
-    padding-bottom: 7.5rpx;
-    background-color: #ffffff;
-    border-radius: 20rpx;
-    border: 4rpx solid #c5dddd;
+    margin: 20rpx auto;
+    width: 80%;
+    padding-top: 10rpx;
+    padding-bottom: 50rpx;
+    background-color: #f5f5f5;
+    border-radius: 30rpx;
 }
 
-.in-text-1 {
+.box2 text {
     text-indent: 20rpx;
-    height: 55rpx;
-    /* width: 90%; */
-    margin: 10rpx 0rpx 0rpx 0rpx;
-    font-size: 30rpx;
+    height: 30%;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 28rpx;
     display: block;
     white-space: pre-line;
     overflow: hidden;
@@ -211,43 +181,27 @@ swiper{
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
     flex-flow:row wrap;
-    font-weight: 500;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .box2 image {
     margin: 20rpx 20rpx;
     width: 200rpx;
->>>>>>> Stashed changes
     height: 200rpx;
-    width: 94%;
-    padding-top: 7%;
-    /* padding-left: 7%; */
-    /* border: solid 1px black; */
-    background-color: #fff;
 }
 
-<<<<<<< Updated upstream
- .alarm{
-    color: rgb(32, 29, 221);
-    font-weight: 700;
- }
-
- .index_three_box1{
-=======
 .box3{
     position: absolute;
-    bottom: 63%;
-    right: 2.5%;
+    bottom: 0%;
+
+
+    right: 0%;
 }
 
 .box3 .post-data {
     float: right;
-    margin: 5rpx 35rpx 35rpx 0rpx ;
-    /* border: 1px solid black; */
 }
 .box3 .mypostmenu{
-    font-weight: 700;
+    
     font-size: 30rpx;
 }
 .box3  image {
@@ -294,141 +248,31 @@ swiper{
     width: 100%;
     height: 100rpx;
     font-size: 30rpx;
->>>>>>> Stashed changes
     text-align: center;
-    /* margin-left: %; */
-    /* padding-left: -20px; */
-}
- 
- .index_three_box{
-     text-align: center;
-     padding-left: 10%;
- }
-
- .img1{
-     height:58px;
-     width: 58px;
-    border-radius: 50%;
-    overflow:hidden;
- }
-
- .under_img{
-    font-size: 30rpx;
-    font-weight: 549;
- }
-
-.mid_pinche{
-    /* border-top: 1px solid; */
-    /* margin-top: 14px; */
-    padding-top: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center; 
-    /* padding-bottom: 10px; */
-}
-
-.mid_jpg{
-    height: 23px;
-    width: 23px;
-    padding-right: 10px;
-}
-
-.mid_jpg_text{
-    font-weight: 700;
-    font-size: 20px;
-}
-
-.call_image{
-    margin-top: 10px;
-    height: 17px;
-    width: 17px;
-}
-
-.chat{
-    padding-top: 10px;
-    margin: 10px auto;
-    /* border: rgba(67, 67, 71, 0.472) solid 1px; */
-    width: 95%;
-    border-radius: 9px;
-    background-color: #fff;
-}
-
-.touxiang{
-    height:45px;
-     width: 45px;
-    border-radius: 50%;
-    overflow:hidden;
-}
-
-.touxianglan{
-    position: relative;
-    margin-left: 5% ;
-    display: flex;
-    flex-direction: row;
-    /* align-items: center; */
-    /* justify-content: center;  */
-}
-
-.name{  
-    padding-left: 10px;
-    font-weight: 700;
-    font-size: 16px;
-    color: rgb(33, 33, 34);
-}
-
-.time{
-    font-weight: 450;
-    font-size: 13px;
-}
-
-.in_contact{
-    padding-top: 10px;
-    padding-left: 10px;
-    background-color: rgba(243,243,247);
-    border-radius: 13rpx;
-    /* background-color: rgba(128, 124, 124, 0.356); */
-    width: 90%;
-    margin:auto;
-    padding-bottom: 10px;
-}
-
-.topic{
-    margin-top: 10px;
-    font-weight: 550;
-    font-size: 18px;
-}
-
-.date{
-    font-weight: 550;
-    font-size: 14px;
-}
-
-.space{
-    font-size: 14px;
-    font-weight: 550;
-}
-
-.spot{
-    font-size: 14px;
-    font-weight: 550;
-}
-
-.price_share{
-    font-weight: 550;
-    font-size: 14px;
-    
-}
-
-.contact{
-    font-size: 14px;
-    font-weight: 550;
-}
-.people{
-    font-weight: 550;
-    font-size: 14px;
-}
-.bottom{
-        padding-top: 8px;
-        padding-bottom: 4px;
+    margin-top: 30rpx;
   }
+  
+  .weui-loading {
+    width: 50rpx;
+    height: 50rpx;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-animation: weuiLoading 1s steps(12, end) infinite;
+    animation: weuiLoading 1s steps(12, end) infinite;
+    background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgxMDB2MTAwSDB6Ii8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTlFOUU5IiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgLTMwKSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iIzk4OTY5NyIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgzMCAxMDUuOTggNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjOUI5OTlBIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDYwIDc1Ljk4IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0EzQTFBMiIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSg5MCA2NSA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNBQkE5QUEiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoMTIwIDU4LjY2IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0IyQjJCMiIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgxNTAgNTQuMDIgNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjQkFCOEI5IiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDE4MCA1MCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDMkMwQzEiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTE1MCA0NS45OCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDQkNCQ0IiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTEyMCA0MS4zNCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNEMkQyRDIiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDM1IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0RBREFEQSIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgtNjAgMjQuMDIgNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTJFMkUyIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKC0zMCAtNS45OCA2NSkiLz48L3N2Zz4=) no-repeat;
+    background-size: 100%;
+  }
+  
+  .weui-loadmore-tips {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .nologinmessage
+  {
+      text-align: center;
+      color: grey;
+      margin-top: 10rpx;
+      margin-bottom: 10rpx;
+  }
+  
+  

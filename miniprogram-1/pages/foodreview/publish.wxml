@@ -1,58 +1,66 @@
-<view class="nav-wrap" style="height: {{navH*2+20}}px;">
+<view class="nav-wrap" style="height: {{navH*2+20}}px;position: absolute;">
     <!-- 自定义导航栏 -->
-    <view class="nav-title" style="line-height: {{navH*2+44}}px;">美食分享</view>
+    <view class="nav-title" style="line-height: {{navH*2+44}}px;">发布</view>
     <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
-        <navigator hoverClass="none" open-type="navigate" url="../foodreview/index">
-                    <image class="back-pre" src="../../assets/images/sort/back.png" style="height:50rpx;width:50rpx;margin-top: 50rpx;"></image>
+        <navigator hoverClass="none" open-type="navigate" url="/pages/foodreview/index">
+                    <image class="back-pre" src="https://www.scnusay.cc/icon/back.png" style="height:50rpx;width:50rpx;margin-top: 50rpx;"></image>
         </navigator>
     </view>
 </view>
-<form bindsubmit="formsubmit">
-<view style="margin-top:{{navH*4+50}}rpx;" >
-    <textarea   placeholder="给出你的标题吧" auto-focus="true" class="title"value='{{title}}' name="title" bindblur="titleblur"/>
-</view>
-<view>
-    <textarea   placeholder="说说你的看法（赞美/吐槽）" auto-focus="true" class="information" name="info" value='{{info}}' bindblur="infoblur"/>
-</view>
-<view>
-        <text>上传图片(最多3张)</text>
-        </view>
-        <view class="container">
-            <view class='img_body'>
-                <view class='img_list'>
-                    <view class='img_li' wx:for="{{imglist}}" wx:key="index">
-                        <image src="{{item}}" bindtap="previewImg"></image>
-                        <image class='delete' bindtap="deleteImg" data-index="{{index}}" src="/assets/images/sort/delete.png"></image>
-                    </view>
-                    <view class='addimg' bindtap='img_w_show' wx:if="{{countNow<count}}">
-                        <image src='../../assets/images/sort/tianjia.png'></image>
-                    </view>
+
+<view style="height: {{navH*2+20}}px;"></view>
+<view style="margin: 3%;">
+    <!-- 这里将图片作为swiper模块摆放, -->
+    <view class="divline"></view>
+    <swiper style="height: 480rpx;" current="{{current_Page}}">
+        <!-- 通过循环生成img的图片,当图片为0时仅出现上传图片按钮,图片大于1时出现图片,同时图片下面生成删除按钮与添加按钮 -->
+        <block wx:if="{{countNow==0}}">
+            <swiper-item>
+                <view class='imgInSwiper' bindtap='img_w_show'>
+                    <image src='https://www.scnusay.cc/icon/iconAddPhoto.png' mode="aspectFit" style="display: block; margin: auto; width: 200rpx;"></image>
                 </view>
+            </swiper-item>
+        </block>
+        <block wx:else>
+            <swiper-item wx:for="{{imglist}}" wx:key="index" style="position: relative;">
+                <image src="{{item}}" mode="aspectFit" bindtap="previewImg"  data-url="{{item}}" style="width: 100%;"></image>
+                <!-- 两个按钮分别为删除与添加,绑定事件delete -->
+                <image bindtap='img_w_show' wx:if="{{countNow<count}}" src="https://www.scnusay.cc/icon/iconAddCircle.png" style="position: absolute; bottom: 6%; right: 11%;height: 50rpx; width: 50rpx;"></image>
+                <image bindtap="deleteImg" data-index="{{index}}" src="https://www.scnusay.cc/icon/iconDeleteCircle.png" style="position: absolute; bottom: 6%; right: 4%;height: 50rpx; width: 50rpx;"></image>
+            </swiper-item>
+        </block>
+
+    </swiper>
+    <view class="divline"></view>
+    <!-- 标题 -->
+    <input type="text" maxlength="17" class="topic" placeholder="标题" placeholder-style="color:rgb(100, 100, 100)" value="{{postValue.foodreview_topic}}" bindinput="adInputChange" data-info="foodreview_topic" />
+    <!-- 详情内容 -->
+    <textarea style="font-size: 30rpx; margin: 20rpx 5rpx; height:500rpx" placeholder="具体评价信息、地址等" placeholder-style="font-size:30rpx" value="{{postValue.foodreview_detail}}" bindinput="adInputChange" data-info="foodreview_detail" />
+    <view class="divline"></view>
+  
+    <!-- 分类 -->
+    <view style="margin: 20rpx 5rpx;">
+        <picker bindchange="bindPickerChange_Tag" value="{{tag}}" range="{{array_Tag}}">
+            <view style="margin-right: 20rpx;color:{{tagColor}}">
+                <text style="color:#000 ;">评价：</text>{{array_Tag[tag]}}
             </view>
-        </view>
-        <view class="divline"></view>
-<view class="myinput">
-   <text class="price">地址</text><input type="text" class="input1" name="addr" value="{{addr}}"/><image src="../../assets/images/sort/dingwei.png" bindtap="getAddress"></image>
-</view>
-<!-- 下拉选择框 -->
-<view class='fenlei'>
-    <text style="color: black; font-weight: 400;">校区</text>
-  <!-- 下拉框 -->
-    <view class='select_box'>
-      <view class='select' catchtap='selectTaps'>
-        <text class='select_text' name="category">{{selectDatas[indexs]}}</text>
-        <image class='select_img {{shows&&"select_img_rotate"}}' src='../../assets/images/sort/xiasanjiao.png'></image>
-      </view>
-      <view class='option_box' style='height:{{shows?(selectDatas.length>5?300:selectDatas.length*60):0}}rpx;'>
-        <text class='option' style='{{indexs==selectDatas.length-1&&"border:0;"}}' wx:for='{{selectDatas}}' wx:key='this' data-index='{{index}}' catchtap='optionTaps'>{{item}}</text>
-      </view>
+        </picker>
     </view>
+    <view class="divline"></view>
+    <!-- 联系方式+标签 -->
+   <!-- <view class="moreInfor">
+        <view style="position: absolute;">{{foodreview_Time_Binding}}时间：</view>
+        <input type="number" maxlength="17" style="float:left;; margin: 0rpx 140rpx; " placeholder="9月19日18:00:00" value="{{postValue.foodreview_time}}" bindinput="adInputChange" data-info="foodreview_time" />
+    </view>
+    <view class="divline"></view> -->
+    <!-- <view class="moreInfor">
+        <view style="position: absolute;">联系方式：</view>
+        <input type="text" maxlength="17" style="float:left;; margin: 0rpx 25%; " placeholder="19999999999" value="{{postValue.foodreview_contact}}" bindinput="adInputChange" data-info="foodreview_contact" />
+    </view>
+    <view class="divline"></view> -->
+    <!-- <view class="moreInfor">
+            <view style="position: absolute;">标签：</view>
+            <input type="text" maxlength="30" style="float:left;width:100%; margin: 0rpx 90rpx;" placeholder="希望分享的标签（可选）以顿号‘、’分割" placeholder-style="" />
+        </view> -->
+    <button class="send" hover-class="send-hover" bindtap="sendToServer">发送</button>
 </view>
-<view class="myinput">
-<text>姓名（可选）</text> <input type="text"  value="{{username}}" name="username" bindblur="usernameblur" />
-</view>
-<view class="myinput">
-<text>备注（可选）</text><input type="text" value="{{tip}}"  name="tip"bindblur="tipblur"/>
-</view>
-<button form-type="submit" style="border-radius: 40rpx;height: 80rpx;width: 700rpx; font-size: 30rpx;flex-wrap: wrap; letter-spacing:5rpx;background-color: #32CD32;color: aliceblue;">立即分享</button>
-</form>

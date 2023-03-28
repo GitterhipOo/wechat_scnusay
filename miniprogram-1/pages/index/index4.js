@@ -39,11 +39,13 @@ Page({
             console.log(res.data['user_imgurl']);
             //后面返回的json
             app.globalData.headurl=res.data['user_imgurl'];
-            app.globalData.wxname=res.data['user_wxname']
+            app.globalData.wxname=res.data['user_wxname'];
+
             that.setData({
                 headimgurl:app.globalData.headurl,
                 username:app.globalData.wxname,
-                doihaveinfo:true
+                doihaveinfo:true,
+                
             })
             
             //同步返回的数据到全局数据里面 作为用户的头像储存
@@ -61,39 +63,7 @@ logo: function (e) {
   })
 },
 enroll: function (e) {
-  // 发起网络请求
-//   点击授权
-// wx.getUserProfile({
-//     desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
-//     success: (res) => {
-//       console.log(res)
-//       this.setData({
-//         userInfo: res.userInfo,
-//         hasUserInfo: true
-//       })
-//       wx.showModal({
-//         title:'授权成功',
-//         content:'已同步您的微信头像及昵称',
-//         showCancel:false
-//       })
-//     //   onload 已经拿到了openid
-//       wx.request({
-//         url: 'https://www.scnusay.cc/signup/saveimgandname.php',
-//         method:"POST",
-//         data:{
-//             'user_imgurl':res.userInfo.avatarUrl,
-//             'user_wxname':res.userInfo.nickName,
-//             'openid':app.globalData.openid
-//         },
-//         header: {
-//             'content-type': 'application/x-www-form-urlencoded'  
-//           },
-//           success(res){
-//               console.log(res.data);
-//           }
-//       })
-//     }
-//   })
+
   wx.navigateTo({
     // 开发者服务器接口地址
       url: '/pages/updatewxinfo/updatewxinfo',
@@ -103,6 +73,18 @@ userknow:function(e){
     wx.navigateTo({
         // 开发者服务器接口地址
           url: '/pages/userknow/userknow',
+        })
+},
+contactus:function(e){
+    wx.navigateTo({
+        // 开发者服务器接口地址
+          url: '/pages/index/contactus',
+        })
+},
+aboutus:function(e){
+    wx.navigateTo({
+        // 开发者服务器接口地址
+          url: '/pages/index/aboutus',
         })
 },
 getUserProfile(e) {
