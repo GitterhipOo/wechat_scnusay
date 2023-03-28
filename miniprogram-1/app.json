@@ -41,6 +41,8 @@
         "pages/team/searchIndex",
         "pages/talk/content/index",
         "pages/index/userprivacy",
+        "pages/index/contactus",
+        "pages/index/aboutus",
         "pages/lostthing/searchIndex"
     ],
     "tabBar": {

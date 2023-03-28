@@ -1,0 +1,8 @@
+<view class="user_privacy">
+    <text class="privacy_title" style="font-family: youyuan; font-weight: 1200;">关于我们</text>
+
+    <text class="privacy_maintext" decode="true">
+        &emsp; &emsp;华师说旨在提供信息交流、拼车同行、失物招领、二手交易、竞赛组队、校园热点、个人信息管理等服务，使得同学们日常生活的信息交流更加便捷，提高学习效率。
+    </text>
+    <image class="updateimg" src="https://www.scnusay.cc/icon/logo.png" ></image>
+</view>
