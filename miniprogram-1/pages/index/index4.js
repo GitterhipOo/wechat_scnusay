@@ -75,6 +75,18 @@ userknow:function(e){
           url: '/pages/userknow/userknow',
         })
 },
+contactus:function(e){
+    wx.navigateTo({
+        // 开发者服务器接口地址
+          url: '/pages/index/contactus',
+        })
+},
+aboutus:function(e){
+    wx.navigateTo({
+        // 开发者服务器接口地址
+          url: '/pages/index/aboutus',
+        })
+},
 getUserProfile(e) {
   // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
   wx.getUserProfile({
