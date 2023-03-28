@@ -132,9 +132,9 @@ Page({
                                             complete: (res) => {
                                                 if (res.cancel) {}
                                                 if (res.confirm) {
-                                                    wx.navigateTo({
-                                                        url: '/pages/index/index3',
-                                                    })
+                                                    wx.reLaunch({
+                                                        url: 'index3',
+                                                      })
                                                 }
                                             }
                                         })
