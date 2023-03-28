@@ -34,10 +34,10 @@
 <view class="goto_updateinfo"  bindtap="updateinfo">
  更新信息
 </view>
-<view class="goto_updateinfo2">
+<view class="goto_updateinfo2" bindtap="contactus">
   联系我们
 </view>
-<view class="goto_updateinfo2">
+<view class="goto_updateinfo2" bindtap="aboutus">
 关于我们
 </view>
 <view class="goto_updateinfo2" bindtap="User_Privacy">
