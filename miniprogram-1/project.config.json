@@ -39,6 +39,11 @@
         "useCompilerPlugins": false,
         "ignoreUploadUnusedFiles": true,
         "useStaticServer": true,
+<<<<<<< Updated upstream
+=======
+        "ignoreDevUnusedFiles": false,
+        "ignoreUploadUnusedFiles": false,
+>>>>>>> Stashed changes
         "condition": false
     },
     "compileType": "miniprogram",

@@ -131,10 +131,161 @@ Page({
             wx.showToast({
               title: '已取消收藏',
             })
+<<<<<<< Updated upstream
           }
           this.setData({
             isClick:!this.data.isClick
           })
+=======
+        }
+        else {
+            wx.navigateTo({
+                url: '/pages/ShareCar/publish',
+            })
+            console.log("login 状态为" + app.globalData.haslogin)
+            console.log("您已登录，获得发布权限")
+        }
+    },
+    gotosearch: function (e) {
+        console.log("点击去发布")
+            wx.navigateTo({
+                url: '/pages/ShareCar/search',
+            })
+
+    },
+    getSwiperItemHeight:function(){
+        var postHeight = 0
+        var post
+        if (this.data.current_Page == 0){
+            post = this.data.post0
+        }
+        else{
+            post = this.data.post1
+        }
+        console.log(post)
+        for (var i = 0; i < post.length; i++){                     
+                postHeight+=500
+            
+        }
+        postHeight=postHeight+300;
+        postHeight = postHeight + "rpx";
+        console.log("计算页面高度触发")
+        this.setData({
+            swiperHeight:postHeight,
+        })
+        console.log("高度赋值完成")
+    },
+    // 点击标签判断
+    clicktab: function (e) {
+        //点击标签切换swiper
+        var pag = e.currentTarget.dataset.current;
+        console.log("点击标签的数据为" + e.currentTarget.dataset.current)
+        this.getSwiperItemHeight()
+        this.setData({
+            current_Page: pag
+        })
+        var tabstylelost
+        var tabstylemy
+        if (this.data.current_Page == 0){
+            tabstylelost="color: #10b1b1";
+            tabstylemy="color: grey";
+        }
+        else{
+            tabstylelost="color: grey";
+            tabstylemy="color: #10b1b1";
+        }
+        this.setData({
+            tabstylelost:tabstylelost,
+            tabstylemy: tabstylemy,
+        })
+    },
+    //滑动swiperItem修改currentPag
+    changeswiper(e){ 
+        this.setData({
+            current_Page: e.detail.current
+        })
+        console.log("切换触发")
+        this.getSwiperItemHeight()
+        var tabstylelost
+        var tabstylemy
+        if (this.data.current_Page == 0){
+            tabstylelost="color: #10b1b1";
+            tabstylemy="color: grey";
+        }
+        else{
+            tabstylelost="color: grey";
+            tabstylemy="color: #10b1b1";
+        }
+        this.setData({
+            tabstylelost:tabstylelost,
+            tabstylemy: tabstylemy,
+        })
+    },  
+    postmenu: function (e) {
+        console.log(e);
+        var that = this
+        let index = e.currentTarget.dataset.index
+        console.log("点击菜单的index值为" + index)
+        var menudeletevalue
+        //滑动以后判断当前页面是什么的辨识
+        console.log('current_page(判断当前是我的还是失物招领)为' + that.data.current_Page)
+        if (that.data.current_Page == 0) {
+            var menupostValue = that.data.post0[index].specialcode
+        } else if (that.data.current_Page == 1)
+            var menupostValue = that.data.post1[index].specialcode
+        //从已经放好的数组中获取对应的specialcode
+        console.log("选择菜蛋对应的specialcode为" + menupostValue)
+
+        wx.showActionSheet({
+            itemList: ['删除', '已解决'],
+            success: function (res) {
+                if (res.tapIndex == 0) {
+                    wx.showModal({
+                        title: '删除',
+                        content: '是否删除内容',
+                        complete: (res) => {
+                            if (res.cancel) {
+                            }
+                            if (res.confirm) {
+                                //console.log("选择菜蛋对应的specialcode为"+menupostValue)
+                                wx.request({
+                                    url: 'https://www.scnusay.cc/sharecar/sharecarphoto/deletemysharecarpost.php',
+                                    method: "POST",
+                                    data: {
+                                        'menupostValue': menupostValue,
+                                    },
+                                    header: {
+                                        'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
+                                    },
+                                    success(res) {
+                                        wx.showModal({
+                                            title: '删除成功',
+                                            content: '发布内容已删除',
+                                            complete: (res) => {
+                                                if (res.cancel) {
+
+                                                }
+                                                if (res.confirm) {
+                                                    wx.navigateTo({
+                                                        url: '/pages/ShareCar/index',
+                                                    })
+                                                }
+                                            }
+                                        })
+
+                                    },
+                                })
+                            }
+                        }
+                    })
+                }
+            },
+
+            fail: function (res) {
+                console.log(res.errMsg)
+            }
+        })
+>>>>>>> Stashed changes
     },
     /**
      * 生命周期函数--监听页面加载

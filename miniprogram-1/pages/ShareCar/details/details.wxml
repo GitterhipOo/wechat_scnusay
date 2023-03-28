@@ -1,19 +1,48 @@
 <!--pages/ShareCar/details/index.wxml-->
 <!-- <text>pages/ShareCar/details/index.wxml</text> -->
+<<<<<<< Updated upstream:miniprogram-1/pages/ShareCar/details/details.wxml
 <view class="chat" wx:for="{{blogger_list}}">
+=======
+<view class="nav-wrap" style="height: {{navH*2+20}}px;position: absolute;">
+    <!-- 自定义导航栏 -->
+    <view class="nav-title" style="line-height: {{navH*2+44}}px;font-weight: 700;">拼车详情</view>
+    <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
+        <navigator hoverClass="none" open-type="navigateBack">
+            <image class="back-pre" src="https://www.scnusay.cc/icon/back.png" style="height:50rpx;width:50rpx;margin-top: 60rpx;margin-left: 48rpx;"></image>
+        </navigator>
+    </view>
+</view>
+<view style="height: {{navH*2+20}}px;"></view>
+<view class="weui-loadmore" wx:if='{{isRefreshing}}'>
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore-tips">正在刷新...</view>
+</view>
+<view class="chat">
+>>>>>>> Stashed changes:miniprogram-1/pages/ShareCar/detail.wxml
     <!-- woshifengexian -->
     <view class="touxianglan">
         <view>
             <image class="touxiang" src="{{item.blogger_avatar}}"></image>
         </view>
         <view>
+<<<<<<< Updated upstream:miniprogram-1/pages/ShareCar/details/details.wxml
             <text class="name">{{item.blogger_name}}</text>
             <text class="time" decode="true">\n &nbsp;&nbsp;&nbsp;{{item.blogger_time}}</text>
         </view>
         <button size="mini" type="primary" class="follow">关注</button>
+=======
+            <text class="name">{{blogger_list.blogger_name}}</text>
+            <text class="time" decode="true">\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;{{blogger_list.blogger_time}}</text>
+        </view>
+        <button class="follow"></button>
+        <!-- <view class="follow">
+           闲置
+        </view> -->
+>>>>>>> Stashed changes:miniprogram-1/pages/ShareCar/detail.wxml
     </view>
 
     <view class="in_contact">
+<<<<<<< Updated upstream:miniprogram-1/pages/ShareCar/details/details.wxml
         <text class="topic">{{item.ShareCar_title}}
         </text>
         <text class="date">日期：<text style="font-weight: 400;">{{item.ShareCar_time}}</text></text>
@@ -29,14 +58,61 @@
         <text class="ShareCar_people">
             出行人数：<text style="font-weight: 400;">{{item.ShareCar_people}}</text>
         </text>
+=======
+
+        <text class="topic">{{blogger_list.sharecar_topic}}
+        </text>
+        <view class="neirong">
+            <view class="space1">
+                <text style="font-weight: 700;">
+                    人数：<text style="font-weight: 400;font-size: 17px; ">{{blogger_list.sharecar_number}}</text>
+                </text>
+            </view>
+            <view class="space">
+                <text style="font-weight: 700;">
+                    时间：<text style="font-weight: 400;">{{blogger_list.sharecar_time}}</text>
+                </text>
+            </view>
+            <view class="space">
+                <text style="font-weight: 700;">
+                    校区：<text style="font-weight: 400;">{{blogger_list.sharecar_space}}</text>
+                </text>
+            </view>
+            <view class="space">
+                <text  style="font-weight: 700;">
+                    出发地：<text style="font-weight: 400;">{{blogger_list.sharecar_from}}</text>
+                </text>
+            </view>
+            <view class="space">
+                <text style="font-weight: 700;">
+                    目的地：<text style="font-weight: 400;">{{blogger_list.sharecar_go}}</text>
+                </text>
+            </view>
+            <view class="space2">
+                <text style="font-weight: 700;">
+                    联系方式：<text style="font-weight: 400;">{{blogger_list.sharecar_contact}}</text>
+                </text>
+            </view>
+        </view>
+>>>>>>> Stashed changes:miniprogram-1/pages/ShareCar/detail.wxml
     </view>
 
     <view class="contact_detail">
+<<<<<<< Updated upstream:miniprogram-1/pages/ShareCar/details/details.wxml
         <text class="h1_detail">出行详情
         </text>
         <view style="margin-top: 5px;">
             <text class="detail_1">{{item.ShareCar_detail}}</text>
         </view>
+=======
+    <view class="h1_detail">
+        <text>详情内容</text>
+    </view>    
+        <view style="margin-top: 5px;">
+            <text class="detail_1">{{blogger_list.sharecar_detail}}</text>
+        </view>
+
+>>>>>>> Stashed changes:miniprogram-1/pages/ShareCar/detail.wxml
     </view>
 </view>
 
