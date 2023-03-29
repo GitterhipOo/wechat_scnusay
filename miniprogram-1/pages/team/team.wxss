@@ -268,13 +268,5 @@ page{
     display: inline-block;
     vertical-align: middle;
   }
-  .nologinmessage
-  {
-      text-align: center;
-      color: grey;
-      margin-top: 10rpx;
-      margin-bottom: 10rpx;
-  }
-  
   
    
