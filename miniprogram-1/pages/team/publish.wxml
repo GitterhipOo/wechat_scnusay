@@ -1,11 +1,12 @@
 <!--pages/team/publish/index.wxml-->
 <!-- <text>pages/team/publish/index.wxml</text> -->
+<view class="all">
 <view class="nav-wrap" style="height: {{navH*2+20}}px;position: absolute;">
     <!-- 自定义导航栏 -->
-    <view class="nav-title" style="line-height: {{navH*2+44}}px;">发布</view>
+    <view class="nav-title" style="line-height: {{navH*2+44}}px;font-weight: 700;">发布</view>
     <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
         <navigator hoverClass="none" open-type="navigate" url="/pages/team/team">
-                    <image class="back-pre" src="https://www.scnusay.cc/icon/back.png" style="height:50rpx;width:50rpx;margin-top: 50rpx;"></image>
+                    <image class="back-pre" src="https://www.scnusay.cc/icon/back.png" style="height:50rpx;width:50rpx;margin-top: 70rpx;margin-left: 45rpx;"></image>
         </navigator>
     </view>
 </view>
@@ -16,27 +17,27 @@
 <view class="modify-form">
 <form bindsubmit='getForm'>
     <view class="label-list">
-        <view class="label">标题介绍：</view>
+        <!-- <view class="label"></view> -->
         <view class="input-box">
-        <input  value="{{postValue.team_topic}}" bindinput="adInputChange" data-info="team_topic" placeholder-class="topic" name='school'/>
+        <input placeholder="标题介绍：" value="{{postValue.team_topic}}" bindinput="adInputChange" data-info="team_topic" placeholder-class="place" name='school'/>
+        </view>
+    </view>  
+    <view class="label-list2">
+        <!-- <view class="label">所在校区：</view> -->
+        <view class="input-box">
+        <input placeholder="所在校区：" value="{{postValue.team_space}}" bindinput="adInputChange" data-info="team_space" placeholder-class="place" name='school'/>
         </view>
     </view>  
     <view class="label-list">
-        <view class="label">所在校区：</view>
+        <!-- <view class="label">联系方式：</view> -->
         <view class="input-box">
-        <input placeholder="请输入您所在校区" value="{{postValue.team_space}}" bindinput="adInputChange" data-info="team_space" placeholder-class="place" name='school'/>
-        </view>
-    </view>  
-    <view class="label-list">
-        <view class="label">联系方式：</view>
-        <view class="input-box">
-        <input placeholder="微信/邮箱/电话号码" value="{{postValue.team_contact}}" bindinput="adInputChange" data-info="team_contact" placeholder-class="place" name='Phonenumber'/>
+        <input placeholder="联系方式：微信/邮箱/电话号码" value="{{postValue.team_contact}}" bindinput="adInputChange" data-info="team_contact" placeholder-class="place" name='Phonenumber'/>
         </view>
     </view>
-    <view class="label-list">
-        <view class="label">截止日期：</view>
+    <view class="label-list2">
+        <!-- <view class="label">截止日期：</view> -->
         <view class="input-box">
-        <input value="{{postValue.team_time}}" bindinput="adInputChange" data-info="team_time"placeholder="请输入截止时间"  placeholder-class="place" name="name"/>
+        <input placeholder="截止日期：" value="{{postValue.team_time}}" bindinput="adInputChange" data-info="team_time" placeholder-class="place" name="name"/>
         </view>
     </view>
     
@@ -48,12 +49,13 @@
     </view>
 
 
-    <button formType="submit" bindtap="sendToServer" class="submit">发布</button>
+    <button formType="submit" bindtap="sendToServer" size="mini" plain style="color: white;background-color: rgba(223, 163, 53, 0.698);font-weight: 700;margin-left: 40%;">发布</button>
 </form>
 
 </view>
+</view>
+<view class="end">
+            <text class="end_txt" space="nbsp">— 没有更多内容啦~ —</text>
 
-
-
-
+        </view>
 </view>

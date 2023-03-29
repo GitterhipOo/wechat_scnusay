@@ -14,6 +14,22 @@ page {
   }
   .search_arr input{
     margin-left: 60rpx;
+    margin-top: 4rpx;
+    margin-bottom: 4rpx;
+    padding-top: 4rpx;
+}
+.nologinmessage
+{
+    text-align: center;
+    color: grey;
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+}
+
+.search input{
+    background-color: rgb(235, 235, 235);
+    border-radius: 30rpx;
+    margin-right: 20%;
     height: 60rpx;
     border-radius: 5px;
   }

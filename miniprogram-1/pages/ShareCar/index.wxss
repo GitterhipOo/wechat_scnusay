@@ -7,10 +7,11 @@ page{
     width: 98%;
   }
   .search_arr {
-      margin-top: 10px;
+      margin-top: 12rpx;
     border: 1px solid #d0d0d0;
-    border-radius: 10rpx;
+    border-radius: 100rpx;
     margin-left: 20rpx;
+    background-color: #fff;
   }
   .search_arr input{
     margin-left: 60rpx;
@@ -18,12 +19,12 @@ page{
     border-radius: 5px;
   }
   .sousuo {
-    padding-left: 38%;
+    padding-left: 1.5%;
     width: 15%;
     line-height: 150%;
     text-align: center;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 35rpx;
   }
   .page_row{
     display: flex;
@@ -32,7 +33,7 @@ page{
   .searchcion {
     margin: 10rpx 10rpx 10rpx 10rpx;
     position: absolute;
-    margin-left:38%;
+    margin-left:2.5%;
     z-index: 2;
     width: 15px;
     height: 15px;
@@ -47,7 +48,7 @@ page{
     margin: 3% 1%;
     height: 90rpx;
     width: 90rpx;
-    border-radius: 45rpx;
+    border-radius: 40rpx;
     background-color: #fff;
     box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
 }
@@ -55,13 +56,14 @@ page{
     display: block;
     text-align: center;
     line-height: 90rpx;
-    color: rgb(53, 192, 247);
+    font-weight: 550;
+    color: rgb(142, 206, 231);
 }
 /* 切换栏 */
 .tabitem1{
     display: flex;
     float: left;
-    color: #9bd3d3;
+    color: #10b1b1;
     background-color: white;
     margin-top: 1rpx;
     margin-bottom: 1rpx;
@@ -71,6 +73,7 @@ page{
     text-align: center;
     justify-content: space-around;
     align-items: center;
+    font-weight: 700;
 }
 .tabitem2{
     float: right;
@@ -84,13 +87,15 @@ page{
     text-align: center;
     justify-content: space-around;
     align-items: center;
+    font-weight: 700;
 }
 .swipertab{
     height:80rpx;
     background-color: white;
     width: 96%;
-    margin: 10rpx auto;
-    border-radius: 20rpx;
+    margin: 25rpx auto 0rpx auto;
+    border-radius: 23rpx;
+    
 }
 /* 切换栏 */
 /* swiper模块 */
@@ -105,21 +110,24 @@ swiper{
 .box {
     width: 96%;
     position: relative;
-    margin: 10rpx auto;
+    margin: 35rpx auto;
     background-color: #fff;
-    border-radius: 50rpx;
+    border-radius: 25rpx;
     box-shadow: -1px 2px 6px 0px rgba(0, 0, 0, 0.4);
-    height:480rpx
+    height:480rpx;
+    border: rgba(116, 202, 202, 0.6) solid 1rpx;
 }
 
 .box1 {
     height: 100rpx;
     width: 500rpx;
+    padding-top: 23rpx;
+    padding-left: 20rpx;
 }
 
 .box1 image {
     float: left;
-    margin: 5rpx 0 5rpx 10rpx;
+    margin: 0rpx 0 5rpx 14rpx;
     width: 90rpx;
     height: 90rpx;
     border-radius: 90rpx;
@@ -128,10 +136,10 @@ swiper{
 
 .box1 .text1 {
     float: left;
-    margin-top: 10rpx;
+    margin-top: 7rpx;
     margin-left: 20rpx;
     font-weight: 700;
-    font-size: 34rpx;
+    font-size: 35rpx;
     width: 380rpx;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -145,33 +153,37 @@ swiper{
 .box1 .text2 {
     float: left;
     margin-left: 20rpx;
-    font-size: 20rpx;
+    margin-top: 5rpx;
+    font-size: 23rpx;
     color: #aaa;
+    font-weight: 520;
 }
 
 .box-way {
     position: absolute;
-    right: 30rpx;
-    top: 10rpx;
-    color: rgb(53, 192, 247);
+    right: 35rpx;
+    top: 36rpx;
+    color: rgb(91, 102, 106);
     font-size: 36rpx;
+    font-weight: 700;
 }
 
 .box2 {
-    margin: 20rpx auto;
-    width: 80%;
-    padding-top: 10rpx;
-    padding-bottom: 50rpx;
-    background-color: #f5f5f5;
-    border-radius: 30rpx;
+    margin: 5rpx auto 0rpx auto;
+    width: 94%;
+    padding-top: 5rpx;
+    padding-bottom: 7.5rpx;
+    background-color: #ffffff;
+    border-radius: 20rpx;
+    border: 4rpx solid #c5dddd;
 }
 
-.box2 text {
+.in-text-1 {
     text-indent: 20rpx;
-    height: 30%;
-    width: 100%;
-    margin: 0 auto;
-    font-size: 28rpx;
+    height: 55rpx;
+    /* width: 90%; */
+    margin: 10rpx 0rpx 0rpx 0rpx;
+    font-size: 30rpx;
     display: block;
     white-space: pre-line;
     overflow: hidden;
@@ -181,6 +193,8 @@ swiper{
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
     flex-flow:row wrap;
+    font-weight: 500;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .box2 image {
@@ -191,17 +205,17 @@ swiper{
 
 .box3{
     position: absolute;
-    bottom: 0%;
-
-
-    right: 0%;
+    bottom: 63%;
+    right: 2.5%;
 }
 
 .box3 .post-data {
     float: right;
+    margin: 5rpx 35rpx 35rpx 0rpx ;
+    /* border: 1px solid black; */
 }
 .box3 .mypostmenu{
-    
+    font-weight: 700;
     font-size: 30rpx;
 }
 .box3  image {

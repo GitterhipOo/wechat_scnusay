@@ -30,11 +30,22 @@
 
 <!-- 发布入口结束 -->
 <!-- 切换栏 -->
-<view class='swipertab'>
+<!-- <view class='swipertab'>
     <view class="tabitem1" style="{{tabstylelost}}" data-current="0" bindtap='clicktab'>好评/吐槽</view>
 
     <view class="tabitem2" style="{{tabstylemy}}" data-current="1" bindtap='clicktab'>我的发布</view>
+</view> -->
+<block wx:if="{{haslogin}}">
+<view class='swipertab'>
+    <view class="tabitem1" style="{{tabstylelost}}" data-current="0" bindtap='clicktab'>好评/吐槽</view>
+    <view class="tabitem2" style="{{tabstylemy}}" data-current="1" bindtap='clicktab'>我的发布</view>
 </view>
+</block>
+<block wx:if="{{!haslogin}}">
+    <view class="nologinmessage">
+        登录后查看更多消息~
+    </view>
+</block>
 <!-- 切换栏结束 -->
 
 <!-- 商品栏用<swiper></swiper> -->
@@ -60,6 +71,7 @@
             </view>
         </view>
     </swiper-item>
+    <block wx:if="{{haslogin}}">
     <swiper-item class="container1">
         <view class="list" wx:if="{{post1.length!=0}}">
             <!-- 以一个作为案例 -->
@@ -97,4 +109,5 @@
 
                             </view>
     </swiper-item>
+    </block>
 </swiper>

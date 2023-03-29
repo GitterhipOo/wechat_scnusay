@@ -1,0 +1,11 @@
+<view class="user_privacy">
+    <text class="privacy_title" style="font-family: youyuan; font-weight: 1200;">联系我们</text>
+
+    <text class="privacy_maintext" decode="true">
+    
+        <text>你可以通过Github向我们联系</text>
+        我们的Github地址：
+        https://github.com/GitterhipOo/wechat_scnusay
+    </text>
+    <image class="updateimg" src="https://www.scnusay.cc/icon/logo.png" ></image>
+</view>

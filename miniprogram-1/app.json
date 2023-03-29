@@ -1,12 +1,11 @@
 {
     "pages": [
-        "pages/index/index1",
-        "pages/ShareCar/index",      
+        "pages/ShareCar/index",  
+        "pages/index/index1",      
         "pages/ShareCar/publish",
         "pages/ShareCar/detail",
         "pages/ShareCar/search",
         "pages/ShareCar/searchIndex",
-
         "pages/News/index",
         "pages/index/index3",
         "pages/index/index3post",
@@ -41,11 +40,13 @@
         "pages/team/searchIndex",
         "pages/talk/content/index",
         "pages/index/userprivacy",
+        "pages/index/contactus",
+        "pages/index/aboutus",
         "pages/lostthing/searchIndex"
     ],
     "tabBar": {
         "color": "#7A7E83",
-        "selectedColor": "#3cc51f",
+        "selectedColor": "#1296db",
         "borderStyle": "black",
         "backgroundColor": "#ffffff",
         "list": [
