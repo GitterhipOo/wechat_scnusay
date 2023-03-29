@@ -35,7 +35,8 @@
         "disableUseStrict": false,
         "useCompilerPlugins": false,
         "minifyWXML": true,
-        "compileHotReLoad": true
+        "compileHotReLoad": true,
+        "condition": false
     },
     "condition": {},
     "editorSetting": {

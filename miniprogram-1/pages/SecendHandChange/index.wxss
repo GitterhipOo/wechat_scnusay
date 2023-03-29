@@ -33,6 +33,7 @@ page {
     height:80rpx;
     margin-top: 10rpx;
     background-color: white;
+    border-radius: 16rpx;
 
 }
 /*搜索*/
@@ -85,13 +86,13 @@ page {
     display: block;
     text-align: center;
     line-height: 90rpx;
-    color: #aaa;
+    color: #9bd3d3;
 }
 .guide2{
     display: block;
     text-align: center;
     line-height: 90rpx;
-    color: #aaa;
+    color: #9bd3d3;
 }
 
 
@@ -110,6 +111,8 @@ swiper{
     position: relative;
     margin: 10rpx 0;
     background-color: #fff;
+    border-radius: 30rpx;
+    box-shadow: -1px 2px 6px 0px rgba(0, 0, 0, 0.4)
 }
 
 .box1 {
@@ -196,7 +199,9 @@ swiper{
     float: right;
 }
 .box3 .mypostmenu{
-    
+    background-color: #acacac;
+    border-radius: 16rpx;
+    padding: 16rpx;
     font-size: 30rpx;
 }
 .box3  image {

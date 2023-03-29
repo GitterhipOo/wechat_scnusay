@@ -15,8 +15,13 @@
 </view>
 
 <!-- 搜索 -->
-<view class="search"bindtap="gotosearch"  >
-    <input type="text" placeholder="搜索关键词" id="mysearch"/>  
+<view class='page_row'bindtap='gotosearch' >
+    <view class="search">
+      <view class="search_arr">
+        <icon class="searchcion" size='16' type='search'></icon>
+        <input class="sousuo" disabled placeholder="搜索" />
+      </view>
+    </view>
 </view>
 <view class="guide" bindtap="gotosend" >
     <view class="lostcenter">发布</view>
@@ -62,9 +67,7 @@
                     <image wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
                 </view>
                 <!-- 文后小标模块 -->
-                <view class="box3" style="width: 50%; height: 10%;">
-                    <image src="https://www.scnusay.cc/icon/liuyan.png" class="otherimg"></image><text>{{item.comments}}</text>
-                </view>
+                
             </view>
         </view>
     </swiper-item>

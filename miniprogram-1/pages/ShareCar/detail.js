@@ -60,24 +60,6 @@ Page({
         var comment_text = this.data.inputvalue;
         var specialcode= this.data.blogger_list.specialcode
         //判断用户是否输入内容为空
-        if (app.globalData.haslogin === false) {
-            //出现可选择弹窗提醒用户未登录，如果用户点击确定，则跳转至登录页面，否则不跳转
-            wx.showModal({
-                title: '提示',
-                content: '您还未登录，是否前往登录？',
-                success(res) {
-                    if (res.confirm) {
-                        console.log('用户点击确定')
-                        wx.switchTab({
-                            url: '/pages/index/index4',
-                        })
-                    } else if (res.cancel) {
-                        console.log('用户点击取消')
-                    }
-                }
-            })
-        }
-        else {
         if (comment_text == '') {
             //用户评论输入内容为空时弹出
             wx.showToast({
@@ -218,7 +200,6 @@ Page({
             
             //动态渲染
            
-        }
         }
     },
 

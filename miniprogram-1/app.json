@@ -1,12 +1,12 @@
 {
     "pages": [
-        "pages/index/index1",
-        "pages/ShareCar/index",      
+
+        "pages/index/index1",      
         "pages/ShareCar/publish",
         "pages/ShareCar/detail",
         "pages/ShareCar/search",
+        "pages/ShareCar/index",  
         "pages/ShareCar/searchIndex",
-
         "pages/News/index",
         "pages/index/index3",
         "pages/index/index3post",
