@@ -117,12 +117,12 @@ Page({
         var tabstylelost
         var tabstylemy
         if (this.data.current_Page == 0){
-            tabstylelost="color: #9bd3d3";
-            tabstylemy="color: black";
+            tabstylelost="color: #10b1b1";
+            tabstylemy="color: grey";
         }
         else{
-            tabstylelost="color: black";
-            tabstylemy="color: #9bd3d3";
+            tabstylelost="color: grey";
+            tabstylemy="color: #10b1b1";
         }
         this.setData({
             tabstylelost:tabstylelost,
@@ -139,12 +139,12 @@ Page({
         var tabstylelost
         var tabstylemy
         if (this.data.current_Page == 0){
-            tabstylelost="color: #9bd3d3";
-            tabstylemy="color: black";
+            tabstylelost="color: #10b1b1";
+            tabstylemy="color: grey";
         }
         else{
-            tabstylelost="color: black";
-            tabstylemy="color: #9bd3d3";
+            tabstylelost="color: grey";
+            tabstylemy="color: #10b1b1";
         }
         this.setData({
             tabstylelost:tabstylelost,

@@ -1,11 +1,19 @@
 page {
     background-color: #f5f5f5;
   }
-.search{
-    width: 100%;
-    display: flex;
-    justify-content: center;
+  .search{
+    width: 98%;
+    
+  }
+  .search_arr {
+      margin-top: 10px;
+    border: 1px solid #d0d0d0;
+    border-radius: 10rpx;
+    margin-left: 20rpx;
     background-color: #fff;
+  }
+  .search_arr input{
+    margin-left: 60rpx;
     margin-top: 4rpx;
     margin-bottom: 4rpx;
     padding-top: 4rpx;
@@ -23,10 +31,29 @@ page {
     border-radius: 30rpx;
     margin-right: 20%;
     height: 60rpx;
-    width: 500rpx;
-    font-size: 24rpx;
-    padding-left: 30rpx;
-}
+    border-radius: 5px;
+  }
+  .sousuo {
+    padding-left: 38%;
+    width: 15%;
+    line-height: 150%;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .page_row{
+    display: flex;
+    flex-direction: row
+  }
+  .searchcion {
+    margin: 10rpx 10rpx 10rpx 10rpx;
+    position: absolute;
+    margin-left:38%;
+    z-index: 2;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+   }
 /* 切换栏 */
 .tabitem1{
     display: flex;
@@ -59,6 +86,7 @@ page {
     height:80rpx;
     margin-top: 10rpx;
     background-color: white;
+    border-radius: 16rpx;
 
 }
 /*搜索*/
@@ -207,7 +235,9 @@ swiper{
     float: right;
 }
 .box3 .mypostmenu{
-    
+    background-color: #acacac;
+    border-radius: 16rpx;
+    padding: 16rpx;
     font-size: 30rpx;
 }
 .box3  image {

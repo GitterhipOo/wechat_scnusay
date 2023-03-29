@@ -1,65 +1,78 @@
-/* pages/team/publish/index.wxss */
-.modify-form{
-    display: block;
-    padding: 30rpx;
+/* pages/ShareCar/ReleaseInformation/index.wxss */
+.all{
+    background-color: rgb(255, 255, 255);
 }
+
 .label-list{
-    display: flex;
     width: 100%;
-    height: 120rpx;
     align-items: center;
-    border-bottom: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e2a22a;
+    background-color: #fff;
+
 }
-.label-list .label {
-    color: #333;
-    font-size: 36rpx;
-    font-weight: bold;
+
+.label-list2{
+    width: 100%;
+    align-items: center;
+  background-color: #fff;
+  border-bottom: 1px solid #e2a22a;
 }
+
 .input-box{
     position: relative;
-    left:20px;
-}
-.topic{
+    height: 83rpx;
+    display: flex;
     align-items: center;
-    font-size: 16px;
-     padding-left:36px;
-    vertical-align:middle;
+    margin-left: 0%;
+    font-style: italic;
+    font-weight: 480;
 }
+.radiotext{
+    font-size: 36rpx;
+}
+
 .place {
     align-items: center;
-    font-size: 16px;
-   
+    line-height: 83rpx;
+    font-size: 37rpx;
+    left: 8rpx;
     vertical-align:middle;
 }
 
-.submit {
-    margin-top: 45rpx;
-    background-color: rgb(39, 114, 16);
-    color: #fff;
+.picker-show{
+    position: relative;
+    left: 80%;
+}
+.pinche_label{
+    font-weight: 700;
+}
+
+
+.chefei_text{
+    padding-right: 10px;
 }
 
 .con {
-    width: 630rpx;
-    /* height: 250rpx; */
-    position: relative;
+    width: 100%;
     margin-top: 10rpx;
     flex-wrap: wrap;
     margin-bottom: 60rpx;
+     font-style: italic;
   }
   
   .inputText {
     display: block;
     padding: 20rpx 30rpx;
     box-sizing: border-box;
-    width: 682rpx;
-    height: 400rpx;
-    border-radius: 20rpx;
-    border: 1rpx solid #D8D8D8;
+    width: 100%;
+    height: 250rpx;
+    border-bottom: 4.5rpx solid #e2a22a;
     font-size: 32rpx;
     font-family: PingFangSC-Regular, PingFang SC;
     font-weight: 400;
     color: #222222;
     line-height: 32rpx;
+    background-color: #fff;
   }
   
   .textword {
@@ -73,3 +86,110 @@
     line-height: 24rpx;
     text-align: right;
   }
+
+  .label-list1{
+    width: 100%;
+    height: 115rpx; 
+    align-items: center;
+    border: 1px solid #bbbbbb;
+    border-radius: 0.9ch;
+    margin-bottom: 30rpx;
+}
+
+.input-box{
+    position: relative;
+    height: 83rpx;
+    margin-top: 2.25%;
+    display: flex;
+    align-items: center;
+    left: 3%;
+}
+
+.chose_box_people{
+        display: flex;
+        flex-direction: row;
+        height: 83rpx;
+        line-height: 100rpx;
+        margin-top: 10rpx;
+        font-size: 31rpx;
+        color: #918d8d;
+        margin-left: 3.5%;
+}
+
+
+.share_car_people {
+    white-space: nowrap;
+    font-size: 36rpx;
+  }
+
+  .share_car_people1 {
+    width: 100%;
+    margin-left: 20rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+.inp_people {
+      position: relative;
+      width: 100%;
+      height: 80rpx;
+}
+.radiogroup_people {
+      display: flex;
+      flex-direction: row;
+}
+.radiobox_people {
+        display: flex;
+        flex-direction: row;
+        margin-left: 20rpx;
+      }
+    /* 我是可爱的分割线捏 */
+      .chose_box_money{
+        display: flex;
+        flex-direction: row;
+        height: 83rpx;
+        line-height: 100rpx;
+        margin-top: 10rpx;
+        font-size: 31rpx;
+        color: #918d8d;
+        margin-left: 3.5%;
+}
+
+
+.share_car_money {
+    white-space: nowrap;
+    font-size: 36rpx;
+  }
+
+  .share_car_money1 {
+    width: 100%;
+    margin-left: 20rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+.inp_money {
+      position: relative;
+      width: 100%;
+      height: 80rpx;
+}
+.radiogroup_money {
+      display: flex;
+      flex-direction: row;
+}
+.radiobox_money {
+        display: flex;
+        flex-direction: row;
+        margin-left: 20rpx;
+      }
+
+      .end {
+        margin-top: 47rpx;
+        margin-bottom: 48rpx;
+        text-align: center;
+        padding-bottom: 15rpx;
+    }
+    .end_txt {
+        font-size: 24rpx;
+        color: #999999;
+    }
