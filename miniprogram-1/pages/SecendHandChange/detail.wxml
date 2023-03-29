@@ -38,17 +38,17 @@
         <text class="topic">{{blogger_list.secendhand_topic}}
         </text>
 
-        <text class="date">价格：<text style="font-weight: 400;">{{blogger_list.secendhand_time}}</text></text>
+        <text class="date"style="font-weight: 700;">价格：<text style="font-weight: 400;">{{blogger_list.secendhand_time}}</text></text>
 
-        <text class="space">
+        <text class="space"style="font-weight: 700;">
             校区：<text style="font-weight: 400;">{{blogger_list.secendhand_space}}</text></text>
-        <text class="space_detail">
+        <text class="space_detail"style="font-weight: 700;">
             地点：<text style="font-weight: 400;">{{blogger_list.secendhand_space_detail}}</text></text>
         <text class="contact">
             联系方式：<text style="font-weight: 400;">{{blogger_list.secendhand_contact}}</text></text>
         <text class="secendhand_class">
             分类：<text style="font-weight: 400;">{{blogger_list.secendhand_class}}</text>
-        </text> -->
+        </text> 
     </view>
     <!-- 主要内容 -->
     <view class="contact_detail">
@@ -61,10 +61,7 @@
                 <image wx:if="{{photo}}" class="details_img" src="{{photo}}" data-photoindex='{{index}}' bindtap='previewImg' mode="widthFix"></image>
             </block>
         </view>
-        <text class="h1_detail">联系方式</text>
-        <view style="margin-top: 5px;">
-            <text class="detail_1">{{blogger_list.secendhand_contact}}</text>
-        </view>
+       
     </view>
     <!-- 文后小标模块 -->
 

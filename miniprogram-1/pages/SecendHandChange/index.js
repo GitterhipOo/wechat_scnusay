@@ -53,27 +53,17 @@ Page({
         })
     },
     //通过计算post的数量获取页面长度
-    getSwiperItemHeight: function () {
-        var postHeight = 0
-        var post
-        if (this.data.current_Page == 0) {
-            post = this.data.post0
-        } else {
-            post = this.data.post1
+    getSwiperItemHeight:function(){
+        var postHeight
+        if (this.data.current_Page == 0){
+            postHeight=(this.data.post0.length)*500+600+"rpx";
         }
-        console.log(post)
-        for (var i = 0; i < post.length; i++) {
-            if (post[i].photos.length > 0) {
-                postHeight += 500
-            } else {
-                postHeight += 300
-            }
+        else{
+            postHeight=(this.data.post1.length)*500+600+"rpx";
         }
-        postHeight = postHeight + 300;
-        postHeight = postHeight + "rpx";
         console.log("计算页面高度触发")
         this.setData({
-            swiperHeight: postHeight,
+            swiperHeight:postHeight,
         })
         console.log("高度赋值完成")
     },
