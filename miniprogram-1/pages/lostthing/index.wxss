@@ -159,7 +159,7 @@ swiper{
     display: -webkit-box;
     word-break: break-all;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 5;
+    -webkit-line-clamp: 1;
     flex-flow:row wrap;
 }
 
