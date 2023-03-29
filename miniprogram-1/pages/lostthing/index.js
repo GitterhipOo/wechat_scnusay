@@ -11,7 +11,6 @@ Page({
      */
     data: {
         haslogin: '',
-        swiperHeight: "1000px",
         //页面切换相关数据
         current_Page: 0,
         photocou: 0, //用户上传图片的数量
@@ -49,13 +48,13 @@ Page({
         console.log(post)
         for (var i = 0; i < post.length; i++){
             if (post[i].photos.length > 0){
-                postHeight+=400
+                postHeight+=384
             }
             else{ 
-                postHeight+=220
+                postHeight+=206
             }
         }
-        postHeight=postHeight+600;
+        postHeight=postHeight+200;
         postHeight = postHeight+"rpx";
         this.setData({
             swiperHeight:postHeight,
