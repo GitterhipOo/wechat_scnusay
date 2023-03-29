@@ -48,7 +48,6 @@ page{
   }
   .bottom {
     border-radius: 80rpx;
-    margin: 70rpx 50rpx;
     font-size: 35rpx;
     width: 200px !important ;
     background-color: rgb(80, 123, 168) !important;
@@ -116,6 +115,7 @@ page{
   }
 
   .userknow{
+    margin-top: 40rpx;
     text-align: center;
     font-size: 13px;
     color: gray;
