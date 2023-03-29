@@ -4,29 +4,32 @@ page{
 }
 .chat {
     position: relative;
-    padding-top: 10px;
-    margin: 10px auto;
+    padding-top: 25rpx;
+    margin: 30rpx auto;
     /* border: rgb(32, 29, 221) solid 1px; */
     background-color: #fff;
-    border-radius: 50rpx;
+    border-radius: 33rpx;
     box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.4);
     width: 95%;
 
 }
 
 .touxiang {
-    height: 45px;
-    width: 45px;
-    border-radius: 50%;
+    height: 100rpx;
+    width: 100rpx;
+    border-radius: 45%;
     overflow: hidden;
+    margin-left: 28%; 
+    margin-bottom: 4%;
 }
 
 .touxianglan {
-    margin-left: 4.5%;
+    /* margin-left: 4.5%; */
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    border-bottom: 5rpx solid rgba(214, 207, 207);
 }
 
  .follow { 
@@ -41,34 +44,34 @@ page{
     border: none;
 }
 .name {
-    padding-left: 10px;
+    padding-left: 25rpx;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 38rpx;
+    margin-left: 6.5%; 
 }
 
 .time {
     font-weight: 450;
-    font-size: 13px;
+    font-size: 28rpx;
+   padding-top: -20% ;
 }
 
 .in_contact {
-    padding-top: 10px;
-    padding-left: 10px;
-    margin-top: 30rpx;
+    /* margin-top: 20px; */
     width: 90%;
-    margin: 10px auto;
-    padding-bottom: 10px;
-    background-color: #f5f5f5;
+    margin: 0rpx auto;
+    /* border: black solid 1rpx; */
+    /* background-color: rgb(221, 214, 214) */
 }
 .in_contact text{
     margin-top: 20rpx;
-    font-weight: 700;
-    
+    /* font-weight: 700; */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 /* 标题内容全显示，自动换行，不会溢出 */
 .topic {
     text-indent: 20rpx;
-    margin-right: 30rpx;
+    margin-left: -2.4%;
     font-weight: 700;
     font-size: 17px;
     display: block;
@@ -78,11 +81,38 @@ page{
     display: -webkit-box;
     word-break: break-all;
     flex-flow:row wrap;
+    /* position: relative; */
 }
 
+.neirong{
+    margin-top: -5%;
+}
+
+.space1{
+    /* position: relative; */
+    /* margin-top: -10%; */
+    line-height: 20rpx;
+    padding-top: 15rpx;
+    margin: 30rpx auto 0rpx auto;
+}
+
+.space{
+        /* position: relative; */
+        /* margin-top: -10%; */
+        line-height: 20rpx;
+        /* padding-top: 30rpx; */
+        margin: 28rpx auto 0rpx auto;
+}
+
+.space2{
+    /* position: relative; */
+    /* margin-top: -10%; */
+    line-height: 20rpx;
+    padding-bottom: 10rpx;
+    margin: 30rpx auto 0rpx auto;
+}
 
 .contact {
-    
     font-weight: 700;
 }
 
@@ -111,23 +141,27 @@ page{
 }
 
 .contact_detail {
-    /* margin: 0 auto; */
-    width: 90%;
+    width: 98.5%;
+    border-top: 5rpx solid rgba(214, 207, 207);
     /* background-color: rgba(128, 124, 124, 0.356); */
-    margin: 0 auto;
-    padding-left: 10px;
-    padding-bottom: 12px;
+    margin: 10px auto;
+    padding-left: 10rpx;
+    padding-bottom: 30rpx;
 }
 
 .h1_detail {
     /* padding-bottom: 10px; */
     font-weight: 700;
     font-size: 17px;
+    margin-left: 3.5%;
+    margin-top: 2.2%;
+    /* padding-top: 3%; */
 }
 /* 详情内容全显示，自动换行，不会溢出 */
 .detail_1 {
     text-indent: 20rpx;
-    font-size: 17px;
+    font-size: 15px;
+    margin-left: 1.2%;
     display: block;
     white-space: pre-line;
     overflow: hidden;
@@ -159,15 +193,17 @@ page{
 .container {
     width: 100%;
     margin-top: 39rpx;
-
+    background-color: #fff;
+    padding-top: 35rpx;
 }
 
 .total {
-    font-size: 24rpx;
-    color: #999999;
+    font-size: 28rpx;
+    color: #857f7f;
     margin-left: 1rpx;
     height:40rpx;
     padding-left: 32rpx;
+    font-weight: 700;
 }
 
 .container_inp {
@@ -179,6 +215,8 @@ page{
     margin-top: 24rpx;
     margin-bottom: 47rpx;
     padding-left: 32rpx;
+    border: solid 1px rgb(238, 227, 227);
+    margin-left: 30rpx;
 }
 
 .container_place {
@@ -190,12 +228,14 @@ page{
     display: flex;
     margin-bottom: 34rpx;
     align-items: flex-start;
+    /* font-weight: normal; */
 }
 
 .item_img {
     width: 64rpx;
     height: 64rpx;
     margin-right: 17rpx;
+    border-radius: 30rpx;
 }
 
 .item_right {
@@ -209,10 +249,10 @@ page{
 .right_name {
     font-size: 24rpx;
     color: #999999;
+    font-weight: 700;
 }
 
 .right_content {
-    
     width: 603rpx;
     margin-top: 20rpx;
 }
@@ -220,18 +260,28 @@ page{
 .right_content_txt {
     font-size: 26rpx;
     color: #333333;
+    white-space: pre-line;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 20;
+    flex-flow:row wrap;
 }
 
 .right_content_txt2 {
     font-size: 24rpx;
     color: #CCCCCC;
-    margin-left: 30rpx;
+    font-weight: 500;
+    /* margin-left: 30rpx; */
 }
 
 .reply {
     display: flex;
     margin-top: 32rpx;
     align-items: flex-start;
+    /* font-weight: 700; */
 }
 
 .reply_img {
