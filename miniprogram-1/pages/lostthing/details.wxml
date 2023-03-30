@@ -11,11 +11,11 @@
         <view>
             <image class="touxiang" src="{{blogger_list.blogger_avatar}}"></image>
         </view>
-        <view>
+        <view style="margin-left: 2%;">
             <text class="name">{{blogger_list.blogger_name}}</text>
             <text class="time" decode="true">\n &nbsp;&nbsp;&nbsp;{{blogger_list.blogger_time}}</text>
         </view>
-        <button size="mini" type="primary" class="follow">关注</button>
+        <button size="mini" type="primary" style="color: white;background-color: rgba(114, 217, 224, 0.743);">关注</button>
     </view>
     <!-- 信息展览 -->
     <view class="in_contact">

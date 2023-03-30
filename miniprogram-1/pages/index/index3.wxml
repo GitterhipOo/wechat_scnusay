@@ -62,7 +62,7 @@
     </swiper-item>
 
     <swiper-item class="container1">
-        <view class="list">
+        <view class="list" wx:if="{{post1.length!=0}}">
             <!-- 以一个作为案例 -->
             <view class="box" wx:for="{{post1}}" wx:key="index">
                 <!-- 头像栏模块 -->
@@ -89,6 +89,17 @@
                 </view>
             </view>
         </view>
+        <view class="list" wx:else>
+                        <view class="emptyhistory">
+        <image src="https://www.scnusay.cc/icon/empty.png" mode="" class="emptyimg"/>
+    </view>
+
+    <view class="nohistory-container">
+        <text class="nohistory">oh!暂无历史记录</text>
+    </view>
+
+
+                            </view>
     </swiper-item>
 </swiper>
 <view class="test">

@@ -1,9 +1,9 @@
 <view class="nav-wrap" style="height: {{navH*2+20}}px;position: absolute;">
     <!-- 自定义导航栏 -->
-    <view class="nav-title" style="line-height: {{navH*2+44}}px;">闲置交易</view>
+    <view class="nav-title" style="line-height: {{navH*2+44}}px;font-weight: 700;">闲置交易</view>
     <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
         <navigator hoverClass="none" open-type="switchTab" url="/pages/index/index1">
-                    <image class="back-pre" src="https://www.scnusay.cc/icon/back.png" style="height:50rpx;width:50rpx;margin-top: 50rpx;"></image>
+                    <image class="back-pre" src="https://www.scnusay.cc/icon/back.png" style="height:50rpx;width:50rpx;margin-top: 70rpx;margin-left: 45rpx;"></image>
         </navigator>
     </view>
 </view>
@@ -64,8 +64,8 @@
                 </view>
                 <!-- 主要内容模块 -->
                 <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
-                    <view style="margin: 20rpx 30rpx 40rpx 30rpx;"><text>{{item.secendhand_detail}}</text></view>
-                    <image wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
+                    <view class="contact_class"><text style="font-weight: 540;font-size: 30rpx;">{{item.secendhand_detail}}</text></view>
+                    <image style="border-radius: 10rpx;" wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
                 </view>
                 <!-- 文后小标模块 -->
                 <view class="box3" style="width: 50%; height: 10%;">
@@ -78,7 +78,7 @@
     <swiper-item class="container1">
         <view class="list" wx:if="{{post1.length!=0}}">
             <!-- 以一个作为案例 -->
-            <view class="box" wx:for="{{post1}}" wx:key="index">
+            <view class="box_my" wx:for="{{post1}}" wx:key="index">
                 <block wx:if="{{item.saled==1}}">
                         <image class="photo-finish" src="https://www.scnusay.cc/icon/SecondHand_saled.png" alt="已售"></image>
                 </block>
@@ -90,11 +90,11 @@
                 </view>
                 <!-- 主要内容模块 -->
                 <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
-                    <view style="margin: 20rpx 30rpx 40rpx 30rpx;"><text>{{item.secendhand_detail}}</text></view>
-                    <image wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
+                    <view class="contact_class"><text style="font-weight: 540;font-size: 30rpx;">{{item.secendhand_detail}}</text></view>
+                    <image style="border-radius: 10rpx;" wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
                 </view>
                 <!-- 文后小标模块 -->
-                <view class="box3" style="width: 50%; height: 10%;">
+                <view class="box3" style="width: 50%; height: 20%;">
                         <view class="post-data" style="height: 100%;">
                         <t-button shape="round" class="mypostmenu" bindtap="postmenu" data-index="{{index}}">更多操作</t-button>
                         <!-- 点赞   -->

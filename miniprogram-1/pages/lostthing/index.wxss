@@ -21,6 +21,14 @@ page{
     background-color: rgb(209, 209, 209);
 }
 
+.photo-finish{
+    position: absolute;
+    right: 0;
+    width: 150rpx;
+    height: 150rpx;
+    opacity: 40%;
+}
+
 /* 搜索框结束 */
 /* 发布 */
 .guide {
@@ -47,8 +55,6 @@ page{
     display: flex;
     float: left;
     background-color: rgb(186 , 204, 217);
-    margin-top: 1rpx;
-    margin-bottom: 1rpx;
     width: 46%;
     height: 100%;
     border-radius: 10rpx;
@@ -57,14 +63,19 @@ page{
     justify-content: space-around;
     align-items: center;
     box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
-    font-weight: 550;
+    border-radius: 25rpx;
+    margin-bottom: 12rpx;
+    margin-top: 12rpx;
+    font-size: 34rpx;
+    font-weight: 700;
+
 }
 .tabitem2{
     float: right;
     display: flex;
     background-color: white;
-    margin-top: 1rpx;
-    margin-bottom: 1rpx;
+    margin-bottom: 12rpx;
+    margin-top: 12rpx;
     width: 46%;
     height: 100%;
     border-radius: 10rpx;
@@ -73,7 +84,10 @@ page{
     justify-content: space-around;
     align-items: center;
     box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.2);
-    font-weight: 550;
+    border-radius: 25rpx;
+    font-size: 34rpx;
+    font-weight: 700;
+
 }
 .swipertab{
     height: 5%;
@@ -89,14 +103,25 @@ swiper{
 
 /* 帖子数据 */
 .box {
-    /* width: 95%; */
+    width: 96%;
     position: relative;
-    margin-top: 15rpx;
-    margin-left: 4%;
-    margin-right: 4%;
+    margin: 35rpx auto;
     background-color: #fff;
-    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.4);
-    border-radius: 16rpx;
+    border-radius: 25rpx;
+    box-shadow: -1px 2px 6px 0px rgba(0, 0, 0, 0.4);
+    height:710rpx;
+    border: rgba(116, 202, 202, 0.6) solid 1rpx;
+}
+
+.box_my {
+    width: 96%;
+    position: relative;
+    margin: 35rpx auto;
+    background-color: #fff;
+    border-radius: 25rpx;
+    box-shadow: -1px 2px 6px 0px rgba(0, 0, 0, 0.4);
+    height:790rpx;
+    border: rgba(116, 202, 202, 0.6) solid 1rpx;
 }
 
 .box1 {
@@ -104,12 +129,15 @@ swiper{
     padding-left: 3%;
     height: 100rpx;
     width: 500rpx;
+    padding-top: 23rpx;
+    padding-left: 20rpx;
+
     
 }
 
 .box1 image {
     float: left;
-    margin: 5rpx 0 5rpx 10rpx;
+    margin: -8rpx 0 5rpx 0rpx;
     width: 90rpx;
     height: 90rpx;
     border-radius: 90rpx;
@@ -117,10 +145,12 @@ swiper{
 
 .box1 .text1 {
     float: left;
-    margin-top: 10rpx;
-    margin-left: 20rpx;
+    /* margin-top: 5rpx; */
+    margin-left: 15rpx;
     font-weight: 700;
-    font-size: 30rpx;
+
+    font-size: 35rpx;
+
     width: 380rpx;
     /* 设置单行省略 */
     overflow: hidden;
@@ -130,24 +160,32 @@ swiper{
 }
 
 .box1 .text2 {
-    margin-left: 20rpx;
-    font-size: 20rpx;
-    color: #aaa;
+    float: left;
+    margin-left: 15rpx;
+    margin-top: 3rpx;
+    font-size: 23rpx;
+    color: rgb(170, 164, 164);
+    font-weight: 520;
 }
 
 .box-way {
     position: absolute;
-    right: 3%;
-    top: 3%;
-    color: green;
-    font-size: 40rpx;
+    right: 35rpx;
+    top: 36rpx;
+    color: rgb(91, 102, 106);
+    font-size: 36rpx;
+    font-weight: 700;
 }
 
 .box2 {
-    margin: 20rpx 10rpx;
-    margin-left: 3%;
-    padding-bottom: 40rpx;
-    /* height: 400rpx; */
+    margin: -10rpx auto 0rpx auto;
+    width: 98%;
+    padding-top: 10rpx;
+    /* padding-bottom: 7.5rpx; */
+    background-color: #ffffff;
+    /* border-radius: 20rpx; */
+    border-top: solid rgba(176, 189, 192, 0.743) 1rpx;
+    /* border: 4rpx solid #c5dddd; */
 }
 
 .box2 text {
@@ -156,29 +194,140 @@ swiper{
     padding-left: 1%;
     width: 95%;
     height: 30%;
-    /* 多行省略 */
+    width: 600rpx;
+    margin: 0 auto;
+    font-size: 29rpx;
+    display: block;
+
     white-space: pre-line;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     word-break: break-all;
     -webkit-box-orient: vertical;
-
-    -webkit-line-clamp: 1;
-
+    -webkit-line-clamp: 2;
     flex-flow:row wrap;
 }
 
 .box2 image {
-    margin: 20rpx 5rpx 5rpx;
-    border-radius: 20rpx;
-    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.3);
+    margin: 2% 5% 5% 2%;
+    width: 95%;
+    height: 445rpx;
+}
+/* 
+.contact_class{ */
+    /* float: left; */
+    /* margin-top: 8rpx;
+    margin-left: -3%; */
+    /* display: block; */
+    /* white-space: pre-line; */
+    /* 多行省略 */
+/* } */
+
+/* .contact_class .text{
+    white-space: pre-line;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    flex-flow:row wrap;
+} */
+
+.in-text-1 {
+    text-indent: 20rpx;
+    height: 55rpx;
+    /* width: 90%; */
+    /* margin: 10rpx 0rpx 0rpx 0rpx; */
+    font-size: 30rpx;
+    display: block;
+    white-space: pre-line;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    flex-flow:row wrap;
+    font-weight: 500;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.box2 image {
+    margin: 2% 5% 5% 2%;
+    width: 95%;
+    height: 445rpx;
+}
+/* 
+.contact_class{ */
+    /* float: left; */
+    /* margin-top: 8rpx;
+    margin-left: -3%; */
+    /* display: block; */
+    /* white-space: pre-line; */
+    /* 多行省略 */
+/* } */
+
+/* .contact_class .text{
+    white-space: pre-line;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    flex-flow:row wrap;
+} */
+.emptyimg{
+    /* make the img on the center of de view */
+    width: 50px;
+    height: 50px;
+    margin-top: 200rpx;
+}
+.emptyhistory{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.nohistory{
+    /* grey center 16px */
+    color: #999;
+    font-size: 16px;
+    margin-top: 20px;
+}
+.nohistory-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.in-text-1 {
+    text-indent: 20rpx;
+    height: 55rpx;
+    /* width: 90%; */
+    /* margin: 10rpx 0rpx 0rpx 0rpx; */
+    font-size: 30rpx;
+    display: block;
+    white-space: pre-line;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    flex-flow:row wrap;
+    font-weight: 500;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .box3{
     position: absolute;
-    bottom: 0%;
-    right: 0%;
+    bottom: -6%;
+    right: 4%;
 }
 
 .box3 .post-data {
