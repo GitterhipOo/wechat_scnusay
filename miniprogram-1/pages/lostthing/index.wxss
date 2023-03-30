@@ -252,7 +252,7 @@ swiper{
     flex-flow:row wrap;
     font-weight: 500;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
+}
 .box2 image {
     margin: 2% 5% 5% 2%;
     width: 95%;
