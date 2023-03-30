@@ -48,11 +48,7 @@ Page({
         console.log(post)
         for (var i = 0; i < post.length; i++){
             if (post[i].photos.length > 0){
-<<<<<<< HEAD
-                postHeight+=714
-=======
                 postHeight+=720
->>>>>>> 5bb018e52561dc2a795b8891fecb9ac49ae0b4de
             }
             else{ 
                 postHeight+=280

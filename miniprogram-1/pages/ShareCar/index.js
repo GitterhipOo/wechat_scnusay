@@ -93,7 +93,6 @@ Page({
             post = this.data.post1
         }
         console.log(post)
-<<<<<<< HEAD
         for (var i = 0; i < post.length; i++){                     
                 postHeight+=484
             
@@ -102,7 +101,6 @@ Page({
         postHeight = postHeight +100;
         postHeight = postHeight + "rpx";
         console.log("计算页面高度触发")
-=======
         for (var i = 0; i < post.length; i++){
             if (post[i].photos.length > 0){
                 postHeight+=720
@@ -114,7 +112,7 @@ Page({
         postHeight=postHeight+400;
 
         postHeight = postHeight+"rpx";
->>>>>>> 5bb018e52561dc2a795b8891fecb9ac49ae0b4de
+
         this.setData({
             swiperHeight:postHeight,
         })

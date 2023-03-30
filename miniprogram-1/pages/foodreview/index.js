@@ -61,16 +61,7 @@ Page({
         console.log(post)
         for (var i = 0; i < post.length; i++){
             if (post[i].photos.length > 0){
-<<<<<<< HEAD
-                postHeight+=570
-            }
-            else{ 
-                postHeight+=370
-            }
-        }
-        if (postHeight == 0) postHeight = 300
-        postHeight = postHeight +100;
-=======
+
                 postHeight+=560
             }
             else{ 
@@ -79,7 +70,7 @@ Page({
         }
         postHeight=postHeight+400;
 
->>>>>>> 5bb018e52561dc2a795b8891fecb9ac49ae0b4de
+
         postHeight = postHeight+"rpx";
         this.setData({
             swiperHeight:postHeight,
