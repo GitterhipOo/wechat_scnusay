@@ -9,7 +9,7 @@ page{
     /* border: rgb(32, 29, 221) solid 1px; */
     background-color: #fff;
     border-radius: 33rpx;
-    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: -1px 2px 12px 0px rgba(121, 212, 234, 0.4);
     width: 95%;
 
 }
@@ -19,7 +19,7 @@ page{
     width: 100rpx;
     border-radius: 45%;
     overflow: hidden;
-    margin-left: 28%; 
+    margin-left: 24%; 
     margin-bottom: 4%;
 }
 
@@ -29,7 +29,7 @@ page{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    border-bottom: 5rpx solid rgba(214, 207, 207);
+    border-bottom: 5rpx solid rgba(121, 212, 234, 0.4);
 }
 
  .follow { 
@@ -58,6 +58,9 @@ page{
 
 .in_contact {
     /* margin-top: 20px; */
+    /* padding-bottom: 10px; */
+    /* padding-top: 10px; */
+    /* padding-left: 10px; */
     width: 90%;
     margin: 0rpx auto;
     /* border: black solid 1rpx; */
@@ -142,11 +145,12 @@ page{
 
 .contact_detail {
     width: 98.5%;
-    border-top: 5rpx solid rgba(214, 207, 207);
+    border-top: 5rpx solid rgba(121, 212, 234, 0.4);
     /* background-color: rgba(128, 124, 124, 0.356); */
     margin: 10px auto;
     padding-left: 10rpx;
     padding-bottom: 30rpx;
+    padding-top: 2%;
 }
 
 .h1_detail {

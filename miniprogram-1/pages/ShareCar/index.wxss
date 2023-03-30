@@ -28,7 +28,7 @@ page{
   }
   .page_row{
     display: flex;
-    flex-direction: row
+    flex-direction: row;
   }
   .searchcion {
     margin: 10rpx 10rpx 10rpx 10rpx;
@@ -118,6 +118,17 @@ swiper{
     border: rgba(116, 202, 202, 0.6) solid 1rpx;
 }
 
+.box_my {
+    width: 96%;
+    position: relative;
+    margin: 35rpx auto;
+    background-color: #fff;
+    border-radius: 25rpx;
+    box-shadow: -1px 2px 6px 0px rgba(0, 0, 0, 0.4);
+    height:530rpx;
+    border: rgba(116, 202, 202, 0.6) solid 1rpx;
+}
+
 .box1 {
     height: 100rpx;
     width: 500rpx;
@@ -197,6 +208,26 @@ swiper{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.in-text-contact {
+    text-indent: 20rpx;
+    height: 55rpx;
+    line-height: 50rpx;
+    /* width: 90%; */
+    margin: 10rpx 0rpx 0rpx 0rpx;
+    font-size: 30rpx;
+    display: block;
+    white-space: pre-line;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    flex-flow:row wrap;
+    font-weight: 500;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 .box2 image {
     margin: 20rpx 20rpx;
     width: 200rpx;
@@ -205,8 +236,9 @@ swiper{
 
 .box3{
     position: absolute;
-    bottom: 63%;
+    /* bottom: 0%; */
     right: 2.5%;
+    color: rgb(116, 202, 202);
 }
 
 .box3 .post-data {
@@ -216,7 +248,7 @@ swiper{
 }
 .box3 .mypostmenu{
     font-weight: 700;
-    font-size: 30rpx;
+    font-size: 32rpx;
 }
 .box3  image {
     display: inline-block;

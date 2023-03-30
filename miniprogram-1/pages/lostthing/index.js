@@ -55,6 +55,7 @@ Page({
             }
         }
         postHeight=postHeight+400;
+
         postHeight = postHeight+"rpx";
         this.setData({
             swiperHeight:postHeight,
