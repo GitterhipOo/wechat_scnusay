@@ -59,8 +59,9 @@
                 <!-- <view class="box-way">{{item.lostthing_class==1?"丢失物品":"寻找物品"}}</view> -->
                 <!-- 主要内容模块 -->
                 <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
-                    <view style="margin: 20rpx 0 10rpx 0;"><text>{{item.lostthing_detail}}</text></view>
-                    <image wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill" class="detailimg"></image>
+                    <view class="contact_class"><text style="font-weight: 540;font-size: 30rpx;">{{item.lostthing_detail}}</text>
+                    </view>
+                    <image style="border-radius: 10rpx;" wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill" class="detailimg"></image>
                 </view>
                 <!-- 文后小标模块 -->
       
@@ -69,10 +70,9 @@
     </swiper-item>
 <block wx:if="{{haslogin}}">
     <swiper-item class="container1">
-
         <view class="list" wx:if="{{post1.length!=0}}">
             <!-- 以一个作为案例 -->
-            <view class="box" wx:for="{{post1}}" wx:key="index">
+            <view class="box_my" wx:for="{{post1}}" wx:key="index">
                 <block wx:if="{{item.lostthing_hadsolved==1}}">
                         <image class="photo-finish" src="https://www.scnusay.cc/icon/solved.png" alt="已售"></image>
                 </block>
@@ -84,8 +84,8 @@
                 </view>
                 <!-- 主要内容模块 -->
                 <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
-                    <view style="margin: 20rpx 0 40rpx 0;"><text>{{item.lostthing_detail}}</text></view>
-                    <image wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
+                    <view class="contact_class"><text style="font-weight: 540;font-size: 30rpx;">{{item.lostthing_detail}}</text></view>
+                    <image style="border-radius: 10rpx;" wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
                 </view>
                 <!-- 文后小标模块 -->
                 <view class="box3" style="width: 50%; height: 20%;">

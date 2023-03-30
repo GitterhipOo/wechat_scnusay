@@ -28,7 +28,7 @@ page{
   }
   .page_row{
     display: flex;
-    flex-direction: row
+    flex-direction: row;
   }
   .searchcion {
     margin: 10rpx 10rpx 10rpx 10rpx;
@@ -115,6 +115,17 @@ swiper{
     border-radius: 25rpx;
     box-shadow: -1px 2px 6px 0px rgba(0, 0, 0, 0.4);
     height:480rpx;
+    border: rgba(116, 202, 202, 0.6) solid 1rpx;
+}
+
+.box_my {
+    width: 96%;
+    position: relative;
+    margin: 35rpx auto;
+    background-color: #fff;
+    border-radius: 25rpx;
+    box-shadow: -1px 2px 6px 0px rgba(0, 0, 0, 0.4);
+    height:530rpx;
     border: rgba(116, 202, 202, 0.6) solid 1rpx;
 }
 
@@ -205,8 +216,9 @@ swiper{
 
 .box3{
     position: absolute;
-    bottom: 63%;
+    /* bottom: 0%; */
     right: 2.5%;
+    color: rgb(116, 202, 202);
 }
 
 .box3 .post-data {
