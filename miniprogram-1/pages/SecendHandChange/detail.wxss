@@ -4,51 +4,54 @@ page{
 }
 .chat {
     position: relative;
-    padding-top: 10px;
-    margin: 10px auto;
+    padding-top: 25rpx;
+    margin: 30rpx auto;
     /* border: rgb(32, 29, 221) solid 1px; */
     background-color: #fff;
-    border-radius: 50rpx;
-    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.4);
+    border-radius: 33rpx;
+    box-shadow: -1px 2px 12px 0px rgba(128, 122, 122, 0.356);
     width: 95%;
 
 }
 
 .touxiang {
-    height: 45px;
-    width: 45px;
-    border-radius: 50%;
+    height: 100rpx;
+    width: 100rpx;
+    border-radius: 45%;
     overflow: hidden;
+    margin-left: 24%; 
+    margin-bottom: 4%;
 }
 
 .touxianglan {
-    margin-left: 4.5%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    border-bottom: 5rpx solid rgba(228, 224, 224, 0.646);
 }
 
  .follow { 
-     background-color: #fff;
+     background-color: rgba(75, 200, 238,0.5);
      border-color: #fff;
-     color: rgb(75, 200, 238);
+     color: rgb(255, 255, 255);
      font-size: 35rpx;
-     right: -6%;
+     /* right: -6%; */
  }
   
 .follow::after{
     border: none;
 }
 .name {
-    padding-left: 10px;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 38rpx;
+    margin-left: 6.5%; 
 }
 
 .time {
     font-weight: 450;
-    font-size: 13px;
+    font-size: 28rpx;
+    padding-top: -20% ;
 }
 
 .in_contact {
@@ -162,15 +165,17 @@ page{
 .container {
     width: 100%;
     margin-top: 39rpx;
-
+    background-color: #fff;
+    padding-top: 35rpx;
 }
 
 .total {
-    font-size: 24rpx;
-    color: #999999;
+    font-size: 28rpx;
+    color: #857f7f;
     margin-left: 1rpx;
     height:40rpx;
     padding-left: 32rpx;
+    font-weight: 700;
 }
 
 .container_inp {
@@ -182,6 +187,8 @@ page{
     margin-top: 24rpx;
     margin-bottom: 47rpx;
     padding-left: 32rpx;
+    border: solid 1px rgb(238, 227, 227);
+    margin-left: 30rpx;
 }
 
 .container_place {
@@ -212,6 +219,7 @@ page{
 .right_name {
     font-size: 24rpx;
     color: #999999;
+    font-weight: 700;
 }
 
 .right_content {
@@ -223,6 +231,14 @@ page{
 .right_content_txt {
     font-size: 26rpx;
     color: #333333;
+    white-space: pre-line;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 20;
+    flex-flow:row wrap;
 }
 
 .right_content_txt2 {
