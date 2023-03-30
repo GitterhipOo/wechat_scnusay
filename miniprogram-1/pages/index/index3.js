@@ -52,12 +52,13 @@ Page({
         console.log(post)
         for (var i = 0; i < post.length; i++) {
             if (post[i].photos.length > 0) {
-                postHeight += 763
+                postHeight += 742
             } else {
-                postHeight += 255
+                postHeight += 262
             }
         }
-        postHeight = postHeight +400;
+        if (postHeight == 0) postHeight = 300
+        postHeight = postHeight +100;
         postHeight = postHeight + "rpx";
         this.setData({
             swiperHeight: postHeight,

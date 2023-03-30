@@ -38,13 +38,22 @@ Page({
 
     //通过计算post的数量获取页面长度
     getSwiperItemHeight:function(){
-        var postHeight
+        var postHeight = 0
+        var post
         if (this.data.current_Page == 0){
-            postHeight=(this.data.post0.length)*500+100+"rpx";
+            post = this.data.post0
         }
         else{
-            postHeight=(this.data.post1.length)*500+100+"rpx";
+            post = this.data.post1
         }
+        console.log(post)
+        for (var i = 0; i < post.length; i++){                     
+                postHeight+=484
+            
+        }
+        if (postHeight == 0) postHeight = 300
+        postHeight = postHeight +100;
+        postHeight = postHeight + "rpx";
         console.log("计算页面高度触发")
         this.setData({
             swiperHeight:postHeight,

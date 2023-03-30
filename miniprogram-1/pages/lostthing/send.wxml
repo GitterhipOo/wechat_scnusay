@@ -78,7 +78,7 @@
                 <view style="position: absolute;">{{lostthing_Time_Binding}}时间：</view>
             </view>
             <view class="detail_box">
-                <input type="number" maxlength="17" style="display: inline-block; margin: 0rpx 30rpx;" placeholder="9月19日18:00:00" value="{{postValue.lostthing_time}}" bindinput="adInputChange" data-info="lostthing_time" />
+                <input type="text" maxlength="17" style="display: inline-block; margin: 0rpx 30rpx;" placeholder="9月19日18:00:00" value="{{postValue.lostthing_time}}" bindinput="adInputChange" data-info="lostthing_time" />
             </view>
             <!-- <view class="divline"></view> -->
 

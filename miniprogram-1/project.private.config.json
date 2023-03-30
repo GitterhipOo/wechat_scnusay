@@ -59,5 +59,6 @@
             ]
         }
     },
-    "projectname": "miniprogram-1"
+    "projectname": "miniprogram-1",
+    "libVersion": "2.29.2"
 }
