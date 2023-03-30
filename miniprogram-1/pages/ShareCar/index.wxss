@@ -208,6 +208,26 @@ swiper{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.in-text-contact {
+    text-indent: 20rpx;
+    height: 55rpx;
+    line-height: 50rpx;
+    /* width: 90%; */
+    margin: 10rpx 0rpx 0rpx 0rpx;
+    font-size: 30rpx;
+    display: block;
+    white-space: pre-line;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    flex-flow:row wrap;
+    font-weight: 500;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 .box2 image {
     margin: 20rpx 20rpx;
     width: 200rpx;
@@ -228,7 +248,7 @@ swiper{
 }
 .box3 .mypostmenu{
     font-weight: 700;
-    font-size: 30rpx;
+    font-size: 32rpx;
 }
 .box3  image {
     display: inline-block;

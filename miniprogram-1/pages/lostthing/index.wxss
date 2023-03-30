@@ -21,6 +21,14 @@ page{
     background-color: rgb(209, 209, 209);
 }
 
+.photo-finish{
+    position: absolute;
+    right: 0;
+    width: 150rpx;
+    height: 150rpx;
+    opacity: 40%;
+}
+
 /* 搜索框结束 */
 /* 发布 */
 .guide {
@@ -170,9 +178,9 @@ swiper{
 }
 
 .box2 {
-    margin: 5rpx auto 0rpx auto;
+    margin: -10rpx auto 0rpx auto;
     width: 98%;
-    /* padding-top: 5rpx; */
+    padding-top: 10rpx;
     /* padding-bottom: 7.5rpx; */
     background-color: #ffffff;
     /* border-radius: 20rpx; */
@@ -197,7 +205,7 @@ swiper{
     display: -webkit-box;
     word-break: break-all;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
     flex-flow:row wrap;
 }
 
@@ -244,7 +252,76 @@ swiper{
     flex-flow:row wrap;
     font-weight: 500;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.box2 image {
+    margin: 2% 5% 5% 2%;
+    width: 95%;
+    height: 445rpx;
+}
+/* 
+.contact_class{ */
+    /* float: left; */
+    /* margin-top: 8rpx;
+    margin-left: -3%; */
+    /* display: block; */
+    /* white-space: pre-line; */
+    /* 多行省略 */
+/* } */
 
+/* .contact_class .text{
+    white-space: pre-line;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    flex-flow:row wrap;
+} */
+.emptyimg{
+    /* make the img on the center of de view */
+    width: 50px;
+    height: 50px;
+    margin-top: 200rpx;
+}
+.emptyhistory{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.nohistory{
+    /* grey center 16px */
+    color: #999;
+    font-size: 16px;
+    margin-top: 20px;
+}
+.nohistory-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.in-text-1 {
+    text-indent: 20rpx;
+    height: 55rpx;
+    /* width: 90%; */
+    /* margin: 10rpx 0rpx 0rpx 0rpx; */
+    font-size: 30rpx;
+    display: block;
+    white-space: pre-line;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    flex-flow:row wrap;
+    font-weight: 500;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .box3{

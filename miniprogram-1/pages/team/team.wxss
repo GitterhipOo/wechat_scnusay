@@ -186,7 +186,7 @@ swiper {
     right: 35rpx;
     top: 36rpx;
     color: #e2a22a;
-    font-size: 30rpx;
+    font-size: 35rpx;
     font-weight: 700;
 }
 
@@ -204,6 +204,7 @@ swiper {
 .in-text-1  {
     text-indent: 20rpx;
     height: 55rpx;
+    line-height: 50rpx;
     /* width: 90%; */
     margin: 10rpx 0rpx 0rpx 0rpx;
     font-size: 30rpx;
@@ -240,7 +241,7 @@ swiper {
 
 .box3 .mypostmenu {
     font-weight: 700;
-    font-size: 30rpx;
+    font-size: 32rpx;
 }
 
 .box3 image {
