@@ -48,14 +48,18 @@ Page({
         console.log(post)
         for (var i = 0; i < post.length; i++){
             if (post[i].photos.length > 0){
-                postHeight+=384
+<<<<<<< HEAD
+                postHeight+=714
+=======
+                postHeight+=720
+>>>>>>> 5bb018e52561dc2a795b8891fecb9ac49ae0b4de
             }
             else{ 
-                postHeight+=206
+                postHeight+=280
             }
         }
-        postHeight=postHeight+400;
-
+        if (postHeight == 0) postHeight = 300
+        postHeight = postHeight +100;
         postHeight = postHeight+"rpx";
         this.setData({
             swiperHeight:postHeight,
