@@ -14,9 +14,7 @@ Page({
         current_Page: 0,
         heights: [],
         //post0为拼车大厅信息
-            post0:[            
-                
-            ],
+            post0:[],
             //post1为我的发布信息
             post1: [],
             

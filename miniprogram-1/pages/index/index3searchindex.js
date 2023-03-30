@@ -36,21 +36,31 @@ Page({
         //点击搜索跳转
     },
 
-    //通过计算post的数量获取页面长度
-    getSwiperItemHeight:function(){
-        var postHeight
-        if (this.data.current_Page == 0){
-            postHeight=(this.data.post0.length)*500+100+"rpx";
-        }
-        else{
-            postHeight=(this.data.post1.length)*500+100+"rpx";
-        }
-        console.log("计算页面高度触发")
-        this.setData({
-            swiperHeight:postHeight,
-        })
-        console.log("高度赋值完成")
-    },
+        //通过计算post的数量获取页面长度
+        getSwiperItemHeight: function () {
+            var postHeight = 0
+            var post
+            if (this.data.current_Page == 0) {
+                post = this.data.post0
+            } else {
+                post = this.data.post1
+            }
+            console.log(post)
+            for (var i = 0; i < post.length; i++) {
+                if (post[i].photos.length > 0) {
+                    postHeight += 742
+                } else {
+                    postHeight += 262
+                }
+            }
+            if (postHeight == 0) postHeight = 300
+            postHeight = postHeight +100;
+            postHeight = postHeight + "rpx";
+            this.setData({
+                swiperHeight: postHeight,
+            })
+            console.log("高度赋值完成,计算高度为", postHeight)
+        },
 
     //跳转至详情页面
     jumptodetails: function (e) {

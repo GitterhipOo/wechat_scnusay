@@ -61,6 +61,7 @@ Page({
         console.log(post)
         for (var i = 0; i < post.length; i++){
             if (post[i].photos.length > 0){
+
                 postHeight+=560
             }
             else{ 
@@ -68,6 +69,7 @@ Page({
             }
         }
         postHeight=postHeight+400;
+
 
         postHeight = postHeight+"rpx";
         this.setData({
