@@ -60,6 +60,7 @@ page{
     margin-top: 12rpx;
     font-size: 34rpx;
     font-weight: 700;
+
 }
 .tabitem2{
     float: right;
@@ -78,6 +79,7 @@ page{
     border-radius: 25rpx;
     font-size: 34rpx;
     font-weight: 700;
+
 }
 .swipertab{
     height: 5%;
@@ -115,10 +117,13 @@ swiper{
 }
 
 .box1 {
+    padding-top: 3%;
+    padding-left: 3%;
     height: 100rpx;
     width: 500rpx;
     padding-top: 23rpx;
     padding-left: 20rpx;
+
     
 }
 
@@ -135,15 +140,15 @@ swiper{
     /* margin-top: 5rpx; */
     margin-left: 15rpx;
     font-weight: 700;
+
     font-size: 35rpx;
+
     width: 380rpx;
+    /* 设置单行省略 */
     overflow: hidden;
     text-overflow: ellipsis;
-    flex-flow:row wrap;
+    white-space: nowrap;
     word-break: break-all;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
 }
 
 .box1 .text2 {
@@ -176,19 +181,23 @@ swiper{
 }
 
 .box2 text {
-    text-indent: 20rpx;
+    font-size: 30rpx;
+    padding-right: 3%;
+    padding-left: 1%;
+    width: 95%;
     height: 30%;
     width: 600rpx;
     margin: 0 auto;
     font-size: 29rpx;
     display: block;
+
     white-space: pre-line;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     word-break: break-all;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     flex-flow:row wrap;
 }
 
@@ -235,6 +244,7 @@ swiper{
     flex-flow:row wrap;
     font-weight: 500;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
 }
 
 .box3{
@@ -259,50 +269,6 @@ swiper{
 .test{
     height: 10px;
 }
-.nohistory{
-    /* grey center 16px */
-    color: #999;
-    font-size: 16px;
-    margin-top: 20px;
-}
-.nohistory-container
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-}
-.emptyhistory{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-}
-.emptyimg{
-    /* make the img on the center of de view */
-    width: 50px;
-    height: 50px;
-    margin-top: 200rpx;
-}
-.nologinmessage
-{
-    text-align: center;
-    color: grey;
-    margin-top: 10rpx;
-    margin-bottom: 10rpx;
-}
-
-/* 图片已完成的样式 */
-.photo-finish{
-    position: absolute;
-    right: 0;
-    width: 150rpx;
-    height: 150rpx;
-    opacity: 40%;
-}
-
 .weui-loadmore {
     width: 100%;
     height: 100rpx;

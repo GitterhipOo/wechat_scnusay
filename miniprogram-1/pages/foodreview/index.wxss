@@ -32,6 +32,7 @@ page {
     margin-right: 20%;
     height: 60rpx;
     border-radius: 5px;
+    background-color: #fff;
   }
   .sousuo {
     padding-left: 38%;
@@ -46,7 +47,7 @@ page {
     flex-direction: row
   }
   .searchcion {
-    margin: 10rpx 10rpx 10rpx 10rpx;
+    margin: 2% 10rpx 10rpx 10rpx;
     position: absolute;
     margin-left:38%;
     z-index: 2;
