@@ -18,13 +18,13 @@
 </view>
 <view style="height: {{navH*2+20}}px;"></view>
 <view class="weui-loadmore" wx:if='{{isRefreshing}}'>
-  <view class="weui-loading"></view>
-  <view class="weui-loadmore-tips">正在刷新...</view>
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore-tips">正在刷新...</view>
 </view>
 
 <!-- 顶部导航栏结束 -->
 <!-- 发布入口 -->
-<view class="guide" bindtap="gotosend" >
+<view class="guide" bindtap="gotosend">
     <view class="lostcenter">发布</view>
 </view>
 <!-- 发布入口结束 -->
@@ -50,19 +50,19 @@
                 <!-- <view class="box-way">{{item.talking_class==1?"丢失物品":"寻找物品"}}</view> -->
                 <!-- 主要内容模块 -->
                 <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
-                    <view style="margin: 20rpx 0 10rpx 0;"><text>{{item.talking_detail}}</text></view>
+                    <view><text>{{item.talking_detail}}</text></view>
                     <block wx:if="{{item.photos[0]}}">
                         <image src="{{item.photos[0]}}" mode="aspectFill" class="detailimg"></image>
                     </block>
                 </view>
                 <!-- 文后小标模块 -->
-      
+
             </view>
         </view>
     </swiper-item>
 
     <swiper-item class="container1">
-        <view class="list">
+        <view class="list" wx:if="{{post1.length!=0}}">
             <!-- 以一个作为案例 -->
             <view class="box" wx:for="{{post1}}" wx:key="index">
                 <!-- 头像栏模块 -->
@@ -71,7 +71,9 @@
                     <text class="text1">{{item.talking_topic}}</text>
                     <text class="text2">{{item.blogger_time}}</text>
                 </view>
-                <view class="box-way"><t-button shape="round" class="mypostmenu" bindtap="postmenu" data-index="{{index}}">更多操作</t-button></view>
+                <view class="box-way">
+                    <t-button shape="round" class="mypostmenu" bindtap="postmenu" data-index="{{index}}">更多操作</t-button>
+                </view>
                 <!-- 主要内容模块 -->
                 <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
                     <view><text>{{item.talking_detail}}</text></view>
@@ -87,6 +89,17 @@
                 </view>
             </view>
         </view>
+        <view class="list" wx:else>
+                        <view class="emptyhistory">
+        <image src="https://www.scnusay.cc/icon/empty.png" mode="" class="emptyimg"/>
+    </view>
+
+    <view class="nohistory-container">
+        <text class="nohistory">oh!暂无历史记录</text>
+    </view>
+
+
+                            </view>
     </swiper-item>
 </swiper>
 <view class="test">

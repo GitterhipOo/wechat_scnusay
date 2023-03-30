@@ -115,10 +115,10 @@ Page({
         var tabstylemy
         if (this.data.current_Page == 0){
             tabstylelost="color: #e2a22a";
-            tabstylemy="color: black";
+            tabstylemy="color: grey";
         }
         else{
-            tabstylelost="color: black";
+            tabstylelost="color: grey";
             tabstylemy="color: #e2a22a";
         }
         this.setData({
@@ -137,10 +137,10 @@ Page({
         var tabstylemy
         if (this.data.current_Page == 0){
             tabstylelost="color: #e2a22a";
-            tabstylemy="color: black";
+            tabstylemy="color: grey";
         }
         else{
-            tabstylelost="color: black";
+            tabstylelost="color: grey";
             tabstylemy="color: #e2a22a";
         }
         this.setData({
@@ -434,7 +434,8 @@ Page({
      * 页面上拉触底事件的处理函数
      */
     onReachBottom() {
-
+        console.log("触底事件触发")
+        this.getSwiperItemHeight()
     },
 
     /**
