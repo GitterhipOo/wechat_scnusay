@@ -21,6 +21,14 @@ page{
     background-color: rgb(209, 209, 209);
 }
 
+.photo-finish{
+    position: absolute;
+    right: 0;
+    width: 150rpx;
+    height: 150rpx;
+    opacity: 40%;
+}
+
 /* 搜索框结束 */
 /* 发布 */
 .guide {
@@ -170,9 +178,9 @@ swiper{
 }
 
 .box2 {
-    margin: 5rpx auto 0rpx auto;
+    margin: -10rpx auto 0rpx auto;
     width: 98%;
-    /* padding-top: 5rpx; */
+    padding-top: 10rpx;
     /* padding-bottom: 7.5rpx; */
     background-color: #ffffff;
     /* border-radius: 20rpx; */
@@ -197,7 +205,7 @@ swiper{
     display: -webkit-box;
     word-break: break-all;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
     flex-flow:row wrap;
 }
 

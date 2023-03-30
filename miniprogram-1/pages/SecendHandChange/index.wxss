@@ -224,8 +224,8 @@ swiper{
 
 .box3 .post-data {
     float: right;
-    margin-right: 15%;
-    margin-top:18%;
+    margin-right: 10%;
+    margin-top:20%;
 }
 .box3 .mypostmenu{
     background-color: #b9d4d0;
