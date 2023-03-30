@@ -4,55 +4,64 @@ page{
 }
 .chat {
     position: relative;
-    padding-top: 10px;
-    margin: 10px auto;
+    padding-top: 25rpx;
+    margin: 30rpx auto;
     /* border: rgb(32, 29, 221) solid 1px; */
     background-color: #fff;
-    border-radius: 50rpx;
-    box-shadow: -1px 2px 12px 0px rgba(0, 0, 0, 0.4);
+    border-radius: 33rpx;
+    box-shadow: -1px 2px 12px 0px rgba(128, 122, 122, 0.356);
     width: 95%;
 
 }
 
 .touxiang {
-    height: 45px;
-    width: 45px;
-    border-radius: 50%;
+    height: 100rpx;
+    width: 100rpx;
+    border-radius: 45%;
     overflow: hidden;
+    margin-left: 24%; 
+    margin-bottom: 4%;
 }
 
 .touxianglan {
-    margin-left: 4.5%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    border-bottom: 5rpx solid rgba(228, 224, 224, 0.646);
 }
 
-.follow {
-    right: -2%;
+/* .follow {
+    background-color: #fff;
+     border-color: #fff;
+     color: rgb(75, 200, 238);
+     font-size: 35rpx;
+     right: -6%;
 
-}
+} */
 
 .name {
-    padding-left: 10px;
+    /* padding-left: 25rpx; */
     font-weight: 700;
-    font-size: 15px;
+    font-size: 38rpx;
+    margin-left: 6.5%; 
 }
 
 .time {
     font-weight: 450;
-    font-size: 13px;
+    font-size: 28rpx;
+    padding-top: -20% ;
+    /* margin-left: 20%; */
 }
 
 .in_contact {
     padding-top: 10px;
     padding-left: 10px;
-    background-color: rgba(128, 124, 124, 0.356);
+    background-color: rgba(228, 224, 224, 0.356);
     width: 90%;
     margin: 10px auto;
     padding-bottom: 10px;
-
+    border-radius: 25rpx;
 }
 
 .topic {
@@ -112,12 +121,13 @@ page{
 }
 
 .contact_detail {
-    /* margin: 0 auto; */
-    width: 90%;
+    width: 95%;
+    border-top: 5rpx solid rgba(202, 213, 216, 0.4);
     /* background-color: rgba(128, 124, 124, 0.356); */
-    margin: 0 auto;
-    padding-left: 10px;
-    padding-bottom: 12px;
+    margin: 10px auto;
+    padding-left: 10rpx;
+    padding-bottom: 30rpx;
+    padding-top: 2%;
 }
 
 .h1_detail {
@@ -127,8 +137,23 @@ page{
 }
 
 .detail_1 {
-
+    
     font-size: 14px;
+    color: #333333;
+    white-space: pre-line;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 100;
+    flex-flow:row wrap;
+}
+
+.right_content_txt2 {
+    font-size: 24rpx;
+    color: #CCCCCC;
+    font-weight: 500;
 }
 
 .box3 .tags{
@@ -157,15 +182,17 @@ page{
 .container {
     width: 100%;
     margin-top: 39rpx;
-
+    background-color: #fff;
+    padding-top: 35rpx;
 }
 
 .total {
-    font-size: 24rpx;
-    color: #999999;
+    font-size: 28rpx;
+    color: #857f7f;
     margin-left: 1rpx;
     height:40rpx;
     padding-left: 32rpx;
+    font-weight: 700;
 }
 
 .container_inp {
@@ -177,6 +204,8 @@ page{
     margin-top: 24rpx;
     margin-bottom: 47rpx;
     padding-left: 32rpx;
+    border: solid 1px rgb(238, 227, 227);
+    margin-left: 30rpx;
 }
 
 .container_place {
@@ -194,6 +223,7 @@ page{
     width: 64rpx;
     height: 64rpx;
     margin-right: 17rpx;
+    border-radius: 30rpx;
 }
 
 .item_right {
@@ -207,10 +237,10 @@ page{
 .right_name {
     font-size: 24rpx;
     color: #999999;
+    font-weight: 700;
 }
 
 .right_content {
-    
     width: 603rpx;
     margin-top: 20rpx;
 }
@@ -218,12 +248,20 @@ page{
 .right_content_txt {
     font-size: 26rpx;
     color: #333333;
+    white-space: pre-line;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 20;
+    flex-flow:row wrap;
 }
 
 .right_content_txt2 {
     font-size: 24rpx;
     color: #CCCCCC;
-    margin-left: 30rpx;
+    font-weight: 500;
 }
 
 .reply {
@@ -340,9 +378,15 @@ page{
 .details_img{
     width: 100%;
     object-fit:contain;
+    /* border-radius: 25prx; */
 }
+
 .imgbox{
-    width: 100%;
+    margin-top: 3%;
+    width: 98%;
+    padding-bottom: 5%;
+    padding-left: 0.5%;
+    /* border-radius: 25rpx; */
 }
 .say_btn{
     width: 200rpx;

@@ -80,9 +80,9 @@ Page({
         var tabstylemy
         if (this.data.current_Page == 0) {
             tabstylelost = "color: #9bd3d3";
-            tabstylemy = "color: black";
+            tabstylemy = "color: grey";
         } else {
-            tabstylelost = "color: black";
+            tabstylelost = "color: grey";
             tabstylemy = "color: #9bd3d3";
         }
         this.setData({
@@ -101,9 +101,9 @@ Page({
         var tabstylemy
         if (this.data.current_Page == 0) {
             tabstylelost = "color: #9bd3d3";
-            tabstylemy = "color: black";
+            tabstylemy = "color: grey";
         } else {
-            tabstylelost = "color: black";
+            tabstylelost = "color: grey";
             tabstylemy = "color: #9bd3d3";
         }
         this.setData({
