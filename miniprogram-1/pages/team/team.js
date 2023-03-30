@@ -90,17 +90,21 @@ Page({
             post = this.data.post1
         }
         console.log(post)
-        for (var i = 0; i < post.length; i++){                     
-                postHeight+=500
-            
+        for (var i = 0; i < post.length; i++){
+            if (post[i].photos.length > 0){
+                postHeight+=720
+            }
+            else{ 
+                postHeight+=450
+            }
         }
-        postHeight=postHeight+300;
-        postHeight = postHeight + "rpx";
-        console.log("计算页面高度触发")
+        postHeight=postHeight+400;
+
+        postHeight = postHeight+"rpx";
         this.setData({
             swiperHeight:postHeight,
         })
-        console.log("高度赋值完成")
+        console.log("高度赋值完成,计算高度为",postHeight)
     },
     // 点击标签判断
     clicktab: function (e) {
