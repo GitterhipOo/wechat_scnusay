@@ -4,20 +4,28 @@ page {
 
 /* 帖子数据 */
 .box {
-    width: 95;
+    width: 96%;
     position: relative;
-    margin: 10rpx 0;
+    margin: 35rpx auto;
     background-color: #fff;
+    border-radius: 25rpx;
+    box-shadow: -1px 2px 6px 0px rgba(0, 0, 0, 0.4);
+    height: 725rpx;
+    border: rgba(116, 202, 202, 0.6) solid 1rpx;
 }
 
 .box1 {
+    padding-top: 3%;
+    padding-left: 3%;
     height: 100rpx;
     width: 500rpx;
+    padding-top: 23rpx;
+    padding-left: 20rpx;
 }
 
 .box1 image {
     float: left;
-    margin: 5rpx 0 5rpx 10rpx;
+    margin: -8rpx 0 5rpx 0rpx;
     width: 90rpx;
     height: 90rpx;
     border-radius: 90rpx;
@@ -25,48 +33,67 @@ page {
 
 .box1 .text1 {
     float: left;
-    margin-top: 10rpx;
-    margin-left: 20rpx;
+    /* margin-top: 5rpx; */
+    margin-left: 15rpx;
     font-weight: 700;
-    font-size: 34rpx;
+
+    font-size: 35rpx;
+
     width: 380rpx;
+    /* 设置单行省略 */
     overflow: hidden;
     text-overflow: ellipsis;
-    flex-flow:row wrap;
+    white-space: nowrap;
     word-break: break-all;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
 }
 
 .box1 .text2 {
     float: left;
-    margin-left: 20rpx;
-    font-size: 20rpx;
-    color: #aaa;
+    margin-left: 15rpx;
+    margin-top: 3rpx;
+    font-size: 23rpx;
+    color: rgb(170, 164, 164);
+    font-weight: 520;
 }
 
 .box-way {
     position: absolute;
-    right: 30rpx;
+    right: 10rpx;
     top: 10rpx;
     color: rgb(53, 192, 247);
     font-size: 40rpx;
 }
 
+.contact_class {
+    float: left;
+    margin-top: 8rpx;
+    margin-left: 2.7%;
+    display: block;
+    white-space: pre-line;
+}
+
 .box2 {
-    margin: 20rpx 10rpx;
-    padding-bottom: 50rpx;
-     height: 400rpx; 
+    margin: -10rpx auto 0rpx auto;
+    width: 98%;
+    padding-top: 10rpx;
+    /* padding-bottom: 7.5rpx; */
+    background-color: #ffffff;
+    /* border-radius: 20rpx; */
+    border-top: solid rgba(176, 189, 192, 0.743) 1rpx;
+    /* border: 4rpx solid #c5dddd; */
 }
 
 .box2 text {
-    text-indent: 20rpx;
+    font-size: 30rpx;
+    padding-right: 3%;
+    padding-left: 1%;
+    width: 95%;
     height: 30%;
     width: 600rpx;
     margin: 0 auto;
-    font-size: 28rpx;
+    font-size: 29rpx;
     display: block;
+
     white-space: pre-line;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -74,20 +101,18 @@ page {
     word-break: break-all;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
-    flex-flow:row wrap;
+    flex-flow: row wrap;
 }
 
 .box2 image {
-    margin: 20rpx 20rpx;
-    width: 200rpx;
-    height: 200rpx;
+    margin: 2% 5% 5% 2%;
+    width: 95%;
+    height: 445rpx;
 }
 
 .box3{
     position: absolute;
-    bottom: 0%;
-
-
+    bottom: -3%;
     right: 0%;
 }
 
@@ -111,6 +136,9 @@ page {
     left: 82%;
 }
 
+/* .otherimg{
+    margin-bottom: -30%;
+} */
 
 /* 图片已完成的样式 */
 .photo-finish{

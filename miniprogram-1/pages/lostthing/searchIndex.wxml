@@ -35,11 +35,11 @@
             <image src="{{item.blogger_avatar}}"></image>
             <text class="text1">{{item.lostthing_topic}}</text>
             <text class="text2">{{item.blogger_time}}</text>
-        </view>、
+        </view>
         <!-- 主要内容模块 -->
         <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
-            <view style="margin: 20rpx 0 40rpx 0;"><text>{{item.lostthing_detail}}</text></view>
-            <image wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
+            <view class="contact_class"><text style="font-weight: 540;font-size: 30rpx;">{{item.lostthing_detail}}</text></view>
+            <image style="border-radius: 10rpx;" src="{{item.photos[0]}}" mode="aspectFill" class="detailimg"></image>
         </view>
     </view>
 </view>

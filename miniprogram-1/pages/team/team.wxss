@@ -161,7 +161,7 @@ swiper {
     margin-top: 7rpx;
     margin-left: 20rpx;
     font-weight: 700;
-    font-size: 36rpx;
+    font-size: 35rpx;
     width: 380rpx;
     overflow: hidden;
     text-overflow: ellipsis;
