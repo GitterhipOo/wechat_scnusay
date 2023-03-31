@@ -3,7 +3,7 @@
     <view class="nav-title" style="line-height: {{navH*2+44}}px;">搜索结果</view>
     <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
         <navigator hoverClass="none" open-type="navigate" url="/pages/team/team">
-                    <image class="back-pre" src="https://www.scnusay.cc/icon/back.png" style="height:50rpx;width:50rpx;margin-top: 50rpx;"></image>
+                    <image class="back-pre" src="https://www.scnusay.cc/icon/back.png" style="height:50rpx;width:50rpx;margin-top: 70rpx;margin-left: 45rpx;"></image>
         </navigator>
     </view>
 </view>
@@ -21,9 +21,11 @@
                 <view class="box-way">{{item.team_space}}</view>
                 <!-- 主要内容模块 -->
                 <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
-                   <text style="margin: 10rpx 30rpx 0rpx 30rpx;font-weight: 700;font-size: 34rpx;">招募信息：</text>
-                    <view style="margin: 10rpx 30rpx 0rpx 30rpx;font-weight: 500;"><text>{{item.team_detail}}</text></view>
- 
+                  <view><text class="in-text-1"><text style="font-weight: 700;">所在校区：</text>{{item.team_space}}</text></view> 
+                  <view><text class="in-text-1"><text style="font-weight: 700;">截止日期：</text>{{item.team_time}}</text></view>
+                  <view><text class="in-text-1"><text style="font-weight: 700;">联系方式：</text>{{item.team_contact}}</text></view>
+                  <!-- <view><text class="in-text-1"><text style="font-weight: 700;">招募信息：</text>{{item.team_}}</text></view> -->
+                  <view><text class="in-text-1"><text style="font-weight: 700;">详情信息：</text>{{item.team_detail}}</text></view>
                 </view>
                 <!-- 文后小标模块 -->
                 <view class="box3" style="width: 50%; height: 10%;">

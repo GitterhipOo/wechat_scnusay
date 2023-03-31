@@ -23,8 +23,8 @@
                 </view>
                 <!-- 主要内容模块 -->
                 <view class="box2" bindtap="jumptodetails" data-index="{{index}}">
-                    <view style="margin: 20rpx 30rpx 40rpx 30rpx;"><text>{{item.secendhand_detail}}</text></view>
-                    <image wx:for="{{item.photos}}" wx:for-item="photo" src="{{photo}}" mode="aspectFill"></image>
+                    <view class="contact_class"><text style="font-weight: 540;font-size: 30rpx;">{{item.secendhand_detail}}</text></view>
+                    <image style="border-radius: 10rpx;" src="{{item.photos[0]}}" mode="aspectFill" class="detailimg"></image>
                 </view>
                 <!-- 文后小标模块 -->
                 <view class="box3" style="width: 50%; height: 10%;">

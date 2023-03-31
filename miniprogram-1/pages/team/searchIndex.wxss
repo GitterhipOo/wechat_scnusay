@@ -4,23 +4,37 @@ page {
 
 /* 帖子数据 */
 .box {
-    width: 98%;
+    width: 96%;
     position: relative;
-    margin: 10rpx auto;
+    margin: 35rpx auto;
     background-color: #fff;
-    border-radius: 30rpx;
+    border-radius: 25rpx;
     box-shadow: -1px 2px 6px 0px rgba(0, 0, 0, 0.4);
-    height:600rpx
+    height:440rpx;
+    border: rgba(234, 151, 72, 0.5) solid 1rpx;
+}
+
+.box_my {
+    width: 96%;
+    position: relative;
+    margin: 35rpx auto;
+    background-color: #fff;
+    border-radius: 25rpx;
+    box-shadow: -1px 2px 6px 0px rgba(0, 0, 0, 0.4);
+    height:460rpx;
+    border: rgba(234, 151, 72, 0.5) solid 1rpx;
 }
 
 .box1 {
     height: 100rpx;
     width: 500rpx;
+    padding-top: 23rpx;
+    padding-left: 20rpx;
 }
 
 .box1 image {
     float: left;
-    margin: 5rpx 0 5rpx 10rpx;
+    margin: 0rpx 0 5rpx 14rpx;
     width: 90rpx;
     height: 90rpx;
     border-radius: 90rpx;
@@ -29,10 +43,10 @@ page {
 
 .box1 .text1 {
     float: left;
-    margin-top: 10rpx;
+    margin-top: 7rpx;
     margin-left: 20rpx;
     font-weight: 700;
-    font-size: 34rpx;
+    font-size: 35rpx;
     width: 380rpx;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -46,33 +60,39 @@ page {
 .box1 .text2 {
     float: left;
     margin-left: 20rpx;
-    font-size: 20rpx;
+    margin-top: 5rpx;
+    font-size: 23rpx;
     color: #aaa;
+    font-weight: 520;
 }
 
 .box-way {
     position: absolute;
-    right: 30rpx;
-    top: 10rpx;
+    right: 35rpx;
+    top: 36rpx;
     color: #e2a22a;
-    font-size: 36rpx;
+    font-size: 35rpx;
+    font-weight: 700;
 }
 
 .box2 {
-    margin: 20rpx auto;
-    width: 80%;
-    padding-top: 10rpx;
-    padding-bottom: 50rpx;
-    background-color: #f5f5f5;
-    border-radius: 30rpx;
+    margin: 5rpx auto 0rpx auto;
+    width: 94%;
+    padding-top: 5rpx;
+    padding-bottom: 7.5rpx;
+    padding-top: 7.5rpx;
+    background-color: #ffffff;
+    border-radius: 20rpx;
+    border: 4rpx solid #e4c4508f;
 }
 
-.box2 text {
+.in-text-1  {
     text-indent: 20rpx;
-    height: 30%;
-    width: 100%;
-    margin: 0 auto;
-    font-size: 28rpx;
+    height: 55rpx;
+    line-height: 50rpx;
+    /* width: 90%; */
+    margin: 10rpx 0rpx 0rpx 0rpx;
+    font-size: 30rpx;
     display: block;
     white-space: pre-line;
     overflow: hidden;
@@ -80,8 +100,10 @@ page {
     display: -webkit-box;
     word-break: break-all;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 7;
+    -webkit-line-clamp: 1;
     flex-flow:row wrap;
+    font-weight: 500;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .box2 image {
@@ -92,10 +114,9 @@ page {
 
 .box3{
     position: absolute;
-    bottom: 0%;
-
-
-    right: 0%;
+    /* bottom: 0%; */
+    right: 2.5%;
+    color: #e2a22a;
 }
 
 .box3 .post-data {
