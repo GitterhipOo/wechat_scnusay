@@ -50,18 +50,32 @@ Page({
     },
     //通过计算post的数量获取页面长度
     getSwiperItemHeight:function(){
-        var postHeight
+        var postHeight = 0
+        var post
         if (this.data.current_Page == 0){
-            postHeight=(this.data.post0.length)*500+600+"rpx";
+            post = this.data.post0
         }
         else{
-            postHeight=(this.data.post1.length)*500+600+"rpx";
+            post = this.data.post1
         }
-        console.log("计算页面高度触发")
+        console.log(post)
+        for (var i = 0; i < post.length; i++){
+            if (post[i].photos.length > 0){
+
+                postHeight+=560
+            }
+            else{ 
+                postHeight+=560
+            }
+        }
+        postHeight=postHeight+400;
+
+
+        postHeight = postHeight+"rpx";
         this.setData({
             swiperHeight:postHeight,
         })
-        console.log("高度赋值完成")
+        console.log("高度赋值完成,计算高度为",postHeight)
     },
     // 点击标签判断
     clicktab: function (e) {

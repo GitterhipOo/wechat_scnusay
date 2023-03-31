@@ -288,8 +288,8 @@ Page({
             }
         
             if (res.confirm) {
-                wx.switchTab({
-                    url: '/pages/index/index3',
+                wx.reLaunch({
+                    url: 'index3',
                   })
             }
           }
